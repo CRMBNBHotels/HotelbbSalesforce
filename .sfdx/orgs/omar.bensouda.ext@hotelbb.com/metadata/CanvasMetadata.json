@@ -1,0 +1,17 @@
+{
+  "status": 0,
+  "result": {
+    "createdById": "0051v0000055juyAAA",
+    "createdByName": "Jérémy Cazal",
+    "createdDate": "2018-10-19T09:39:24.000Z",
+    "fileName": "modules/dataloader_io2_oauth_c4s/Canvases/mule__dataloader_io2_oauth_c4s__dataloader_io2_oauth_c4sCanvas.Canvas",
+    "fullName": "mule__dataloader_io2_oauth_c4s__dataloader_io2_oauth_c4sCanvas",
+    "id": "07O1v000000Gq1KEAS",
+    "lastModifiedById": "0051v0000055juyAAA",
+    "lastModifiedByName": "Jérémy Cazal",
+    "lastModifiedDate": "2018-10-19T09:39:24.000Z",
+    "manageableState": "installed",
+    "namespacePrefix": "mule",
+    "type": "CanvasMetadata"
+  }
+}

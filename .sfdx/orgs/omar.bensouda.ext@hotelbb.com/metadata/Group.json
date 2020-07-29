@@ -1,0 +1,161 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0051v000006XvzCAAS",
+      "createdByName": "Nadia Camus",
+      "createdDate": "2020-06-23T11:50:41.000Z",
+      "fileName": "groups/KarinTemplate.group",
+      "fullName": "KarinTemplate",
+      "id": "00G1v000007fxhAEAQ",
+      "lastModifiedById": "0051v000006XvzCAAS",
+      "lastModifiedByName": "Nadia Camus",
+      "lastModifiedDate": "2020-06-23T11:50:41.000Z",
+      "type": "Group"
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "2020-06-04T08:23:33.000Z",
+      "fileName": "groups/PG11_GermanQueueOPs.group",
+      "fullName": "PG11_GermanQueueOPs",
+      "id": "00G1v000007fpxtEAA",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "2020-06-04T08:23:33.000Z",
+      "type": "Group"
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "2020-06-04T08:22:55.000Z",
+      "fileName": "groups/PG09_GermanQueueDevelopment.group",
+      "fullName": "PG09_GermanQueueDevelopment",
+      "id": "00G1v000007fpxjEAA",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "2020-06-04T08:22:55.000Z",
+      "type": "Group"
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "2020-03-31T14:11:40.000Z",
+      "fileName": "groups/PG05_GermanECom.group",
+      "fullName": "PG05_GermanECom",
+      "id": "00G1v000007QYxkEAG",
+      "lastModifiedById": "0051v000006XvzCAAS",
+      "lastModifiedByName": "Nadia Camus",
+      "lastModifiedDate": "2020-06-23T11:59:17.000Z",
+      "type": "Group"
+    },
+    {
+      "createdById": "0050Y000000gQkdQAE",
+      "createdByName": "EIT EIT",
+      "createdDate": "2018-06-20T13:56:17.000Z",
+      "fileName": "groups/PG03_ItalianGroup.group",
+      "fullName": "PG03_ItalianGroup",
+      "id": "00G0Y000003j63eUAA",
+      "lastModifiedById": "0050Y000003kdNRQAY",
+      "lastModifiedByName": "Consultant TMA",
+      "lastModifiedDate": "2018-11-28T11:02:15.000Z",
+      "type": "Group"
+    },
+    {
+      "createdById": "0050Y000001rthGQAQ",
+      "createdByName": "Genevieve Jawhar",
+      "createdDate": "2018-02-15T06:57:09.000Z",
+      "fileName": "groups/PG01_FrenchGroup.group",
+      "fullName": "PG01_FrenchGroup",
+      "id": "00G0Y000004LkncUAC",
+      "lastModifiedById": "0050Y000001rthGQAQ",
+      "lastModifiedByName": "Genevieve Jawhar",
+      "lastModifiedDate": "2018-02-15T07:48:50.000Z",
+      "type": "Group"
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "2020-03-31T14:11:40.000Z",
+      "fileName": "groups/PG08_GermanSales.group",
+      "fullName": "PG08_GermanSales",
+      "id": "00G1v000007QYxnEAG",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "2020-03-31T14:11:40.000Z",
+      "type": "Group"
+    },
+    {
+      "createdById": "0050Y000001rthGQAQ",
+      "createdByName": "Genevieve Jawhar",
+      "createdDate": "2018-02-15T06:57:09.000Z",
+      "fileName": "groups/PG02_GermanGroup.group",
+      "fullName": "PG02_GermanGroup",
+      "id": "00G0Y000004LkndUAC",
+      "lastModifiedById": "0050Y000001rthGQAQ",
+      "lastModifiedByName": "Genevieve Jawhar",
+      "lastModifiedDate": "2018-02-15T07:48:07.000Z",
+      "type": "Group"
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "2020-03-31T14:11:40.000Z",
+      "fileName": "groups/PG06.group",
+      "fullName": "PG06",
+      "id": "00G1v000007QYxlEAG",
+      "lastModifiedById": "0051v000006XvzCAAS",
+      "lastModifiedByName": "Nadia Camus",
+      "lastModifiedDate": "2020-06-23T12:15:38.000Z",
+      "type": "Group"
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "2020-03-31T14:11:40.000Z",
+      "fileName": "groups/PG07_GermanOfficeService.group",
+      "fullName": "PG07_GermanOfficeService",
+      "id": "00G1v000007QYxmEAG",
+      "lastModifiedById": "0051v000006XvzCAAS",
+      "lastModifiedByName": "Nadia Camus",
+      "lastModifiedDate": "2020-06-23T12:18:08.000Z",
+      "type": "Group"
+    },
+    {
+      "createdById": "0050Y000001rthGQAQ",
+      "createdByName": "Genevieve Jawhar",
+      "createdDate": "2018-02-15T06:57:09.000Z",
+      "fileName": "groups/PG01_Case_ServiceUsers.group",
+      "fullName": "PG01_Case_ServiceUsers",
+      "id": "00G0Y000004LknbUAC",
+      "lastModifiedById": "0050Y000001rthGQAQ",
+      "lastModifiedByName": "Genevieve Jawhar",
+      "lastModifiedDate": "2018-02-15T07:50:25.000Z",
+      "type": "Group"
+    },
+    {
+      "createdById": "0051v0000055juyAAA",
+      "createdByName": "Jérémy Cazal",
+      "createdDate": "2018-11-06T09:08:15.000Z",
+      "fileName": "groups/PG04_SpanishGroup.group",
+      "fullName": "PG04_SpanishGroup",
+      "id": "00G1v000005Je7gEAC",
+      "lastModifiedById": "0051v0000055juyAAA",
+      "lastModifiedByName": "Jérémy Cazal",
+      "lastModifiedDate": "2018-11-06T09:14:10.000Z",
+      "type": "Group"
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "2020-06-04T08:23:20.000Z",
+      "fileName": "groups/PG10_GermanQueueHotelCase.group",
+      "fullName": "PG10_GermanQueueHotelCase",
+      "id": "00G1v000007fpxoEAA",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "2020-06-04T08:23:20.000Z",
+      "type": "Group"
+    }
+  ]
+}

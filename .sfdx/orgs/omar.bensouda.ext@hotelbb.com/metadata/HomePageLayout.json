@@ -1,0 +1,16 @@
+{
+  "status": 0,
+  "result": {
+    "createdById": "0050Y000001EiZOQA0",
+    "createdByName": "Jérôme DESTORS",
+    "createdDate": "2017-02-05T11:54:40.000Z",
+    "fileName": "homePageLayouts/Dashboard Home Page Default.homePageLayout",
+    "fullName": "Dashboard Home Page Default",
+    "id": "02T0Y000000NqeCUAS",
+    "lastModifiedById": "0050Y000001EiZOQA0",
+    "lastModifiedByName": "Jérôme DESTORS",
+    "lastModifiedDate": "2017-02-05T11:54:40.000Z",
+    "manageableState": "unmanaged",
+    "type": "HomePageLayout"
+  }
+}

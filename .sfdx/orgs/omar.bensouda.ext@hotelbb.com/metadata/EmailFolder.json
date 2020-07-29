@@ -1,0 +1,85 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0050Y0000028MJqQAM",
+      "createdByName": "Khadija Benabdellah",
+      "createdDate": "2017-10-26T08:58:24.000Z",
+      "fileName": "email/Services_Coud_Templates",
+      "fullName": "Services_Coud_Templates",
+      "id": "00l0Y000000dbH3QAI",
+      "lastModifiedById": "0050Y0000028MJqQAM",
+      "lastModifiedByName": "Khadija Benabdellah",
+      "lastModifiedDate": "2017-10-26T08:58:24.000Z",
+      "manageableState": "unmanaged",
+      "type": "EmailFolder"
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "2020-06-18T07:57:46.000Z",
+      "fileName": "email/Ecommerce",
+      "fullName": "Ecommerce",
+      "id": "00l1v000000zkFoAAI",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "2020-06-18T12:43:31.000Z",
+      "manageableState": "unmanaged",
+      "type": "EmailFolder"
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "2020-06-18T07:58:12.000Z",
+      "fileName": "email/Loyalty2",
+      "fullName": "Loyalty2",
+      "id": "00l1v000000zkFtAAI",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "2020-06-18T12:45:15.000Z",
+      "manageableState": "unmanaged",
+      "type": "EmailFolder"
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "2020-06-18T07:58:29.000Z",
+      "fileName": "email/Office_Services",
+      "fullName": "Office_Services",
+      "id": "00l1v000000zkFyAAI",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "2020-06-18T12:45:00.000Z",
+      "manageableState": "unmanaged",
+      "type": "EmailFolder"
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "unfiled$public",
+      "fullName": "unfiled$public",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "manageableState": "unmanaged",
+      "namespacePrefix": "",
+      "type": "EmailFolder"
+    },
+    {
+      "createdById": "0050Y0000028Lz2QAE",
+      "createdByName": "API User",
+      "createdDate": "2018-11-15T09:12:06.000Z",
+      "fileName": "email/et4ae5__ExactTarget",
+      "fullName": "et4ae5__ExactTarget",
+      "id": "00l1v000000OZMoAAO",
+      "lastModifiedById": "0050Y0000028Lz2QAE",
+      "lastModifiedByName": "API User",
+      "lastModifiedDate": "2018-11-15T09:12:06.000Z",
+      "manageableState": "installed",
+      "namespacePrefix": "et4ae5",
+      "type": "EmailFolder"
+    }
+  ]
+}

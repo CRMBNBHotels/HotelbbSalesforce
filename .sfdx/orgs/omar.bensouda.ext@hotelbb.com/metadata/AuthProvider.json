@@ -1,0 +1,29 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "2018-10-10T12:27:51.000Z",
+      "fileName": "authproviders/LightningForGmail.authprovider",
+      "fullName": "LightningForGmail",
+      "id": "0SO1v000000Grp2GAC",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "type": "AuthProvider"
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "2020-06-04T12:34:46.000Z",
+      "fileName": "authproviders/LogInWithGoogle.authprovider",
+      "fullName": "LogInWithGoogle",
+      "id": "0SO1v00000006odGAA",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "type": "AuthProvider"
+    }
+  ]
+}

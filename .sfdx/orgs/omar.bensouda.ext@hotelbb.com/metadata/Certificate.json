@@ -1,0 +1,15 @@
+{
+  "status": 0,
+  "result": {
+    "createdById": "0051v000006WkykAAC",
+    "createdByName": "Omar BENSOUDA",
+    "createdDate": "2020-03-23T14:06:28.000Z",
+    "fileName": "certs/SelfSignedCert_23March2020.crt",
+    "fullName": "SelfSignedCert_23March2020",
+    "id": "0P11v000003NjfjCAC",
+    "lastModifiedById": "0051v000006WkykAAC",
+    "lastModifiedByName": "Omar BENSOUDA",
+    "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+    "type": "Certificate"
+  }
+}

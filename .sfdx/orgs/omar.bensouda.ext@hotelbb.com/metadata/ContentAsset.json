@@ -1,0 +1,57 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0050Y0000028MJqQAM",
+      "createdByName": "Khadija Benabdellah",
+      "createdDate": "2017-06-21T08:25:51.000Z",
+      "fileName": "contentassets/BB1.asset",
+      "fullName": "BB1",
+      "id": "03S0Y00000006GNUAY",
+      "lastModifiedById": "0050Y0000028MJqQAM",
+      "lastModifiedByName": "Khadija Benabdellah",
+      "lastModifiedDate": "2017-06-21T08:25:51.000Z",
+      "manageableState": "unmanaged",
+      "type": "ContentAsset"
+    },
+    {
+      "createdById": "0050Y0000028MJqQAM",
+      "createdByName": "Khadija Benabdellah",
+      "createdDate": "2017-06-20T15:25:46.000Z",
+      "fileName": "contentassets/BB.asset",
+      "fullName": "BB",
+      "id": "03S0Y00000006EvUAI",
+      "lastModifiedById": "0050Y0000028MJqQAM",
+      "lastModifiedByName": "Khadija Benabdellah",
+      "lastModifiedDate": "2017-06-20T15:25:46.000Z",
+      "manageableState": "unmanaged",
+      "type": "ContentAsset"
+    },
+    {
+      "createdById": "0050Y0000028MJqQAM",
+      "createdByName": "Khadija Benabdellah",
+      "createdDate": "2018-02-16T16:15:03.000Z",
+      "fileName": "contentassets/BB3.asset",
+      "fullName": "BB3",
+      "id": "03S0Y000000PVvKUAW",
+      "lastModifiedById": "0050Y0000028MJqQAM",
+      "lastModifiedByName": "Khadija Benabdellah",
+      "lastModifiedDate": "2018-02-16T16:15:03.000Z",
+      "manageableState": "unmanaged",
+      "type": "ContentAsset"
+    },
+    {
+      "createdById": "0050Y0000028MJqQAM",
+      "createdByName": "Khadija Benabdellah",
+      "createdDate": "2018-02-16T16:14:30.000Z",
+      "fileName": "contentassets/BB2.asset",
+      "fullName": "BB2",
+      "id": "03S0Y000000PVvFUAW",
+      "lastModifiedById": "0050Y0000028MJqQAM",
+      "lastModifiedByName": "Khadija Benabdellah",
+      "lastModifiedDate": "2018-02-16T16:14:30.000Z",
+      "manageableState": "unmanaged",
+      "type": "ContentAsset"
+    }
+  ]
+}

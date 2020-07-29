@@ -1,0 +1,73 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "2020-07-22T10:47:32.000Z",
+      "fileName": "documents/SocialService__Social_Customer_Service",
+      "fullName": "SocialService__Social_Customer_Service",
+      "id": "00l1v000000zkz8AAA",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "2020-07-22T10:47:32.000Z",
+      "manageableState": "installed",
+      "namespacePrefix": "SocialService",
+      "type": "DocumentFolder"
+    },
+    {
+      "createdById": "0050Y0000028MJqQAM",
+      "createdByName": "Khadija Benabdellah",
+      "createdDate": "2017-09-27T14:36:42.000Z",
+      "fileName": "documents/cwbtool__CWB",
+      "fullName": "cwbtool__CWB",
+      "id": "00l0Y000000dYnhQAE",
+      "lastModifiedById": "0050Y0000028MJqQAM",
+      "lastModifiedByName": "Khadija Benabdellah",
+      "lastModifiedDate": "2017-09-27T14:36:42.000Z",
+      "manageableState": "installed",
+      "namespacePrefix": "cwbtool",
+      "type": "DocumentFolder"
+    },
+    {
+      "createdById": "0050Y000001EiZOQA0",
+      "createdByName": "Jérôme DESTORS",
+      "createdDate": "2017-02-05T11:54:40.000Z",
+      "fileName": "documents/SalesTools",
+      "fullName": "SalesTools",
+      "id": "00l0Y000001AZrOQAW",
+      "lastModifiedById": "0050Y000001EiZOQA0",
+      "lastModifiedByName": "Jérôme DESTORS",
+      "lastModifiedDate": "2017-02-05T11:54:40.000Z",
+      "manageableState": "unmanaged",
+      "type": "DocumentFolder"
+    },
+    {
+      "createdById": "0050Y0000028Lz2QAE",
+      "createdByName": "API User",
+      "createdDate": "2018-11-15T09:12:05.000Z",
+      "fileName": "documents/et4ae5__ExactTargetDocuments",
+      "fullName": "et4ae5__ExactTargetDocuments",
+      "id": "00l1v000000OZMnAAO",
+      "lastModifiedById": "0050Y0000028Lz2QAE",
+      "lastModifiedByName": "API User",
+      "lastModifiedDate": "2018-11-15T09:12:05.000Z",
+      "manageableState": "installed",
+      "namespacePrefix": "et4ae5",
+      "type": "DocumentFolder"
+    },
+    {
+      "createdById": "0050Y000001EiZOQA0",
+      "createdByName": "Jérôme DESTORS",
+      "createdDate": "2017-02-05T11:54:40.000Z",
+      "fileName": "documents/SharedDocuments",
+      "fullName": "SharedDocuments",
+      "id": "00l0Y000001AZrNQAW",
+      "lastModifiedById": "0050Y000001EiZOQA0",
+      "lastModifiedByName": "Jérôme DESTORS",
+      "lastModifiedDate": "2017-02-05T11:54:40.000Z",
+      "manageableState": "unmanaged",
+      "type": "DocumentFolder"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0050Y0000028MJqQAM",
+      "createdByName": "Khadija Benabdellah",
+      "createdDate": "2017-11-23T14:58:28.000Z",
+      "fileName": "flows/UpdateContactName_Case.flow",
+      "fullName": "UpdateContactName_Case",
+      "id": "3010Y000000lDa2QAE",
+      "lastModifiedById": "0050Y0000028MJqQAM",
+      "lastModifiedByName": "Khadija Benabdellah",
+      "lastModifiedDate": "2018-02-23T13:38:59.000Z",
+      "manageableState": "unmanaged",
+      "type": "Flow"
+    },
+    {
+      "createdById": "0050Y0000028Lz2QAE",
+      "createdByName": "API User",
+      "createdDate": "2020-05-04T14:11:40.000Z",
+      "fileName": "flows/JBSystem_Account_Process.flow",
+      "fullName": "JBSystem_Account_Process",
+      "id": "3011v000000mXNQAA2",
+      "lastModifiedById": "0050Y0000028Lz2QAE",
+      "lastModifiedByName": "API User",
+      "lastModifiedDate": "2020-05-04T14:11:42.000Z",
+      "manageableState": "unmanaged",
+      "type": "Flow"
+    },
+    {
+      "createdById": "0050Y0000028Lz2QAE",
+      "createdByName": "API User",
+      "createdDate": "2020-05-04T14:11:38.000Z",
+      "fileName": "flows/JBSystemFlow_Account.flow",
+      "fullName": "JBSystemFlow_Account",
+      "id": "3011v000000mXNLAA2",
+      "lastModifiedById": "0050Y0000028Lz2QAE",
+      "lastModifiedByName": "API User",
+      "lastModifiedDate": "2020-05-04T14:11:40.000Z",
+      "manageableState": "unmanaged",
+      "type": "Flow"
+    },
+    {
+      "createdById": "0050Y0000028Lz2QAE",
+      "createdByName": "API User",
+      "createdDate": "2017-09-21T13:18:33.000Z",
+      "fileName": "flows/JBSystem_Opportunity_Process.flow",
+      "fullName": "JBSystem_Opportunity_Process",
+      "id": "3010Y000000kyDmQAI",
+      "lastModifiedById": "0050Y0000028Lz2QAE",
+      "lastModifiedByName": "API User",
+      "lastModifiedDate": "2017-09-21T13:18:33.000Z",
+      "manageableState": "unmanaged",
+      "type": "Flow"
+    },
+    {
+      "createdById": "0050Y0000028Lz2QAE",
+      "createdByName": "API User",
+      "createdDate": "2018-11-16T08:22:33.000Z",
+      "fileName": "flows/JBSystemFlow_Opportunity.flow",
+      "fullName": "JBSystemFlow_Opportunity",
+      "id": "3011v0000002WqNAAU",
+      "lastModifiedById": "0050Y0000028Lz2QAE",
+      "lastModifiedByName": "API User",
+      "lastModifiedDate": "2018-11-16T08:22:47.000Z",
+      "manageableState": "unmanaged",
+      "type": "Flow"
+    }
+  ]
+}

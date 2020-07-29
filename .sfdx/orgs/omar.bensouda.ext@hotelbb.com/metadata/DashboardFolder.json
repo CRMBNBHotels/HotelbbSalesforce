@@ -1,0 +1,122 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0050Y000001EiZOQA0",
+      "createdByName": "Jérôme DESTORS",
+      "createdDate": "2017-02-05T11:54:40.000Z",
+      "fileName": "dashboards/Service_Dashboards",
+      "fullName": "Service_Dashboards",
+      "id": "00l0Y000001AZrMQAW",
+      "lastModifiedById": "0050Y000001EiZOQA0",
+      "lastModifiedByName": "Jérôme DESTORS",
+      "lastModifiedDate": "2017-02-05T11:54:40.000Z",
+      "manageableState": "unmanaged",
+      "type": "DashboardFolder"
+    },
+    {
+      "createdById": "0050Y000000gQkdQAE",
+      "createdByName": "EIT EIT",
+      "createdDate": "2019-09-25T09:56:09.000Z",
+      "fileName": "dashboards/GlobalDashboard",
+      "fullName": "GlobalDashboard",
+      "id": "00l1v000000iUdsAAE",
+      "lastModifiedById": "0050Y000000gQkdQAE",
+      "lastModifiedByName": "EIT EIT",
+      "lastModifiedDate": "2019-09-25T09:56:09.000Z",
+      "manageableState": "unmanaged",
+      "type": "DashboardFolder"
+    },
+    {
+      "createdById": "0051v000006XZ8fAAG",
+      "createdByName": "jorge cristilio",
+      "createdDate": "2020-01-28T20:05:18.000Z",
+      "fileName": "dashboards/EClubKPIs",
+      "fullName": "EClubKPIs",
+      "id": "00l1v000000dqwzAAA",
+      "lastModifiedById": "0051v000006XZ8fAAG",
+      "lastModifiedByName": "jorge cristilio",
+      "lastModifiedDate": "2020-01-28T20:05:18.000Z",
+      "manageableState": "unmanaged",
+      "type": "DashboardFolder"
+    },
+    {
+      "createdById": "0051v000006FyQOAA0",
+      "createdByName": "Joelle Guivarc'h",
+      "createdDate": "2020-05-06T16:45:10.000Z",
+      "fileName": "dashboards/Finance_FR",
+      "fullName": "Finance_FR",
+      "id": "00l1v000000dsOzAAI",
+      "lastModifiedById": "0051v000006FyQOAA0",
+      "lastModifiedByName": "Joelle Guivarc'h",
+      "lastModifiedDate": "2020-05-06T16:45:10.000Z",
+      "manageableState": "unmanaged",
+      "type": "DashboardFolder"
+    },
+    {
+      "createdById": "0050Y000000gQkdQAE",
+      "createdByName": "EIT EIT",
+      "createdDate": "2019-08-01T12:43:14.000Z",
+      "fileName": "dashboards/BBHClubDashboard",
+      "fullName": "BBHClubDashboard",
+      "id": "00l1v000000iTfPAAU",
+      "lastModifiedById": "0050Y000000gQkdQAE",
+      "lastModifiedByName": "EIT EIT",
+      "lastModifiedDate": "2019-08-01T12:43:14.000Z",
+      "manageableState": "unmanaged",
+      "type": "DashboardFolder"
+    },
+    {
+      "createdById": "0050Y000001EiZOQA0",
+      "createdByName": "Jérôme DESTORS",
+      "createdDate": "2017-02-05T11:54:40.000Z",
+      "fileName": "dashboards/Sales_and_Marketing_Dashboards",
+      "fullName": "Sales_and_Marketing_Dashboards",
+      "id": "00l0Y000001AZriQAG",
+      "lastModifiedById": "0050Y000001EiZOQA0",
+      "lastModifiedByName": "Jérôme DESTORS",
+      "lastModifiedDate": "2017-02-05T11:54:40.000Z",
+      "manageableState": "unmanaged",
+      "type": "DashboardFolder"
+    },
+    {
+      "createdById": "0050Y000000gQkdQAE",
+      "createdByName": "EIT EIT",
+      "createdDate": "2019-09-18T07:14:12.000Z",
+      "fileName": "dashboards/TestV2",
+      "fullName": "TestV2",
+      "id": "00l1v000000iUU7AAM",
+      "lastModifiedById": "0050Y000000gQkdQAE",
+      "lastModifiedByName": "EIT EIT",
+      "lastModifiedDate": "2019-09-18T07:14:12.000Z",
+      "manageableState": "unmanaged",
+      "type": "DashboardFolder"
+    },
+    {
+      "createdById": "0051v000006FyQOAA0",
+      "createdByName": "Joelle Guivarc'h",
+      "createdDate": "2020-05-06T16:49:28.000Z",
+      "fileName": "dashboards/Finance_FR1",
+      "fullName": "Finance_FR1",
+      "id": "00l1v000000dsP4AAI",
+      "lastModifiedById": "0051v000006FyQOAA0",
+      "lastModifiedByName": "Joelle Guivarc'h",
+      "lastModifiedDate": "2020-05-06T17:09:58.000Z",
+      "manageableState": "unmanaged",
+      "type": "DashboardFolder"
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "2020-06-04T06:38:30.000Z",
+      "fileName": "dashboards/GermanyDashborad",
+      "fullName": "GermanyDashborad",
+      "id": "00l1v000000zjxDAAQ",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "2020-06-04T06:38:30.000Z",
+      "manageableState": "unmanaged",
+      "type": "DashboardFolder"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0050Y0000028Lz2QAE",
+      "createdByName": "API User",
+      "createdDate": "2020-05-03T16:18:45.000Z",
+      "fileName": "flowDefinitions/JBSystemFlow_Account.flowDefinition",
+      "fullName": "JBSystemFlow_Account",
+      "id": "3001v000000kZXFAA2",
+      "lastModifiedById": "0050Y0000028Lz2QAE",
+      "lastModifiedByName": "API User",
+      "lastModifiedDate": "2020-05-04T14:11:40.000Z",
+      "manageableState": "unmanaged",
+      "type": "FlowDefinition"
+    },
+    {
+      "createdById": "0050Y0000028Lz2QAE",
+      "createdByName": "API User",
+      "createdDate": "2017-09-21T13:12:50.000Z",
+      "fileName": "flowDefinitions/JBSystemFlow_Opportunity.flowDefinition",
+      "fullName": "JBSystemFlow_Opportunity",
+      "id": "3000Y000000kKRfQAM",
+      "lastModifiedById": "0050Y0000028Lz2QAE",
+      "lastModifiedByName": "API User",
+      "lastModifiedDate": "2018-11-16T08:22:47.000Z",
+      "manageableState": "unmanaged",
+      "type": "FlowDefinition"
+    },
+    {
+      "createdById": "0050Y0000028Lz2QAE",
+      "createdByName": "API User",
+      "createdDate": "2020-05-03T16:18:47.000Z",
+      "fileName": "flowDefinitions/JBSystem_Account_Process.flowDefinition",
+      "fullName": "JBSystem_Account_Process",
+      "id": "3001v000000kZXKAA2",
+      "lastModifiedById": "0050Y0000028Lz2QAE",
+      "lastModifiedByName": "API User",
+      "lastModifiedDate": "2020-05-04T14:11:42.000Z",
+      "manageableState": "unmanaged",
+      "type": "FlowDefinition"
+    },
+    {
+      "createdById": "0050Y0000028MJqQAM",
+      "createdByName": "Khadija Benabdellah",
+      "createdDate": "2017-11-21T10:37:39.000Z",
+      "fileName": "flowDefinitions/UpdateContactName_Case.flowDefinition",
+      "fullName": "UpdateContactName_Case",
+      "id": "3000Y000000kMq8QAE",
+      "lastModifiedById": "0050Y0000028MJqQAM",
+      "lastModifiedByName": "Khadija Benabdellah",
+      "lastModifiedDate": "2018-02-23T13:38:59.000Z",
+      "manageableState": "unmanaged",
+      "type": "FlowDefinition"
+    },
+    {
+      "createdById": "0050Y0000028Lz2QAE",
+      "createdByName": "API User",
+      "createdDate": "2017-09-21T13:12:52.000Z",
+      "fileName": "flowDefinitions/JBSystem_Opportunity_Process.flowDefinition",
+      "fullName": "JBSystem_Opportunity_Process",
+      "id": "3000Y000000kKRkQAM",
+      "lastModifiedById": "0050Y0000028Lz2QAE",
+      "lastModifiedByName": "API User",
+      "lastModifiedDate": "2017-09-21T14:06:11.000Z",
+      "manageableState": "unmanaged",
+      "type": "FlowDefinition"
+    }
+  ]
+}

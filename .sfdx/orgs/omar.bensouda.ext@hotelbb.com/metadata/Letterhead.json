@@ -1,0 +1,16 @@
+{
+  "status": 0,
+  "result": {
+    "createdById": "0050Y0000028MJqQAM",
+    "createdByName": "Khadija Benabdellah",
+    "createdDate": "2017-10-26T07:56:06.000Z",
+    "fileName": "letterhead/B_B_Letterhead.letter",
+    "fullName": "B_B_Letterhead",
+    "id": "0160Y000000fzZJQAY",
+    "lastModifiedById": "0050Y0000028MJqQAM",
+    "lastModifiedByName": "Khadija Benabdellah",
+    "lastModifiedDate": "2017-10-26T08:56:41.000Z",
+    "manageableState": "unmanaged",
+    "type": "Letterhead"
+  }
+}

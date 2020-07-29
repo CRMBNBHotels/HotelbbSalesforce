@@ -1,0 +1,44 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0050Y000003kdNRQAY",
+      "createdByName": "Consultant TMA",
+      "createdDate": "2019-05-29T07:38:11.000Z",
+      "fileName": "globalValueSets/Case_Types.globalValueSet",
+      "fullName": "Case_Types",
+      "id": "0Nt1v000000cO3UCAU",
+      "lastModifiedById": "0050Y000003kdNRQAY",
+      "lastModifiedByName": "Consultant TMA",
+      "lastModifiedDate": "2019-05-29T07:38:11.000Z",
+      "manageableState": "unmanaged",
+      "type": "GlobalValueSet"
+    },
+    {
+      "createdById": "0050Y000003kdNRQAY",
+      "createdByName": "Consultant TMA",
+      "createdDate": "2019-05-29T07:38:11.000Z",
+      "fileName": "globalValueSets/Case_Motifs.globalValueSet",
+      "fullName": "Case_Motifs",
+      "id": "0Nt1v000000cO3SCAU",
+      "lastModifiedById": "0050Y000003kdNRQAY",
+      "lastModifiedByName": "Consultant TMA",
+      "lastModifiedDate": "2019-05-29T07:38:11.000Z",
+      "manageableState": "unmanaged",
+      "type": "GlobalValueSet"
+    },
+    {
+      "createdById": "0050Y000003kdNRQAY",
+      "createdByName": "Consultant TMA",
+      "createdDate": "2019-05-29T07:38:11.000Z",
+      "fileName": "globalValueSets/Case_Objets.globalValueSet",
+      "fullName": "Case_Objets",
+      "id": "0Nt1v000000cO3TCAU",
+      "lastModifiedById": "0050Y000003kdNRQAY",
+      "lastModifiedByName": "Consultant TMA",
+      "lastModifiedDate": "2019-05-29T07:38:11.000Z",
+      "manageableState": "unmanaged",
+      "type": "GlobalValueSet"
+    }
+  ]
+}

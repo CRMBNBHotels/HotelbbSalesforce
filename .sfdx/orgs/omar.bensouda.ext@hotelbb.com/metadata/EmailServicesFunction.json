@@ -1,0 +1,29 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0050Y000001rsTsQAI",
+      "createdByName": "Lucile Incardona",
+      "createdDate": "2017-09-27T07:50:39.000Z",
+      "fileName": "emailservices/EmailToCase.xml",
+      "fullName": "EmailToCase",
+      "id": "0910Y000000TNNVQA4",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "2020-06-18T08:07:58.000Z",
+      "type": "EmailServicesFunction"
+    },
+    {
+      "createdById": "0050Y000001EiZOQA0",
+      "createdByName": "Jérôme DESTORS",
+      "createdDate": "2017-02-05T11:54:40.000Z",
+      "fileName": "emailservices/EmailToSalesforce.xml",
+      "fullName": "EmailToSalesforce",
+      "id": "0910Y0000009QxKQAU",
+      "lastModifiedById": "0050Y000001EiZOQA0",
+      "lastModifiedByName": "Jérôme DESTORS",
+      "lastModifiedDate": "2017-02-05T11:54:40.000Z",
+      "type": "EmailServicesFunction"
+    }
+  ]
+}

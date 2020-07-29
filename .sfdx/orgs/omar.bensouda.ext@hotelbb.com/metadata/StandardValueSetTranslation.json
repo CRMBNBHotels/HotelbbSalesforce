@@ -1,0 +1,787 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/AccountOwnership-de.standardValueSetTranslation",
+      "fullName": "AccountOwnership-de",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/Salutation-fr.standardValueSetTranslation",
+      "fullName": "Salutation-fr",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/EventSubject-it.standardValueSetTranslation",
+      "fullName": "EventSubject-it",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/CaseType-fr.standardValueSetTranslation",
+      "fullName": "CaseType-fr",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/AddressCountryCode-fr.standardValueSetTranslation",
+      "fullName": "AddressCountryCode-fr",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/Industry-fr.standardValueSetTranslation",
+      "fullName": "Industry-fr",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/AddressStateCode-de.standardValueSetTranslation",
+      "fullName": "AddressStateCode-de",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/AddressStateCode-fr.standardValueSetTranslation",
+      "fullName": "AddressStateCode-fr",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/QuoteStatus-fr.standardValueSetTranslation",
+      "fullName": "QuoteStatus-fr",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/AddressCountryCode-es.standardValueSetTranslation",
+      "fullName": "AddressCountryCode-es",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/TaskSubject-it.standardValueSetTranslation",
+      "fullName": "TaskSubject-it",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/CaseType-de.standardValueSetTranslation",
+      "fullName": "CaseType-de",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/CaseStatus-de.standardValueSetTranslation",
+      "fullName": "CaseStatus-de",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/EventSubject-fr.standardValueSetTranslation",
+      "fullName": "EventSubject-fr",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/TaskSubject-fr.standardValueSetTranslation",
+      "fullName": "TaskSubject-fr",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/OpportunityStage-es.standardValueSetTranslation",
+      "fullName": "OpportunityStage-es",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/QuoteStatus-es.standardValueSetTranslation",
+      "fullName": "QuoteStatus-es",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/OpportunityStage-it.standardValueSetTranslation",
+      "fullName": "OpportunityStage-it",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/OpportunityType-fr.standardValueSetTranslation",
+      "fullName": "OpportunityType-fr",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/OpportunityType-es.standardValueSetTranslation",
+      "fullName": "OpportunityType-es",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/OpportunityType-de.standardValueSetTranslation",
+      "fullName": "OpportunityType-de",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/EventSubject-de.standardValueSetTranslation",
+      "fullName": "EventSubject-de",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/ContractContactRole-it.standardValueSetTranslation",
+      "fullName": "ContractContactRole-it",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/QuoteStatus-it.standardValueSetTranslation",
+      "fullName": "QuoteStatus-it",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/OpportunityType-it.standardValueSetTranslation",
+      "fullName": "OpportunityType-it",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/TaskSubject-de.standardValueSetTranslation",
+      "fullName": "TaskSubject-de",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/AddressCountryCode-de.standardValueSetTranslation",
+      "fullName": "AddressCountryCode-de",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/Salutation-de.standardValueSetTranslation",
+      "fullName": "Salutation-de",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/CasePriority-de.standardValueSetTranslation",
+      "fullName": "CasePriority-de",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/ContractStatus-de.standardValueSetTranslation",
+      "fullName": "ContractStatus-de",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/TaskSubject-es.standardValueSetTranslation",
+      "fullName": "TaskSubject-es",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/EventSubject-es.standardValueSetTranslation",
+      "fullName": "EventSubject-es",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/CaseStatus-fr.standardValueSetTranslation",
+      "fullName": "CaseStatus-fr",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/ContractContactRole-es.standardValueSetTranslation",
+      "fullName": "ContractContactRole-es",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/OpportunityStage-fr.standardValueSetTranslation",
+      "fullName": "OpportunityStage-fr",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/ContractStatus-fr.standardValueSetTranslation",
+      "fullName": "ContractStatus-fr",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/ContactRole-de.standardValueSetTranslation",
+      "fullName": "ContactRole-de",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/CasePriority-fr.standardValueSetTranslation",
+      "fullName": "CasePriority-fr",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/QuoteStatus-de.standardValueSetTranslation",
+      "fullName": "QuoteStatus-de",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/ContractContactRole-de.standardValueSetTranslation",
+      "fullName": "ContractContactRole-de",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/AddressStateCode-es.standardValueSetTranslation",
+      "fullName": "AddressStateCode-es",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/ContractContactRole-fr.standardValueSetTranslation",
+      "fullName": "ContractContactRole-fr",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/CaseOrigin-de.standardValueSetTranslation",
+      "fullName": "CaseOrigin-de",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/OpportunityStage-de.standardValueSetTranslation",
+      "fullName": "OpportunityStage-de",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/ContractStatus-es.standardValueSetTranslation",
+      "fullName": "ContractStatus-es",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    },
+    {
+      "createdById": "0051v000006WkykAAC",
+      "createdByName": "Omar BENSOUDA",
+      "createdDate": "1970-01-01T00:00:00.000Z",
+      "fileName": "standardValueSetTranslations/ContractStatus-it.standardValueSetTranslation",
+      "fullName": "ContractStatus-it",
+      "id": "",
+      "lastModifiedById": "0051v000006WkykAAC",
+      "lastModifiedByName": "Omar BENSOUDA",
+      "lastModifiedDate": "1970-01-01T00:00:00.000Z",
+      "namespacePrefix": "",
+      "type": {
+        "$": {
+          "xsi:nil": "true"
+        }
+      }
+    }
+  ]
+}
