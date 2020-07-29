@@ -16,7 +16,6 @@ public without sharing class AP01_Case {
         list<case> listCaseUpdated = [Select Id,Hotel_ID__c,Origin,ContactId, Type,ContactEmail,RecordTypeID,Concerned_country__c  //Modified TMAEI - JK - Ticket 76 Add RecordTypeID                             
                                       From Case
                                       Where Id IN: triggerNew];
-        OrgWideEmailAddress orgEmailAddress = [SELECT Id, Address, DisplayName FROM OrgWideEmailAddress where DisplayName like '%noreply%' limit 1];
         list<case> listCase = new list<case>();
         list<string> listHotelId = new list<string>();  
         
@@ -129,8 +128,6 @@ public without sharing class AP01_Case {
                                                                                                          cas.contactId,cas.Id,templateId,cas.ContactEmail);
                     singleEmailMessage.setTreatTargetObjectAsRecipient(false);
                     singleEmailMessage.setSaveAsActivity(false);
-                    singleEmailMessage.setSenderDisplayName(null);
-                    singleEmailMessage.setOrgWideEmailAddressId(orgEmailAddress.id);
                     Messaging.sendEmail(new Messaging.Email[] { singleEmailMessage });
                 }
             }

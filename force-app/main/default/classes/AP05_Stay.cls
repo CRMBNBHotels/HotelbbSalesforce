@@ -6,10 +6,12 @@
 */
 public class AP05_Stay 
 {
+    /*
     public static void UpdateMaxBookingMinArrival(list<Stay__c> triggerNew, Map<Id,Stay__c> oldMap, List<Stay__c> triggerOld)
     {
-        list<string> listAccountId = new list<string>();     
-        list<string> listPersonAccount = new list<string>();
+        System.debug('##### AP05_Stay Start');
+        set<string> listAccountId = new set<string>();     
+        set<string> listPersonAccount = new set<string>();
         if(triggerNew != null)
         {
             for(Stay__c stay: triggerNew)
@@ -17,18 +19,17 @@ public class AP05_Stay
                 Stay__c oldStay=oldMap==null ? stay : oldMap.get(stay.Id);
                 if(stay.Min_Arrival__c != null)
                 {
-                    listPersonAccount.add(stay.Guest_account__c);
-                    if(stay.BusinessAccountId__c!=null)
-                    {
-                        listAccountId.add(stay.BusinessAccountId__c);                       
-                    }
+                    if(oldMap==null && String.isNotBlank(stay.Guest_Account__c))listPersonAccount.add(stay.Guest_account__c);
+                    if(oldMap==null && String.isNotBlank(stay.BusinessAccountId__c)) listAccountId.add(stay.BusinessAccountId__c);                       
                     if(oldMap != null && oldStay.Guest_account__c != stay.Guest_account__c)
                     {
-                        listPersonAccount.add(oldStay.Guest_account__c);
+                       if(String.isNotBlank(stay.Guest_Account__c))listPersonAccount.add(stay.Guest_account__c); 
+                       if(String.isNotBlank(oldStay.Guest_account__c)) listPersonAccount.add(oldStay.Guest_account__c);
                     }
                     if(oldMap!=null && oldStay.BusinessAccountId__c!=stay.BusinessAccountId__c )
                     {
-                        listAccountId.add(oldStay.BusinessAccountId__c);                     
+                        if(String.isNotBlank(stay.BusinessAccountId__c)) listAccountId.add(stay.BusinessAccountId__c);
+                      if(String.isNotBlank(oldStay.BusinessAccountId__c))  listAccountId.add(oldStay.BusinessAccountId__c);                     
                     }
                 }                
             }
@@ -39,8 +40,8 @@ public class AP05_Stay
             {
                 if(stay.Min_Arrival__c!=null)
                 {
-                    listPersonAccount.add(stay.Guest_account__c);
-                    if(stay.BusinessAccountId__c!=null)
+                     if(String.isNotBlank(stay.Guest_Account__c))listPersonAccount.add(stay.Guest_account__c);
+                    if(String.isNotBlank(stay.BusinessAccountId__c))
                     {
                         listAccountId.add(stay.BusinessAccountId__c);                    
                     }
@@ -54,9 +55,10 @@ public class AP05_Stay
                                                 (select Id,Min_Arrival__c
                                                  from Stays__r
                                                  where Min_Arrival__c != null
-                                                 Order by Min_Arrival__c desc)
+                                                 Order by Min_Arrival__c desc limit 1)
                                                 from Account
                                                 where Id IN: listPersonAccount];   
+            System.debug('##### AP05_Stay listSelectedAccount ' + listSelectedAccount);
             for(Account acc : listSelectedAccount)
             {
                 list<Stay__c> listStay = acc.Stays__r;
@@ -79,6 +81,7 @@ public class AP05_Stay
                                        From Stay__c
                                        where BusinessAccountId__c IN: listAccountId
                                        And Min_Arrival__c != null];
+            System.debug('##### AP05_Stay listStays ' + listStays);
             list<Account> listAccount = [Select Id, MaxBookingMinArrival__c
                                          From Account
                                          Where Id IN:listAccountId];
@@ -100,5 +103,5 @@ public class AP05_Stay
             }
             update listAccToUpdate;
         }
-    }    
+    }    */
 }

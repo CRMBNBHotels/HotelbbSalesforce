@@ -75,14 +75,19 @@ public without sharing class AP01_Voucher {
     //This is a common method for both cretion and modification
     public static void FillInvitationInformation(list<Voucher__c> listVouchers){
         //Get Custom settings data for the value of valorisation
-        List<InvitationValorisation__c> listInvitationValorisation = [select Prestation_offerte__c,Valorisation__c
-                                                                      from InvitationValorisation__c];
         
+        //added by TMA EIL CRMSS-469 24-02-2020 Start
+        //List<InvitationValorisation__c> listInvitationValorisation = [select Prestation_offerte__c,Valorisation__c
+                                                                      //from InvitationValorisation__c];
+        List<InvitationValorisationmdt__mdt> listInvitationValorisation = [select Prestation_offerte__c,Valorisation__c
+                                                                      from InvitationValorisationmdt__mdt];
         //Set  a map of prestation offerte -> Valorisation
         Map<String,Decimal> mapPrestaValorisation = new Map<String,Decimal>();
-        For(InvitationValorisation__c val :listInvitationValorisation){
+        //For(InvitationValorisation__c val :listInvitationValorisation){
+        For(InvitationValorisationmdt__mdt val :listInvitationValorisation){
             mapPrestaValorisation.put(val.Prestation_offerte__c, val.Valorisation__c);           
         }
+        //added by TMA EIL CRMSS-469 24-02-2020 end
         
         //Set values
         For(Voucher__c voucher : listVouchers){
@@ -90,6 +95,7 @@ public without sharing class AP01_Voucher {
             if(voucher.Prestation_offerte__c != null && mapPrestaValorisation.containsKey(voucher.Prestation_offerte__c)){
                 voucher.Valorisation__c = mapPrestaValorisation.get(voucher.Prestation_offerte__c);
             }
+            system.debug('VoucherValor' +voucher.Valorisation__c);
             //Erase the value of Hotel if the field Service is not equal to Hotel
             if(voucher.service__c != null && voucher.Service__c != 'Hotel' && voucher.Hotel__c != null){
                 voucher.Hotel__c = null;
@@ -113,12 +119,11 @@ public without sharing class AP01_Voucher {
         
         //Insert Cases
         For(Voucher__c voucher : listVouchers){
-          //   system.debug('vvvvv voucher.RecordTypeID'+voucher.RecordTypeID);
-           // System.debug('vvvvv Schema.SObjectType.Voucher__c.getRecordTypeInfosByName().get(Label.Voucher_IR_RT_OnCreation_Name).getRecordTypeId()'+Schema.SObjectType.Voucher__c.getRecordTypeInfosByName().get(Label.Voucher_IR_RT_OnCreation_Name).getRecordTypeId());
-           // System.debug('vvvvv Schema.SObjectType.Voucher__c.getRecordTypeInfosByName().get(Label.Voucher_IR_RT_Emission_Name).getRecordTypeId()'+Schema.SObjectType.Voucher__c.getRecordTypeInfosByName().get(Label.Voucher_IR_RT_Emission_Name).getRecordTypeId());
+             system.debug('vvvvv voucher.RecordTypeID'+voucher.RecordTypeID);
+            System.debug('vvvvv Schema.SObjectType.Voucher__c.getRecordTypeInfosByName().get(Label.Voucher_IR_RT_OnCreation_Name).getRecordTypeId()'+Schema.SObjectType.Voucher__c.getRecordTypeInfosByName().get(Label.Voucher_IR_RT_OnCreation_Name).getRecordTypeId());
+            System.debug('vvvvv Schema.SObjectType.Voucher__c.getRecordTypeInfosByName().get(Label.Voucher_IR_RT_Emission_Name).getRecordTypeId()'+Schema.SObjectType.Voucher__c.getRecordTypeInfosByName().get(Label.Voucher_IR_RT_Emission_Name).getRecordTypeId());
             //Create a case if the voucher is an IR
-           if(voucher.RecordTypeID  == Schema.SObjectType.Voucher__c.getRecordTypeInfosByName().get(Label.Voucher_IR_RT_OnCreation_Name).getRecordTypeId() || 
-               voucher.RecordTypeID  == Schema.SObjectType.Voucher__c.getRecordTypeInfosByName().get(Label.Voucher_IR_RT_Emission_Name).getRecordTypeId()){
+           if(voucher.RecordTypeID  == Schema.SObjectType.Voucher__c.getRecordTypeInfosByName().get(Label.Voucher_IR_RT_OnCreation_Name).getRecordTypeId() || voucher.RecordTypeID  == Schema.SObjectType.Voucher__c.getRecordTypeInfosByName().get(Label.Voucher_IR_RT_Emission_Name).getRecordTypeId()){
                    Case caseToCreate = new Case();
                    //caseToCreate.RecordTypeId= Label.Case_RT_Case_linked_to_IR;
                    caseToCreate.RecordTypeId= Schema.SObjectType.Case.getRecordTypeInfosByDeveloperName().get('Case_linked_to_IR').getRecordTypeId();
@@ -126,7 +131,7 @@ public without sharing class AP01_Voucher {
                    caseToCreate.AccountId = voucher.Person_Account__c;
                    caseToCreate.TYPES__c = voucher.TYPES__c;
                    caseToCreate.OBJETS__c = voucher.OBJET__c;
-                   caseToCreate.MOTIFS__c = voucher.MOTIF__c;
+                   //caseToCreate.MOTIFS__c = voucher.MOTIF__c;
                    caseToCreate.Invitation__c = voucher.id;
                    caseToCreate.Status='Closed';
                    caseToCreate.Type = 'Garantie-RI';

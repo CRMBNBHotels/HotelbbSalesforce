@@ -17,8 +17,7 @@
         <recipients>
             <type>owner</type>
         </recipients>
-        <senderAddress>noreply@hotelbb.com</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderType>CurrentUser</senderType>
         <template>unfiled$public/SendNotifToOwner</template>
     </alerts>
     <alerts>
@@ -39,8 +38,7 @@
             <field>ContactId</field>
             <type>contactLookup</type>
         </recipients>
-        <senderAddress>noreply@hotelbb.com</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderType>CurrentUser</senderType>
         <template>unfiled$public/EnglishCaseAutoResponse</template>
     </alerts>
     <alerts>
@@ -62,7 +60,7 @@
             <field>ContactId</field>
             <type>contactLookup</type>
         </recipients>
-        <senderAddress>noreply@hotelbb.com</senderAddress>
+        <senderAddress>marine.gremmel@ei-technologies.com</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>unfiled$public/FrenchCaseAutoResponse</template>
     </alerts>
@@ -107,8 +105,7 @@
             <field>ContactId</field>
             <type>contactLookup</type>
         </recipients>
-        <senderAddress>noreply@hotelbb.com</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderType>CurrentUser</senderType>
         <template>unfiled$public/ItalyCaseAutoResponse</template>
     </alerts>
     <alerts>
@@ -119,106 +116,14 @@
             <field>ContactId</field>
             <type>contactLookup</type>
         </recipients>
-        <senderAddress>noreply@hotelbb.com</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
+        <senderType>CurrentUser</senderType>
         <template>unfiled$public/SpanishCaseAutoResponse</template>
     </alerts>
-    <alerts>
-        <fullName>coronavirus</fullName>
-        <description>coronavirus</description>
-        <protected>false</protected>
-        <recipients>
-            <field>SuppliedEmail</field>
-            <type>email</type>
-        </recipients>
-        <senderAddress>noreply@hotelbb.com</senderAddress>
-        <senderType>OrgWideEmailAddress</senderType>
-        <template>unfiled$public/Coronavirus</template>
-    </alerts>
-    <fieldUpdates>
-        <fullName>Case_Update_City</fullName>
-        <description>Update the case&apos;s first name based on its related contact</description>
-        <field>City__c</field>
-        <formula>Contact.MailingCity</formula>
-        <name>Case_Update_City</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>Case_Update_Country</fullName>
-        <description>Update the case&apos;s fcountry based on its related contact</description>
-        <field>Country__c</field>
-        <formula>Contact.MailingCountry</formula>
-        <name>Case_Update_Country</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>Case_Update_EClubNumber</fullName>
-        <description>Update the case&apos;s E-Club Number based on its related contact</description>
-        <field>E_club_ID__c</field>
-        <formula>Contact.E_club_card_number__c</formula>
-        <name>Case_Update_EClubNumber</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>Case_Update_FirstName</fullName>
-        <description>Update the case&apos;s first name based on its related contact</description>
-        <field>First_Name__c</field>
-        <formula>Contact.FirstName</formula>
-        <name>Case_Update_FirstName</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>Case_Update_GuestAddress</fullName>
-        <description>Update the case&apos;s guest address based on its related contact</description>
-        <field>Guest_Adress__c</field>
-        <formula>Contact.MailingStreet</formula>
-        <name>Case_Update_GuestAddress</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>Case_Update_LastName</fullName>
-        <description>Update the case&apos;s last name based on its related contact</description>
-        <field>Last_Name__c</field>
-        <formula>Contact.LastName</formula>
-        <name>Case_Update_LastName</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>Case_Update_ZipCode</fullName>
-        <description>Update the case&apos;s Zip Code based on its related contact</description>
-        <field>Zip_code__c</field>
-        <formula>Contact.MailingPostalCode</formula>
-        <name>Case_Update_ZipCode</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>FU23_UpdateDateClosed</fullName>
-        <field>Date_Time_Closed__c</field>
-        <formula>NOW()</formula>
-        <name>FU23_UpdateDateClosed</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
-    </fieldUpdates>
     <fieldUpdates>
         <fullName>MiseAJourStatut</fullName>
         <description>Close the case</description>
         <field>Status</field>
-        <literalValue>Closed Done</literalValue>
+        <literalValue>Closed</literalValue>
         <name>MiseAJourStatut</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Literal</operation>
@@ -243,17 +148,6 @@
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
-        <fullName>UpdateCaseRT_DE</fullName>
-        <description>Update the case&apos;s record type to &quot;Customers Request/ Feedback (Germany)&quot;</description>
-        <field>RecordTypeId</field>
-        <lookupValue>Customers_Request_Feedback_Germany</lookupValue>
-        <lookupValueType>RecordType</lookupValueType>
-        <name>UpdateCaseRT_DE</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>LookupValue</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
         <fullName>WA_Case_Closed</fullName>
         <field>Status</field>
         <literalValue>Closed</literalValue>
@@ -273,18 +167,42 @@
         <protected>false</protected>
     </fieldUpdates>
     <rules>
-        <fullName>Coronavirus</fullName>
-        <actions>
-            <name>coronavirus</name>
-            <type>Alert</type>
-        </actions>
-        <active>true</active>
+        <fullName>CloseCaseAfterOneHour</fullName>
+        <active>false</active>
         <criteriaItems>
-            <field>Case.Concerned_country__c</field>
+            <field>Case.Type</field>
             <operation>equals</operation>
-            <value>FR</value>
+            <value>Information request,Booking confirmation,Duplicate Invoice,Lost Property,Customer claim</value>
         </criteriaItems>
-        <triggerType>onCreateOnly</triggerType>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>WA_Case_Closed</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Case.CreatedDate</offsetFromField>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>CloseCaseAfterTwoHours</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Type</field>
+            <operation>notEqual</operation>
+            <value>Information request,Booking confirmation,Duplicate Invoice,Lost Property,Customer claim</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>WA_Case_Closed</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Case.CreatedDate</offsetFromField>
+            <timeLength>2</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
     </rules>
     <rules>
         <fullName>WF017_Case_FrenchCaseResponse</fullName>
@@ -293,7 +211,7 @@
             <type>Alert</type>
         </actions>
         <active>true</active>
-        <formula>AND( Not($User.BypassWorkflow__c)  ,  OR(Language__c = &apos;FR&apos; , Language__c = &apos;fr&apos;) ,   OR(ISPICKVAL(Concerned_country__c , &apos;ES&apos;), ISPICKVAL(Concerned_country__c , &apos;IT&apos;)), CreatedBy.FirstName =&apos;Technical&apos;, CreatedBy.LastName =&apos;User&apos;)</formula>
+        <formula>AND( Not($User.BypassWorkflow__c)  ,  Language__c  = &#39;FR&#39; ,   OR(ISPICKVAL(Concerned_country__c , &#39;ES&#39;), ISPICKVAL(Concerned_country__c , &#39;IT&#39;)), CreatedBy.FirstName =&#39;Technical&#39;, CreatedBy.LastName =&#39;User&#39;)</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>
     <rules>
@@ -343,7 +261,7 @@
             <type>Alert</type>
         </actions>
         <active>true</active>
-        <formula>AND(   Not($User.BypassWorkflow__c) ,   Language__c != &apos;IT&apos; ,   Language__c != &apos;FR&apos;,  Language__c != &apos;ES&apos;, Language__c != &apos;it&apos; , Language__c != &apos;fr&apos; , Language__c != &apos;es&apos; ,   OR(ISPICKVAL(Concerned_country__c , &apos;ES&apos;), ISPICKVAL(Concerned_country__c , &apos;IT&apos;)), CreatedBy.FirstName =&apos;Technical&apos;, CreatedBy.LastName =&apos;User&apos;)</formula>
+        <formula>AND( Not($User.BypassWorkflow__c) , Language__c != &#39;IT&#39; , Language__c != &#39;FR&#39;,Language__c != &#39;ES&#39;, OR(ISPICKVAL(Concerned_country__c , &#39;ES&#39;), ISPICKVAL(Concerned_country__c , &#39;IT&#39;)), CreatedBy.FirstName =&#39;Technical&#39;, CreatedBy.LastName =&#39;User&#39;)</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>
     <rules>
@@ -417,7 +335,7 @@
             <name>EnglishCaseClosed</name>
             <type>Alert</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <booleanFilter>1 AND 2 AND 7 AND ((3) OR (4 AND 5) OR (4 AND 6))</booleanFilter>
         <criteriaItems>
             <field>Case.Sent_an_email__c</field>
@@ -462,7 +380,7 @@
             <name>FrenchCaseClosed</name>
             <type>Alert</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <booleanFilter>1 AND 2 AND 6  AND ((3) OR (4 AND 5))</booleanFilter>
         <criteriaItems>
             <field>Case.Sent_an_email__c</field>
@@ -502,7 +420,7 @@
             <name>GermanCaseClosed</name>
             <type>Alert</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <booleanFilter>1 AND 2 AND 6 AND ((3) OR (4 AND 5))</booleanFilter>
         <criteriaItems>
             <field>Case.Sent_an_email__c</field>
@@ -543,7 +461,7 @@
             <type>Alert</type>
         </actions>
         <active>true</active>
-        <formula>AND(    Not($User.BypassWorkflow__c) ,    OR(Language__c = &apos;ES&apos; , Language__c = &apos;es&apos;),   OR(       ISPICKVAL(Concerned_country__c , &apos;ES&apos;),        ISPICKVAL(Concerned_country__c , &apos;IT&apos;) 	  ),    CreatedBy.FirstName =&apos;Technical&apos;,    CreatedBy.LastName =&apos;User&apos;   )</formula>
+        <formula>AND( Not($User.BypassWorkflow__c) , Language__c = &#39;ES&#39; , OR(ISPICKVAL(Concerned_country__c , &#39;ES&#39;), ISPICKVAL(Concerned_country__c , &#39;IT&#39;)), CreatedBy.FirstName =&#39;Technical&#39;, CreatedBy.LastName =&#39;User&#39;)</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>
     <rules>
@@ -600,7 +518,7 @@
             <name>WA_UpdateOwner</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <booleanFilter>1 OR 2 OR 3</booleanFilter>
         <criteriaItems>
             <field>User.UserRoleId</field>
@@ -655,12 +573,12 @@
             <type>Alert</type>
         </actions>
         <active>true</active>
-        <formula>AND( Not($User.BypassWorkflow__c) , OR(Language__c = &apos;IT&apos; , Language__c = &apos;it&apos;) , OR(ISPICKVAL(Concerned_country__c , &apos;ES&apos;), ISPICKVAL(Concerned_country__c , &apos;IT&apos;)), CreatedBy.FirstName =&apos;Technical&apos;, CreatedBy.LastName =&apos;User&apos;)</formula>
+        <formula>AND( Not($User.BypassWorkflow__c) , Language__c = &#39;IT&#39; , OR(ISPICKVAL(Concerned_country__c , &#39;ES&#39;), ISPICKVAL(Concerned_country__c , &#39;IT&#39;)), CreatedBy.FirstName =&#39;Technical&#39;, CreatedBy.LastName =&#39;User&#39;)</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>
     <rules>
         <fullName>WF19_CaseWaitingHotel2Days</fullName>
-        <active>false</active>
+        <active>true</active>
         <criteriaItems>
             <field>Case.Status</field>
             <operation>equals</operation>
@@ -717,48 +635,6 @@
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
         <workflowTimeTriggers>
             <actions>
-                <name>FU23_UpdateDateClosed</name>
-                <type>FieldUpdate</type>
-            </actions>
-            <actions>
-                <name>MiseAJourStatut</name>
-                <type>FieldUpdate</type>
-            </actions>
-            <timeLength>5</timeLength>
-            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
-        </workflowTimeTriggers>
-    </rules>
-    <rules>
-        <fullName>WF20_Case_CloseCaseWDAfter5daysInactivity</fullName>
-        <active>true</active>
-        <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
-        <criteriaItems>
-            <field>Case.Status</field>
-            <operation>equals</operation>
-            <value>Waiting Development</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>User.BypassWorkflow__c</field>
-            <operation>equals</operation>
-            <value>False</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>Case.Concerned_country__c</field>
-            <operation>equals</operation>
-            <value>FR,IT,ES,DE</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>Case.Origin</field>
-            <operation>equals</operation>
-            <value>Web</value>
-        </criteriaItems>
-        <triggerType>onCreateOrTriggeringUpdate</triggerType>
-        <workflowTimeTriggers>
-            <actions>
-                <name>FU23_UpdateDateClosed</name>
-                <type>FieldUpdate</type>
-            </actions>
-            <actions>
                 <name>MiseAJourStatut</name>
                 <type>FieldUpdate</type>
             </actions>
@@ -783,7 +659,7 @@
         <criteriaItems>
             <field>Case.Concerned_country__c</field>
             <operation>equals</operation>
-            <value>FR,IT,ES,DE</value>
+            <value>FR,IT,ES</value>
         </criteriaItems>
         <criteriaItems>
             <field>Case.Origin</field>
@@ -792,48 +668,6 @@
         </criteriaItems>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
         <workflowTimeTriggers>
-            <actions>
-                <name>FU23_UpdateDateClosed</name>
-                <type>FieldUpdate</type>
-            </actions>
-            <actions>
-                <name>MiseAJourStatut</name>
-                <type>FieldUpdate</type>
-            </actions>
-            <timeLength>5</timeLength>
-            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
-        </workflowTimeTriggers>
-    </rules>
-    <rules>
-        <fullName>WF20_Case_CloseCaseWOAfter5daysInactivity</fullName>
-        <active>true</active>
-        <booleanFilter>1 AND 2 AND 3 AND 4</booleanFilter>
-        <criteriaItems>
-            <field>Case.Status</field>
-            <operation>equals</operation>
-            <value>Waiting Ops</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>User.BypassWorkflow__c</field>
-            <operation>equals</operation>
-            <value>False</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>Case.Concerned_country__c</field>
-            <operation>equals</operation>
-            <value>FR,IT,ES,DE</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>Case.Origin</field>
-            <operation>equals</operation>
-            <value>Web</value>
-        </criteriaItems>
-        <triggerType>onCreateOrTriggeringUpdate</triggerType>
-        <workflowTimeTriggers>
-            <actions>
-                <name>FU23_UpdateDateClosed</name>
-                <type>FieldUpdate</type>
-            </actions>
             <actions>
                 <name>MiseAJourStatut</name>
                 <type>FieldUpdate</type>
@@ -849,75 +683,7 @@
             <type>Alert</type>
         </actions>
         <active>false</active>
-        <formula>!$User.BypassWorkflow__c &amp;&amp;  (ISPICKVAL(Concerned_country__c,&apos;FR&apos;) || ISPICKVAL(Concerned_country__c,&apos;IT&apos;) ) &amp;&amp;  ISPICKVAL(Origin, &apos;Web&apos;) &amp;&amp; (ischanged( OwnerId ) ||  ISNEW() || ISChanged( TechChangeOwner__c ))</formula>
-        <triggerType>onAllChanges</triggerType>
-    </rules>
-    <rules>
-        <fullName>WF22_Case_UpdateRTDE</fullName>
-        <actions>
-            <name>UpdateCaseRT_DE</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <active>true</active>
-        <criteriaItems>
-            <field>Case.Concerned_country__c</field>
-            <operation>equals</operation>
-            <value>DE</value>
-        </criteriaItems>
-        <description>This WF sets the record type of the case to &quot;Customers Request/ Feedback (Germany)&quot; if the concerned country is DE</description>
-        <triggerType>onCreateOrTriggeringUpdate</triggerType>
-    </rules>
-    <rules>
-        <fullName>WF23_CaseClosedDate</fullName>
-        <actions>
-            <name>FU23_UpdateDateClosed</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <active>true</active>
-        <criteriaItems>
-            <field>Case.Status</field>
-            <operation>equals</operation>
-            <value>Closed Done</value>
-        </criteriaItems>
-        <triggerType>onCreateOrTriggeringUpdate</triggerType>
-    </rules>
-    <rules>
-        <fullName>WF27_Case_FillFieldsFromContact</fullName>
-        <actions>
-            <name>Case_Update_City</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <actions>
-            <name>Case_Update_Country</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <actions>
-            <name>Case_Update_EClubNumber</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <actions>
-            <name>Case_Update_FirstName</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <actions>
-            <name>Case_Update_GuestAddress</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <actions>
-            <name>Case_Update_LastName</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <actions>
-            <name>Case_Update_ZipCode</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <active>true</active>
-        <criteriaItems>
-            <field>Case.Origin</field>
-            <operation>notEqual</operation>
-            <value>Web</value>
-        </criteriaItems>
-        <description>Workflow that fills some of the case&apos;s fields based on its related contact, whenever the case isn&apos;t created from the WebForm</description>
+        <formula>!$User.BypassWorkflow__c &amp;&amp;  (ISPICKVAL(Concerned_country__c,&#39;FR&#39;) || ISPICKVAL(Concerned_country__c,&#39;IT&#39;) ) &amp;&amp;  ISPICKVAL(Origin, &#39;Web&#39;) &amp;&amp; (ischanged( OwnerId ) ||  ISNEW() || ISChanged( TechChangeOwner__c )) &amp;&amp; LEFT(OwnerId , 3)=&#39;005&#39;</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
@@ -927,7 +693,30 @@
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
-        <formula>True</formula>
+        <description>Treatment date = today</description>
+        <formula>true</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
+    <tasks>
+        <fullName>statusWaitingFor1hour</fullName>
+        <assignedTo>consultant.tma@hotelbb_ext_sandboxbb.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Ouvert</status>
+        <subject>statusWaitingFor1hour</subject>
+    </tasks>
+    <tasks>
+        <fullName>statusWaitingFor1houur</fullName>
+        <assignedTo>consultant.tma@hotelbb_ext_sandboxbb.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Ouvert</status>
+        <subject>statusWaitingFor1houur</subject>
+    </tasks>
 </Workflow>

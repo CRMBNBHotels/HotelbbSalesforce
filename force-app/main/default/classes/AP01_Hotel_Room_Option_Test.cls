@@ -7,6 +7,7 @@
 @isTest
 public class AP01_Hotel_Room_Option_Test 
 {
+    /*Commented by TMA-EIL CG CRMSS-448 23/01/2020 Start
     public static testMethod void updateDeleteInsertHotelRoomOption()
     {
         //insert Hotel_Room_Option__c
@@ -81,11 +82,12 @@ public class AP01_Hotel_Room_Option_Test
         Account acc = [Select Id,Favorite_Room_type__pc
                        From Account
                        Where Id =: PersonAccount.Id];
-        //system.assertEquals('RT01',acc.Favorite_Room_type__pc);
+        system.assertEquals('RT01',acc.Favorite_Room_type__pc);
         delete (hotelRoomOption);
         acc = [Select Id,Favorite_Room_type__pc
                From Account
                Where Id =: PersonAccount.Id];
         //system.assertEquals(label.UnknownProduct,acc.Favorite_Room_type__pc);
     }
+    Commented by TMA-EIL CG CRMSS-448 23/01/2020 End*/
 }

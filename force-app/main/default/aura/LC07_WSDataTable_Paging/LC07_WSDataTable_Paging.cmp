@@ -1,10 +1,9 @@
 <!-- LC07_WSDataTable_Paging -->
 <aura:component>
     <aura:attribute name="pageNumber" type="Integer" default="1"/>
-    <aura:attribute name="pageKey" type="String" default=""/>
+    <aura:attribute name="pageKey" type="Integer" default=""/>
     <aura:attribute name="pageDateKey" type="String" default=""/>
     <aura:attribute name="mapPages" type="Map" default=""/>
-    <aura:attribute name="mapPagesDate" type="Map" default=""/>
     <aura:attribute name="bDataLoaded" type="boolean" default="false"/>
     <aura:attribute name="bDisableLeftButton" type="boolean" default="true"/>
     <aura:attribute name="bDisableRightButton" type="boolean" default="true"/>

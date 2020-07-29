@@ -40,16 +40,6 @@
         <reevaluateOnChange>true</reevaluateOnChange>
     </fieldUpdates>
     <fieldUpdates>
-        <fullName>UpdateOpportunityOpco</fullName>
-        <description>Update the field &quot;Opco&quot; with the value of the field &quot;Hotelcountry__c&quot;</description>
-        <field>opco__c</field>
-        <formula>HotelCountry__c</formula>
-        <name>UpdateOpportunityOpco</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
         <fullName>WA_Opportunity_UpdateManagerEmail</fullName>
         <field>Manager_Email__c</field>
         <formula>Owner.Manager_Email__c</formula>
@@ -114,33 +104,13 @@
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
-        <fullName>WF03_Opportunity_FillOpco</fullName>
-        <actions>
-            <name>UpdateOpportunityOpco</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <active>true</active>
-        <booleanFilter>1 AND 2</booleanFilter>
-        <criteriaItems>
-            <field>Opportunity.HotelCountry__c</field>
-            <operation>notEqual</operation>
-        </criteriaItems>
-        <criteriaItems>
-            <field>User.BypassWorkflow__c</field>
-            <operation>equals</operation>
-            <value>False</value>
-        </criteriaItems>
-        <description>Fills the field &quot;OPCO__c&quot; with the value of the field &quot;HotelCountry__c&quot;</description>
-        <triggerType>onAllChanges</triggerType>
-    </rules>
-    <rules>
         <fullName>WF_Opportunity_ExternalId</fullName>
         <actions>
             <name>WF_Opp_Update_ExternalId</name>
             <type>FieldUpdate</type>
         </actions>
         <active>false</active>
-        <description>Remplir le champ ExternalId avec l&apos;Id Salesforce, une fois l&apos;enregistrement est créé et le champ externalId est vide</description>
+        <description>Remplir le champ ExternalId avec l&#39;Id Salesforce, une fois l&#39;enregistrement est créé et le champ externalId est vide</description>
         <formula>ISBLANK(Externalid__c)</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>

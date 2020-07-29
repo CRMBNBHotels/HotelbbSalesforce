@@ -1,0 +1,27 @@
+<apex:page id="VFP03_SendEmailForCarteCompany" controller="VFC03_SendEmailForCarteCompany">
+    <!-- Begin Default Content REMOVE THIS -->
+    <apex:outputPanel id="info" rendered="true">
+            <h1>Bonjour</h1><br/>
+            <p>
+                <h2>
+                    On cliquons sur le bouton Envoyer, un email va être envoyé au client : {!currentContract.Contact__r.Name} à l'adresse: {!currentContract.Contact__r.Email}
+                </h2>
+            </p>
+            <p>
+                <h2>
+                    {!errorMessage}<br/><br/>
+                </h2>
+            </p>
+    </apex:outputPanel>
+   
+    
+    <apex:form >
+        <apex:commandButton value="Cancel" oncomplete="doRedirect();"/>   
+        <apex:commandButton action="{!Send}" value="Envoyer" id="send" reRender="info"/>             
+    </apex:form>
+    <script type="text/javascript">
+        function doRedirect(){
+            window.history.back();
+        }
+    </script>
+</apex:page>

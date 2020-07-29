@@ -75,45 +75,35 @@ Global without sharing class Batch_FirstLastBooking implements Database.Batchabl
         
         list<Opportunity> listOppInLot = new list<Opportunity>();
         Map<string,Account> MapPAToUpdate = new Map<string,Account>();
-        system.debug('@@@ listBookings '+listBookings);
+        
         if(listBookings != null && listBookings.size()>0){
             
             listOppInLot = [select id, Person_Account__c, OldParent__c, Person_Account__r.First_Booking_Date__c,Person_Account__r.Last_Booking_Date__c,Person_Account__r.TechIsNotFirst_02__c,  Bookings_Checked_Count__c, LastModifiedDate, Departure_Date__c
                             from opportunity 
                             where RecordType.DeveloperName='Master_Booking' and  Person_Account__c != null and id in : listBookings and Bookings_Checked_Count__c > 0];
-            system.debug('@@@ listOppInLot '+listOppInLot);
+            
             if(listOppInLot != null && listOppInLot.size()>0){
+                
                 Date FirstDate = Date.newInstance(2100, 1, 1);
                 Date LastDate = Date.newInstance(1900, 1, 1);
+                
                 for(Opportunity Book : listOppInLot){
                     
                     if(!Book.Person_Account__r.TechIsNotFirst_02__c){
-                        system.debug('### put it null');
-                       /* if(Book.Person_Account__r.First_Booking_Date__c != null){
-                            
-                            Book.Person_Account__r.First_Booking_Date__c = null;
-                        }*/
                         
                         if(Book.Person_Account__r.Last_Booking_Date__c != null){
                             
                             Book.Person_Account__r.Last_Booking_Date__c = null;
                         }
                     }
-                    system.debug('### MapPAToUpdate beforeeeeeeee ' + MapPAToUpdate);
-                    system.debug('### Book.Person_Account__r.First_Booking_Date__c ' + Book.Person_Account__r.First_Booking_Date__c);
-                    system.debug('### book.Departure_Date__c ' + book.Departure_Date__c);
-                     system.debug('### MapPAToUpdate.containsKey(Book.Person_Account__c ' + MapPAToUpdate.containsKey(Book.Person_Account__c));
-                     //system.debug('### MapPAToUpdate.get(Book.Person_Account__c).First_Booking_Date__c ' + MapPAToUpdate.get(Book.Person_Account__c).First_Booking_Date__c);
-                     system.debug('### Book.Person_Account__r.First_Booking_Date__c ' + Book.Person_Account__r.First_Booking_Date__c);
 
                     if((Book.Person_Account__r.First_Booking_Date__c != null && book.Departure_Date__c < Book.Person_Account__r.First_Booking_Date__c && !MapPAToUpdate.containsKey(Book.Person_Account__c)) || 
                        (Book.Person_Account__r.First_Booking_Date__c == null && !MapPAToUpdate.containsKey(Book.Person_Account__c))
                       || (MapPAToUpdate.containsKey(Book.Person_Account__c) && (MapPAToUpdate.get(Book.Person_Account__c).First_Booking_Date__c == null || MapPAToUpdate.get(Book.Person_Account__c).First_Booking_Date__c > book.Departure_Date__c) )){
-                        system.debug('@@@ in firstt');
+                        
                         Account acc = new Account();
                         acc.id = Book.Person_Account__c;
                         acc.First_Booking_Date__c = book.Departure_Date__c;
-                        //acc.TechIsNotFirst_02__c = true;
                         
                         if(!MapPAToUpdate.containsKey(Book.Person_Account__c)){
                             acc.Last_Booking_Date__c = Book.Person_Account__r.Last_Booking_Date__c;
@@ -127,11 +117,10 @@ Global without sharing class Batch_FirstLastBooking implements Database.Batchabl
                             MapPAToUpdate.put(Book.Person_Account__c,acc);
                         }					
                     }
-                    system.debug('### Book.Person_Account__r.Last_Booking_Date__c ' + Book.Person_Account__r.Last_Booking_Date__c);
-                    system.debug('### book.Departure_Date__c ' + book.Departure_Date__c);
+                    
                     if((Book.Person_Account__r.Last_Booking_Date__c != null && book.Departure_Date__c > Book.Person_Account__r.Last_Booking_Date__c  && !MapPAToUpdate.containsKey(Book.Person_Account__c)) || (Book.Person_Account__r.Last_Booking_Date__c == null && !MapPAToUpdate.containsKey(Book.Person_Account__c))
                        || (MapPAToUpdate.containsKey(Book.Person_Account__c)&& (MapPAToUpdate.get(Book.Person_Account__c).Last_Booking_Date__c == null || MapPAToUpdate.get(Book.Person_Account__c).Last_Booking_Date__c < book.Departure_Date__c)) ){
-                         system.debug('@@@ in last');
+                         
                         Account acc = new Account();
                         acc.id = Book.Person_Account__c;
                         acc.Last_Booking_Date__c = book.Departure_Date__c;
@@ -150,9 +139,8 @@ Global without sharing class Batch_FirstLastBooking implements Database.Batchabl
                         }
                         							
                     }
-                    system.debug('### MapPAToUpdate after ' + MapPAToUpdate);
                 }
-                system.debug('### MapPAToUpdate final ' + MapPAToUpdate);
+                
                 if(MapPAToUpdate != null && MapPAToUpdate.size()>0){
                     
                     Database.SaveResult[] srListPA;

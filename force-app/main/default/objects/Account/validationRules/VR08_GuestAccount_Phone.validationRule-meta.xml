@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>VR08_GuestAccount_Phone</fullName>
-    <active>false</active>
-    <errorConditionFormula>LEFT(Phone, 1) &lt;&gt; &quot;+&quot;</errorConditionFormula>
-    <errorDisplayField>PersonMobilePhone</errorDisplayField>
-    <errorMessage>The phone number must start with + (country code).</errorMessage>
-</ValidationRule>

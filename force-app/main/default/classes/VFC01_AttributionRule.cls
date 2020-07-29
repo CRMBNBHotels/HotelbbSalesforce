@@ -18,8 +18,14 @@ public without sharing class VFC01_AttributionRule {
         List<String> ListQueueName = new List<String>(); 
         Profile Userprofile = new Profile();
         Userprofile=[select id,name from Profile where id =: Userid]; 
-        Map<String, Queue_Profile__c> QueueProfile = Queue_Profile__c.getAll();
-        Map<String, Agent_Manager__c> AgentManager = Agent_Manager__c.getAll();
+        
+        //added by TMA EIL CRMSS-469 24-02-2020 Start
+        //Map<String, Queue_Profile__c> QueueProfile = Queue_Profile__c.getAll();
+        Map<String, Queue_Profilemdtp__mdt> QueueProfile = new Map<String, Queue_Profilemdtp__mdt>([select Id, DeveloperName, MasterLabel, Language, NamespacePrefix, Label, QualifiedApiName, Queue__c from Queue_Profilemdtp__mdt]);
+        //Map<String, Agent_Manager__c> AgentManager = Agent_Manager__c.getAll();       
+        Map<String, Agent_Managermdt__mdt> AgentManager = new Map<String, Agent_Managermdt__mdt>([SELECT Id, DeveloperName, MasterLabel, Language, NamespacePrefix, Label, QualifiedApiName, Agent__c FROM Agent_Managermdt__mdt]);
+        //added by TMA EIL CRMSS-469 24-02-2020 end
+        
         system.debug('QueueProfile###'+QueueProfile);
         system.debug('Userprofile.name###'+Userprofile.name);
         if(Userprofile.name!=null) 

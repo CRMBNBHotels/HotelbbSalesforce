@@ -7,6 +7,7 @@
 
 @isTest
 public class AP01_Stay_Test {
+    /*
     private static testMethod void InsertUpdateDeleteStay(){
         //insert Account       
         Account testAccount = Utils.CreatePersonAccount('Person', null); 
@@ -46,5 +47,5 @@ public class AP01_Stay_Test {
              Where Id=:testAccount.Id];        
         System.assertEquals(Label.BusinessCustomerType, 
                             acc.Customer_type__pc);      
-    }
+    }*/
 }

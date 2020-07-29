@@ -3,7 +3,7 @@
 * @author TMA Cynthia Geagea
 * @date 20/09/2019
 * @Test: WS02_BookingInfo_Test
-* @Coverage: 80%
+* @Coverage: 80% 
 */
 
 global without sharing class WS02_BookingInfo {
@@ -25,42 +25,14 @@ global without sharing class WS02_BookingInfo {
     
     webservice static List<BookingInfoUpsertResponse> doUpsertBookingInfos(BookingInfos BookingInfos ) {
         UtilsBypass.addSkipApexClass('Account_Handle', 'CPU Time');
-        FromBookingInfo = true;
-        
-        /*Commented by TMA-EIL CRMSS-579 16/04/2020 
-        //Added by Cynthia Geagea ACT-795 30/10/2019 Start
-        //
-        //Add for logs Start
-        Log__c log = new Log__c();
-        log.WSName__c = 'Booking Info';
-        if(Json.serialize(BookingInfos).length()>131072){
-            log.JsonMessage__c = Json.serialize(BookingInfos).substring(0,131072);
-        }else{
-            log.JsonMessage__c = Json.serialize(BookingInfos);
-        }
-        system.debug('Limits.getDmlStatements() 1 ## ' + Limits.getDmlStatements());
-        
-        insert log;
-        Attachment  doc = new Attachment ();
-        doc.Name = 'JsonLog';  
-        doc.Body = Blob.valueOf(Json.serialize(BookingInfos));
-        doc.ContentType = 'text/plain';
-        doc.ParentId = log.id;
-        insert doc;        
-        //Add for logs End
-        //Added by Cynthia Geagea ACT-795 30/10/2019 End
-        */
-        
+        FromBookingInfo = true;      
         System.debug('##### doUpsertBookingInfos ' + BookingInfos);
         Integer rowIndex = 0; //This index will be returned to BBUS to count the number of responses sent back to them 
         String strMasterExternalId; //This is the Master Booking's external id that will be sent back to BBUS
-        
-        Map<Integer, BookingInfoUpsertResponse> mapIndexListResponses = new Map<Integer, BookingInfoUpsertResponse>(); //In this map we will store all responses to send back to BBUS
-        
+        Map<Integer, BookingInfoUpsertResponse> mapIndexListResponses = new Map<Integer, BookingInfoUpsertResponse>(); //In this map we will store all responses to send back to BBUS     
         BookingInfo.MasterBookingWrapper masterBookingWrap;
         List<BookingInfo.BookingWrapper> listBookingWrap;
-        MasterBooking masterBooking;
-        
+        MasterBooking masterBooking;   
         // Each one of these lists is used to retrieve data sent in the BookingInfo 
         //Added by TMA-JK - CRMSS-173 Start
         list<BookingRoomLine> listBookingRoomLinesParent = new list<BookingRoomLine>(); 
@@ -87,279 +59,83 @@ global without sharing class WS02_BookingInfo {
         List<UpsertResponse> listBRLResponses = new List<UpsertResponse>();
         List<UpsertResponse> listPAResponses = new List<UpsertResponse>();
         
+
+        //Added by TMA-EIL CRMSS-579 17/04/2020 Start       
+        List<masterBooking> masterbookings = new List<masterBooking>();
+        List<bookinginfo.BookingWrapper> bookingWrapperList = new List<bookinginfo.BookingWrapper>();
         for(BookingInfo bookinginfo : BookingInfos.BookingInfo){
-            system.debug('### cg bookinginfo'+bookinginfo);
+            
             masterBookingWrap = bookinginfo.MasterBookingWrapper;
             listBookingWrap = masterBookingWrap.BookingWrapper;
             masterBooking = masterBookingWrap.MasterBooking;
             
-            if(listBookingWrap != null && listBookingWrap.size() > 0){
-                
-                //For each booking in the bookingInfo, we will retrieve the Booking's external Id and the Booking room line's external id 
-                for(BookingInfo.BookingWrapper bookingWrap : listBookingWrap){
-                    
-                    string masterBookId;
-                    
-                    if(masterBooking != null && masterBooking.ExternalId != null){
-                        
-                        masterBookId = masterBooking.ExternalId;
-                    }
-                    
-                    if(bookingWrap.Booking != null && bookingWrap.Booking.ExternalId != null){
-                        
-                        String BookID = bookingWrap.Booking.ExternalId;
-                        
-                        if(masterBookId != null && !string.isBlank(masterBookId)){
-                            
-                            bookingWrap.Booking.MasterBooking = masterBookId;
-                        }
-                        
-                        listBookings.add(bookingWrap.Booking);
-                        setExistingBookingsExtId.add(bookingWrap.Booking.ExternalId);
-                        
-                        if(!mapObjIdMbId.containsKey(bookingWrap.Booking.ExternalId)){
-                            
-                            mapObjIdMbId.put(bookingWrap.Booking.ExternalId, masterBooking.ExternalId);
-                        }
-                        
-                        if(bookingWrap.BookingRoomLines != null){
-                            
-                            for(BookingRoomLine bookingrl : bookingWrap.BookingRoomLines) {
-                                
-                                if(bookingrl.ExternalId != null){
-                                    
-                                    bookingrl.booking = BookID;
-                                    //Added by TMA-JK - CRMSS-173 Start
-                                    if(bookingrl.RoomLineParent == null || String.isEmpty(bookingrl.RoomLineParent)){
-                                        listBookingRoomLinesParent.add(bookingrl);
-                                    }
-                                    //Added by TMA-JK - CRMSS-173 End
-                                    else{
-                                        listBookingRoomLines.add(bookingrl); 
-                                    }
-                                    
-                                    
-                                    setBookingRLFmWS.add(bookingrl.ExternalId);
-                                    
-                                    if(!mapObjIdMbId.containsKey(bookingrl.ExternalId)){
-                                        
-                                        mapObjIdMbId.put(bookingrl.ExternalId, masterBooking.ExternalId);
-                                    }
-                                    
-                                }
-                            }
-                        }
-                    }
-                    
-                    //here we are retrieving each guest Account's extrenal id
-                    if(bookingWrap.GuestAccount1 != null && bookingWrap.GuestAccount1.ExternalId != null){
-                        
-                        //Added by Cynthia Geagea ACT-795 30/10/2019 Start
-                        if(bookingWrap.Booking != null && bookingWrap.Booking.ExternalId != null){
-                            
-                            if(!mapBookingIdListPA.containsKey(bookingWrap.Booking.ExternalId)){
-                                
-                                list<PersonAccount> listPAtoPut = new list<PersonAccount>();
-                                listPAtoPut.add(bookingWrap.GuestAccount1);
-                                
-                                mapBookingIdListPA.put(bookingWrap.Booking.ExternalId,listPAtoPut);
-                            }
-                            else{
-                                
-                                list<PersonAccount> listPAtoPut = new list<PersonAccount>();
-                                listPAtoPut = mapBookingIdListPA.get(bookingWrap.Booking.ExternalId);
-                                listPAtoPut.add(bookingWrap.GuestAccount1);
-                                
-                                mapBookingIdListPA.put(bookingWrap.Booking.ExternalId,listPAtoPut);
-                            }
-                        }
-                        system.debug('### cg mapBookingIdListPA'+mapBookingIdListPA);
-                        //Added by Cynthia Geagea ACT-795 30/10/2019 End
-                        
-                        listGuestAccounts.add(bookingWrap.GuestAccount1);
-                        
-                        if(!mapObjIdMbId.containsKey(bookingWrap.GuestAccount1.ExternalId)){
-                            
-                            mapObjIdMbId.put(bookingWrap.GuestAccount1.ExternalId, masterBooking.ExternalId);
-                        }
-                        
-                        //These 2 sets will be used as parameters for the method matchGuestAccounts
-                        setPersonAccountEmail.add(bookingWrap.GuestAccount1.Email.toLowerCase());
-                        setPersonAccountExtID.add(bookingWrap.GuestAccount1.ExternalId);
-                        
-                    }
-                    
-                    if(bookingWrap.GuestAccount2 != null && bookingWrap.GuestAccount2.ExternalId != null){
-                        
-                        //Added by Cynthia Geagea ACT-795 30/10/2019 Start
-                        if(bookingWrap.Booking != null && bookingWrap.Booking.ExternalId != null){
-                            
-                            if(!mapBookingIdListPA.containsKey(bookingWrap.Booking.ExternalId)){
-                                
-                                list<PersonAccount> listPAtoPut = new list<PersonAccount>();
-                                listPAtoPut.add(bookingWrap.GuestAccount2);
-                                
-                                mapBookingIdListPA.put(bookingWrap.Booking.ExternalId,listPAtoPut);
-                            }
-                            else{
-                                
-                                list<PersonAccount> listPAtoPut = new list<PersonAccount>();
-                                listPAtoPut = mapBookingIdListPA.get(bookingWrap.Booking.ExternalId);
-                                listPAtoPut.add(bookingWrap.GuestAccount2);
-                                
-                                mapBookingIdListPA.put(bookingWrap.Booking.ExternalId,listPAtoPut);
-                            }
-                        }
-                        system.debug('### cg mapBookingIdListPA'+mapBookingIdListPA);
-                        //Added by Cynthia Geagea ACT-795 30/10/2019 End
-                        
-                        listGuestAccounts.add(bookingWrap.GuestAccount2);
-                        
-                        if(!mapObjIdMbId.containsKey(bookingWrap.GuestAccount2.ExternalId)){
-                            
-                            mapObjIdMbId.put(bookingWrap.GuestAccount2.ExternalId, masterBooking.ExternalId);
-                        }
-                        
-                        setPersonAccountEmail.add(bookingWrap.GuestAccount2.Email.toLowerCase());
-                        setPersonAccountExtID.add(bookingWrap.GuestAccount2.ExternalId);
-                        
-                    }
-                    
-                    if(bookingWrap.GuestAccount3 != null && bookingWrap.GuestAccount3.ExternalId != null){
-                        
-                        //Added by Cynthia Geagea ACT-795 30/10/2019 Start
-                        if(bookingWrap.Booking != null && bookingWrap.Booking.ExternalId != null){
-                            
-                            if(!mapBookingIdListPA.containsKey(bookingWrap.Booking.ExternalId)){
-                                
-                                list<PersonAccount> listPAtoPut = new list<PersonAccount>();
-                                listPAtoPut.add(bookingWrap.GuestAccount3);
-                                
-                                mapBookingIdListPA.put(bookingWrap.Booking.ExternalId,listPAtoPut);
-                            }
-                            else{
-                                
-                                list<PersonAccount> listPAtoPut = new list<PersonAccount>();
-                                listPAtoPut = mapBookingIdListPA.get(bookingWrap.Booking.ExternalId);
-                                listPAtoPut.add(bookingWrap.GuestAccount3);
-                                
-                                mapBookingIdListPA.put(bookingWrap.Booking.ExternalId,listPAtoPut);
-                            }
-                        }
-                        system.debug('### cg mapBookingIdListPA'+mapBookingIdListPA);
-                        //Added by Cynthia Geagea ACT-795 30/10/2019 End
-                        
-                        listGuestAccounts.add(bookingWrap.GuestAccount3);
-                        
-                        if(!mapObjIdMbId.containsKey(bookingWrap.GuestAccount3.ExternalId)){
-                            
-                            mapObjIdMbId.put(bookingWrap.GuestAccount3.ExternalId, masterBooking.ExternalId);
-                        }
-                        
-                        setPersonAccountEmail.add(bookingWrap.GuestAccount3.Email.toLowerCase());
-                        setPersonAccountExtID.add(bookingWrap.GuestAccount3.ExternalId);
-                        
-                    }
-                    
-                    if(bookingWrap.GuestAccount4 != null && bookingWrap.GuestAccount4.ExternalId != null){
-                        
-                        //Added by Cynthia Geagea ACT-795 30/10/2019 Start
-                        if(bookingWrap.Booking != null && bookingWrap.Booking.ExternalId != null){
-                            
-                            if(!mapBookingIdListPA.containsKey(bookingWrap.Booking.ExternalId)){
-                                
-                                list<PersonAccount> listPAtoPut = new list<PersonAccount>();
-                                listPAtoPut.add(bookingWrap.GuestAccount4);
-                                
-                                mapBookingIdListPA.put(bookingWrap.Booking.ExternalId,listPAtoPut);
-                            }
-                            else{
-                                
-                                list<PersonAccount> listPAtoPut = new list<PersonAccount>();
-                                listPAtoPut = mapBookingIdListPA.get(bookingWrap.Booking.ExternalId);
-                                listPAtoPut.add(bookingWrap.GuestAccount4);
-                                
-                                mapBookingIdListPA.put(bookingWrap.Booking.ExternalId,listPAtoPut);
-                            }
-                        }
-                        system.debug('### cg mapBookingIdListPA'+mapBookingIdListPA);
-                        //Added by Cynthia Geagea ACT-795 30/10/2019 End
-                        
-                        listGuestAccounts.add(bookingWrap.GuestAccount4);
-                        
-                        if(!mapObjIdMbId.containsKey(bookingWrap.GuestAccount4.ExternalId)){
-                            
-                            mapObjIdMbId.put(bookingWrap.GuestAccount4.ExternalId, masterBooking.ExternalId);
-                        }
-                        
-                        setPersonAccountEmail.add(bookingWrap.GuestAccount4.Email.toLowerCase());
-                        setPersonAccountExtID.add(bookingWrap.GuestAccount4.ExternalId);
-                        
-                    }
-                    
-                    if(bookingWrap.GuestAccount5 != null && bookingWrap.GuestAccount5.ExternalId != null){
-                        
-                        //Added by Cynthia Geagea ACT-795 30/10/2019 Start
-                        if(bookingWrap.Booking != null && bookingWrap.Booking.ExternalId != null){
-                            
-                            if(!mapBookingIdListPA.containsKey(bookingWrap.Booking.ExternalId)){
-                                
-                                list<PersonAccount> listPAtoPut = new list<PersonAccount>();
-                                listPAtoPut.add(bookingWrap.GuestAccount5);
-                                
-                                mapBookingIdListPA.put(bookingWrap.Booking.ExternalId,listPAtoPut);
-                            }
-                            else{
-                                
-                                list<PersonAccount> listPAtoPut = new list<PersonAccount>();
-                                listPAtoPut = mapBookingIdListPA.get(bookingWrap.Booking.ExternalId);
-                                listPAtoPut.add(bookingWrap.GuestAccount5);
-                                
-                                mapBookingIdListPA.put(bookingWrap.Booking.ExternalId,listPAtoPut);
-                            }
-                        }
-                        system.debug('### cg mapBookingIdListPA'+mapBookingIdListPA);
-                        //Added by Cynthia Geagea ACT-795 30/10/2019 End
-                        
-                        listGuestAccounts.add(bookingWrap.GuestAccount5);
-                        
-                        if(!mapObjIdMbId.containsKey(bookingWrap.GuestAccount5.ExternalId)){
-                            
-                            mapObjIdMbId.put(bookingWrap.GuestAccount5.ExternalId, masterBooking.ExternalId);
-                        }
-                        
-                        setPersonAccountEmail.add(bookingWrap.GuestAccount5.Email.toLowerCase());
-                        setPersonAccountExtID.add(bookingWrap.GuestAccount5.ExternalId);
-                        
-                    }
-                }
-            }
+            bookinginfo.BookingWrapper bookingWrap = masterBookingWrap.bookingwrapper[0];
+            bookingWrap.Booking.MasterBooking = masterBookingWrap.MasterBooking.externalid;
+            bookingWrapperList.add(bookingWrap);
+            listBookingWrap.remove(0);
             
-            // Here we are retrieving the master booking's external id that is sent in the bookingInfo
-            if(masterBooking != null && masterBooking.ExternalId != null){
-                
-                listMasterBookings.add(masterBooking);
-                
-                //To be used later to sort responses 
-                mapMBExtIdRowIndex.put(masterBooking.ExternalId,rowIndex);
-                rowIndex++;
-            }
+            bookingWrapperList.addAll(listBookingWrap);
+            masterbookings.add(bookinginfo.MasterBookingWrapper.MasterBooking);
             
+            listMasterBookings.addAll(masterbookings);
+            
+            mapMBExtIdRowIndex.put(masterBookingWrap.MasterBooking.externalid,rowIndex);
+            rowIndex++;
         }
+       
+        String MBExtId;  
+        for(bookinginfo.BookingWrapper bookWrap : bookingWrapperList){    
+            list<PersonAccount> listPA = new list<PersonAccount>();
+            if(bookWrap.booking.MasterBooking != null){
+                MBExtId = bookWrap.booking.MasterBooking;
+            }else {
+                bookWrap.booking.MasterBooking = MBExtId;
+            } 
+            listBookings.add(bookWrap.booking);
+            bookWrap.BookingRoomLines[0].booking = bookWrap.Booking.externalid;
+            bookWrap.BookingRoomLines.remove(0);
+            
+            listBookingRoomLines.addAll(bookWrap.BookingRoomLines);  
+            
+            listGuestAccounts.add(bookWrap.GuestAccount1);
+            listGuestAccounts.add(bookWrap.GuestAccount2);
+            listGuestAccounts.add(bookWrap.GuestAccount3);
+            listGuestAccounts.add(bookWrap.GuestAccount4);
+            listGuestAccounts.add(bookWrap.GuestAccount5);
+    
+            listPA.add(bookWrap.GuestAccount1);
+            listPA.add(bookWrap.GuestAccount2);
+            listPA.add(bookWrap.GuestAccount3);
+            listPA.add(bookWrap.GuestAccount4);
+            listPA.add(bookWrap.GuestAccount5);
+            
+            mapBookingIdListPA.put(bookWrap.Booking.externalid, listPA);
+        }
+
+        List<BookingRoomLine> ListBRLModified = new List<BookingRoomLine>();
+        String BExtId;
+        for(BookingRoomLine brl : listBookingRoomLines){
+            if(brl.booking != null){
+                BExtId = brl.booking;
+            }else {
+                brl.booking = BExtId;
+            }   
+            ListBRLModified.add(brl);
+        }
+        
+        //Added by TMA-EIL CRMSS-579 17/04/2020 End
+  
         
         system.debug('### cg listBookings'+listBookings);
         
         if(setExistingBookingsExtId != null && setExistingBookingsExtId.size()>0){
-            
             for (Booking_Room_Line__c BRL : [select id, Externalid__c,Obsolete__c
                                              from Booking_Room_Line__c 
                                              where Booking_FK__r.ExternalId__c in :setExistingBookingsExtId]){
-                                                 
-                                                 if(!setBookingRLFmWS.contains(BRL.Externalid__c)){
-                                                     
-                                                     mapBRToUpdate.put(BRL.ExternalId__c, BRL);
-                                                 }
-                                             }
+                if(!setBookingRLFmWS.contains(BRL.Externalid__c)){
+                    mapBRToUpdate.put(BRL.ExternalId__c, BRL);
+                }
+            }
         } 
         
         //This method makes sure to match the guest accounts existing in salesforce with the ones sent in the bookingInfo from BBUS, to avoid duplicates or errors
@@ -476,7 +252,8 @@ global without sharing class WS02_BookingInfo {
         listBRLResponses = doUpsertBookingRoomLines(bookRLPs);
         //Added by TMA-JK - CRMSS-173 End
         BookingRoomLines bookRLs = new BookingRoomLines();
-        bookRLs.BookingRoomLine = listBookingRoomLines;
+        //bookRLs.BookingRoomLine = listBookingRoomLines;
+        bookRLs.BookingRoomLine = ListBRLModified;
         listBRLResponses = doUpsertBookingRoomLines(bookRLs);
 
         
@@ -597,7 +374,8 @@ global without sharing class WS02_BookingInfo {
                     rowIndex = mapMBExtIdRowIndex.get(strMasterExternalId);
                     mapIndexListResponses.put(rowIndex, new BookingInfoUpsertResponse(true, strMasterExternalId, null, rowIndex, null, false));
                 }
-            }system.debug('### cg mapIndexListResponses in b succ'+mapIndexListResponses);
+            }
+            system.debug('### cg mapIndexListResponses in b succ'+mapIndexListResponses);
         }
         
         for(UpsertResponse respbrl : listBRLResponses){
@@ -627,27 +405,23 @@ global without sharing class WS02_BookingInfo {
                     rowIndex = mapMBExtIdRowIndex.get(strMasterExternalId);
                     mapIndexListResponses.put(rowIndex, new BookingInfoUpsertResponse(true, strMasterExternalId, null, rowIndex, null, false));
                 }
-            }system.debug('### cg mapIndexListResponses in brl succ'+mapIndexListResponses);
+            }
+            system.debug('### cg mapIndexListResponses in brl succ'+mapIndexListResponses);
         }
-        
+
         //We need to sort the list to be returned, according to the rowIndex
         list<Integer> rowIndexList = new list<Integer>();
         rowIndexList.addAll(mapIndexListResponses.keySet());
         rowIndexList.sort();
-        
-        map<Integer,BookingInfoUpsertResponse> mapIndexListResponsesSorted = new map<Integer,BookingInfoUpsertResponse>();//This is the sorted map which values are returned to BBUS
-        
+        map<Integer,BookingInfoUpsertResponse> mapIndexListResponsesSorted = new map<Integer,BookingInfoUpsertResponse>();//This is the sorted map which values are returned to BBUS        
         for(Integer rowInd : rowIndexList){
             
             mapIndexListResponsesSorted.put(rowInd, mapIndexListResponses.get(rowInd));
         }
-        
         //finally we return a list of all error or succes responses back to BBUS. Each MB will have only one returned response: an error, or a success in case there are no errors at all
         System.debug('##### mapIndexListResponsesSorted ' + mapIndexListResponsesSorted.values());
-        return mapIndexListResponsesSorted.values();
-        
+        return mapIndexListResponsesSorted.values();    
     }
-    
     
     webservice static List<UpsertResponse> doUpsertBookingRoomLines(BookingRoomLines BookingRoomLines) {
         Map<Integer, UpsertResponse> mapResponses = new Map<Integer, UpsertResponse>();
@@ -786,7 +560,6 @@ global without sharing class WS02_BookingInfo {
         if(!FromBookingInfo){
             
             system.debug('### cg FromBookingInfo false'+FromBookingInfo);
-            /*Commented by TMA-EIL CRMSS-579 16/04/2020 
             //Add for logs Start
             Log__c log2 = new Log__c();
             log2.WSName__c = 'Do upsert Person Account';
@@ -798,8 +571,6 @@ global without sharing class WS02_BookingInfo {
             doc2.ParentId = log2.id;
             insert doc2;
             //Add for logs End
-            //*/
-            
             for(PersonAccount guestAccount : listPersonAccounts) {
                 setEmail.add(guestAccount.Email.tolowercase());
                 setExtID.add(guestAccount.ExternalId);
@@ -845,7 +616,6 @@ global without sharing class WS02_BookingInfo {
             System.debug('### mapExternalAccountsToTreat.values() not fm bookingInfo' + mapExternalAccountsToTreat.values());
             doUpsertRecords(mapExternalAccountsToTreat.values(), 'Account', mapResponses, mapPersonRowIndex);    
             
-            /*Commented by TMA-EIL CRMSS-579 16/04/2020 
             //Add for logs Start
             Log__c log = new Log__c();
             log.WSName__c = 'Do upsert Person Account Return';
@@ -857,7 +627,6 @@ global without sharing class WS02_BookingInfo {
             doc.ParentId = log.id;
             insert doc;
             //Add for logs End
-            //*/
             
         }
         //Added by Cynthia Geagea ACT-795 30/10/2019 Start
@@ -894,28 +663,7 @@ global without sharing class WS02_BookingInfo {
                                 //Added by TMA-JK CRMSS-160 End
                                 MapPAToTreat.get(bookExtID).put(guestAccount.ExternalId, acc);
                                 mapResponses.put(rowIndex, null);
-                            }
-                            /*if(mapExternalAccountsToTreat.containsKey(guestAccount.ExternalId)) {
-existingIndex = mapPersonRowIndex.get(guestAccount.ExternalId);
-mapResponses.put(rowIndex, new UpsertResponse(false,null , rowIndex, 'Duplicate external id specified: ' + guestAccount.ExternalId));
-mapResponses.put(existingIndex, new UpsertResponse(false,null , existingIndex, 'Duplicate external id specified: ' + guestAccount.ExternalId));
-mapExternalAccountsToTreat.remove(guestAccount.ExternalId);
-} else {
-mapPersonRowIndex.put(guestAccount.ExternalId, rowIndex);
-//Added by TMA-JK CRMSS-160 Start
-Account acc = new Account();
-acc = guestAccount.mapSFFields();
-if(mapExtIDSFID.containsKey(acc.Externalid__c)){
-System.debug('### EXT contains');
-acc.id = mapExtIDSFID.get(acc.Externalid__c);
-}else if(mapEmailSFID.containsKey(acc.Email__pc.tolowercase())){
-System.debug('### Email__pc contains');
-acc.id = mapEmailSFID.get(acc.Email__pc.tolowercase());
-}
-//Added by TMA-JK CRMSS-160 End
-mapExternalAccountsToTreat.put(guestAccount.ExternalId, acc);
-mapResponses.put(rowIndex, null);
-}      */                                                      
+                            }                                                   
                         } else {
                             mapResponses.put(rowIndex, new UpsertResponse(false,null , rowIndex, 'ExternalId__c not specified'));
                         }

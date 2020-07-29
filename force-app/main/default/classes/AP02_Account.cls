@@ -8,6 +8,7 @@ public class AP02_Account
 {
     //when the field current_compagny__c is updated in the guest account,the fields total_nights__c, total_revenue__c and total_transactions__c should be recalculated on the old and new
     //current_compagny__c business account
+    /*
     public static void UpdateStayOppWhenGuestAccountUpdate(list<Account> triggerNew, map<Id,Account> oldMap)
     {
         list<Account> listAccount = new list<Account>();
@@ -111,8 +112,7 @@ public class AP02_Account
             
             //update all the lists
             //The methods are called one by one because the other methods in the AfterUpdateStay and AfterUpdateOpportunity trigger should not be called
-            AP02_Stay.UpdateTotalNights(listStayToUpdate , null,null);
-            AP03_Stay.UpdateTotalRevenue(listStayToUpdate , null,null);
+            AP02_Stay.UpdateTotalNightsTotalRevenueFavoriteHotel(listStayToUpdate , null,null); 
             AP05_Stay.UpdateMaxBookingMinArrival(listStayToUpdate , null,null);
             AP04_Opportunity.UpdateTotalTransactions(listOpportunityToUpdate, null, null);
             update listBusinessAccountToUpdate;
@@ -139,7 +139,7 @@ public class AP02_Account
     }
     public static void updatePartnerShipFieldsWhenPartnerCodeChange(list<Account> triggerNew, map<Id,Account> oldMap)
     {
-        list<String> listPartnerCode = new list<string>();
+        set<String> listPartnerCode = new set<string>();
         for(Account acc:triggerNew)
         {
             if(acc.RecordTypeId != label.PersonAccountRecordTypeId && (oldMap==null || oldMap.get(acc.Id).Partner_Code__c != acc.Partner_Code__c))
@@ -148,6 +148,10 @@ public class AP02_Account
                 {
                     listPartnerCode.add(acc.Partner_Code__c);
                 }
+                 if(oldMap!=null && !string.IsBlank(oldMap.get(acc.Id).Partner_Code__c))
+                {
+                    listPartnerCode.add(oldMap.get(acc.Id).Partner_Code__c);
+                }
             }
         }
         if(listPartnerCode.size() > 0)
@@ -155,9 +159,7 @@ public class AP02_Account
             list<Opportunity> listBookingAffected = [Select Id,Partner_Code__c,recordTypeId
                                                      From Opportunity
                                                      Where Partner_Code__c IN: listPartnerCode];
-            AP03_Opportunity.UpdateTotalNightsPartnerShip(listBookingAffected ,null, null);
-            AP03_Opportunity.UpdateTotalRevenuePartnerShip(listBookingAffected ,null, null);
-            AP03_Opportunity.UpdateTotalTransactionsPartnerShip(listBookingAffected,null,null);
+           if(listBookingAffected!= null && listBookingAffected.size()>0) AP03_Opportunity.UpdateTotalNightsPartnerShip(listBookingAffected ,null, null);
         }
-    }
+    }*/
 }

@@ -28,5 +28,12 @@ public class AP08_Account_Test {
          update acc2;
           acc2.E_club_Expiration_date__pc=date.today().addDays(-40);
          update acc2;
+         
+         Account acc3=new Account();
+         acc3.RecordTypeId=Schema.SObjectType.Account.getRecordTypeInfosByDeveloperName().get('PersonAccount').getRecordTypeId();
+         acc3.LastName='test';
+         insert acc3;
+         acc3.E_club_Expiration_date__pc = date.today().addDays(-8);
+         update acc3;
      }
 }

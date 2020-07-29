@@ -1,9 +1,9 @@
 /**
 * @author TMA-EI Julien
 * @date 15/04/2019
-* @description update fields on voucher object + WS. aCRMSS-133
+* @description update fields on voucher object + WS. CRMSS-133
 * @test class : AP03_voucher_test
-* @coverage: 78 %
+* @coverage: 80 %
 */
 public without sharing class AP03_voucher {
     //Method to check if  1-Statut__c on object voucher is modified 
@@ -63,9 +63,8 @@ public without sharing class AP03_voucher {
             String ConnectedUserId = userinfo.getUserId();
             if( ConnectedUserId.substring(0,15) != label.technical_user_2_id){
                 //If the info modified is related to personal info, set a list of fields modified and call a future method to perform the callout for BBUS
-                if((newMap.get(Idcurr).Status_change_request__c =='Processing' || 
-                    newMap.get(Idcurr).Status_change_request__c == oldMap.get(Idcurr).Status_change_request__c ) && 
-                    newMap.get(Idcurr).Statut__c != oldMap.get(Idcurr).Statut__c){
+                if((newMap.get(Idcurr).Status_change_request__c =='Processing' || newMap.get(Idcurr).Status_change_request__c == oldMap.get(Idcurr).Status_change_request__c ) && 
+                   newMap.get(Idcurr).Statut__c != oldMap.get(Idcurr).Statut__c){
                        
                        mapfieldModified.put('Statut__c',newMap.get(Idcurr).Statut__c);
                        
@@ -75,8 +74,7 @@ public without sharing class AP03_voucher {
                        
                        //Added by TMA-CG CRMSS-203 20/06/2019 start
                        //If it's from a batch or future method call the regular method
-                       if(System.isFuture() ||
-                          System.isBatch()){
+                       if(System.isFuture() || System.isBatch()){
                            system.debug('@@@ CallWSUpdateVoucherInfo if');
                            regularCallWS(newMap.get(Idcurr).externalID__c,Idcurr,mapfieldModified.keyset());
                        } 
@@ -123,18 +121,20 @@ public without sharing class AP03_voucher {
         try { 
             
             //Added by TMA-EIL CG - CRMSS 423 - 09/01/2020 - Start
-            if(rtId != null && 
-               string.isNotBlank(rtId)){
+            if(rtId != null && string.isNotBlank(rtId)){
                 
                 BB_VoucherObject.RTID = rtId;
             }
             system.debug('### ExtID ap03 ' + ExtID);
             //Added by TMA-EIL CG - CRMSS 423 - 09/01/2020 - End
-            if(ExtID != null && 
-               !string.isBlank(ExtID)){
+            if(ExtID != null && !string.isBlank(ExtID)){
                 system.debug('###  Call BBUS ');
                 HttpResponse response = BBUS_DataHistoryManager.callBBUSWebserviceResponse('voucher', null, null, ExtID,setfieldModif);
+                system.debug('### cg response: '+response);
                 system.debug('###cyn CallWS ExtID'+ExtID);
+                system.debug('running test?'+test.isRunningTest());
+                
+                
                 String strResponse = response.getBody(); 
                 system.debug('###cyn strResponse'+strResponse);
                 Log__c log = new Log__c();
@@ -143,6 +143,7 @@ public without sharing class AP03_voucher {
                 log.FromSalesforce__c = true;
                 insert log;
                 //if it's a bad response then perform a rollback + set the status of the sync to error
+                
                 if(response.getStatusCode() != 200){
                     system.debug('@@@ !200 ap03');
                     vouch =  voucherObject.actionBadResponse(strResponse, Idcurr,setfieldModif);
@@ -161,7 +162,7 @@ public without sharing class AP03_voucher {
            		 update vouch;
             }
         }catch(Exception e) {
-            system.debug('### cyn catch exception');
+            system.debug('### cyn catch exception ' + e);
             system.debug('### cyn vouch.Statut__c'+vouch.Statut__c);
             //if we could not perform the callout, set the status to error with the date
             vouch.id = Idcurr;

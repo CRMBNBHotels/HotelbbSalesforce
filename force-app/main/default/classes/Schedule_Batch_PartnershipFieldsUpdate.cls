@@ -1,6 +1,6 @@
 /*
 * Description: Scheduler Batch_PartnershipFieldsUpdate . Job to run every day at 12 am
-* String CRON_EXP = '0 0 0 1/1 * ? *';
+* String CRON_EXP = '0 0 12 1/1 * ? *';
 String description = 'Schedule Batch Partnership Fields Update';
 System.schedule(description, CRON_EXP, new Schedule_Batch_PartnershipFieldsUpdate());
 
@@ -10,7 +10,7 @@ System.schedule(description, CRON_EXP, new Schedule_Batch_PartnershipFieldsUpdat
 * @Coverage: 100%
 */
 
-global class Schedule_Batch_PartnershipFieldsUpdate implements Schedulable {
+global without sharing class Schedule_Batch_PartnershipFieldsUpdate implements Schedulable {
     
     global void execute(SchedulableContext ctx) {
        String jobId = Database.executeBatch(new Batch_PartnershipFieldsUpdate(null,0), 50);

@@ -56,6 +56,7 @@
     
     //modified by TMA Cynthia Geagea CRMSS-128 - 27/05/2019
     SendData : function(component, event, helper){
+        
         var action = component.get('c.DoCalculation'); 
         console.log(' component.get(v.NBPoint) '+ component.get('v.NBPoint'));
         action.setParams({ "accountId" : component.get('v.recordId'),
@@ -66,6 +67,7 @@
                           "Description": component.get('v.Description')
                          });
         
+        
         action.setCallback(this, function(response) {
             
             var state = response.getState();
@@ -75,7 +77,8 @@
         
         
         /*setTimeout(function(){
-             $A.get("e.force:closeQuickAction").fire(); 
+            $A.get("e.force:closeQuickAction").fire(); 
+            alert('### cg SendData 3');
 		}, 1000);*/
         $A.enqueueAction(action); 
         $A.get('e.force:refreshView').fire();

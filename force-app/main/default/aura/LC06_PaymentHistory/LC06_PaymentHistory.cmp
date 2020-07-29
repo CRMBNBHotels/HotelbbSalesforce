@@ -1,5 +1,5 @@
 <!-- LC06_PaymentHistory -->
-<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,force:hasSObjectName,flexipage:availableForAllPageTypes">
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,force:hasSObjectName">
     <aura:attribute type="String" name="recordId" />
     <c:LC05_PaymentInfo recordId="{!v.recordId}"/>
     <br/>

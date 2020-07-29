@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <fieldUpdates>
+        <fullName>ACC_Status_E_R</fullName>
+        <field>E_Club_Status__c</field>
+        <literalValue>Expired and renewable</literalValue>
+        <name>ACC_Status_E&amp;R</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ACC_Status_Expired</fullName>
+        <field>E_Club_Status__c</field>
+        <literalValue>Closed</literalValue>
+        <name>ACC_Status_Expired</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ACC_Status_Renewable</fullName>
+        <field>E_Club_Status__c</field>
+        <literalValue>Renewable</literalValue>
+        <name>ACC_Status_Renewable</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Fill_Email_pc</fullName>
         <description>Fill Email__pc with the value of PersonEmail</description>
         <field>Email__pc</field>
@@ -21,35 +48,11 @@
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
-        <fullName>UpdateAccountMarketingCountrySharing</fullName>
-        <description>Fill the field MarketingCountry Sharing with the value of the field MarketingCountry</description>
-        <field>MarketingCountry_Sharing__c</field>
-        <formula>MarketingCountry__c</formula>
-        <name>UpdateAccountMarketingCountrySharing</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>UpdateAccount_TurnoverCompany</fullName>
-        <description>Update the value of the number field &quot;Turnover_of_the_company__c&quot; according to the value of the text field &quot;Turnover_of_the_company_text__c&quot;</description>
-        <field>Turnover_of_the_company__c</field>
-        <formula>IF(OR(CONTAINS(Turnover_of_the_company_Text__c , &apos;K&apos;),CONTAINS(Turnover_of_the_company_Text__c , &apos;k&apos;)) , VALUE(LEFT( Turnover_of_the_company_Text__c , 
-LEN(Turnover_of_the_company_Text__c)- 1))  * 1000,  IF(OR(CONTAINS(Turnover_of_the_company_Text__c , &apos;M&apos;),CONTAINS(Turnover_of_the_company_Text__c , &apos;m&apos;)), VALUE(LEFT( 
-Turnover_of_the_company_Text__c , LEN(Turnover_of_the_company_Text__c)- 1))  * 
-1000000,  IF(OR(CONTAINS(Turnover_of_the_company_Text__c , &apos;B&apos;),CONTAINS(Turnover_of_the_company_Text__c , &apos;b&apos;)), VALUE(LEFT( Turnover_of_the_company_Text__c , LEN(Turnover_of_the_company_Text__c)- 1))  * 1000000000, 
-VALUE(Turnover_of_the_company_Text__c))))</formula>
-        <name>UpdateAccount_TurnoverCompany</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
         <fullName>WA_AccountStatusInDecline</fullName>
         <description>After 6 month from the last booking, update the status of an account to &quot;In Decline&quot;.</description>
         <field>Status_Text__c</field>
-        <formula>if(Status_Text__c != &apos;In Decline&apos; &amp;&amp; today() -   MaxBookingMinArrival__c &gt;= 180 &amp;&amp; today()- MaxBookingMinArrival__c &lt; 730 &amp;&amp; Number_of_Contracts__c !=0 &amp;&amp; !IsPersonAccount,
-&apos;In Decline&apos;,Status_Text__c)</formula>
+        <formula>if(Status_Text__c != &#39;In Decline&#39; &amp;&amp; today() -   MaxBookingMinArrival__c &gt;= 180 &amp;&amp; today()- MaxBookingMinArrival__c &lt; 730 &amp;&amp; Number_of_Contracts__c !=0 &amp;&amp; !IsPersonAccount,
+&#39;In Decline&#39;,Status_Text__c)</formula>
         <name>WA_AccountStatusInDecline</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>
@@ -59,7 +62,7 @@ VALUE(Turnover_of_the_company_Text__c))))</formula>
         <fullName>WA_AccountStatusInactive</fullName>
         <description>After 2 years from the last booking, update the status of an account to &quot;Inactive&quot;.</description>
         <field>Status_Text__c</field>
-        <formula>if(Status_Text__c != &apos;Inactive&apos; &amp;&amp; today() -   MaxBookingMinArrival__c &gt;= 730 &amp;&amp; Number_of_Contracts__c !=0 &amp;&amp; !IsPersonAccount,&apos;Inactive&apos;,Status_Text__c)</formula>
+        <formula>if(Status_Text__c != &#39;Inactive&#39; &amp;&amp; today() -   MaxBookingMinArrival__c &gt;= 730 &amp;&amp; Number_of_Contracts__c !=0 &amp;&amp; !IsPersonAccount,&#39;Inactive&#39;,Status_Text__c)</formula>
         <name>WA_AccountStatusInactive</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>
@@ -68,7 +71,7 @@ VALUE(Turnover_of_the_company_Text__c))))</formula>
     <fieldUpdates>
         <fullName>WA_Account_StatusActiveCustomer</fullName>
         <field>Status_Text__c</field>
-        <formula>if( Number_of_Contracts__c !=0 &amp;&amp; today()-MaxBookingMinArrival__c&lt; 180 &amp;&amp; Status_Text__c != &apos;Active Customer&apos;,&apos;Active Customer&apos;, Status_Text__c)</formula>
+        <formula>if( Number_of_Contracts__c !=0 &amp;&amp; today()-MaxBookingMinArrival__c&lt; 180 &amp;&amp; Status_Text__c != &#39;Active Customer&#39;,&#39;Active Customer&#39;, Status_Text__c)</formula>
         <name>WA_Account_StatusActiveCustomer</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>
@@ -77,7 +80,7 @@ VALUE(Turnover_of_the_company_Text__c))))</formula>
     <fieldUpdates>
         <fullName>WA_Account_StatusNewCustomer</fullName>
         <field>Status_Text__c</field>
-        <formula>if(ISBLANK(MaxBookingMinArrival__c) &amp;&amp;  Number_of_Contracts__c != 0,&apos;New Customer&apos;, Status_Text__c )</formula>
+        <formula>if(ISBLANK(MaxBookingMinArrival__c) &amp;&amp;  Number_of_Contracts__c != 0,&#39;New Customer&#39;, Status_Text__c )</formula>
         <name>WA_Account_StatusNewCustomer</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>
@@ -86,7 +89,7 @@ VALUE(Turnover_of_the_company_Text__c))))</formula>
     <fieldUpdates>
         <fullName>WA_Account_UpdateStatusProspect</fullName>
         <field>Status_Text__c</field>
-        <formula>if( Number_of_Contracts__c ==0,&apos;Prospect&apos;, Status_Text__c )</formula>
+        <formula>if( Number_of_Contracts__c ==0,&#39;Prospect&#39;, Status_Text__c )</formula>
         <name>WA_Account_UpdateStatusProspect</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>
@@ -119,7 +122,7 @@ VALUE(Turnover_of_the_company_Text__c))))</formula>
     <fieldUpdates>
         <fullName>WA_PersonAccount_Churn</fullName>
         <field>Status_Text__c</field>
-        <formula>if(IsPersonAccount &amp;&amp; Status_Text__c != &apos;Churn&apos; &amp;&amp; Today()- MaxBookingMinArrival__c &gt;= 180 &amp;&amp; Today()- MaxBookingMinArrival__c &lt; 360, &apos;Churn&apos;,Status_Text__c)</formula>
+        <formula>if(IsPersonAccount &amp;&amp; Status_Text__c != &#39;Churn&#39; &amp;&amp; Today()- MaxBookingMinArrival__c &gt;= 180 &amp;&amp; Today()- MaxBookingMinArrival__c &lt; 360, &#39;Churn&#39;,Status_Text__c)</formula>
         <name>WA_PersonAccount_Churn</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>
@@ -129,7 +132,7 @@ VALUE(Turnover_of_the_company_Text__c))))</formula>
         <fullName>WA_PersonAccount_Customer</fullName>
         <field>Status_Text__c</field>
         <formula>if(
-((Number_of_stay__c &gt; 1) ||  (Number_of_stay__c == 1 &amp;&amp;  PRIORVALUE(Status_Text__c)!= &apos;Prospect&apos; &amp;&amp;  PRIORVALUE(Status_Text__c)!= &apos;New Customer&apos;)) &amp;&amp; Today()- MaxBookingMinArrival__c &lt; 90,&apos;Customer&apos;, Status_Text__c 
+((Number_of_stay__c &gt; 1) || (Number_of_stay__c == 1 &amp;&amp; PRIORVALUE(Status_Text__c)!= &#39;Prospect&#39; &amp;&amp; PRIORVALUE(Status_Text__c)!= &#39;New Customer&#39;)) &amp;&amp; Today()- MaxBookingMinArrival__c &lt; 90,&#39;Customer&#39;, Status_Text__c 
 )</formula>
         <name>WA_PersonAccount_Customer</name>
         <notifyAssignee>false</notifyAssignee>
@@ -139,7 +142,7 @@ VALUE(Turnover_of_the_company_Text__c))))</formula>
     <fieldUpdates>
         <fullName>WA_PersonAccount_Deceleration</fullName>
         <field>Status_Text__c</field>
-        <formula>if(IsPersonAccount &amp;&amp; Today()- MaxBookingMinArrival__c &gt;= 90 &amp;&amp; Today()- MaxBookingMinArrival__c &lt; 180 &amp;&amp; Status_Text__c != &apos;Deceleration&apos;,&apos;Deceleration&apos;,Status_Text__c)</formula>
+        <formula>if(IsPersonAccount &amp;&amp; Today()- MaxBookingMinArrival__c &gt;= 90 &amp;&amp; Today()- MaxBookingMinArrival__c &lt; 180 &amp;&amp; Status_Text__c != &#39;Deceleration&#39;,&#39;Deceleration&#39;,Status_Text__c)</formula>
         <name>WA_PersonAccount_Deceleration</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>
@@ -148,7 +151,7 @@ VALUE(Turnover_of_the_company_Text__c))))</formula>
     <fieldUpdates>
         <fullName>WA_PersonAccount_Inactive</fullName>
         <field>Status_Text__c</field>
-        <formula>if(IsPersonAccount &amp;&amp; Status_Text__c != &apos;Inactive&apos; &amp;&amp; today()-MaxBookingMinArrival__c &gt;= 360,&apos;Inactive&apos;,Status_Text__c)</formula>
+        <formula>if(IsPersonAccount &amp;&amp; Status_Text__c != &#39;Inactive&#39; &amp;&amp; today()-MaxBookingMinArrival__c &gt;= 360,&#39;Inactive&#39;,Status_Text__c)</formula>
         <name>WA_PersonAccount_Inactive</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>
@@ -157,7 +160,7 @@ VALUE(Turnover_of_the_company_Text__c))))</formula>
     <fieldUpdates>
         <fullName>WA_PersonAccount_NewCustomerStatus</fullName>
         <field>Status_Text__c</field>
-        <formula>if(Number_of_stay__c == 1 &amp;&amp; Today() - MaxBookingMinArrival__c&lt;= 90 &amp;&amp;  PRIORVALUE(Status_Text__c ) == &apos;Prospect&apos; ,&apos;New Customer&apos;, Status_Text__c )</formula>
+        <formula>if(Number_of_stay__c == 1 &amp;&amp; Today() - MaxBookingMinArrival__c&lt;= 90 &amp;&amp; PRIORVALUE(Status_Text__c ) == &#39;Prospect&#39; ,&#39;New Customer&#39;, Status_Text__c )</formula>
         <name>WA_PersonAccount_NewCustomerStatus</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>
@@ -166,7 +169,7 @@ VALUE(Turnover_of_the_company_Text__c))))</formula>
     <fieldUpdates>
         <fullName>WA_PersonAccount_ProspectStatus</fullName>
         <field>Status_Text__c</field>
-        <formula>if( Number_of_stay__c == 0,&apos;Prospect&apos;,Status_Text__c)</formula>
+        <formula>if( Number_of_stay__c == 0,&#39;Prospect&#39;,Status_Text__c)</formula>
         <name>WA_PersonAccount_ProspectStatus</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>
@@ -182,19 +185,19 @@ VALUE(Turnover_of_the_company_Text__c))))</formula>
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
-        <fullName>WFU_FieldNewExtenalID</fullName>
-        <field>Externalid__pc</field>
-        <formula>Externalid__c</formula>
-        <name>WFU_FieldNewExtenalID</name>
+        <fullName>WF_Acc_Update_ExternalId</fullName>
+        <field>Externalid__c</field>
+        <formula>Id</formula>
+        <name>WF_Acc_Update_ExternalId</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
-        <fullName>WF_Acc_Update_ExternalId</fullName>
-        <field>Externalid__c</field>
-        <formula>Id</formula>
-        <name>WF_Acc_Update_ExternalId</name>
+        <fullName>test_fieldUpdate</fullName>
+        <field>Name</field>
+        <formula>Name + &#39;\\n&#39; + &#39;wf&#39;</formula>
+        <name>test_fieldUpdate</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>
         <protected>false</protected>
@@ -214,7 +217,12 @@ VALUE(Turnover_of_the_company_Text__c))))</formula>
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
-        <formula>!IsPersonAccount</formula>
+        <formula>!IsPersonAccount &amp;&amp;
+ ( isnew() ||
+( ISCHANGED(Number_of_Contracts__c ) || 
+ISCHANGED(MaxBookingMinArrival__c)  || 
+ISCHANGED(Status_Text__c ) )
+)</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
@@ -224,7 +232,7 @@ VALUE(Turnover_of_the_company_Text__c))))</formula>
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
-        <formula>IsPersonAccount</formula>
+        <formula>IsPersonAccount &amp;&amp;  ISCHANGED(Email__pc)</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
@@ -317,7 +325,7 @@ VALUE(Turnover_of_the_company_Text__c))))</formula>
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
-        <formula>ISBLANK(Partner_Code__c) &amp;&amp; ISCHANGED(Partner_Code__c)&amp;&amp; !$User.BypassWorkflow__c</formula>
+        <formula>ISBLANK(Partner_Code__c) &amp;&amp; ISCHANGED(Partner_Code__c) &amp;&amp; !$User.BypassWorkflow__c</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
@@ -328,7 +336,7 @@ VALUE(Turnover_of_the_company_Text__c))))</formula>
         </actions>
         <active>true</active>
         <description>Fill the field PersonEmail with the value of the field Email__pc when it is empty</description>
-        <formula>IF(  (IsPersonAccount &amp;&amp; Email__pc &lt;&gt; null &amp;&amp;  Not($User.BypassWorkflow__c)  &amp;&amp; (PersonEmail = null   || ISCHANGED( Email__pc ))), True ,  False  )</formula>
+        <formula>IF(  (IsPersonAccount &amp;&amp; Email__pc &lt;&gt; null &amp;&amp; (PersonEmail = null   || ISCHANGED( Email__pc ))), True ,  False  )</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
@@ -337,7 +345,7 @@ VALUE(Turnover_of_the_company_Text__c))))</formula>
             <name>Fill_Email_pc</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <criteriaItems>
             <field>Account.PersonEmail</field>
             <operation>notEqual</operation>
@@ -353,74 +361,65 @@ VALUE(Turnover_of_the_company_Text__c))))</formula>
             <operation>equals</operation>
             <value>True</value>
         </criteriaItems>
-        <criteriaItems>
-            <field>User.BypassWorkflow__c</field>
-            <operation>equals</operation>
-            <value>False</value>
-        </criteriaItems>
         <description>Fill the field Email__pc with the value of the field PersonEmail when it is empty</description>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
     <rules>
-        <fullName>WF08_Account_FillMarketingCountrySharing</fullName>
-        <actions>
-            <name>UpdateAccountMarketingCountrySharing</name>
-            <type>FieldUpdate</type>
-        </actions>
+        <fullName>WF08_Account_Status_E%26R</fullName>
         <active>true</active>
         <criteriaItems>
-            <field>Account.MarketingCountry__c</field>
-            <operation>notEqual</operation>
-        </criteriaItems>
-        <criteriaItems>
-            <field>User.BypassWorkflow__c</field>
+            <field>Account.E_Club_Status__c</field>
             <operation>equals</operation>
-            <value>False</value>
-        </criteriaItems>
-        <description>fill the field MarketingCountry sharing with the value of the field MarketingCountry</description>
-        <triggerType>onAllChanges</triggerType>
-    </rules>
-    <rules>
-        <fullName>WF09_Account_FillTurnoverCompany</fullName>
-        <actions>
-            <name>UpdateAccount_TurnoverCompany</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <active>true</active>
-        <criteriaItems>
-            <field>User.BypassWorkflow__c</field>
-            <operation>equals</operation>
-            <value>False</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>Account.Turnover_of_the_company_Text__c</field>
-            <operation>notEqual</operation>
-        </criteriaItems>
-        <description>Update the value of the number field &quot;Turnover_of_the_company__c&quot; based on the value of the text field &quot;Turnover_of_the_company_Text__c&quot;</description>
-        <triggerType>onAllChanges</triggerType>
-    </rules>
-    <rules>
-        <fullName>WF10_fieldExtenalIDPC</fullName>
-        <actions>
-            <name>WFU_FieldNewExtenalID</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <active>true</active>
-        <criteriaItems>
-            <field>Account.Externalid__pc</field>
-            <operation>equals</operation>
-            <value>null</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>Account.Externalid__pc</field>
-            <operation>equals</operation>
-        </criteriaItems>
-        <criteriaItems>
-            <field>Account.IsPersonAccount</field>
-            <operation>equals</operation>
-            <value>True</value>
+            <value>Renewable</value>
         </criteriaItems>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>ACC_Status_E_R</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Account.E_club_Expiration_date__pc</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>WF09_Account_Status_Expired</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.E_Club_Status__c</field>
+            <operation>equals</operation>
+            <value>Expired and renewable</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>ACC_Status_Expired</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Account.E_club_Expiration_date__pc</offsetFromField>
+            <timeLength>30</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>WF10_Account_Status_Renewable</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.E_Club_Status__c</field>
+            <operation>equals</operation>
+            <value>Valid</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>ACC_Status_Renewable</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Account.E_club_Expiration_date__pc</offsetFromField>
+            <timeLength>-30</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
     </rules>
     <rules>
         <fullName>WF_Account_ExternalId</fullName>
@@ -429,7 +428,7 @@ VALUE(Turnover_of_the_company_Text__c))))</formula>
             <type>FieldUpdate</type>
         </actions>
         <active>false</active>
-        <description>Remplir le champ ExternalId  avec l&apos;Id Salesforce, une fois l&apos;enregistrement est créé et le champ externalId est vide</description>
+        <description>Remplir le champ ExternalId  avec l&#39;Id Salesforce, une fois l&#39;enregistrement est créé et le champ externalId est vide</description>
         <formula>ISBLANK(Externalid__c  )</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>

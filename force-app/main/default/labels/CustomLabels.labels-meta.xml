@@ -1,46 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
     <labels>
-        <fullName>AP01_CaseFromEmail</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>AP01_CaseFromEmail</shortDescription>
-        <value>noreply@hotelbb.com</value>
-    </labels>
-    <labels>
-        <fullName>AP01_Case_ApplyHotel</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>AP01_Case_ApplyHotel</shortDescription>
-        <value>Apply for hotel management</value>
-    </labels>
-    <labels>
         <fullName>AP01_Case_CA</fullName>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>AP01_Case_CA</shortDescription>
         <value>CA</value>
-    </labels>
-    <labels>
-        <fullName>AP01_Case_CancellationRequest</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>AP01_Case_CancellationRequest</shortDescription>
-        <value>Booking or cancellation request</value>
-    </labels>
-    <labels>
-        <fullName>AP01_Case_CustomerCareEmail</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>AP01_Case_CustomerCareEmail</shortDescription>
-        <value>feedback-de@hotelbb.com</value>
-    </labels>
-    <labels>
-        <fullName>AP01_Case_CustomerFeedback</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>AP01_Case_CustomerFeedback</shortDescription>
-        <value>Customer feedbacks</value>
     </labels>
     <labels>
         <fullName>AP01_Case_ES</fullName>
@@ -50,88 +15,18 @@
         <value>ES</value>
     </labels>
     <labels>
-        <fullName>AP01_Case_InvoiceRequest</fullName>
+        <fullName>AP01_Case_IT</fullName>
         <language>en_US</language>
         <protected>false</protected>
-        <shortDescription>AP01_Case_InvoiceRequest</shortDescription>
-        <value>Invoice request</value>
-    </labels>
-    <labels>
-        <fullName>AP01_Case_JobApp</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>AP01_Case_JobApp</shortDescription>
-        <value>Job application hotel staff</value>
-    </labels>
-    <labels>
-        <fullName>AP01_Case_OpsEmail</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>AP01_Case_OpsEmail</shortDescription>
-        <value>hotelmanager-de@hotelbb.com</value>
+        <shortDescription>AP01_Case_IT</shortDescription>
+        <value>IT</value>
     </labels>
     <labels>
         <fullName>AP01_Case_SpainEmail</fullName>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>AP01_Case_SpainEmail</shortDescription>
-        <value>esp-info@hotelbb.com</value>
-    </labels>
-    <labels>
-        <fullName>AP01_Case_TemplateCustomerFeedback</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>AP01_Case_TemplateCustomerFeedback</shortDescription>
-        <value>00X1v000000ykML</value>
-    </labels>
-    <labels>
-        <fullName>AP01_Case_TemplateDev</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>AP01_Case_TemplateDev</shortDescription>
-        <value>00X1v000000ykMM</value>
-    </labels>
-    <labels>
-        <fullName>AP01_Case_TemplateHotel</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>AP01_Case_TemplateHotel</shortDescription>
-        <value>00X0Y000000uvWt</value>
-    </labels>
-    <labels>
-        <fullName>AP01_Case_TemplateOps</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>AP01_Case_TemplateOps</shortDescription>
-        <value>00X1v000000ykMN</value>
-    </labels>
-    <labels>
-        <fullName>AP01_Case_devEmail</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>AP01_Case_devEmail</shortDescription>
-        <value>development-de@hotelbb.com</value>
-    </labels>
-    <labels>
-        <fullName>AP01_Case_waitingDev</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>AP01_Case_waitingDev</shortDescription>
-        <value>Waiting Development</value>
-    </labels>
-    <labels>
-        <fullName>AP01_Case_waitingOps</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>AP01_Case_waitingOps</shortDescription>
-        <value>Waiting Ops</value>
-    </labels>
-    <labels>
-        <fullName>AP01_RealEstateOffer</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>AP01_RealEstateOffer</shortDescription>
-        <value>Real estate offer</value>
+        <value>joanna.karam@ei-technologies.com</value>
     </labels>
     <labels>
         <fullName>AP06_Account_CreationChannel</fullName>
@@ -139,13 +34,6 @@
         <protected>false</protected>
         <shortDescription>AP06_Account_CreationChannel</shortDescription>
         <value>B&amp;B hotels Club Creation channel</value>
-    </labels>
-    <labels>
-        <fullName>AP06_Account_Dashboard</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>AP06_Account_Dashboard</shortDescription>
-        <value>Dashboard</value>
     </labels>
     <labels>
         <fullName>AP06_Account_DatePurchase</fullName>
@@ -166,7 +54,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Account_CompteGenericID</shortDescription>
-        <value>0011v000027h8fPAAQ</value>
+        <value>0014E00000zduiAQAQ</value>
     </labels>
     <labels>
         <fullName>AutoCompleteKey</fullName>
@@ -187,7 +75,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>BBUS_BookingAPIKey</shortDescription>
-        <value>677e6832-24db-48fe-98b1-473d489f60d1</value>
+        <value>f0828739-1beb-4e0d-85ab-7ef0f84eec40</value>
     </labels>
     <labels>
         <fullName>BBUS_BookingEndpoint</fullName>
@@ -201,7 +89,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>BBUS_HeaderAPIKey</shortDescription>
-        <value>677e6832-24db-48fe-98b1-473d489f60d1</value>
+        <value>64b15392-a124-4ac0-abb5-59694276eff0</value>
     </labels>
     <labels>
         <fullName>BBUS_LoyaltyEndpoint</fullName>
@@ -215,15 +103,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>BBUS_NumberOfUnits</shortDescription>
-        <value>50</value>
-    </labels>
-    <labels>
-        <fullName>BBUS_RefundVoucherEndpointUpdate</fullName>
-        <categories>Refund voucher update endpoint</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>BBUS_RefundVoucherEndpointUpdate</shortDescription>
-        <value>updateRefundVoucher</value>
+        <value>10</value>
     </labels>
     <labels>
         <fullName>BBUS_UpdateAccountEClubEndpoint</fullName>
@@ -244,7 +124,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>BBUS_VoucherAPIKey</shortDescription>
-        <value>677e6832-24db-48fe-98b1-473d489f60d1</value>
+        <value>edf5c0d2-b5ea-47ee-b3d7-92af3122cc95</value>
     </labels>
     <labels>
         <fullName>BBUS_VoucherEndpoint</fullName>
@@ -265,7 +145,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>BBUS_WalletAPIKey</shortDescription>
-        <value>677e6832-24db-48fe-98b1-473d489f60d1</value>
+        <value>edf5c0d2-b5ea-47ee-b3d7-92af3122cc95</value>
     </labels>
     <labels>
         <fullName>BBUS_WalletEndpointUpdate</fullName>
@@ -279,108 +159,34 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>BBUS_WebservicesLink</shortDescription>
-        <value>https://bb-prd-alb-clouds.moveon-hotelbb.com/rest/services/</value>
-    </labels>
-    <labels>
-        <fullName>BatchBBHKPIs_ES</fullName>
-        <categories>Used in Batch_BBH_KPIs</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>BatchBBHKPIs_ES</shortDescription>
-        <value>ES</value>
-    </labels>
-    <labels>
-        <fullName>BatchBBHKPIs_FR</fullName>
-        <categories>Used in Batch_BBH_KPIs</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>BatchBBHKPIs_FR</shortDescription>
-        <value>FR</value>
-    </labels>
-    <labels>
-        <fullName>BatchBBHKPIs_France</fullName>
-        <categories>Used in Batch_BBH_KPIs</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>BatchBBHKPIs_France</shortDescription>
-        <value>France</value>
-    </labels>
-    <labels>
-        <fullName>BatchBBHKPIs_IT</fullName>
-        <categories>Used in Batch_BBH_KPIs</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>BatchBBHKPIs_IT</shortDescription>
-        <value>IT</value>
-    </labels>
-    <labels>
-        <fullName>BatchBBHKPIs_Italy</fullName>
-        <categories>Used in Batch_BBH_KPIs</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>BatchBBHKPIs_Italy</shortDescription>
-        <value>Italy</value>
-    </labels>
-    <labels>
-        <fullName>BatchBBHKPIs_Members</fullName>
-        <categories>Used in Batch_BBH_KPIs</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>BatchBBHKPIs_Members</shortDescription>
-        <value>Members</value>
-    </labels>
-    <labels>
-        <fullName>BatchBBHKPIs_NonMembers</fullName>
-        <categories>Used in Batch_BBH_KPIs</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>BatchBBHKPIs_NonMembers</shortDescription>
-        <value>Non Members</value>
-    </labels>
-    <labels>
-        <fullName>BatchBBHKPIs_Others</fullName>
-        <categories>Used in Batch_BBH_KPIs</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>BatchBBHKPIs_Others</shortDescription>
-        <value>Others</value>
-    </labels>
-    <labels>
-        <fullName>BatchBBHKPIs_Spain</fullName>
-        <categories>Used in Batch_BBH_KPIs</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>BatchBBHKPIs_Spain</shortDescription>
-        <value>Spain</value>
+        <value>https://BB-PP-ALB-CLOUDS.moveon-hotelbb.com/rest/services/</value>
     </labels>
     <labels>
         <fullName>BatchHotelCountChecked_Ids</fullName>
-        <categories>Tech: This label will be filled manually with failed to update PAs Ids when Batch_HotelCountChecked runs</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>BatchHotelCountChecked_Ids</shortDescription>
         <value>//</value>
     </labels>
     <labels>
-        <fullName>BatchRepBRLtoBookingEmail</fullName>
+        <fullName>BatchRepAccountsBookingDates_Ids</fullName>
         <language>en_US</language>
         <protected>false</protected>
-        <shortDescription>BatchRepBRLtoBookingEmail</shortDescription>
-        <value>joanna.karam@ei-technologies.com</value>
-    </labels>
-    <labels>
-        <fullName>BatchRepBRLtoBookingGenericID</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>BatchRepBRLtoBookingGenericID</shortDescription>
-        <value>0061v00000YDwaHAAT</value>
+        <shortDescription>BatchRepAccountsBookingDates_Ids</shortDescription>
+        <value>//</value>
     </labels>
     <labels>
         <fullName>BatchRepBRLtoBooking_Ids</fullName>
-        <categories>Tech: This label will be filled manually with failed to update PAs Ids when BatchReprise_BRLtoBooking runs</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>BatchRepBRLtoBooking_Ids</shortDescription>
+        <value>//</value>
+    </labels>
+    <labels>
+        <fullName>BatchRepBookingToMb_Ids</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BatchRepBookingToMb_Ids</shortDescription>
         <value>//</value>
     </labels>
     <labels>
@@ -389,13 +195,6 @@
         <protected>false</protected>
         <shortDescription>BatchReprise_BRLtoBooking_01</shortDescription>
         <value>where Booking_FK__c != null and LastModifiedDate &gt;= YESTERDAY</value>
-    </labels>
-    <labels>
-        <fullName>BatchReprise_BRLtoBooking_02</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>BatchReprise_BRLtoBooking_02</shortDescription>
-        <value>where Booking_FK__c != null and Room_code__c != null</value>
     </labels>
     <labels>
         <fullName>BatchSuppressionLogs_LimitDate</fullName>
@@ -412,88 +211,11 @@
         <value>//</value>
     </labels>
     <labels>
-        <fullName>BatchUpdateMBIds_Nights_Rooms_StageCount</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>BatchUpdateMBIds_Nights_Rooms_StageCount</shortDescription>
-        <value>//</value>
-    </labels>
-    <labels>
         <fullName>BatchUpdateMB_ConfNb_HotelName_WhereClause</fullName>
-        <categories>Tech</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>BatchUpdateMB_ConfNb_HotelName_WhereClause</shortDescription>
-        <value>where RecordType.DeveloperName = &apos;Booking&apos; and Master_Booking_FK__c != null and (Confirmation_Number__c != null or Hotel_Name__c != null) and (Master_Booking_FK__r.Confirmation_Number__c = null or Master_Booking_FK__r.Hotel_Name_MB__c = null) and lastmodifieddate &gt; Yesterday</value>
-    </labels>
-    <labels>
-        <fullName>BatchUpdateMB_Nights_Rooms_StageCount_WhereClause</fullName>
-        <categories>Tech</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>BatchUpdateMB_Nights_Rooms_StageCount_WhereClause</shortDescription>
-        <value>where RecordType.DeveloperName=&apos;Booking&apos; and Master_Booking_FK__c != null</value>
-    </labels>
-    <labels>
-        <fullName>Batch_Account_EClubStatus_WhereClause</fullName>
-        <categories>Tech: Where clause for Batch_Account_EClubStatus</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Batch_Account_EClubStatus_WhereClause</shortDescription>
-        <value>where IsPersonAccount = true and E_club_Expiration_date__pc!=null And E_club_subscription__pc = true</value>
-    </labels>
-    <labels>
-        <fullName>Batch_BBH_KPIs_WhereClause</fullName>
-        <categories>Tech: Where clause for Batch_BBH_KPIs</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Batch_BBH_KPIs_WhereClause</shortDescription>
-        <value>where recordtype.developername = &apos;booking&apos; and StageName = &apos;Checked&apos; and Booking_Person_account__c != null</value>
-    </labels>
-    <labels>
-        <fullName>Batch_FirstLastBooking_PAIds</fullName>
-        <categories>Tech: This label will be filled manually with failed to update PAs Ids when Batch_FirstLastBooking runs</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Batch_FirstLastBooking_PAIds</shortDescription>
-        <value>//</value>
-    </labels>
-    <labels>
-        <fullName>Batch_FirstLastBooking_WhereClause</fullName>
-        <categories>Tech: This label will be filled manually with failed to update PAs Ids when Batch_FirstLastBooking runs</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Batch_FirstLastBooking_WhereClause</shortDescription>
-        <value>where RecordType.DeveloperName= &apos;Master_Booking&apos; and  Person_Account__c != null and lastmodifieddate &gt;= Yesterday</value>
-    </labels>
-    <labels>
-        <fullName>Batch_HotelCountChecked_01</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Batch_HotelCountChecked_01</shortDescription>
-        <value>where RecordType.DeveloperName=&apos;Booking&apos; and LastModifiedDate&gt;=YESTERDAY and Booking_Person_account__c != null</value>
-    </labels>
-    <labels>
-        <fullName>Batch_PartnershipFieldsUpdate_PAIds</fullName>
-        <categories>Tech: This label will be filled manually with failed to update PAs Ids when Batch_PartnershipFieldsUpdate runs</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Batch_PartnershipFieldsUpdate_PAIds</shortDescription>
-        <value>//</value>
-    </labels>
-    <labels>
-        <fullName>Batch_PartnershipFieldsUpdate_WhereClause</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Batch_PartnershipFieldsUpdate_WhereClause</shortDescription>
-        <value>where PartnerCode__c  != null and RecordType.DeveloperName = &apos;Booking&apos; and lastmodifieddate &gt;= Yesterday</value>
-    </labels>
-    <labels>
-        <fullName>Batch_pourcentageBooking</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Batch_pourcentageBooking</shortDescription>
-        <value>and Person_Account__c != &apos;0011v000027h8fPAAQ&apos; and CreatedDate &lt; 2020-06-11T14:49:00.000+02:00 and  CreatedDate &gt; 2020-04-27T11:30:00.000+02:00 order by Person_Account__c</value>
+        <value>where RecordType.DeveloperName = &#39;Booking&#39; and Master_Booking_FK__c != null and (Confirmation_Number__c != null or Hotel_Name__c != null) and name like &#39;%BOK__%&#39;</value>
     </labels>
     <labels>
         <fullName>BodyAutoCompleteAddress</fullName>
@@ -535,7 +257,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Booking_GenericID</shortDescription>
-        <value>0061v00000YDwaHAAT</value>
+        <value>0064E00000AsrgQQAR</value>
     </labels>
     <labels>
         <fullName>BusinessCustomerType</fullName>
@@ -543,13 +265,6 @@
         <protected>false</protected>
         <shortDescription>BusinessCustomerType</shortDescription>
         <value>Business</value>
-    </labels>
-    <labels>
-        <fullName>CCEmail_Clients_Hotel</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>CCEmail_Clients_Hotel</shortDescription>
-        <value>jeremy.cazal.ext@hotelbb.com</value>
     </labels>
     <labels>
         <fullName>CaseWebOrigin</fullName>
@@ -563,14 +278,14 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Case_GroupRequestRT</shortDescription>
-        <value>0121v0000007HP3</value>
+        <value>0124E0000005CJR</value>
     </labels>
     <labels>
         <fullName>Case_RT_Case_linked_to_IR</fullName>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Case_RT_Case_linked_to_IR</shortDescription>
-        <value>01225000000MD2TAAW</value>
+        <value>0124E000000EBSWQA4</value>
     </labels>
     <labels>
         <fullName>Case_RT_CustomersRequestFeedback</fullName>
@@ -578,13 +293,6 @@
         <protected>false</protected>
         <shortDescription>Case_RT_CustomersRequestFeedback</shortDescription>
         <value>0120Y000000lE3tQAE</value>
-    </labels>
-    <labels>
-        <fullName>Case_RT_ReviewsDeletionModification</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Case_RT_ReviewsDeletionModification</shortDescription>
-        <value>0120Y000000lE8NQAU</value>
     </labels>
     <labels>
         <fullName>Case_Type_CustomerClaim</fullName>
@@ -605,7 +313,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Case_CompanyRequestRT</shortDescription>
-        <value>0121v0000007HP2</value>
+        <value>0124E0000005CJ2</value>
     </labels>
     <labels>
         <fullName>ClosedWonStage</fullName>
@@ -626,7 +334,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>DataCleanFromMonth</shortDescription>
-        <value>24</value>
+        <value>4</value>
     </labels>
     <labels>
         <fullName>DotCSV</fullName>
@@ -650,14 +358,6 @@
         <value>EN</value>
     </labels>
     <labels>
-        <fullName>EmaiForBatchesErrors</fullName>
-        <categories>Tech</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>EmaiForBatchesErrors</shortDescription>
-        <value>joanna.karam@ei-technologies.com</value>
-    </labels>
-    <labels>
         <fullName>EmailExpirationMessage</fullName>
         <language>en_US</language>
         <protected>false</protected>
@@ -674,13 +374,6 @@ Cordially.</value>
         <protected>false</protected>
         <shortDescription>EmailTemplate_SendNotifToOwner</shortDescription>
         <value>SendNotifToOwner</value>
-    </labels>
-    <labels>
-        <fullName>Email_NoReplyHotelBB</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Email_NoReplyHotelBB</shortDescription>
-        <value>noreply@hotelbb.com</value>
     </labels>
     <labels>
         <fullName>ExcelHeaderLightning</fullName>
@@ -781,13 +474,6 @@ Cordially.</value>
         <value>The customer must be B&amp;B Hotels Club member to manage points</value>
     </labels>
     <labels>
-        <fullName>LC08_EchangeCadeau</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>LC08_EchangeCadeau</shortDescription>
-        <value>Echange cadeau</value>
-    </labels>
-    <labels>
         <fullName>LC08_FillField</fullName>
         <language>en_US</language>
         <protected>false</protected>
@@ -799,21 +485,14 @@ Cordially.</value>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>LC08_ModifierPoints</shortDescription>
-        <value>Add / remove points</value>
+        <value>Modifier Points</value>
     </labels>
     <labels>
         <fullName>LC08_NBPoint</fullName>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>LC08_NBPoint</shortDescription>
-        <value>Number of points</value>
-    </labels>
-    <labels>
-        <fullName>LC08_NuiteeConsommee</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>LC08_NuiteeConsommee</shortDescription>
-        <value>Nuitée consommée</value>
+        <value>Nombre de points</value>
     </labels>
     <labels>
         <fullName>LC08_PointsOffertsDedommagement</fullName>
@@ -827,7 +506,7 @@ Cordially.</value>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>LC08_Raison</shortDescription>
-        <value>Reason</value>
+        <value>Raison</value>
     </labels>
     <labels>
         <fullName>LC08_RegulDePointsSuiteRemiseAZero</fullName>
@@ -842,13 +521,6 @@ Cordially.</value>
         <protected>false</protected>
         <shortDescription>LC08_RegularisationPoints</shortDescription>
         <value>Points regulation</value>
-    </labels>
-    <labels>
-        <fullName>LC08_ReinitialisationPointCompteFusionne</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>LC08_ReinitialisationPointCompteFusionne</shortDescription>
-        <value>Réinitialisation point(s) compte fusionné</value>
     </labels>
     <labels>
         <fullName>LC08_RequestBBUS</fullName>
@@ -891,34 +563,6 @@ Cordially.</value>
         <protected>false</protected>
         <shortDescription>LC08_ValidateRequired</shortDescription>
         <value>Please review the errors below</value>
-    </labels>
-    <labels>
-        <fullName>LC11_Bill_Amount</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>LC11_Bill_Amount</shortDescription>
-        <value>Amount</value>
-    </labels>
-    <labels>
-        <fullName>LC11_Bill_Date</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>LC11_Bill_Date</shortDescription>
-        <value>Date</value>
-    </labels>
-    <labels>
-        <fullName>LC11_Bill_Type</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>LC11_Bill_Type</shortDescription>
-        <value>Type</value>
-    </labels>
-    <labels>
-        <fullName>LC11_Bill_ViewDownload</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>LC11_Bill_ViewDownload</shortDescription>
-        <value>View / Download</value>
     </labels>
     <labels>
         <fullName>LeisureCustomerType</fullName>
@@ -1005,11 +649,39 @@ Cordially.</value>
         <value>Checked</value>
     </labels>
     <labels>
+        <fullName>StageNameBooking_Booked</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StageNameBooking_Booked</shortDescription>
+        <value>Booked</value>
+    </labels>
+    <labels>
+        <fullName>StageNameBooking_Cancelled</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StageNameBooking_Cancelled</shortDescription>
+        <value>Cancelled</value>
+    </labels>
+    <labels>
         <fullName>StageNameBooking_Checked</fullName>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>StageNameBooking_Checked</shortDescription>
         <value>Checked</value>
+    </labels>
+    <labels>
+        <fullName>StageNameBooking_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StageNameBooking_Error</shortDescription>
+        <value>Error</value>
+    </labels>
+    <labels>
+        <fullName>StageNameBooking_NoShow</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StageNameBooking_NoShow</shortDescription>
+        <value>No Show</value>
     </labels>
     <labels>
         <fullName>StatusChecked</fullName>
@@ -1031,6 +703,13 @@ Cordially.</value>
         <protected>false</protected>
         <shortDescription>SupportEmail</shortDescription>
         <value>bbeitechnologies@gmail.com</value>
+    </labels>
+    <labels>
+        <fullName>TechnicalUserId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TechnicalUserId</shortDescription>
+        <value>0050Y000000gQke</value>
     </labels>
     <labels>
         <fullName>TypeCodeOption</fullName>
@@ -1058,7 +737,7 @@ Cordially.</value>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>VoucherRecordType_EClub</shortDescription>
-        <value>Eclub</value>
+        <value>Eclub_voucher</value>
     </labels>
     <labels>
         <fullName>Voucher_EClub_RT_Emission_Name</fullName>
@@ -1121,42 +800,42 @@ Cordially.</value>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>WebCaseEnglishEmailTemplateId</shortDescription>
-        <value>00X0Y000000uvWn</value>
+        <value>00X4E000000Imko</value>
     </labels>
     <labels>
         <fullName>WebCaseFrenchEmailTemplateId</fullName>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>WebCaseFrenchEmailTemplateId</shortDescription>
-        <value>00X0Y000000uvWq</value>
+        <value>00X4E000000Imkr</value>
     </labels>
     <labels>
         <fullName>WebCaseGermanEmailTemplateId</fullName>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>WebCaseGermanEmailTemplateId</shortDescription>
-        <value>00X0Y000000uvWt</value>
+        <value>00X4E000000Imku</value>
     </labels>
     <labels>
         <fullName>WebCaseItalyEmailTemplateID</fullName>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>WebCaseItalyEmailTemplateID</shortDescription>
-        <value>00X1v000001deKs</value>
+        <value>00X4E000000qc0h</value>
     </labels>
     <labels>
         <fullName>WebCaseSpanishEmailTemplateId</fullName>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>WebCaseSpanishEmailTemplateId</shortDescription>
-        <value>00X1v000000Jsxm</value>
+        <value>00X4E000000O02d</value>
     </labels>
     <labels>
         <fullName>WebCaseSpanishEmailTemplateIdCompanyGroupReq</fullName>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>WebCaseSpanishEmailTemplateIdCompanyGroupReq</shortDescription>
-        <value>00X1v000000Jsxn</value>
+        <value>00X4E000000Nzu0</value>
     </labels>
     <labels>
         <fullName>ZeroResult</fullName>
@@ -1166,17 +845,10 @@ Cordially.</value>
         <value>ZERO_RESULTS</value>
     </labels>
     <labels>
-        <fullName>bb_BillDownload</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>bb_BillDownload</shortDescription>
-        <value>billDownload</value>
-    </labels>
-    <labels>
         <fullName>technical_user_2_id</fullName>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>technical user 2 id</shortDescription>
-        <value>0051v0000062c4P</value>
+        <value>0054E000004G1pi</value>
     </labels>
 </CustomLabels>

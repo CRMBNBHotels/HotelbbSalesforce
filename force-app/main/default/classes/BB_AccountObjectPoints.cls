@@ -120,10 +120,18 @@ public without sharing class BB_AccountObjectPoints extends BB_Object implements
         String reasonValue = (String)OldDataWrapper.Reason;
         system.debug('### reasonValue'+reasonValue);
         
-        List<Language__c> listLang = [select Language_Client__c, Language_User__c, Translated_Value__c, Value__c
+        //added by TMA EIL CRMSS-469 24-02-2020 Start
+        /*List<Language__c> listLang = [select Language_Client__c, Language_User__c, Translated_Value__c, Value__c
                                       from Language__c
                                       where Language_User__c =:userLang And Language_Client__c =:accountLang and Translated_Value__c =: reasonValue
+                                      limit 1];*/
+        List<Languagemdtp__mdt> listLang = [select Language_Client__c, Language_User__c, Translated_Value__c, Value__c
+                                      from Languagemdtp__mdt
+                                      where Language_User__c =:userLang And Language_Client__c =:accountLang and Translated_Value__c =: reasonValue
                                       limit 1];
+        //added by TMA EIL CRMSS-469 24-02-2020 end
+        
+        
         system.debug('### listLang'+listLang);
         String reasonValueTrans;
         if(listLang != null && listLang.size()>0){

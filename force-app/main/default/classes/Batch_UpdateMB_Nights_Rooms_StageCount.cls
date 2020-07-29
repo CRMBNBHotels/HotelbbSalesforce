@@ -34,7 +34,7 @@ Global without sharing class Batch_UpdateMB_Nights_Rooms_StageCount implements D
             liststaticId = StaticListID.split(',');
         }
         
-       /* string queryModifBooks;
+        string queryModifBooks;
         string queryMBsBooks;
         set<string> setMBIds = new set<string>();
         
@@ -70,8 +70,7 @@ Global without sharing class Batch_UpdateMB_Nights_Rooms_StageCount implements D
             
             queryMBsBooks = 'select id , RecordtypeId, Master_Booking_FK__c, StageName, Number_of_nights__c, Chambre__c, Master_Booking_FK__r.Number_of_nights_master__c, Master_Booking_FK__r.Rooms__c, Master_Booking_FK__r.Bookings_Booked_Count__c, Master_Booking_FK__r.Bookings_Cancelled_Count__c, Master_Booking_FK__r.Bookings_Checked_Count__c, Master_Booking_FK__r.Bookings_Error_Count__c, Master_Booking_FK__r.Bookings_No_Show_Count__c, LastModifiedDate, IsDeleted, Master_Booking_FK__r.TechIsNotFirst_01__c from Opportunity where Master_Booking_FK__c IN: setMBIds All ROWS';
 
-        }*/
-        String queryMBsBooks = 'select id , RecordtypeId, Master_Booking_FK__c, StageName, Number_of_nights__c, Chambre__c, Master_Booking_FK__r.Number_of_nights_master__c, Master_Booking_FK__r.Rooms__c, Master_Booking_FK__r.Bookings_Booked_Count__c, Master_Booking_FK__r.Bookings_Cancelled_Count__c, Master_Booking_FK__r.Bookings_Checked_Count__c, Master_Booking_FK__r.Bookings_Error_Count__c, Master_Booking_FK__r.Bookings_No_Show_Count__c, LastModifiedDate, IsDeleted, Master_Booking_FK__r.TechIsNotFirst_01__c from Opportunity where  RecordType.DeveloperName=\'Booking\' and Master_Booking_FK__c != null';
+        }
         return Database.getQueryLocator(queryMBsBooks);
     }
     

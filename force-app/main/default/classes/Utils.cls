@@ -4,7 +4,7 @@
 * @date: 22/09/2017
 * @Test: Utils_Test
 */
-public class Utils {
+public without sharing class Utils {
     public static Account CreatePersonAccount(string Name, string companyId){
         Account acc = new Account(lastName = Name, recordTypeId = Label.PersonAccountRecordTypeId,
                                   Current_Compagny__pc = companyId, BillingCountry = 'France');//, recordTypeId = Label.PersonAccountRecordTypeId
@@ -27,14 +27,16 @@ public class Utils {
                                           Person_Account__c = accId, recordTypeId = Label.MasterBookingRecordTypeId);
         return opp;
     }
+       
+    
     public static Booking_Room_Line__c CreateBookingRoomLine(string bookingId){
         Booking_Room_Line__c roomLine = new Booking_Room_Line__c(Booking_FK__c = bookingId);
         return roomLine;
     }
-    public static Booking_Room_Line_Price__c CreateBookingRoomLinePrice(string bookingRoomLineId, decimal price){
+    /*public static Booking_Room_Line_Price__c CreateBookingRoomLinePrice(string bookingRoomLineId, decimal price){
         Booking_Room_Line_Price__c roomPrice = new Booking_Room_Line_Price__c(Booking_Room_Line_FK__c = bookingRoomLineId, Price_euros__c = price);
         return roomPrice;
-    }
+    }*/
     public static Contract CreateContract(){
         Contract cont = new Contract();
         return cont;
@@ -51,14 +53,18 @@ public class Utils {
         Case cas = new Case();
         return cas;
     }
+    
+    /*Commented by TMA-EIL CG CRMSS-448 23/01/2020 Start
     public static Hotel_Room_Option__c CreateHotelRoomOptionAndCode(){
         Hotel_Room_Option__c hotelRoomOptionAndCode = new Hotel_Room_Option__c();
         return hotelRoomOptionAndCode;
     }
-    public static Stay__c CreateStay(string AccountId, string BookingId){
-        Stay__c stay = new Stay__c(Guest_Account__c = AccountId , Booking__c = BookingId);
-        return stay;
-    }
+    Commented by TMA-EIL CG CRMSS-448 23/01/2020 End */
+    
+    //public static Stay__c CreateStay(string AccountId, string BookingId){
+        //Stay__c stay = new Stay__c(Guest_Account__c = AccountId , Booking__c = BookingId);
+        //return stay;
+    //}
     public static Messaging.SingleEmailMessage CreateSingleEmailMessage(string[] toAddresses,string[] CcAddresses,Id targetId,
                                                                         Id whatId,string templateId,string ReplyEmail){
         Messaging.SingleEmailMessage singleEmailMessage = new Messaging.SingleEmailMessage();                    

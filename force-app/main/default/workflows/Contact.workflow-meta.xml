@@ -26,7 +26,7 @@
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
-        <formula>true</formula>
+        <formula>isnew() || ISCHANGED(Inactive__c ) || ISCHANGED( Email )</formula>
         <triggerType>onAllChanges</triggerType>
     </rules>
     <rules>
@@ -36,7 +36,7 @@
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
-        <description>Remplir le champ ExternalId avec l&apos;Id Salesforce, une fois l&apos;enregistrement est créé et le champ externalId est vide</description>
+        <description>Remplir le champ ExternalId avec l&#39;Id Salesforce, une fois l&#39;enregistrement est créé et le champ externalId est vide</description>
         <formula>ISBLANK( Externalid__c )</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>

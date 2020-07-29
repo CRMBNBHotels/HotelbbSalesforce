@@ -120,12 +120,14 @@
                                 <!--ui:inputText class="slds-input" value="{!v.Raison}" /-->
                                 <ui:outputText aura:id="RequiredRaison" value="{!v.ErrorMessageRaison}" class="slds-required"/> <br/>
                                 <!-- /Raison -->
+                                
                                 <!-- Added by TMA Cynthia Geagea - CRMSS 260 - 27/08/2019 - Start -->
                                 <!-- Description-->
                                 <ui:outputText class="slds-form-element--label" value="{!v.DescriptionName}"/>
                                 <ui:inputText class="single" aura:id = "descriptionFld"/> 
                                 <!-- /Description-->
                                 <!-- Added by TMA Cynthia Geagea - CRMSS 260 - 27/08/2019 - End -->
+                                
                             </div>
                         </lightning:layout>
                     </form>

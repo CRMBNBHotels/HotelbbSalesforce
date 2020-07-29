@@ -1,5 +1,5 @@
 trigger BeforeInsertContact on Contact (before insert) {
- /*List<Contact> Listcont = new List<Contact>();
+ List<Contact> Listcont = new List<Contact>();
     for(Contact cont : Trigger.new ){
         if(cont.MobilePhone!=null)
         {
@@ -9,5 +9,5 @@ trigger BeforeInsertContact on Contact (before insert) {
     if(Listcont!=null && Listcont.size()>0)
     {
         Ap01_Contact.MAJMobileCountryCode(Listcont);
-    }*/
+    }
 }

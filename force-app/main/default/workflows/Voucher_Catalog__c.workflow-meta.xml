@@ -2,7 +2,7 @@
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <fieldUpdates>
         <fullName>WF_Voucher_Catalog_Update_ExternalId</fullName>
-        <description>Remplir le champ ExternalId avec l&apos;Id Salesforce, une fois l&apos;enregistrement est créé et le champ externalId est vide</description>
+        <description>Remplir le champ ExternalId avec l&#39;Id Salesforce, une fois l&#39;enregistrement est créé et le champ externalId est vide</description>
         <field>Externalid__c</field>
         <formula>Id</formula>
         <name>WF_Voucher_Catalog_Update_ExternalId</name>
@@ -17,7 +17,7 @@
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
-        <description>Remplir le champ ExternalId avec l&apos;Id Salesforce, une fois l&apos;enregistrement est créé et le champ externalId est vide</description>
+        <description>Remplir le champ ExternalId avec l&#39;Id Salesforce, une fois l&#39;enregistrement est créé et le champ externalId est vide</description>
         <formula>AND( NOT($User.BypassWorkflow__c) ,ISBLANK(Externalid__c) )</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>

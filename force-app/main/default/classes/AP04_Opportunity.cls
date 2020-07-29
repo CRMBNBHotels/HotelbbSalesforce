@@ -4,15 +4,17 @@
 * @date: 04/12/2017
 * @Test: AP04_Opportunity_Test
 */
-public class AP04_Opportunity 
+public without sharing class AP04_Opportunity 
 {
     public static void UpdateTotalTransactions(List<Opportunity> triggerNew,Map<Id,Opportunity> oldMap,List<Opportunity> triggerOld)
     {
-        system.debug('#### AP04_Opportunity Start');
+        system.debug('@@@@@@ ap04 UpdateTotalTransactions');
+        //system.debug('#### AP04_Opportunity Start');
         Set<Id> ListAccountId = new Set<Id>();
         Set<string> ListCurrentCompanyId = new Set<string>();       
         if(triggerNew != null)
         {
+            system.debug('@@@@@@ ap04 UpdateTotalTransactions if');
             for(Opportunity opp: triggerNew)
             {
                 Opportunity oldOpp=oldMap==null ? opp : oldMap.get(opp.Id);
@@ -42,6 +44,7 @@ public class AP04_Opportunity
         }
         else
         {
+            system.debug('@@@@@@ ap04 UpdateTotalTransactions else');
             for(Opportunity opp:triggerOld)
             {
                 if(opp.RecordTypeId == Label.MasterBookingRecordTypeId && opp.Person_Account__c!=null)
@@ -67,9 +70,9 @@ public class AP04_Opportunity
                                                                from Opportunity
                                                                where RecordTypeId =: Label.MasterBookingRecordTypeId
                                                                And OnTheCurrentYear__c =: true 
-                                                               and  Person_Account__c IN: ListAccountId 
+                                                               and  Person_Account__c IN: ListAccountId and Person_Account__c != null
                                                                group by Person_Account__c];
-            //and Person_Account__c != null
+            
             for (AggregateResult ar : CountOpportunityBYAccount)  {
                 if(ar.get('Person_Account__c')!= null  && String.isNotBlank(ar.get('Person_Account__c').tostring())){
                     Account toupdate = new Account();
@@ -80,8 +83,8 @@ public class AP04_Opportunity
                     listAccToUpdate.add(toupdate);   
                 } 
             }
-            if(listAccToUpdate != null && listAccToUpdate.size()>0)
-                Update listAccToUpdate; 
+            
+           Update listAccToUpdate; 
         }
         
        if(ListCurrentCompanyId!= null && ListCurrentCompanyId.Size() > 0)

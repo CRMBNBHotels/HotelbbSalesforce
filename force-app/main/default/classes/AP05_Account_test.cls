@@ -12,8 +12,8 @@ public class AP05_Account_test {
         PersonAccount.E_Club_Status__c = 'Valid';
         PersonAccount.FirstName = 'test name update';
         PersonAccount.lastname = 'test name update';
-        //PersonAccount.Email__pc = 'Email@testUpdate.com';
-        //PersonAccount.E_mail_address_2__pc = 'Email@testUpdate.com';
+        PersonAccount.Email__pc = 'Email@testUpdate.com'; //was commented
+        PersonAccount.E_mail_address_2__pc = 'Email@testUpdate.com'; //was commented
         PersonAccount.PersonMobilePhone = '+33 123';
         PersonAccount.Mobile_Phone_Number_2__pc = '+33 123';
         PersonAccount.PersonMailingCity = 'GUIPAVAS';

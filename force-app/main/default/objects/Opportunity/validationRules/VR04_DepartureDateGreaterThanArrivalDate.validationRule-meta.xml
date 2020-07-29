@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>VR04_DepartureDateGreaterThanArrivalDate</fullName>
-    <active>true</active>
-    <description>The depature date should be greater than the arrival date</description>
-    <errorConditionFormula>Arrival_Date__c &gt;  Departure_Date__c</errorConditionFormula>
-    <errorMessage>The Departure date should be greater than the Arrival date</errorMessage>
-</ValidationRule>

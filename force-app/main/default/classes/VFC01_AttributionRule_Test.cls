@@ -1,5 +1,29 @@
 @isTest
 public class VFC01_AttributionRule_Test {
+    
+     //added by TMA EIL CRMSS-469 24-02-2020 Start
+    @testVisible static List<Agent_Managermdt__mdt> customMetadata {    
+        
+    get {
+        if ( customMetadata == null )
+            customMetadata = [ SELECT Id, DeveloperName, MasterLabel, Language, NamespacePrefix, Label, QualifiedApiName, Agent__c FROM Agent_Managermdt__mdt ]; 
+        return customMetadata;
+        
+    } set;
+    }
+    
+     @testVisible static List<Queue_Profilemdtp__mdt> customMetadataQP {    
+        
+    get {
+        if ( customMetadataQP == null )
+            customMetadataQP = [ select Id, DeveloperName, MasterLabel, Language, NamespacePrefix, Label, QualifiedApiName, Queue__c from Queue_Profilemdtp__mdt]; 
+        return customMetadataQP;
+        
+    } set;
+    }
+    
+    //added by TMA EIL CRMSS-469 24-02-2020 end
+  
     static TestMethod void testAttribution(){
         
         Id ProfileIdSpainManager = [SELECT Id FROM Profile WHERE Name = 'Spain Service Manager'].Id;
@@ -34,8 +58,11 @@ public class VFC01_AttributionRule_Test {
         u1.LocaleSidKey = 'en_US'; 
         insert u1;
         
-        System.runAs(u){
+     System.runAs(u){
             system.debug('u$$$$'+u.ProfileId);
+         
+         //added by TMA EIL CRMSS-469 24-02-2020 Start
+/*  
             Queue_Profile__c qp= new Queue_Profile__c();
             qp.name='Spain Service Manager';
             qp.Queue__c='Spain Queue Hotel Case';
@@ -44,6 +71,8 @@ public class VFC01_AttributionRule_Test {
             AM.name='Spain Service Manager';
             AM.Agent__c='Spain Service Agent';
             insert AM;
+*/
+         //added by TMA EIL CRMSS-469 24-02-2020 end
             test.startTest();
             VFC01_AttributionRule controleur = new VFC01_AttributionRule();
             controleur.Cancel();
@@ -54,5 +83,6 @@ public class VFC01_AttributionRule_Test {
             controleur.remove(); 
             test.StopTest();
         }
+         
     }
 }

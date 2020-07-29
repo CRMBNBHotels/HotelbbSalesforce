@@ -5,8 +5,9 @@
 * @Test: AP03_Stay_Test
 */
 public class AP03_Stay {
-    public static void UpdateTotalRevenue(List<Stay__c> triggerNew,Map<Id,Stay__c> oldMap,List<Stay__c> triggerOld)
-    {
+    //public static void UpdateTotalRevenue(List<Stay__c> triggerNew,Map<Id,Stay__c> oldMap,List<Stay__c> triggerOld)
+    //{
+      /*  System.debug('##### AP03_Stay Start');
         List<Id> ListAccountId = new List<Id>();
         List<string> ListCurrentCompanyId = new List<string>();       
         if(triggerNew != null)
@@ -52,7 +53,8 @@ public class AP03_Stay {
                                                  where OnTheCurrentYear__c =: true
                                                  And Price__c != 0)
                                                 from Account
-                                                where Id IN: ListAccountId];            
+                                                where Id IN: ListAccountId];  
+            System.debug('##### AP03_Stay listSelectedAccount' + listSelectedAccount);
             listAccToUpdate =  RevenueCountForPersonAccount(listSelectedAccount);        
             Update listAccToUpdate;
         }
@@ -65,17 +67,20 @@ public class AP03_Stay {
                                        And OnTheCurrentYear__c =: true
                                        And Price__c != 0
                                        And Trip_Context__c =: label.BusinessCustomerType];
+            System.debug('##### AP03_Stay listStays' + listStays);
             List<Account> listAccounts = [Select Id 
                                           from Account
                                           Where Id IN:ListCurrentCompanyId];
+            System.debug('##### AP03_Stay listAccounts' + listAccounts);
             listAccToUpdate = PriceCountForBusinessAccount(listAccounts,listStays);
             Update listAccToUpdate;
-        }
-    }
+        }*/
+    //}
+    /*
     public static list<Account> RevenueCountForPersonAccount(list<Account> listAccount)
     {
         list<Account> listAccToUpdate = new List<Account>();
-        decimal price;
+       /* decimal price;
         for(Account acc: listAccount)
         {
             price = 0;
@@ -92,7 +97,7 @@ public class AP03_Stay {
     public static list<Account> PriceCountForBusinessAccount(list<Account> listAccount, list<Stay__c> listStay)
     {
         list<Account> listAccToUpdate = new List<Account>();
-        decimal price;
+        /*        decimal price;
         for(Account acc:listAccount)
         {                                           
             price = 0;
@@ -105,7 +110,7 @@ public class AP03_Stay {
             }
             acc.Total_Revenue__c = price;	
             listAccToUpdate.add(acc);
-        }
+        } 
         return listAccToUpdate;
-    }
+    }*/
 }

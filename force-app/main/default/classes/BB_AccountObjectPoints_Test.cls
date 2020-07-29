@@ -30,6 +30,10 @@ public class BB_AccountObjectPoints_Test {
         strResponse = '{"bb:UpdateWalletRS": {"bb:Success": {}}}';
         bbAccountObj.actionGoodResponse(strResponse);
         
+        DataTableWrapper test = new DataTableWrapper();
+        test = bbAccountObj.createTableFromResponse(strResponse);
+        test=bbAccountObj.createTableFromBadResponse(strResponse,201);
+        
     }
 
 }

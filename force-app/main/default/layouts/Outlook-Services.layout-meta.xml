@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <quickActionList>
+        <quickActionListItems>
+            <quickActionName>New_Guest_Account</quickActionName>
+        </quickActionListItems>
+        <quickActionListItems>
+            <quickActionName>New_case_Customer_request</quickActionName>
+        </quickActionListItems>
+        <quickActionListItems>
+            <quickActionName>Customer_Damages</quickActionName>
+        </quickActionListItems>
+        <quickActionListItems>
+            <quickActionName>Review_deletion_Modification</quickActionName>
+        </quickActionListItems>
+        <quickActionListItems>
+            <quickActionName>NewTask</quickActionName>
+        </quickActionListItems>
+        <quickActionListItems>
+            <quickActionName>NewEvent</quickActionName>
+        </quickActionListItems>
+    </quickActionList>
+    <showEmailCheckbox>false</showEmailCheckbox>
+    <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
+    <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
+</Layout>

@@ -15,7 +15,6 @@ public without sharing class AccountHandler {
     // The origin of this pattern is http://www.embracingthecloud.com/2010/07/08/ASimpleTriggerTemplateForSalesforce.aspx
     private boolean m_isExecuting = false;
     private integer BatchSize = 0;
-    private String UserBypassApexClass = UtilsBypass.getUserBypassApexClass();
     
     public AccountHandler(boolean isExecuting, integer size){
         m_isExecuting = isExecuting;
@@ -24,26 +23,26 @@ public without sharing class AccountHandler {
     
     public void OnBeforeInsert(Account[] newRecords){
         system.debug('@@@ OnBeforeInsert');
-       /* if((UtilsBypass.getUserBypassApexClass() != null && !UtilsBypass.getUserBypassApexClass().contains('UtilsMethodeForAccount') ) 
+        if((UtilsBypass.getUserBypassApexClass() != null && !UtilsBypass.getUserBypassApexClass().contains('UtilsMethodeForAccount') ) 
            || !UtilsBypass.canISkipApexClass('UtilsMethodeForAccount') 
            || !UtilsBypass.canISkipApexMethod('bBHClubSubscriptionCountry')){
-              // UtilsMethodeForAccount.flowWithTheCommonValueFromAccountSetting(newRecords);
-           }*/
+               UtilsMethodeForAccount.flowWithTheCommonValueFromAccountSetting(newRecords);
+           }
         
-        if((UserBypassApexClass != null && !UserBypassApexClass.contains('AP04_Account') ) 
+        if((UtilsBypass.getUserBypassApexClass() != null && !UtilsBypass.getUserBypassApexClass().contains('AP04_Account') ) 
            || !UtilsBypass.canISkipApexClass('AP04_Account') 
            || !UtilsBypass.canISkipApexMethod('initializeDataHistoryField')){
                // gho modifications
                AP04_Account.initializeDataHistoryField(newRecords);
            }
         
-        if((UserBypassApexClass != null && !UserBypassApexClass.contains('Account_Handler') ) 
+        if((UtilsBypass.getUserBypassApexClass() != null && !UtilsBypass.getUserBypassApexClass().contains('Account_Handler') ) 
            || !UtilsBypass.canISkipApexClass('Account_Handler') 
            || !UtilsBypass.canISkipApexMethod('handle')){
                Account_Handler.handle(newRecords,null);   //TMA EI 9-9-2019 PG 275
            }
         
-        if((UserBypassApexClass != null && !UserBypassApexClass.contains('AP07_Account') ) 
+        if((UtilsBypass.getUserBypassApexClass() != null && !UtilsBypass.getUserBypassApexClass().contains('AP07_Account') ) 
            || !UtilsBypass.canISkipApexClass('AP07_Account') 
            || !UtilsBypass.canISkipApexMethod('getHotelName')){
                AP07_Account.getHotelName(newRecords);
@@ -58,30 +57,30 @@ public without sharing class AccountHandler {
     }
     
     public void OnBeforeUpdate(Account[] oldRecords, Account[] updatedRecords, Map<ID, Account> recordMap, Map<ID, Account> recordMapOld){
-       /* if((UtilsBypass.getUserBypassApexClass() != null && !UtilsBypass.getUserBypassApexClass().contains('UtilsMethodeForAccount') ) 
+        if((UtilsBypass.getUserBypassApexClass() != null && !UtilsBypass.getUserBypassApexClass().contains('UtilsMethodeForAccount') ) 
            || !UtilsBypass.canISkipApexClass('UtilsMethodeForAccount') 
            || !UtilsBypass.canISkipApexMethod('bBHClubSubscriptionCountry')){
-              // UtilsMethodeForAccount.flowWithTheCommonValueFromAccountSetting(updatedRecords);
-           }*/
+               UtilsMethodeForAccount.flowWithTheCommonValueFromAccountSetting(updatedRecords);
+           }
 
-        if((UserBypassApexClass != null  && !UserBypassApexClass.contains('Account_Handler')) 
+        if((UtilsBypass.getUserBypassApexClass() != null  && !UtilsBypass.getUserBypassApexClass().contains('Account_Handler')) 
            || !UtilsBypass.canISkipApexClass('Account_Handler') 
            || !UtilsBypass.canISkipApexMethod('handle')){
                Account_Handler.handle(updatedRecords,recordMapOld);	//TMA EI 9-9-2019 PG 275
            }
         
-        if((UserBypassApexClass != null && !UserBypassApexClass.contains('AP01_Account')) 
+        if((UtilsBypass.getUserBypassApexClass() != null && !UtilsBypass.getUserBypassApexClass().contains('AP01_Account')) 
            || !UtilsBypass.canISkipApexClass('AP01_Account') 
            || !UtilsBypass.canISkipApexMethod('UpdateStatus')){
                AP01_Account.UpdateStatus(updatedRecords,recordMapOld); 
            }
-        if((UserBypassApexClass != null && !UserBypassApexClass.contains('AP05_Account')) 
+        if((UtilsBypass.getUserBypassApexClass() != null && !UtilsBypass.getUserBypassApexClass().contains('AP05_Account')) 
            || !UtilsBypass.canISkipApexClass('AP05_Account') 
            || !UtilsBypass.canISkipApexMethod('StockOldData')){
                AP05_Account.StockOldData(recordMap,recordMapOld);
            }
         
-        if((UserBypassApexClass != null && !UserBypassApexClass.contains('AP07_Account')) 
+        if((UtilsBypass.getUserBypassApexClass() != null && !UtilsBypass.getUserBypassApexClass().contains('AP07_Account')) 
            || !UtilsBypass.canISkipApexClass('AP07_Account') 
            || !UtilsBypass.canISkipApexMethod('getHotelName')){
                AP07_Account.getHotelName(updatedRecords);
@@ -89,7 +88,7 @@ public without sharing class AccountHandler {
     }
     
     public void OnAfterUpdate(Account[] oldRecords, Account[] updatedRecords, Map<ID, Account> recordMap,  Map<ID, Account> recordMapOld){  
-        if((UserBypassApexClass != null && !UserBypassApexClass.contains('AP06_Account')) 
+        if((UtilsBypass.getUserBypassApexClass() != null && !UtilsBypass.getUserBypassApexClass().contains('AP06_Account')) 
            || !UtilsBypass.canISkipApexClass('AP06_Account') 
            || !UtilsBypass.canISkipApexMethod('TrackHistory')){
                // added by JKA CRMSS-437
@@ -98,7 +97,7 @@ public without sharing class AccountHandler {
                AP06_Account.TrackHistory(updatedRecords, recordMapOld);
                //end
            }
-        if((UserBypassApexClass != null  && !UserBypassApexClass.contains('AP05_Account')) 
+        if((UtilsBypass.getUserBypassApexClass() != null  && !UtilsBypass.getUserBypassApexClass().contains('AP05_Account')) 
            || !UtilsBypass.canISkipApexClass('AP05_Account') 
            || !UtilsBypass.canISkipApexMethod('CallWSUpdatePersonAccountInfo')){
                //TMABNB CRMSS-96

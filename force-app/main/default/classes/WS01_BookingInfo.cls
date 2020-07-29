@@ -3,7 +3,7 @@
 * @date 25/01/2019
 * @description webservice used by BBUS to insert/modify BookingInfo : Master Booking - Booking - Person Account - Booking Room Lines
 */
-global class WS01_BookingInfo {
+global without sharing class WS01_BookingInfo {
     
     static Map<String, Map<String, Booking_Room_Line__c>> mapBookingRoomLinesByExternalId = new  Map<String, Map<String, Booking_Room_Line__c>>();
     static Map<String, Booking_Room_Line__c> mapBRToUpdate = new Map<String, Booking_Room_Line__c>();
@@ -20,11 +20,6 @@ global class WS01_BookingInfo {
         FromBookingInfo = true;
         Log__c log = new Log__c();
         log.WSName__c = 'Booking Info';
-        if(Json.serialize(BookingInfos).length()>131072){
-          log.JsonMessage__c = Json.serialize(BookingInfos).substring(0,131072);
-        }else{
-            log.JsonMessage__c = Json.serialize(BookingInfos);
-        }
         insert log;
         Attachment  doc = new Attachment ();
         doc.Name = 'JsonLog';  
@@ -54,7 +49,7 @@ global class WS01_BookingInfo {
         PersonAccounts personAccounts;
         BookingRoomLines bookingRoomLines;
         //Added by TMA-JK - CRMSS-173 Start
-        //BookingRoomLines bookingRoomLinesParent;
+        BookingRoomLines bookingRoomLinesParent;
         //Added by TMA-JK - CRMSS-173 End
         //jul start
         set<String> setExistingBookings = new set<String>();
@@ -88,34 +83,24 @@ global class WS01_BookingInfo {
                     }
                     //Added by TMA-JK - CRMSS-160 Start
                     if(bookingWrapper.GuestAccount1 != null) {
-                        if(bookingWrapper.GuestAccount1.Email != null){
-                            setPersonAccountEmail.add(bookingWrapper.GuestAccount1.Email.toLowerCase());
-                        }
+                        setPersonAccountEmail.add(bookingWrapper.GuestAccount1.Email.toLowerCase());
                         setPersonAccountExtID.add(bookingWrapper.GuestAccount1.ExternalId);
                     }
                     if(bookingWrapper.GuestAccount2 != null) {
-                        if(bookingWrapper.GuestAccount2.Email != null){
-                            setPersonAccountEmail.add(bookingWrapper.GuestAccount2.Email.toLowerCase());
-                        }
+                        setPersonAccountEmail.add(bookingWrapper.GuestAccount2.Email.toLowerCase());
                         setPersonAccountExtID.add(bookingWrapper.GuestAccount2.ExternalId);
                     }
                     if(bookingWrapper.GuestAccount3 != null) {
-                        if(bookingWrapper.GuestAccount3.Email != null){
-                            setPersonAccountEmail.add(bookingWrapper.GuestAccount3.Email.toLowerCase());
-                        }
+                        setPersonAccountEmail.add(bookingWrapper.GuestAccount3.Email.toLowerCase());
                         setPersonAccountExtID.add(bookingWrapper.GuestAccount3.ExternalId);
                     }
                     if(bookingWrapper.GuestAccount4 != null) {
-                        if(bookingWrapper.GuestAccount4.Email != null){
-                            setPersonAccountEmail.add(bookingWrapper.GuestAccount4.Email.toLowerCase());
-                        }
+                        setPersonAccountEmail.add(bookingWrapper.GuestAccount4.Email.toLowerCase());
                         setPersonAccountExtID.add(bookingWrapper.GuestAccount4.ExternalId);
                     }
                     if(bookingWrapper.GuestAccount5 != null) {
                         system.debug('Guest account 5 != null');
-                        if(bookingWrapper.GuestAccount4.Email != null){
-                            setPersonAccountEmail.add(bookingWrapper.GuestAccount5.Email.toLowerCase());
-                        }
+                        setPersonAccountEmail.add(bookingWrapper.GuestAccount5.Email.toLowerCase());
                         setPersonAccountExtID.add(bookingWrapper.GuestAccount5.ExternalId);
                     }
                     //Added by TMA-JK - CRMSS-160 End
@@ -152,7 +137,7 @@ global class WS01_BookingInfo {
             
             masterBookings = new MasterBookings();
             masterBookings.MasterBooking  = new List<MasterBooking>{masterBooking};
-            listResponses = doUpsertMasterBookings(masterBookings);
+            listResponses = doUpsertMasterBookings(masterBookings);system.debug('### cg listResponses mb'+listResponses);
             response = listResponses[0];
             if(response.Success) { 
                 listBookingWrapper = masterBookingWrapper.BookingWrapper;
@@ -163,8 +148,8 @@ global class WS01_BookingInfo {
                 bookingRoomLines = new BookingRoomLines();
                 bookingRoomLines.BookingRoomLine = new List<BookingRoomLine>();
                 //Added by TMA-JK - CRMSS-173 Start
-                //bookingRoomLinesParent = new BookingRoomLines();
-                //bookingRoomLinesParent.BookingRoomLine = new List<BookingRoomLine>();
+                bookingRoomLinesParent = new BookingRoomLines();
+                bookingRoomLinesParent.BookingRoomLine = new List<BookingRoomLine>();
                 //Added by TMA-JK - CRMSS-173 End
                 if(listBookingWrapper != null && listBookingWrapper.size() > 0) {
                     for(BookingInfo.BookingWrapper bookingWrapper : listBookingWrapper) {
@@ -203,14 +188,14 @@ global class WS01_BookingInfo {
                                 for(BookingRoomLine roomLine : bookingWrapper.BookingRoomLines) {
                                     roomLine.Booking = bookingWrapper.Booking.ExternalId;
                                     //Added by TMA-JK - CRMSS-173 Start
-                                    /*if(roomLine.RoomLineParent == null || String.isEmpty(roomLine.RoomLineParent)){
+                                    if(roomLine.RoomLineParent == null || String.isEmpty(roomLine.RoomLineParent)){
                                         bookingRoomLinesParent.BookingRoomLine.add(roomLine);
                                     }else {
                                         bookingRoomLines.BookingRoomLine.add(roomLine);
-                                    }*/
-                                    //system.debug('bookingRoomLinesParent ### ' + bookingRoomLinesParent.BookingRoomLine);
-                                   // system.debug('BookingRoomLine ### ' + bookingRoomLines.BookingRoomLine);
-                                    bookingRoomLines.BookingRoomLine.add(roomLine);// Removed by TMA-EI JK CRMSS - 173
+                                    }
+                                    system.debug('bookingRoomLinesParent ### ' + bookingRoomLinesParent.BookingRoomLine);
+                                    system.debug('BookingRoomLine ### ' + bookingRoomLines.BookingRoomLine);
+                                    //bookingRoomLines.BookingRoomLine.add(roomLine); Removed by TMA-EI JK CRMSS - 173
                                     //Added by TMA-JK - CRMSS-173 End
                                 }
                             }
@@ -223,7 +208,7 @@ global class WS01_BookingInfo {
                     }
                 } 
                 // upsert list of person Accounts
-                listResponses = doUpsertPersonAccounts(personAccounts);
+                listResponses = doUpsertPersonAccounts(personAccounts);system.debug('### cg listResponses pa'+listResponses);
                 for(UpsertResponse upsertResponse : listResponses) {
                     if(!upsertResponse.Success) {
                         bError = true;
@@ -234,7 +219,7 @@ global class WS01_BookingInfo {
                 }
                 if(!bError) {
                     // upsert list of Bookings
-                    listResponses = doUpsertBookings(bookings);
+                    listResponses = doUpsertBookings(bookings);system.debug('### cg listResponses b'+listResponses);
                     for(UpsertResponse upsertResponse : listResponses) {
                         if(!upsertResponse.Success) {
                             bError = true;
@@ -243,10 +228,10 @@ global class WS01_BookingInfo {
                             break;
                         }
                     }
-                 /*   //Added by TMA-JK - CRMSS-173 Start
+                    //Added by TMA-JK - CRMSS-173 Start
                     if(!bError) {
                         // upsert list of booking room lines
-                        listResponses = doUpsertBookingRoomLines(bookingRoomLinesParent);
+                        listResponses = doUpsertBookingRoomLines(bookingRoomLinesParent);system.debug('### cg listResponses brl'+listResponses);
                         for(UpsertResponse upsertResponse : listResponses) {
                             if(!upsertResponse.Success) {
                                 bError = true;
@@ -256,10 +241,10 @@ global class WS01_BookingInfo {
                             }
                         }    
                     } 
-                    //Added by TMA-JK - CRMSS-173 End*/
+                    //Added by TMA-JK - CRMSS-173 End
                     if(!bError) {
                         // upsert list of booking room lines
-                        listResponses = doUpsertBookingRoomLines(bookingRoomLines);
+                        listResponses = doUpsertBookingRoomLines(bookingRoomLines);system.debug('### cg listResponses brl'+listResponses);
                         for(UpsertResponse upsertResponse : listResponses) {
                             if(!upsertResponse.Success) {
                                 bError = true;
@@ -286,11 +271,6 @@ global class WS01_BookingInfo {
         }
         Log__c log2 = new Log__c();
         log2.WSName__c = 'Booking Info Return';
-        if(Json.serialize(mapIndexListResponses.values()).length()>131072){
-          log2.JsonMessage__c = Json.serialize(mapIndexListResponses.values()).substring(0,131072);
-        }else{
-            log2.JsonMessage__c = Json.serialize(mapIndexListResponses.values());
-        }
         insert log2;
         Attachment  doc2 = new Attachment ();
         doc2.Name = 'JsonLog';  
@@ -299,6 +279,7 @@ global class WS01_BookingInfo {
         doc2.ParentId = log2.id;
         insert doc2;        
         //Add for logs End
+        system.debug('### cg mapIndexListResponses'+mapIndexListResponses);
         return mapIndexListResponses.values();
     }
     
@@ -422,7 +403,6 @@ global class WS01_BookingInfo {
     }
     
     webservice static List<UpsertResponse> doUpsertPersonAccounts(PersonAccounts PersonAccounts) {  
-
         Map<Integer, UpsertResponse> mapResponses = new Map<Integer, UpsertResponse>();
         List<PersonAccount> listPersonAccounts = PersonAccounts.PersonAccount;
        
@@ -434,11 +414,6 @@ global class WS01_BookingInfo {
             //Add for logs Start
             Log__c log2 = new Log__c();
             log2.WSName__c = 'Do upsert Person Account';
-            if(Json.serialize(PersonAccounts).length()>131072){
-                log2.JsonMessage__c = Json.serialize(PersonAccounts).substring(0,131072);
-            }else{
-                log2.JsonMessage__c = Json.serialize(PersonAccounts);
-            }
             insert log2;
             Attachment  doc2 = new Attachment ();
             doc2.Name = 'JsonLog';  
@@ -448,9 +423,7 @@ global class WS01_BookingInfo {
             insert doc2;
             //Add for logs End
             for(PersonAccount guestAccount : listPersonAccounts) {
-               if(guestAccount.Email != null){
                 setEmail.add(guestAccount.Email.tolowercase());
-                 }  
                 setExtID.add(guestAccount.ExternalId);
             }
             
@@ -462,7 +435,7 @@ global class WS01_BookingInfo {
         Map<String, Integer> mapPersonRowIndex = new Map<String, Integer>();        
         Integer existingIndex = 0;
         Integer rowIndex = 0;
-   
+        
         
         for(PersonAccount guestAccount : listPersonAccounts) {
             try {
@@ -503,11 +476,6 @@ global class WS01_BookingInfo {
             //Add for logs Start
             Log__c log = new Log__c();
             log.WSName__c = 'Do upsert Person Account Return';
-            if(Json.serialize(mapResponses.values()).length()>131072){
-                log.JsonMessage__c = Json.serialize(mapResponses.values()).substring(0,131072);
-            }else{
-                log.JsonMessage__c = Json.serialize(mapResponses.values());
-            }
             insert log;
             Attachment  doc = new Attachment ();
             doc.Name = 'JsonLog';  
@@ -531,7 +499,7 @@ global class WS01_BookingInfo {
             listOpportunityToUpsert = (List<Opportunity>) listSObjectToUpsert;
             caseIndex = 1;
         } else if(strObjectName.equalsIgnoreCase('Account')) {
-            //externalIdField = Account.Fields.ExternalId__c; //Removed by TMA-JK CRMSS-160 
+            //externalIdField = Account.Fields.ExternalId__c; Removed by TMA-JK CRMSS-160 
             //Added by TMA-JK CRMSS-160 Start
             externalIdField = Account.Fields.id;
             //Added by TMA-JK CRMSS-160 End

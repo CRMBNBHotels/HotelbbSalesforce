@@ -31,10 +31,10 @@ public without sharing class AP11_Opportunity {
                 if(mapMBlistBookings.get(mbId) != null && mapMBlistBookings.get(mbId).size()>0){
                     
                     for(Opportunity book : mapMBlistBookings.get(mbId)){
-                        
+                        system.debug('### entered: ' + book.Master_Booking_FK__r.TechIsNotFirst_01__c);
                         //if the MBs are flagged, that means the batch hasn't finished running yet, so we need to add up the numbers in the calculations
                         if(book.Master_Booking_FK__r.TechIsNotFirst_01__c){
-                            
+                            system.debug('### entered');
                             //We need to check these conditions in the first place, in order to not erase existing data on the fields in question
                             if(book.Master_Booking_FK__r.Number_of_nights_master__c != null && book.Master_Booking_FK__r.Number_of_nights_master__c != 0 && sumNights == 0){
                                 

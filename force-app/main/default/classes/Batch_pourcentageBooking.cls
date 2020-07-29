@@ -11,7 +11,7 @@ Global without sharing class Batch_pourcentageBooking  implements Database.Batch
     //global Map<Id,NumberOfBooking> mapPAId = new Map<Id,NumberOfBooking>();
     global Database.QueryLocator start(Database.BatchableContext bc){
         
-        String query = 'select id from Opportunity where RecordType.name =\'Booking\' and Person_Account__c != null  '+label.Batch_pourcentageBooking;
+        String query = 'select id from Opportunity where RecordType.name =\'Booking\' and (StageName = \'Booked\' or StageName = \'Checked\' ) and (Master_Booking_FK__r.Channel__c = \'Dashboard\' or Master_Booking_FK__r.Channel__c = \'Website\' or Master_Booking_FK__r.Channel__c = \'Apps\') and Person_Account__c != null  '+label.Batch_pourcentageBooking;
         return Database.getQueryLocator(query);
     }
     
@@ -31,6 +31,10 @@ Global without sharing class Batch_pourcentageBooking  implements Database.Batch
             
              	
             AccountDataHistory.CountryPercentage percentage = mapPAId.get(book.Person_Account__c);
+            
+            system.debug('#### HotelCountry__c ' + book.HotelCountry__c);
+            system.debug('#### book.Person_Account__r ' + book.Person_Account__r);
+            system.debug('#### percentage ' + percentage);
             
             if(book.Person_Account__c == '0011v00002AdS5cAAF' || test.isRunningTest()){
                 Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();

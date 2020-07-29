@@ -83,8 +83,10 @@
             helper.setError(component, event, helper, error,true);
             
         }
+
          if(error == ''){
-         helper.SendData(component, event, helper);
+             
+         	helper.SendData(component, event, helper);
          }
         
         //Added vy TMA Cynthia Geagea - CRMSS 260 - 19/09/2019 - Start
@@ -92,6 +94,7 @@
         var btn = event.getSource();
         btn.set("v.disabled",true);
         //Added vy TMA Cynthia Geagea - CRMSS 260 - 19/09/2019 - End
+        
     },
     hideModal : function(component, event, helper){
         helper.hideModalHelper(component, event, helper);

@@ -62,12 +62,21 @@ public class AP03_Case_Test {
             cas2.Origin = 'Web';
             cas2.Status = 'Open';
             cas2.Type = label.Information_request;
-            cas2.SuppliedEmail = 'customerTest2@asce.com';
+            //cas2.SuppliedEmail = 'customerTest2@asce.com';
             cas.RecordTypeId = Label.Case_RT_CustomersRequestFeedback;
-            cas2.Hotel_ID__c = hotel.Hotel_ID__c;
+            //cas2.Hotel_ID__c = hotel.Hotel_ID__c;
             cas2.First_Name__c = 'First2';
             cas2.Last_Name__c = 'Last2';
             cas2.Concerned_country__c = 'ES';
+            cas2.E_club_ID__c = 'E-club ID';
+            cas2.SuppliedPhone = '123456';
+            cas2.Guest_Adress__c = 'testAddress';
+            cas2.Zip_code__c = '000';
+            cas2.City__c = 'testCity';
+            cas2.Country__c = 'testCountry';
+            cas2.Description = 'testDescription';
+            cas2.Arrival_Date__c = date.today() + 1;
+            cas.Departure_date__c = date.today();
             //cas2.setOptions(dmo);
             listCaseToInsert.add(cas2);
             

@@ -238,17 +238,21 @@ global class MockHttpResponseGenerator implements HttpCalloutMock {
             commentObj.Text.add(textObj);
             hotelReservationObj.ResGlobalInfo.Comments.Comment.add(commentObj);
             hotelReservationObj.ResGlobalInfo.DepositPayments = new BB_BookingObject.DepositPayments();
+            hotelReservationObj.ResGlobalInfo.DepositPayments.GuaranteePayment = new List<BB_BookingObject.GuaranteePayment>();
+            BB_BookingObject.GuaranteePayment guaranteePayObj = new BB_BookingObject.GuaranteePayment();
+            guaranteePayObj.AcceptedPayments = new BB_BookingObject.AcceptedPayments();
+            guaranteePayObj.AcceptedPayments.AcceptedPayment = new List<BB_BookingObject.AcceptedPayment>();
+            BB_BookingObject.AcceptedPayment acceptedPayObj = new BB_BookingObject.AcceptedPayment();
+            acceptedPayObj.PaymentCard = new BB_BookingObject.PaymentCard();
+            acceptedPayObj.PaymentCard.MaskedCardNumber = '1111';
+            guaranteePayObj.AcceptedPayments.AcceptedPayment.add(acceptedPayObj);
+            hotelReservationObj.ResGlobalInfo.DepositPayments.GuaranteePayment.add(guaranteePayObj);
+            
+            
             hotelReservationObj.ResGlobalInfo.Total = new BB_BookingObject.Total();
             hotelReservationObj.ResGlobalInfo.HotelReservationIDs = new BB_BookingObject.HotelReservationIDs();
             hotelReservationObj.ResGlobalInfo.Profiles = new BB_BookingObject.Profiles();
             hotelReservationObj.ResGlobalInfo.BookingRules = new BB_BookingObject.BookingRules();
-            
-            hotelReservationObj.ResGlobalInfo.DepositPayments.GuaranteePayment = new List<BB_BookingObject.GuaranteePayment>();
-            BB_BookingObject.GuaranteePayment ga = new BB_BookingObject.GuaranteePayment();
-            hotelReservationObj.ResGlobalInfo.DepositPayments.GuaranteePayment.add(ga);
-            hotelReservationObj.ResGlobalInfo.DepositPayments.GuaranteePayment[0].AcceptedPayments = new BB_BookingObject.AcceptedPayments();
-            hotelReservationObj.ResGlobalInfo.DepositPayments.GuaranteePayment[0].AcceptedPayments.AcceptedPayment = new List<BB_BookingObject.AcceptedPayment>();
-            
             
             hotelReservationObj.TPA_Extensions = new BB_BookingObject.TPA_Extensions();
             hotelReservationObj.TPA_Extensions.Is_Rate_Included = 'false';
@@ -261,6 +265,7 @@ global class MockHttpResponseGenerator implements HttpCalloutMock {
             hotelReservationObj.TPA_Extensions.UniqueID.ID = '260523';
             hotelReservationObj.TPA_Extensions.UniqueID.Type = '14';
             responseWrapper.GetBookingRS.HotelReservations.HotelReservation.add(hotelReservationObj);
+            system.debug('responseWrapper ' + responseWrapper);
             res.setBody(Json.serialize(responseWrapper));
         }   
         res.setStatusCode(200);

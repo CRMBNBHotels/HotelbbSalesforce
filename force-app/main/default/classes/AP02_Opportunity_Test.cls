@@ -6,6 +6,7 @@
 */
 @isTest
 public class AP02_Opportunity_Test {
+    /*
     public static testMethod void updateDeleteBooking()
     {
         //insert person account
@@ -31,5 +32,5 @@ public class AP02_Opportunity_Test {
         opp1.Trip_Context__c = label.BusinessCustomerType;
         update opp1;
         delete opp2;
-    }
+    }*/
 }

@@ -13,6 +13,6 @@
 global without sharing class Schedule_Batch_Account_EClubStatus implements Schedulable {
     
     global void execute(SchedulableContext ctx) {
-       String jobId = Database.executeBatch(new Batch_Account_EClubStatus());
+       String jobId = Database.executeBatch(new Batch_Account_EClubStatus(), 25);
     }
 }

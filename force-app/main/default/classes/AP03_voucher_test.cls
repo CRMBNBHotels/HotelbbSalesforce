@@ -8,7 +8,7 @@ public class AP03_voucher_test {
                                  EmailEncodingKey='UTF-8', LastName='Testing', LanguageLocaleKey='en_US', 
                                  LocaleSidKey='en_US', ProfileId = p.Id, 
                                  TimeZoneSidKey='America/Los_Angeles', UserName='systadm@testorg.com');
-        // testUser.BypassValidationRule__c = true;
+        testUser.BypassValidationRule__c = true;
         insert testUser;
         
         system.runAs(testUser){
@@ -23,12 +23,16 @@ public class AP03_voucher_test {
             //Insert an IR invitation
             Voucher__c voucher = new Voucher__c();
             Voucher.Guest_Account__c = PersonAccount.id;
-            
+            //cga commented release 1003
             voucher.Types__c = '2003';
             voucher.Objet__c = '3007';
             voucher.Motif__c = 'Remerciements';
-            //voucher.Prestation_offerte__c = '6004';
-            voucher.Prestation_offerte__c = 'Un petit déjeuner';
+            voucher.Prestation_offerte__c = '6004';
+            //end
+            //voucher.Types__c = 'Compliments';
+            //voucher.Objet__c = 'Compliment SRC';
+            //voucher.Motif__c = 'Remerciements';
+            //voucher.Prestation_offerte__c = 'Un petit déjeuner';
             voucher.Email_du_client__c = 'test@email.com';
             voucher.Service__c = 'Hotel';
             voucher.Hotel__c = hotel.id;

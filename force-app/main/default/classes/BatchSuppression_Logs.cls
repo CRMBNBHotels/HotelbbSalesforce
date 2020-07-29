@@ -6,7 +6,7 @@
 * @Coverage: 100%
 */
 
-global class BatchSuppression_Logs implements Database.Batchable<sObject>{
+global without sharing class BatchSuppression_Logs implements Database.Batchable<sObject>{
     
     global Database.QueryLocator start(Database.BatchableContext bc){
 

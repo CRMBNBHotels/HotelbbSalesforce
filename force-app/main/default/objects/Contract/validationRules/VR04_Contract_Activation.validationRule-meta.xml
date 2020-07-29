@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>VR04_Contract_Activation</fullName>
-    <active>true</active>
-    <errorConditionFormula>AND(  ISPICKVAL(Status , &apos;Activated&apos;), NOT(ISPICKVAL(Opportunity__r.StageName ,&apos;Closed Won&apos;)), OR(
-ISBLANK(Expiration_Date__c ) ,ISBLANK(TEXT(Contract_type__c )), Corporate_Agreement_Code__c =null,
-RecordType.DeveloperName = &apos;Carte_Log_e&apos;,RecordType.DeveloperName = &apos;Corporate&apos;))</errorConditionFormula>
-    <errorMessage>Cannot currently activate contract</errorMessage>
-</ValidationRule>

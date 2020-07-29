@@ -257,4 +257,64 @@ private class UtilsMethodeForAccount_Test {
         }
         return rStr;
     }
+    
+    
+    public static testMethod void testCountryCustomers() {    
+        User testUser = TestDataFactory.createSingleUser(true);
+        System.runAs(testUser) {
+            Test.startTest();
+            List<Account> acc = TestDataFactory.createGuestAccounts(10);
+            UtilsMethodeForAccount.CountryCustomers(acc);
+            
+            Test.stopTest(); 
+        } 
+    }
+  
+  
+    public static testMethod void testCountryCustomersHelper(){
+         User testUser = TestDataFactory.createSingleUser(true);
+        System.runAs(testUser) {
+            Test.startTest();
+            List<Account> recordsAccounts = TestDataFactory.createGuestAccounts(10);
+                List<Account>               listOfAccount          = new List<Account>();      
+        	Map<String,Map<Decimal,String>>  mapOfAccountIdByMapOfpercentageOfBookingbyCountry  = new Map<String,Map<Decimal,String>>();                                          
+        	for(Account currentAccount : recordsAccounts){
+            if( currentAccount.Booking_France__c != 0 ||  currentAccount.Booking_Spain__c != 0 ||  currentAccount.Booking_Others__c != 0 || currentAccount.Booking_Germany__c != 0 || currentAccount.Booking_Italy__c != 0 ||   currentAccount.Booking_Poland__c != 0  ){
+                listOfAccount.add(currentAccount);
+                Map<Decimal,String> mapOfpercentageOfBookingbyCountry = new  Map<Decimal,String>();
+                mapOfpercentageOfBookingbyCountry.put(currentAccount.Booking_France__c,'FR');
+                if(mapOfpercentageOfBookingbyCountry.containsKey(currentAccount.Booking_Spain__c)){
+                    mapOfpercentageOfBookingbyCountry.put(currentAccount.Booking_Spain__c,mapOfpercentageOfBookingbyCountry.get(currentAccount.Booking_Spain__c)+',ES');
+                }else{
+                    mapOfpercentageOfBookingbyCountry.put(currentAccount.Booking_Spain__c,'ES');
+                }
+                if(mapOfpercentageOfBookingbyCountry.containsKey(currentAccount.Booking_Germany__c)){
+                    mapOfpercentageOfBookingbyCountry.put(currentAccount.Booking_Germany__c,mapOfpercentageOfBookingbyCountry.get(currentAccount.Booking_Spain__c)+',DE');
+                }else{
+                    mapOfpercentageOfBookingbyCountry.put(currentAccount.Booking_Germany__c,'DE');
+                }
+                if(mapOfpercentageOfBookingbyCountry.containsKey(currentAccount.Booking_Italy__c)){
+                    mapOfpercentageOfBookingbyCountry.put(currentAccount.Booking_Italy__c,mapOfpercentageOfBookingbyCountry.get(currentAccount.Booking_Spain__c)+',IT');
+                }else{
+                    mapOfpercentageOfBookingbyCountry.put(currentAccount.Booking_Italy__c,'IT');
+                }
+                if(mapOfpercentageOfBookingbyCountry.containsKey(currentAccount.Booking_Poland__c)){
+                    mapOfpercentageOfBookingbyCountry.put(currentAccount.Booking_Poland__c,mapOfpercentageOfBookingbyCountry.get(currentAccount.Booking_Spain__c)+',PO');
+                }else{
+                    mapOfpercentageOfBookingbyCountry.put(currentAccount.Booking_Poland__c,'PO');
+                }
+                if(mapOfpercentageOfBookingbyCountry.containsKey(currentAccount.Booking_Others__c)){
+                    mapOfpercentageOfBookingbyCountry.put(currentAccount.Booking_Others__c,mapOfpercentageOfBookingbyCountry.get(currentAccount.Booking_Spain__c)+',EA');
+                }else{
+                    mapOfpercentageOfBookingbyCountry.put(currentAccount.Booking_Others__c,'EA');
+                }
+                mapOfAccountIdByMapOfpercentageOfBookingbyCountry.put(currentAccount.Id,mapOfpercentageOfBookingbyCountry);
+            }
+        }
+            UtilsMethodeForAccount.CountryCustomersHelper(recordsAccounts,mapOfAccountIdByMapOfpercentageOfBookingbyCountry);
+            Test.stopTest();
+        } 
+    }
+    
+  
 }

@@ -208,10 +208,10 @@ public without sharing class AP05_Account {
                         }
                     }
                 }
-                //newMap.get(Idcurr).E_Club_Status__c != oldMap.get(Idcurr).E_Club_Status__c || 
+                
                 //If the info modified is related to Eclub info, set a list of fields modified and call a future method to perform the callout for BBUS
                 if ((newMap.get(Idcurr).Eclub_change_request__c =='Processing' || newMap.get(Idcurr).Eclub_change_request__c == oldMap.get(Idcurr).Eclub_change_request__c )&& 
-                    (newMap.get(Idcurr).E_club_Expiration_date__pc != oldMap.get(Idcurr).E_club_Expiration_date__pc)){
+                    (newMap.get(Idcurr).E_Club_Status__c != oldMap.get(Idcurr).E_Club_Status__c || newMap.get(Idcurr).E_club_Expiration_date__pc != oldMap.get(Idcurr).E_club_Expiration_date__pc)){
                         system.debug('### cg in ap05 before regular call');
                         system.debug('### cg in ap05 before regular call newMap.get(Idcurr).Eclub_change_request__c'+newMap.get(Idcurr).Eclub_change_request__c);
                         system.debug('### cg in ap05 before regular call oldMap.get(Idcurr).Eclub_change_request__c'+oldMap.get(Idcurr).Eclub_change_request__c);
@@ -222,9 +222,9 @@ public without sharing class AP05_Account {
                         
                         
                         
-                       // if(oldMap.get(Idcurr).E_Club_Status__c != newMap.get(Idcurr).E_Club_Status__c){
-                      //      setFieldEClub.add('E_Club_Status__c');
-                     //   }
+                        if(oldMap.get(Idcurr).E_Club_Status__c != newMap.get(Idcurr).E_Club_Status__c){
+                            setFieldEClub.add('E_Club_Status__c');
+                        }
                         if(oldMap.get(Idcurr).E_club_Expiration_date__pc != newMap.get(Idcurr).E_club_Expiration_date__pc){
                             setFieldEClub.add('E_club_Expiration_date__pc');
                         }

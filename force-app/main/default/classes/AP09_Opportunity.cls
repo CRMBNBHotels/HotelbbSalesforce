@@ -72,7 +72,6 @@ public without sharing class AP09_Opportunity {
                system.debug('##### acc '+acc);
                 system.debug('### mapPAlistBooking.containskey(acc) '+ !mapPAlistBooking.containskey(acc));
                 system.debug('##### mapPAFirst.containsKey(acc) '+mapPAFirst.containsKey(acc));
-                system.debug('#### mapPAFirst'+ mapPAFirst);
                 //system.debug('##### !mapPAFirst.get(acc) '+ !mapPAFirst.get(acc));
                 
                 if(!mapPAlistBooking.containskey(acc)  && mapPAFirst.containsKey(acc)&& !mapPAFirst.get(acc)){

@@ -22,12 +22,17 @@ public without sharing class BBUS_DataHistoryManager {
             when 'payment'{
                 objectWrapper = new BB_PaymentObject();
             }
-            
+            //Added by TMA-EIL CG CRMSS-430 18-02/2020 Start
+            when 'contract'{
+                objectWrapper = new BB_ContractObject();
+            }
+            //Added by TMA-EIL CG CRMSS-430 18-02/2020 End
         }
         String strEndPoint = null;
         String strBody = null;
         String strMethod = null;
         Map<String, String> mapHeaders = null;
+        system.debug('### ' + objectWrapper);
         if(objectWrapper != null) {
             strEndPoint = objectWrapper.initializeRequestEndpoint();
             strBody = objectWrapper.initializeRequestBody(includePaging, pageKey, sfdcId,fieldToInclude,pageDateKey);
@@ -50,6 +55,7 @@ public without sharing class BBUS_DataHistoryManager {
     }
     
     public static HttpResponse doHttpCallout(string strEndpoint, string strMethod, string strBody, Map<String, String> mapRequestHeaders){ //private
+        system.debug('### cg strEndpoint'+strEndpoint);
         HttpRequest req = new HttpRequest();
         HttpResponse retVal = new HttpResponse();            
         Http http = new Http();
@@ -105,19 +111,25 @@ public without sharing class BBUS_DataHistoryManager {
                 objectWrapper = new BB_AccountObjectPoints();
                 log.WSName__c = 'Account Points Synchronisation';
             }
+            //Added by TMA-EIL CG CRMSS-430 18-02/2020 Start
+            when 'contract'{
+                objectWrapper = new BB_ContractObject();system.debug('### ### objectWrapper 1'+objectWrapper);
+                log.WSName__c = 'Contract Link Generation';
+            }
+            //Added by TMA-EIL CG CRMSS-430 18-02/2020 End
         }
         String strEndPoint = null;
         String strBody = null;
         String strMethod = null;
         Map<String, String> mapHeaders = null;
-        if(objectWrapper != null) {
+        if(objectWrapper != null) {system.debug('### ### objectWrapper != null');
             strEndPoint = objectWrapper.initializeRequestEndpointUpdate();
-            strBody = objectWrapper.initializeRequestBody(includePaging, pageKey, sfdcId,fieldToInclude,null);
+            strBody = objectWrapper.initializeRequestBody(includePaging, pageKey, sfdcId,fieldToInclude,null);system.debug('### ### strBody'+strBody);
             strMethod = objectWrapper.initializeRequestMethod();
-            mapHeaders = objectWrapper.initializeRequestHeader();
+            mapHeaders = objectWrapper.initializeRequestHeader();system.debug('### ### objectWrapper 2'+objectWrapper);
         }
         log.JsonMessage__c = strBody;
-        log.ExternalID__c = sfdcId;
+        log.ExternalID__c = sfdcId;system.debug('### cg sfdcId'+sfdcId);
         log.FromSalesforce__c = true;
         HttpResponse response = doHttpCallout(strEndPoint, strMethod, strBody, mapHeaders);
         system.debug('@@@@ responsee BBUS DATAH'+response);

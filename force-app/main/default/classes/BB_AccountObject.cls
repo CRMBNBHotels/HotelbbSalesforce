@@ -5,7 +5,7 @@
 * @date: 01/05/2019
 * @Test class: BB_AccountObject_Test
 */
-public class BB_AccountObject extends BB_Object implements BB_Object_Interface,BB_Object_Sync_Interface{
+public without sharing class BB_AccountObject extends BB_Object implements BB_Object_Interface,BB_Object_Sync_Interface{
     public String initializeRequestEndpointUpdate() {
         String endPoint = Label.BBUS_WebservicesLink + Label.BBUS_UpdateAccountEndpoint;
         return endPoint;
@@ -121,13 +121,6 @@ public class BB_AccountObject extends BB_Object implements BB_Object_Interface,B
                 if(setfieldtoInclude.contains('PersonMobilePhone')){
                     telephone tel = new telephone();
                     tel.PhoneLocationType = '6';
-                    
-                    //Added by TMA - Cynthia Geagea - CRMSS 220 - Start
-                    if(acc.PersonMobilePhone == null){
-                        acc.PersonMobilePhone = '';
-                    }
-                    //Added by TMA - Cynthia Geagea - CRMSS 220 - End
-                    
                     tel.PhoneNumber = acc.PersonMobilePhone;
                     tel.RPH = '1';
                     AccountWrapper.UpdateClient.Profile.Customer.telephon.add(tel);
@@ -135,13 +128,6 @@ public class BB_AccountObject extends BB_Object implements BB_Object_Interface,B
                 if(setfieldtoInclude.contains('Mobile_Phone_Number_2__pc')){
                     telephone tel = new telephone();
                     tel.PhoneLocationType = '6';
-                    
-                    //Added by TMA - Cynthia Geagea - CRMSS 220 - Start
-                    if(acc.Mobile_Phone_Number_2__pc == null){
-                        acc.Mobile_Phone_Number_2__pc = '';
-                    }
-                    //Added by TMA - Cynthia Geagea - CRMSS 220 - End
-                    
                     tel.PhoneNumber = acc.Mobile_Phone_Number_2__pc;
                     tel.RPH = '2';
                     AccountWrapper.UpdateClient.Profile.Customer.telephon.add(tel);

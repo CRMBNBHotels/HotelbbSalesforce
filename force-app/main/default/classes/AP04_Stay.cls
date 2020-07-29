@@ -6,10 +6,11 @@
 */
 public class AP04_Stay 
 {
-    public static void updateFavoriteHotel(List<Stay__c> triggerNew, Map<Id,Stay__c> oldMap, List<Stay__c> triggerOld)
-    {
-        list<Id> listAccountId = new List<Id>();        
-        if(triggerNew != null)
+    //public static void updateFavoriteHotel(List<Stay__c> triggerNew, Map<Id,Stay__c> oldMap, List<Stay__c> triggerOld)
+    //{
+      // System.debug('##### AP04_Stay Start');
+       // list<Id> listAccountId = new List<Id>();        
+      /*  if(triggerNew != null)
         {
             for(Stay__c stay: triggerNew)
             {
@@ -41,6 +42,7 @@ public class AP04_Stay
                                                  Where Hotel_Id__c!=null)
                                                 From Account
                                                 Where Id IN: ListAccountId]; 
+            System.debug('##### AP04_Stay listSelectedAccount' + listSelectedAccount);
             for(Account acc: listSelectedAccount)
             {
                 map<string,integer> mapCountHotel = new map<string,integer>();
@@ -75,6 +77,6 @@ public class AP04_Stay
                 listAccToUpdate.add(acc);             
             }   
             update listAccToUpdate;            
-        }
-    }
+        }*/
+    //}
 }

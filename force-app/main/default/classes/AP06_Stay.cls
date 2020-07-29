@@ -6,20 +6,23 @@
 */
 public class AP06_Stay
 {
+    /*
     public static void calculateFavorites(list<Stay__c> triggerNew, map<Id, Stay__c> oldMap, list<Stay__c> triggerOld)
     {
+        if(UserInfo.getUserId().contains(Label.InterfaceID)){  return;  }
         System.debug('##### AP06_Stay Start');
-        list<string> listAccountId = new List<string>(); 
+        Set<string> listAccountId = new Set<string>(); 
         if(triggerNew != null)
         {
             for(Stay__c stay: triggerNew)
             {
                 Stay__c oldStay=oldMap==null ? stay : oldMap.get(stay.Id);
-                listAccountId.add(stay.Guest_account__c);  
+                if(oldMap==null && String.isNotBlank(stay.Guest_Account__c))listAccountId.add(stay.Guest_account__c);  
                 // The below if is used to modify the favorites of the old account
                 if(oldMap!=null && oldStay.Guest_account__c!=stay.Guest_account__c)
                 {
-                    listAccountId.add(oldStay.Guest_account__c);                     
+                   if(String.isNotBlank(stay.Guest_Account__c))listAccountId.add(stay.Guest_account__c); 
+                   if(String.isNotBlank(oldStay.Guest_Account__c)) listAccountId.add(oldStay.Guest_account__c);                     
                 }             
             }
         }
@@ -27,7 +30,7 @@ public class AP06_Stay
         {
             for(Stay__c stay:triggerOld)
             {
-                ListAccountId.add(stay.Guest_account__c);       
+               if(String.isNotBlank(stay.Guest_Account__c)) ListAccountId.add(stay.Guest_account__c);       
             }
         } 
         if(listAccountId.size() > 0)
@@ -35,7 +38,7 @@ public class AP06_Stay
             //Get the list of all affected Person Accounts
             list<Account> listAffectedAccount = [Select Id,
                                                  (Select Id,Booking__c 
-                                                  From Stays__r)
+                                                  From Stays__r where Booking__c != null)
                                                  From Account
                                                  Where Id IN: listAccountId ];
             System.debug('##### AP06_Stay listAffectedAccount ' + listAffectedAccount);
@@ -50,7 +53,7 @@ public class AP06_Stay
                 set<Id> listBookingId = new set<Id>();
                 for(Stay__c stay:listStay)
                 {
-                    listBookingId.add(stay.Booking__c); 
+                 if(String.isNotBlank(stay.Booking__c)) listBookingId.add(stay.Booking__c); 
                 }
                 if(listBookingId != null && listBookingId.size() > 0){//added ticket - 88
                     if(!mapAccountBookings.containsKey(accId))
@@ -79,10 +82,10 @@ if(!mapBookingToBookingRoomLines.containsKey(booking.Id))
 {
 mapBookingToBookingRoomLines.put(booking.Id,booking.Bookings_room_line__r);
 }
-}*/
+}
             for(Booking_room_line__c bookingRL : listBRL)
             {
-                if(!mapBookingToBookingRoomLines.containsKey(bookingRL.Booking_FK__c))
+                if(!mapBookingToBookingRoomLines.containsKey(bookingRL.Booking_FK__c) && String.isNotBlank(bookingRL.Booking_FK__c))
                 {
                     listBRLToBooking = new list<Booking_Room_Line__c>();
                     listBRLToBooking.add(bookingRL);
@@ -116,18 +119,22 @@ mapBookingToBookingRoomLines.put(booking.Id,booking.Bookings_room_line__r);
             /*list<Booking_Room_Line__c> listBRL = [Select Id,Room_code__c
 From Booking_Room_Line__c
 Where Booking_FK__c IN: listBookingIdToSelect
-And Room_code__c != null];*/
+And Room_code__c != null];
             System.debug('##### AP06_Stay listBRL ' + listBRL);
             //map each room code to its room code and option record
             list<string> listRoomCode = new list<string>();
             for(Booking_Room_Line__c BRL: listBRL)
             {
-                listRoomCode.add(BRL.Room_code__c); 
+             if(String.isNotBlank(BRL.Room_code__c))listRoomCode.add(BRL.Room_code__c); 
             }
-            list<Hotel_Room_Option__c> listRoomCodeAndOption = [Select Id,Room_code__c,Type_code__c,Room_Type__c,
+             list<Hotel_Room_Option__c> listRoomCodeAndOption= new list<Hotel_Room_Option__c>();
+            if(listRoomCode!= null && listRoomCode.size()>0){
+               listRoomCodeAndOption = [Select Id,Room_code__c,Type_code__c,Room_Type__c,
                                                                 Room_Type_Label__c,Room_Code_Label__c
                                                                 From Hotel_Room_Option__c
-                                                                Where Room_code__c IN: listRoomCode];
+                                                                Where Room_code__c IN: listRoomCode];  
+            }
+            
             System.debug('##### AP06_Stay listRoomCodeAndOption ' + listRoomCodeAndOption);
             map<string,Hotel_Room_Option__c> mapRoomCodeToRoomCodeAndOption = new map<string,Hotel_Room_Option__c>();
             for(Hotel_Room_Option__c roomCodeAndOption : listRoomCodeAndOption)
@@ -294,5 +301,5 @@ And Room_code__c != null];*/
         {
             return counter-((OptionWrapper)other).counter;
         }
-    }
+    }*/
 }

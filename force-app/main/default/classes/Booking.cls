@@ -1,5 +1,4 @@
-//test class: WS02_BookingInfo_Test
-global class Booking {
+global without sharing class Booking {
      
     webservice String Account;
     webservice String BookingDevice;
@@ -131,18 +130,11 @@ global class Booking {
             booking.Name = Name;
         }        
         if(String.isNotBlank(PartnerCode) || setFieldsToNull.contains('PartnerCode')) {
-            system.debug('else remove ______ +++++');
             //booking.Partner_Code__c = PartnerCode;
             //Ticket CRMSS-286 Start
-            if(PartnerCode != null) { 
-                accountObj = new Account(Partner_Code__c = PartnerCode);
-                booking.PartnerCode__r = accountObj;
-                system.debug('#### accountObj ' + accountObj);
-                //Ticket CRMSS-286 End
-            }else if(setFieldsToNull.contains('PartnerCode')) {
-                system.debug('else remove ______');
-                booking.PartnerCode__c = null;
-            }
+            accountObj = new Account(Partner_Code__c = PartnerCode);
+            booking.PartnerCode__r = accountObj;
+            //Ticket CRMSS-286 End
         }
         if(String.isNotBlank(PersonAccount) || setFieldsToNull.contains('PersonAccount')) {
             if(PersonAccount != null) {

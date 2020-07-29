@@ -4,7 +4,7 @@ public without sharing class BB_VoucherObject extends BB_Object implements BB_Ob
     
     public static string RTID;
     public static string IRRecordTypeID = Schema.SObjectType.Voucher__c.getRecordTypeInfosByDeveloperName().get('IR').getRecordTypeId();
-    public static string EClubRecordTypeID = Schema.SObjectType.Voucher__c.getRecordTypeInfosByDeveloperName().get('Eclub').getRecordTypeId();
+    public static string EClubRecordTypeID = Schema.SObjectType.Voucher__c.getRecordTypeInfosByDeveloperName().get('Eclub_voucher').getRecordTypeId();
     //Added by TMA-EIL CG - CRMSS 423 - 09/01/2020 - End
     
     

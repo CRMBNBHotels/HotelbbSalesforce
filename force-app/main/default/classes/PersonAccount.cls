@@ -3,14 +3,6 @@ global without sharing class PersonAccount {
     webservice boolean OptinNL;
     webservice String OptinEmail;
     webservice String OptinSMS;
-    
-    //Added by TMA-EIL CG CRMSS-503 09/04/2020 Start
-    webservice boolean OptinEmailMC;
-    webservice boolean OptinEmailTempMC;
-    webservice boolean OptinSMSMC;
-    webservice boolean OptinSMSTempMC;
-    //Added by TMA-EIL CG CRMSS-503 09/04/2020 End
-    
     webservice String Fax;
     webservice boolean AuthorizedLogeCard;
     webservice Date PersonBirthdate;
@@ -91,12 +83,9 @@ global without sharing class PersonAccount {
     
     
     public Account mapSFFields() {
-        
         Account account = new Account();
         Set<String> setFieldsToNull = new Set<String>();
-        
         if(String.isNotBlank(FieldsToNull)) {
-            
             for(String field : FieldsToNull.split(',')) {
                 setFieldsToNull.add(field);
             }
@@ -114,21 +103,6 @@ global without sharing class PersonAccount {
         if(String.isNotBlank(OptinSMS) || setFieldsToNull.contains('OptinSMS')) {
             account.OptinSms__c = OptinSMS;
         }
-        
-        //Added by TMA-EIL CG CRMSS-503 09/04/2020 Start
-        if(OptinEmailMC != null || setFieldsToNull.contains('OptinEmailMC')) {
-            account.Optin_Email_MC__c = OptinEmailMC;
-        }
-        if(OptinEmailTempMC != null || setFieldsToNull.contains('OptinEmailTempMC')) {
-            account.Optin_Email_Temp_MC__c = OptinEmailTempMC;
-        }
-        if(OptinSMSMC != null || setFieldsToNull.contains('OptinSMSMC')) {
-            account.Optin_SMS_MC__c = OptinSMSMC;
-        }
-        if(OptinSMSTempMC != null || setFieldsToNull.contains('OptinSMSTempMC')) {
-            account.Optin_SMS_Temp_MC__c = OptinSMSTempMC;
-        }
-        //Added by TMA-EIL CG CRMSS-503 09/04/2020 End
         
         if(String.isNotBlank(Fax) || setFieldsToNull.contains('Fax')) {
             account.Fax = Fax;

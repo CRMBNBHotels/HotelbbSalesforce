@@ -7,6 +7,7 @@
 @isTest
 public class AP02_Account_Test 
 {
+    /*
  public static testMethod void updateDeleteAccount()
     {
         //insert Partner
@@ -50,5 +51,5 @@ public class AP02_Account_Test
         delete PersonAccount;
         test.stopTest();
     }
-
+*/
 }

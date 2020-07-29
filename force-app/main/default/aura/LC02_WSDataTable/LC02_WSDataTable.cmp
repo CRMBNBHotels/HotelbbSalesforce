@@ -11,7 +11,7 @@
     <aura:attribute name="pageNumber" type="Integer" default="1" />
     <aura:attribute name="bHasData" type="boolean" default="true" />
     <aura:attribute name="pageKey" type="String"  />
-    <aura:attribute name="pageDateKey" type="String"  />
+    <aura:attribute name="PageDateKey" type="String"  />
     
     <aura:attribute name="errorMessage" type="String" default="" />
     <aura:attribute name="isError" type="boolean" default="false"/>
@@ -31,7 +31,7 @@
             
             <!-- paging -->
             <aura:renderIf isTrue="{! and(v.includePaging, v.bPageLoaded)}">
-                <c:LC07_WSDataTable_Paging pageNumber="{!v.pageNumber}" pageKey="{!v.pageKey}" bDataLoaded="{!v.bDataLoaded}" pageDateKey = "{!v.pageDateKey}"/>
+                <c:LC07_WSDataTable_Paging pageNumber="{!v.pageNumber}" pageKey="{!v.pageKey}" bDataLoaded="{!v.bDataLoaded}" pageDateKey = "{!v.PageDateKey}"/>
                 <br/>
             </aura:renderIf>
             

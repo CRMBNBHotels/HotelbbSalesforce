@@ -54,7 +54,7 @@ public without sharing class AP03_Case {
         
         //Calculate the number of open cases assigned to each member of the queue
         Map<String, Integer> mapCount = new Map<String, integer>();
-        
+        system.debug('### ' + setQueueUsers + ' * ' + listCase);
         For(Case cas : listCase){
            
             if(setQueueUsers.contains(cas.OwnerId)){
@@ -174,7 +174,7 @@ public without sharing class AP03_Case {
                     
                     List<String> sendTo = new List<String>();
                     sendTo.add(mapOwnerIdEmail.get(cas.OwnerId));
-                    Messaging.SingleEmailMessage mail = Utils.CreateSingleEmailMessage(sendTo,null,cas.OwnerId,null,emailTemplateObj.Id,Label.Email_NoReplyHotelBB);
+                    Messaging.SingleEmailMessage mail = Utils.CreateSingleEmailMessage(sendTo,null,cas.OwnerId,null,emailTemplateObj.Id,'noreply@hotelbb.com');
                     mail.setSaveAsActivity(false);
                     mail.setTreatTargetObjectAsRecipient(false);
                     system.debug('cas.Hotel_Name_1__c '+cas.Hotel_Name_1__c);
@@ -272,9 +272,7 @@ public without sharing class AP03_Case {
                 }
             }
         }
-     
-             Messaging.sendEmail(listMails);    
-        
-       
+            
+        Messaging.sendEmail(listMails);    
     }
 }
