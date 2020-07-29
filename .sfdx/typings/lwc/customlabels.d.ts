@@ -1,86 +1,22 @@
-declare module "@salesforce/label/c.AP01_CaseFromEmail" {
-    var AP01_CaseFromEmail: string;
-    export default AP01_CaseFromEmail;
-}
-declare module "@salesforce/label/c.AP01_Case_ApplyHotel" {
-    var AP01_Case_ApplyHotel: string;
-    export default AP01_Case_ApplyHotel;
-}
 declare module "@salesforce/label/c.AP01_Case_CA" {
     var AP01_Case_CA: string;
     export default AP01_Case_CA;
-}
-declare module "@salesforce/label/c.AP01_Case_CancellationRequest" {
-    var AP01_Case_CancellationRequest: string;
-    export default AP01_Case_CancellationRequest;
-}
-declare module "@salesforce/label/c.AP01_Case_CustomerCareEmail" {
-    var AP01_Case_CustomerCareEmail: string;
-    export default AP01_Case_CustomerCareEmail;
-}
-declare module "@salesforce/label/c.AP01_Case_CustomerFeedback" {
-    var AP01_Case_CustomerFeedback: string;
-    export default AP01_Case_CustomerFeedback;
 }
 declare module "@salesforce/label/c.AP01_Case_ES" {
     var AP01_Case_ES: string;
     export default AP01_Case_ES;
 }
-declare module "@salesforce/label/c.AP01_Case_InvoiceRequest" {
-    var AP01_Case_InvoiceRequest: string;
-    export default AP01_Case_InvoiceRequest;
-}
-declare module "@salesforce/label/c.AP01_Case_JobApp" {
-    var AP01_Case_JobApp: string;
-    export default AP01_Case_JobApp;
-}
-declare module "@salesforce/label/c.AP01_Case_OpsEmail" {
-    var AP01_Case_OpsEmail: string;
-    export default AP01_Case_OpsEmail;
+declare module "@salesforce/label/c.AP01_Case_IT" {
+    var AP01_Case_IT: string;
+    export default AP01_Case_IT;
 }
 declare module "@salesforce/label/c.AP01_Case_SpainEmail" {
     var AP01_Case_SpainEmail: string;
     export default AP01_Case_SpainEmail;
 }
-declare module "@salesforce/label/c.AP01_Case_TemplateCustomerFeedback" {
-    var AP01_Case_TemplateCustomerFeedback: string;
-    export default AP01_Case_TemplateCustomerFeedback;
-}
-declare module "@salesforce/label/c.AP01_Case_TemplateDev" {
-    var AP01_Case_TemplateDev: string;
-    export default AP01_Case_TemplateDev;
-}
-declare module "@salesforce/label/c.AP01_Case_TemplateHotel" {
-    var AP01_Case_TemplateHotel: string;
-    export default AP01_Case_TemplateHotel;
-}
-declare module "@salesforce/label/c.AP01_Case_TemplateOps" {
-    var AP01_Case_TemplateOps: string;
-    export default AP01_Case_TemplateOps;
-}
-declare module "@salesforce/label/c.AP01_Case_devEmail" {
-    var AP01_Case_devEmail: string;
-    export default AP01_Case_devEmail;
-}
-declare module "@salesforce/label/c.AP01_Case_waitingDev" {
-    var AP01_Case_waitingDev: string;
-    export default AP01_Case_waitingDev;
-}
-declare module "@salesforce/label/c.AP01_Case_waitingOps" {
-    var AP01_Case_waitingOps: string;
-    export default AP01_Case_waitingOps;
-}
-declare module "@salesforce/label/c.AP01_RealEstateOffer" {
-    var AP01_RealEstateOffer: string;
-    export default AP01_RealEstateOffer;
-}
 declare module "@salesforce/label/c.AP06_Account_CreationChannel" {
     var AP06_Account_CreationChannel: string;
     export default AP06_Account_CreationChannel;
-}
-declare module "@salesforce/label/c.AP06_Account_Dashboard" {
-    var AP06_Account_Dashboard: string;
-    export default AP06_Account_Dashboard;
 }
 declare module "@salesforce/label/c.AP06_Account_DatePurchase" {
     var AP06_Account_DatePurchase: string;
@@ -122,10 +58,6 @@ declare module "@salesforce/label/c.BBUS_NumberOfUnits" {
     var BBUS_NumberOfUnits: string;
     export default BBUS_NumberOfUnits;
 }
-declare module "@salesforce/label/c.BBUS_RefundVoucherEndpointUpdate" {
-    var BBUS_RefundVoucherEndpointUpdate: string;
-    export default BBUS_RefundVoucherEndpointUpdate;
-}
 declare module "@salesforce/label/c.BBUS_UpdateAccountEClubEndpoint" {
     var BBUS_UpdateAccountEClubEndpoint: string;
     export default BBUS_UpdateAccountEClubEndpoint;
@@ -158,65 +90,25 @@ declare module "@salesforce/label/c.BBUS_WebservicesLink" {
     var BBUS_WebservicesLink: string;
     export default BBUS_WebservicesLink;
 }
-declare module "@salesforce/label/c.BatchBBHKPIs_ES" {
-    var BatchBBHKPIs_ES: string;
-    export default BatchBBHKPIs_ES;
-}
-declare module "@salesforce/label/c.BatchBBHKPIs_FR" {
-    var BatchBBHKPIs_FR: string;
-    export default BatchBBHKPIs_FR;
-}
-declare module "@salesforce/label/c.BatchBBHKPIs_France" {
-    var BatchBBHKPIs_France: string;
-    export default BatchBBHKPIs_France;
-}
-declare module "@salesforce/label/c.BatchBBHKPIs_IT" {
-    var BatchBBHKPIs_IT: string;
-    export default BatchBBHKPIs_IT;
-}
-declare module "@salesforce/label/c.BatchBBHKPIs_Italy" {
-    var BatchBBHKPIs_Italy: string;
-    export default BatchBBHKPIs_Italy;
-}
-declare module "@salesforce/label/c.BatchBBHKPIs_Members" {
-    var BatchBBHKPIs_Members: string;
-    export default BatchBBHKPIs_Members;
-}
-declare module "@salesforce/label/c.BatchBBHKPIs_NonMembers" {
-    var BatchBBHKPIs_NonMembers: string;
-    export default BatchBBHKPIs_NonMembers;
-}
-declare module "@salesforce/label/c.BatchBBHKPIs_Others" {
-    var BatchBBHKPIs_Others: string;
-    export default BatchBBHKPIs_Others;
-}
-declare module "@salesforce/label/c.BatchBBHKPIs_Spain" {
-    var BatchBBHKPIs_Spain: string;
-    export default BatchBBHKPIs_Spain;
-}
 declare module "@salesforce/label/c.BatchHotelCountChecked_Ids" {
     var BatchHotelCountChecked_Ids: string;
     export default BatchHotelCountChecked_Ids;
 }
-declare module "@salesforce/label/c.BatchRepBRLtoBookingEmail" {
-    var BatchRepBRLtoBookingEmail: string;
-    export default BatchRepBRLtoBookingEmail;
-}
-declare module "@salesforce/label/c.BatchRepBRLtoBookingGenericID" {
-    var BatchRepBRLtoBookingGenericID: string;
-    export default BatchRepBRLtoBookingGenericID;
+declare module "@salesforce/label/c.BatchRepAccountsBookingDates_Ids" {
+    var BatchRepAccountsBookingDates_Ids: string;
+    export default BatchRepAccountsBookingDates_Ids;
 }
 declare module "@salesforce/label/c.BatchRepBRLtoBooking_Ids" {
     var BatchRepBRLtoBooking_Ids: string;
     export default BatchRepBRLtoBooking_Ids;
 }
+declare module "@salesforce/label/c.BatchRepBookingToMb_Ids" {
+    var BatchRepBookingToMb_Ids: string;
+    export default BatchRepBookingToMb_Ids;
+}
 declare module "@salesforce/label/c.BatchReprise_BRLtoBooking_01" {
     var BatchReprise_BRLtoBooking_01: string;
     export default BatchReprise_BRLtoBooking_01;
-}
-declare module "@salesforce/label/c.BatchReprise_BRLtoBooking_02" {
-    var BatchReprise_BRLtoBooking_02: string;
-    export default BatchReprise_BRLtoBooking_02;
 }
 declare module "@salesforce/label/c.BatchSuppressionLogs_LimitDate" {
     var BatchSuppressionLogs_LimitDate: string;
@@ -226,49 +118,9 @@ declare module "@salesforce/label/c.BatchUpdateMBIds_ConfNb_HotelName" {
     var BatchUpdateMBIds_ConfNb_HotelName: string;
     export default BatchUpdateMBIds_ConfNb_HotelName;
 }
-declare module "@salesforce/label/c.BatchUpdateMBIds_Nights_Rooms_StageCount" {
-    var BatchUpdateMBIds_Nights_Rooms_StageCount: string;
-    export default BatchUpdateMBIds_Nights_Rooms_StageCount;
-}
 declare module "@salesforce/label/c.BatchUpdateMB_ConfNb_HotelName_WhereClause" {
     var BatchUpdateMB_ConfNb_HotelName_WhereClause: string;
     export default BatchUpdateMB_ConfNb_HotelName_WhereClause;
-}
-declare module "@salesforce/label/c.BatchUpdateMB_Nights_Rooms_StageCount_WhereClause" {
-    var BatchUpdateMB_Nights_Rooms_StageCount_WhereClause: string;
-    export default BatchUpdateMB_Nights_Rooms_StageCount_WhereClause;
-}
-declare module "@salesforce/label/c.Batch_Account_EClubStatus_WhereClause" {
-    var Batch_Account_EClubStatus_WhereClause: string;
-    export default Batch_Account_EClubStatus_WhereClause;
-}
-declare module "@salesforce/label/c.Batch_BBH_KPIs_WhereClause" {
-    var Batch_BBH_KPIs_WhereClause: string;
-    export default Batch_BBH_KPIs_WhereClause;
-}
-declare module "@salesforce/label/c.Batch_FirstLastBooking_PAIds" {
-    var Batch_FirstLastBooking_PAIds: string;
-    export default Batch_FirstLastBooking_PAIds;
-}
-declare module "@salesforce/label/c.Batch_FirstLastBooking_WhereClause" {
-    var Batch_FirstLastBooking_WhereClause: string;
-    export default Batch_FirstLastBooking_WhereClause;
-}
-declare module "@salesforce/label/c.Batch_HotelCountChecked_01" {
-    var Batch_HotelCountChecked_01: string;
-    export default Batch_HotelCountChecked_01;
-}
-declare module "@salesforce/label/c.Batch_PartnershipFieldsUpdate_PAIds" {
-    var Batch_PartnershipFieldsUpdate_PAIds: string;
-    export default Batch_PartnershipFieldsUpdate_PAIds;
-}
-declare module "@salesforce/label/c.Batch_PartnershipFieldsUpdate_WhereClause" {
-    var Batch_PartnershipFieldsUpdate_WhereClause: string;
-    export default Batch_PartnershipFieldsUpdate_WhereClause;
-}
-declare module "@salesforce/label/c.Batch_pourcentageBooking" {
-    var Batch_pourcentageBooking: string;
-    export default Batch_pourcentageBooking;
 }
 declare module "@salesforce/label/c.BodyAutoCompleteAddress" {
     var BodyAutoCompleteAddress: string;
@@ -298,10 +150,6 @@ declare module "@salesforce/label/c.BusinessCustomerType" {
     var BusinessCustomerType: string;
     export default BusinessCustomerType;
 }
-declare module "@salesforce/label/c.CCEmail_Clients_Hotel" {
-    var CCEmail_Clients_Hotel: string;
-    export default CCEmail_Clients_Hotel;
-}
 declare module "@salesforce/label/c.CaseWebOrigin" {
     var CaseWebOrigin: string;
     export default CaseWebOrigin;
@@ -317,10 +165,6 @@ declare module "@salesforce/label/c.Case_RT_Case_linked_to_IR" {
 declare module "@salesforce/label/c.Case_RT_CustomersRequestFeedback" {
     var Case_RT_CustomersRequestFeedback: string;
     export default Case_RT_CustomersRequestFeedback;
-}
-declare module "@salesforce/label/c.Case_RT_ReviewsDeletionModification" {
-    var Case_RT_ReviewsDeletionModification: string;
-    export default Case_RT_ReviewsDeletionModification;
 }
 declare module "@salesforce/label/c.Case_Type_CustomerClaim" {
     var Case_Type_CustomerClaim: string;
@@ -358,10 +202,6 @@ declare module "@salesforce/label/c.EN" {
     var EN: string;
     export default EN;
 }
-declare module "@salesforce/label/c.EmaiForBatchesErrors" {
-    var EmaiForBatchesErrors: string;
-    export default EmaiForBatchesErrors;
-}
 declare module "@salesforce/label/c.EmailExpirationMessage" {
     var EmailExpirationMessage: string;
     export default EmailExpirationMessage;
@@ -369,10 +209,6 @@ declare module "@salesforce/label/c.EmailExpirationMessage" {
 declare module "@salesforce/label/c.EmailTemplate_SendNotifToOwner" {
     var EmailTemplate_SendNotifToOwner: string;
     export default EmailTemplate_SendNotifToOwner;
-}
-declare module "@salesforce/label/c.Email_NoReplyHotelBB" {
-    var Email_NoReplyHotelBB: string;
-    export default Email_NoReplyHotelBB;
 }
 declare module "@salesforce/label/c.ExcelHeaderLightning" {
     var ExcelHeaderLightning: string;
@@ -430,10 +266,6 @@ declare module "@salesforce/label/c.LC08_EClubCustomer" {
     var LC08_EClubCustomer: string;
     export default LC08_EClubCustomer;
 }
-declare module "@salesforce/label/c.LC08_EchangeCadeau" {
-    var LC08_EchangeCadeau: string;
-    export default LC08_EchangeCadeau;
-}
 declare module "@salesforce/label/c.LC08_FillField" {
     var LC08_FillField: string;
     export default LC08_FillField;
@@ -445,10 +277,6 @@ declare module "@salesforce/label/c.LC08_ModifierPoints" {
 declare module "@salesforce/label/c.LC08_NBPoint" {
     var LC08_NBPoint: string;
     export default LC08_NBPoint;
-}
-declare module "@salesforce/label/c.LC08_NuiteeConsommee" {
-    var LC08_NuiteeConsommee: string;
-    export default LC08_NuiteeConsommee;
 }
 declare module "@salesforce/label/c.LC08_PointsOffertsDedommagement" {
     var LC08_PointsOffertsDedommagement: string;
@@ -465,10 +293,6 @@ declare module "@salesforce/label/c.LC08_RegulDePointsSuiteRemiseAZero" {
 declare module "@salesforce/label/c.LC08_RegularisationPoints" {
     var LC08_RegularisationPoints: string;
     export default LC08_RegularisationPoints;
-}
-declare module "@salesforce/label/c.LC08_ReinitialisationPointCompteFusionne" {
-    var LC08_ReinitialisationPointCompteFusionne: string;
-    export default LC08_ReinitialisationPointCompteFusionne;
 }
 declare module "@salesforce/label/c.LC08_RequestBBUS" {
     var LC08_RequestBBUS: string;
@@ -493,22 +317,6 @@ declare module "@salesforce/label/c.LC08_Type" {
 declare module "@salesforce/label/c.LC08_ValidateRequired" {
     var LC08_ValidateRequired: string;
     export default LC08_ValidateRequired;
-}
-declare module "@salesforce/label/c.LC11_Bill_Amount" {
-    var LC11_Bill_Amount: string;
-    export default LC11_Bill_Amount;
-}
-declare module "@salesforce/label/c.LC11_Bill_Date" {
-    var LC11_Bill_Date: string;
-    export default LC11_Bill_Date;
-}
-declare module "@salesforce/label/c.LC11_Bill_Type" {
-    var LC11_Bill_Type: string;
-    export default LC11_Bill_Type;
-}
-declare module "@salesforce/label/c.LC11_Bill_ViewDownload" {
-    var LC11_Bill_ViewDownload: string;
-    export default LC11_Bill_ViewDownload;
 }
 declare module "@salesforce/label/c.LeisureCustomerType" {
     var LeisureCustomerType: string;
@@ -558,9 +366,25 @@ declare module "@salesforce/label/c.StageChecked" {
     var StageChecked: string;
     export default StageChecked;
 }
+declare module "@salesforce/label/c.StageNameBooking_Booked" {
+    var StageNameBooking_Booked: string;
+    export default StageNameBooking_Booked;
+}
+declare module "@salesforce/label/c.StageNameBooking_Cancelled" {
+    var StageNameBooking_Cancelled: string;
+    export default StageNameBooking_Cancelled;
+}
 declare module "@salesforce/label/c.StageNameBooking_Checked" {
     var StageNameBooking_Checked: string;
     export default StageNameBooking_Checked;
+}
+declare module "@salesforce/label/c.StageNameBooking_Error" {
+    var StageNameBooking_Error: string;
+    export default StageNameBooking_Error;
+}
+declare module "@salesforce/label/c.StageNameBooking_NoShow" {
+    var StageNameBooking_NoShow: string;
+    export default StageNameBooking_NoShow;
 }
 declare module "@salesforce/label/c.StatusChecked" {
     var StatusChecked: string;
@@ -573,6 +397,10 @@ declare module "@salesforce/label/c.StatusComplete" {
 declare module "@salesforce/label/c.SupportEmail" {
     var SupportEmail: string;
     export default SupportEmail;
+}
+declare module "@salesforce/label/c.TechnicalUserId" {
+    var TechnicalUserId: string;
+    export default TechnicalUserId;
 }
 declare module "@salesforce/label/c.TypeCodeOption" {
     var TypeCodeOption: string;
@@ -649,10 +477,6 @@ declare module "@salesforce/label/c.WebCaseSpanishEmailTemplateIdCompanyGroupReq
 declare module "@salesforce/label/c.ZeroResult" {
     var ZeroResult: string;
     export default ZeroResult;
-}
-declare module "@salesforce/label/c.bb_BillDownload" {
-    var bb_BillDownload: string;
-    export default bb_BillDownload;
 }
 declare module "@salesforce/label/c.technical_user_2_id" {
     var technical_user_2_id: string;
