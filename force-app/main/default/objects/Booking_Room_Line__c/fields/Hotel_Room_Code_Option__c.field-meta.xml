@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hotel_Room_Code_Option__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Link between Booking Room line and Hotel Room Code &amp; option</description>
+    <externalId>false</externalId>
+    <label>Hotel Room Code &amp; Option</label>
+    <referenceTo>Hotel_Room_Option__c</referenceTo>
+    <relationshipLabel>Bookings Room Line</relationshipLabel>
+    <relationshipName>Bookings_Room_Line</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

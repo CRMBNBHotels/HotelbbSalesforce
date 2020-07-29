@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Objet__c</fullName>
+    <externalId>false</externalId>
+    <label>Objet</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>3000</fullName>
+                <default>false</default>
+                <label>Annulation client</label>
+            </value>
+            <value>
+                <fullName>3001</fullName>
+                <default>false</default>
+                <label>Erreur hôtel</label>
+            </value>
+            <value>
+                <fullName>3002</fullName>
+                <default>false</default>
+                <label>Modification client</label>
+            </value>
+            <value>
+                <fullName>3003</fullName>
+                <default>false</default>
+                <label>Echec paiement hôtel</label>
+            </value>
+            <value>
+                <fullName>3004</fullName>
+                <default>false</default>
+                <label>Factures</label>
+            </value>
+            <value>
+                <fullName>3005</fullName>
+                <default>false</default>
+                <label>Relevé mensuel</label>
+            </value>
+            <value>
+                <fullName>3006</fullName>
+                <default>false</default>
+                <label>Problème Identification/Internet</label>
+            </value>
+            <value>
+                <fullName>3007</fullName>
+                <default>false</default>
+                <label>Compliment SRC</label>
+            </value>
+            <value>
+                <fullName>3008</fullName>
+                <default>false</default>
+                <label>Compliment Accueil</label>
+            </value>
+            <value>
+                <fullName>3009</fullName>
+                <default>false</default>
+                <label>Compliment Hôtel</label>
+            </value>
+            <value>
+                <fullName>3010</fullName>
+                <default>false</default>
+                <label>Compliment sur la réponse</label>
+            </value>
+            <value>
+                <fullName>3011</fullName>
+                <default>false</default>
+                <label>Impayé Eclub</label>
+            </value>
+            <value>
+                <fullName>3012</fullName>
+                <default>false</default>
+                <label>Divers Avis Clients</label>
+            </value>
+            <value>
+                <fullName>3013</fullName>
+                <default>false</default>
+                <label>Dédommagement</label>
+            </value>
+            <value>
+                <fullName>3014</fullName>
+                <default>false</default>
+                <label>Réponse du gérant</label>
+            </value>
+            <value>
+                <fullName>3015</fullName>
+                <default>false</default>
+                <label>Bug du site</label>
+            </value>
+            <value>
+                <fullName>3016</fullName>
+                <default>false</default>
+                <label>Débit frauduleux</label>
+            </value>
+            <value>
+                <fullName>3017</fullName>
+                <default>false</default>
+                <label>Erreur du client</label>
+            </value>
+            <value>
+                <fullName>3018</fullName>
+                <default>false</default>
+                <label>Annulation/modif pour imprévu</label>
+            </value>
+            <value>
+                <fullName>3019</fullName>
+                <default>false</default>
+                <label>Conditions de la promo</label>
+            </value>
+            <value>
+                <fullName>3021</fullName>
+                <default>false</default>
+                <label>accueil</label>
+            </value>
+            <value>
+                <fullName>3022</fullName>
+                <default>false</default>
+                <label>pas de réservation</label>
+            </value>
+            <value>
+                <fullName>3023</fullName>
+                <default>false</default>
+                <label>erreur de résa</label>
+            </value>
+            <value>
+                <fullName>3024</fullName>
+                <default>false</default>
+                <label>erreur de paramétrage</label>
+            </value>
+            <value>
+                <fullName>3025</fullName>
+                <default>false</default>
+                <label>site web</label>
+            </value>
+            <value>
+                <fullName>3026</fullName>
+                <default>false</default>
+                <label>Divers récla</label>
+            </value>
+            <value>
+                <fullName>3027</fullName>
+                <default>false</default>
+                <label>N° surtaxé</label>
+            </value>
+            <value>
+                <fullName>3028</fullName>
+                <default>false</default>
+                <label>Dde infos résa</label>
+            </value>
+            <value>
+                <fullName>3029</fullName>
+                <default>false</default>
+                <label>Accueil à l&apos;arrivée</label>
+            </value>
+            <value>
+                <fullName>3030</fullName>
+                <default>false</default>
+                <label>Localisation/accessibilité/GPS</label>
+            </value>
+            <value>
+                <fullName>3031</fullName>
+                <default>false</default>
+                <label>Abords de l&apos;hôtel</label>
+            </value>
+            <value>
+                <fullName>3032</fullName>
+                <default>false</default>
+                <label>Service d&apos;assistance</label>
+            </value>
+            <value>
+                <fullName>3033</fullName>
+                <default>false</default>
+                <label>DAC</label>
+            </value>
+            <value>
+                <fullName>3034</fullName>
+                <default>false</default>
+                <label>confusion hôtels</label>
+            </value>
+            <value>
+                <fullName>3035</fullName>
+                <default>false</default>
+                <label>pb navettes</label>
+            </value>
+            <value>
+                <fullName>3036</fullName>
+                <default>false</default>
+                <label>Hall d&apos;accueil, sanitaires</label>
+            </value>
+            <value>
+                <fullName>3037</fullName>
+                <default>false</default>
+                <label>Ascenseur</label>
+            </value>
+            <value>
+                <fullName>3038</fullName>
+                <default>false</default>
+                <label>Distributeurs boissons en-cas</label>
+            </value>
+            <value>
+                <fullName>3039</fullName>
+                <default>false</default>
+                <label>Propreté</label>
+            </value>
+            <value>
+                <fullName>3040</fullName>
+                <default>false</default>
+                <label>Température ambiante</label>
+            </value>
+            <value>
+                <fullName>3041</fullName>
+                <default>false</default>
+                <label>Wifi-TV</label>
+            </value>
+            <value>
+                <fullName>3042</fullName>
+                <default>false</default>
+                <label>Electricité-eau</label>
+            </value>
+            <value>
+                <fullName>3043</fullName>
+                <default>false</default>
+                <label>Linge de toilette linge de lit</label>
+            </value>
+            <value>
+                <fullName>3044</fullName>
+                <default>false</default>
+                <label>Accessibilité de la chambre</label>
+            </value>
+            <value>
+                <fullName>3045</fullName>
+                <default>false</default>
+                <label>Nuisances sonores</label>
+            </value>
+            <value>
+                <fullName>3046</fullName>
+                <default>false</default>
+                <label>Insectes</label>
+            </value>
+            <value>
+                <fullName>3047</fullName>
+                <default>false</default>
+                <label>Odeurs</label>
+            </value>
+            <value>
+                <fullName>3048</fullName>
+                <default>false</default>
+                <label>Confort de la chambre</label>
+            </value>
+            <value>
+                <fullName>3049</fullName>
+                <default>false</default>
+                <label>Ouvertures</label>
+            </value>
+            <value>
+                <fullName>3050</fullName>
+                <default>false</default>
+                <label>femmes de chambre</label>
+            </value>
+            <value>
+                <fullName>3051</fullName>
+                <default>false</default>
+                <label>Situation de la chambre</label>
+            </value>
+            <value>
+                <fullName>3052</fullName>
+                <default>false</default>
+                <label>Douche</label>
+            </value>
+            <value>
+                <fullName>3053</fullName>
+                <default>false</default>
+                <label>Lavabo</label>
+            </value>
+            <value>
+                <fullName>3054</fullName>
+                <default>false</default>
+                <label>WC</label>
+            </value>
+            <value>
+                <fullName>3055</fullName>
+                <default>false</default>
+                <label>Le buffet Disney</label>
+            </value>
+            <value>
+                <fullName>3056</fullName>
+                <default>false</default>
+                <label>Accueil au restaurant Disney</label>
+            </value>
+            <value>
+                <fullName>3057</fullName>
+                <default>false</default>
+                <label>Accueil au pdj</label>
+            </value>
+            <value>
+                <fullName>3058</fullName>
+                <default>false</default>
+                <label>Le buffet</label>
+            </value>
+            <value>
+                <fullName>3059</fullName>
+                <default>false</default>
+                <label>Salle pdj</label>
+            </value>
+            <value>
+                <fullName>3060</fullName>
+                <default>false</default>
+                <label>Pdj pas pris</label>
+            </value>
+            <value>
+                <fullName>3061</fullName>
+                <default>false</default>
+                <label>Erreur de facturation</label>
+            </value>
+            <value>
+                <fullName>3062</fullName>
+                <default>false</default>
+                <label>Tarif confirmé non appliqué</label>
+            </value>
+            <value>
+                <fullName>3063</fullName>
+                <default>false</default>
+                <label>No show</label>
+            </value>
+            <value>
+                <fullName>3064</fullName>
+                <default>false</default>
+                <label>Saisie manuelle</label>
+            </value>
+            <value>
+                <fullName>3065</fullName>
+                <default>false</default>
+                <label>Débit inexpliqué</label>
+            </value>
+            <value>
+                <fullName>3066</fullName>
+                <default>false</default>
+                <label>Explications</label>
+            </value>
+            <value>
+                <fullName>3067</fullName>
+                <default>false</default>
+                <label>Non application de la promo</label>
+            </value>
+            <value>
+                <fullName>3068</fullName>
+                <default>false</default>
+                <label>Augmentation saisonnière</label>
+            </value>
+            <value>
+                <fullName>3069</fullName>
+                <default>false</default>
+                <label>Augmentation évènement</label>
+            </value>
+            <value>
+                <fullName>3070</fullName>
+                <default>false</default>
+                <label>Facture téléphone</label>
+            </value>
+            <value>
+                <fullName>3071</fullName>
+                <default>false</default>
+                <label>Vol</label>
+            </value>
+            <value>
+                <fullName>3072</fullName>
+                <default>false</default>
+                <label>Dommages corporels</label>
+            </value>
+            <value>
+                <fullName>3073</fullName>
+                <default>false</default>
+                <label>Oubli/perte</label>
+            </value>
+            <value>
+                <fullName>3074</fullName>
+                <default>false</default>
+                <label>attend son rbt</label>
+            </value>
+            <value>
+                <fullName>3075</fullName>
+                <default>false</default>
+                <label>Avantages eclub</label>
+            </value>
+            <value>
+                <fullName>3076</fullName>
+                <default>false</default>
+                <label>Carte eclub</label>
+            </value>
+            <value>
+                <fullName>3077</fullName>
+                <default>false</default>
+                <label>Commande cadeau</label>
+            </value>
+            <value>
+                <fullName>3078</fullName>
+                <default>false</default>
+                <label>Divers</label>
+            </value>
+            <value>
+                <fullName>3079</fullName>
+                <default>false</default>
+                <label>E-chèque</label>
+            </value>
+            <value>
+                <fullName>3080</fullName>
+                <default>false</default>
+                <label>Nuits/Points</label>
+            </value>
+            <value>
+                <fullName>3081</fullName>
+                <default>false</default>
+                <label>Aucune signification</label>
+            </value>
+            <value>
+                <fullName>3082</fullName>
+                <default>false</default>
+                <label>Avis mensonger</label>
+            </value>
+            <value>
+                <fullName>3083</fullName>
+                <default>false</default>
+                <label>Informations personnelles</label>
+            </value>
+            <value>
+                <fullName>3084</fullName>
+                <default>false</default>
+                <label>Injures, grossièretés</label>
+            </value>
+            <value>
+                <fullName>3085</fullName>
+                <default>false</default>
+                <label>Pas de consommation</label>
+            </value>
+            <value>
+                <fullName>4000</fullName>
+                <default>false</default>
+                <label>4000</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

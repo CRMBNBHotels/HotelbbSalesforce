@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_feedback_reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Customer feedback reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ARRIVAL</fullName>
+                <default>false</default>
+                <label>ARRIVAL</label>
+            </value>
+            <value>
+                <fullName>OUTDOOR INSTALLATION</fullName>
+                <default>false</default>
+                <label>OUTDOOR INSTALLATION</label>
+            </value>
+            <value>
+                <fullName>EQUIPMENT</fullName>
+                <default>false</default>
+                <label>EQUIPMENT</label>
+            </value>
+            <value>
+                <fullName>BATHROOM</fullName>
+                <default>false</default>
+                <label>BATHROOM</label>
+            </value>
+            <value>
+                <fullName>BED</fullName>
+                <default>false</default>
+                <label>BED</label>
+            </value>
+            <value>
+                <fullName>BEDBUGS</fullName>
+                <default>false</default>
+                <label>BEDBUGS</label>
+            </value>
+            <value>
+                <fullName>BONUSHEFT</fullName>
+                <default>false</default>
+                <label>BONUSHEFT</label>
+            </value>
+            <value>
+                <fullName>KIOSK</fullName>
+                <default>false</default>
+                <label>KIOSK</label>
+            </value>
+            <value>
+                <fullName>CLUB CARD</fullName>
+                <default>false</default>
+                <label>CLUB CARD</label>
+            </value>
+            <value>
+                <fullName>FLIGHT</fullName>
+                <default>false</default>
+                <label>FLIGHT</label>
+            </value>
+            <value>
+                <fullName>DOUBLE PAYMENT</fullName>
+                <default>false</default>
+                <label>DOUBLE PAYMENT</label>
+            </value>
+            <value>
+                <fullName>DISEASE</fullName>
+                <default>false</default>
+                <label>DISEASE</label>
+            </value>
+            <value>
+                <fullName>CUSTOMER WRONGDOING</fullName>
+                <default>false</default>
+                <label>CUSTOMER WRONGDOING</label>
+            </value>
+            <value>
+                <fullName>WRONGDOING HOTEL</fullName>
+                <default>false</default>
+                <label>WRONGDOING HOTEL</label>
+            </value>
+            <value>
+                <fullName>FIRE ALARM</fullName>
+                <default>false</default>
+                <label>FIRE ALARM</label>
+            </value>
+            <value>
+                <fullName>FRIENDLINESS</fullName>
+                <default>false</default>
+                <label>FRIENDLINESS</label>
+            </value>
+            <value>
+                <fullName>FRONT OFFICE</fullName>
+                <default>false</default>
+                <label>FRONT OFFICE</label>
+            </value>
+            <value>
+                <fullName>EARLY BOOKING</fullName>
+                <default>false</default>
+                <label>EARLY BOOKING</label>
+            </value>
+            <value>
+                <fullName>BREAKFAST</fullName>
+                <default>false</default>
+                <label>BREAKFAST</label>
+            </value>
+            <value>
+                <fullName>BUILDING</fullName>
+                <default>false</default>
+                <label>BUILDING</label>
+            </value>
+            <value>
+                <fullName>ODOUR</fullName>
+                <default>false</default>
+                <label>ODOUR</label>
+            </value>
+            <value>
+                <fullName>SERVICE AGENT</fullName>
+                <default>false</default>
+                <label>SERVICE AGENT</label>
+            </value>
+            <value>
+                <fullName>AIR CONDITIONER</fullName>
+                <default>false</default>
+                <label>AIR CONDITIONER</label>
+            </value>
+            <value>
+                <fullName>CREDIT CARD FEES</fullName>
+                <default>false</default>
+                <label>CREDIT CARD FEES</label>
+            </value>
+            <value>
+                <fullName>NOISE</fullName>
+                <default>false</default>
+                <label>NOISE</label>
+            </value>
+            <value>
+                <fullName>SHOW NO</fullName>
+                <default>false</default>
+                <label>SHOW NO</label>
+            </value>
+            <value>
+                <fullName>OPENING HOURS</fullName>
+                <default>false</default>
+                <label>OPENING HOURS</label>
+            </value>
+            <value>
+                <fullName>ONLINE REGISTRATION</fullName>
+                <default>false</default>
+                <label>ONLINE REGISTRATION</label>
+            </value>
+            <value>
+                <fullName>CAR PARK</fullName>
+                <default>false</default>
+                <label>CAR PARK</label>
+            </value>
+            <value>
+                <fullName>PRICE</fullName>
+                <default>false</default>
+                <label>PRICE</label>
+            </value>
+            <value>
+                <fullName>SMOKING / NON-SMOKING</fullName>
+                <default>false</default>
+                <label>SMOKING / NON-SMOKING</label>
+            </value>
+            <value>
+                <fullName>BILL</fullName>
+                <default>false</default>
+                <label>BILL</label>
+            </value>
+            <value>
+                <fullName>RENOVATION</fullName>
+                <default>false</default>
+                <label>RENOVATION</label>
+            </value>
+            <value>
+                <fullName>BOOKING</fullName>
+                <default>false</default>
+                <label>BOOKING</label>
+            </value>
+            <value>
+                <fullName>GENERAL CLEANLINESS</fullName>
+                <default>false</default>
+                <label>GENERAL CLEANLINESS</label>
+            </value>
+            <value>
+                <fullName>BAD CLEANLINESS</fullName>
+                <default>false</default>
+                <label>BAD CLEANLINESS</label>
+            </value>
+            <value>
+                <fullName>CLEANLINESS</fullName>
+                <default>false</default>
+                <label>CLEANLINESS</label>
+            </value>
+            <value>
+                <fullName>SERVICE</fullName>
+                <default>false</default>
+                <label>SERVICE</label>
+            </value>
+            <value>
+                <fullName>SNACK / BEVERAGE MACHINE</fullName>
+                <default>false</default>
+                <label>SNACK / BEVERAGE MACHINE</label>
+            </value>
+            <value>
+                <fullName>OTHER</fullName>
+                <default>false</default>
+                <label>OTHER</label>
+            </value>
+            <value>
+                <fullName>CANCELLATION</fullName>
+                <default>false</default>
+                <label>CANCELLATION</label>
+            </value>
+            <value>
+                <fullName>TV, SKY ...</fullName>
+                <default>false</default>
+                <label>TV, SKY ...</label>
+            </value>
+            <value>
+                <fullName>INSECT</fullName>
+                <default>false</default>
+                <label>INSECT</label>
+            </value>
+            <value>
+                <fullName>LOST OBJECT</fullName>
+                <default>false</default>
+                <label>LOST OBJECT</label>
+            </value>
+            <value>
+                <fullName>INSURANCE CLAIM</fullName>
+                <default>false</default>
+                <label>INSURANCE CLAIM</label>
+            </value>
+            <value>
+                <fullName>HOT WATER OUTAGE</fullName>
+                <default>false</default>
+                <label>HOT WATER OUTAGE</label>
+            </value>
+            <value>
+                <fullName>WIFI</fullName>
+                <default>false</default>
+                <label>WIFI</label>
+            </value>
+            <value>
+                <fullName>BEDROOM</fullName>
+                <default>false</default>
+                <label>BEDROOM</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

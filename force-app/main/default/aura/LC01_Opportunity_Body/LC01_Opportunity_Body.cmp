@@ -1,0 +1,63 @@
+<aura:component controller="AP01_Opportunity">
+    <aura:handler name="init" action="{!c.doInitHotel}" value="{!this}"/>   
+    <aura:attribute name="hotels" type="Hotel__c[]"/>    
+    <aura:attribute name="filteredOptions" type="String[]"/>
+    <aura:attribute name="searchKey" type="String"/> 
+    
+    <aura:registerEvent name="E01_Opportunity_Body" type="c:E01_Opportunity_Body"/>  
+    <aura:method name="InitHotel" action="{!c.doInitHotel}"/>
+    <aura:method name="CallEvent" action="{!c.fireEvent}"/>
+    <aura:handler name="change" value="{!v.hotels}" action="{!c.clearCheckedBox}"/>
+
+    <!--Filter-->
+    <lightning:card title="Filter Hotels By Location: " iconName="utility:filterList"> 
+        <div class="slds-form-element">
+            <div class="slds-form-element__control">                      
+                <ui:inputText aura:id="addressText" updateOn="keyup"
+                              keyup="{!c.displayOptionsLocation}"
+                              class="slds-input slds-combobox__input"
+                              value="{!v.searchKey}"
+                              placeholder="Enter a location"/>                                          
+                
+                <aura:if isTrue="{!empty(v.filteredOptions)}">                       
+                    <aura:set attribute="else">
+                        <div class="slds-form-element slds-is-required">
+                            <div class="slds-form-element__control">
+                                <ui:inputSelect multiple="true" aura:id="predictions" 
+                                                class="slds-input" required="true">                   
+                                    <aura:iteration items="{!v.filteredOptions}" var="option">
+                                        <ui:inputSelectOption text="{!option}" label="{!option}"  click="{!c.pickAddress}"/>  
+                                    </aura:iteration>
+                                </ui:inputSelect> 
+                            </div>
+                        </div> 
+                    </aura:set>
+                </aura:if>                                                        
+            </div>
+        </div>
+    </lightning:card>
+    <br/>
+    <!--/Filter-->
+    <!--Table Of Hotels-->
+    <table class="slds-table slds-table--bordered slds-table--striped">
+        <thead>
+            <tr>
+                <th scope="col"><span class="slds-truncate">Select</span></th>
+                <th scope="col"><span class="slds-truncate">Hotel Name</span></th>
+                <th scope="col"><span class="slds-truncate">Distance(km)</span></th>
+            </tr>
+        </thead>
+        <tbody>            
+            <aura:iteration items="{!v.hotels}" var="hotel">
+                <tr>
+                    <td><ui:inputCheckBox text="{!hotel}" 
+                                          aura:id="checkedHotel" change="{!c.fireEvent}"/></td>
+                    <td>{!hotel.Commercial_Hotel_Name__c}</td>
+                    <td>{!hotel.Distance__c}</td>
+                </tr>
+            </aura:iteration>
+        </tbody>
+    </table>
+    <!-- / Table Of Hotels-->
+    
+</aura:component>

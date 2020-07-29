@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR06_CarteLogeeNumberModification</fullName>
+    <active>true</active>
+    <description>The carte logee number cannot be modified if the contract status is Activated or Expired</description>
+    <errorConditionFormula>AND (ISCHANGED (Loge_Card_Number__c),
+OR(
+ISPICKVAL(Status, &apos;Activated&apos;),
+ISPICKVAL(Status, &apos;Expired&apos;)
+)
+)</errorConditionFormula>
+    <errorDisplayField>Loge_Card_Number__c</errorDisplayField>
+    <errorMessage>You cannot modify the carte loge number</errorMessage>
+</ValidationRule>

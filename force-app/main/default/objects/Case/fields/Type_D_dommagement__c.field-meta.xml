@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_D_dommagement__c</fullName>
+    <externalId>false</externalId>
+    <label>Type Dédommagement</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Avoir</fullName>
+                <default>false</default>
+                <label>Avoir</label>
+            </value>
+            <value>
+                <fullName>Invitation</fullName>
+                <default>false</default>
+                <label>Invitation</label>
+            </value>
+            <value>
+                <fullName>Rbt/Invit</fullName>
+                <default>false</default>
+                <label>Rbt/Invit</label>
+            </value>
+            <value>
+                <fullName>Remboursement</fullName>
+                <default>false</default>
+                <label>Remboursement</label>
+            </value>
+            <value>
+                <fullName>régul eclub</fullName>
+                <default>false</default>
+                <label>régul eclub</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

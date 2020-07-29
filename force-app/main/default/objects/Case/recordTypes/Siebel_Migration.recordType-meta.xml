@@ -1,0 +1,6242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Siebel_Migration</fullName>
+    <active>true</active>
+    <businessProcess>Case process</businessProcess>
+    <description>A new record type and page layout had been created specifically for the migration of the cases from Siebel</description>
+    <label>Siebel Migration</label>
+    <picklistValues>
+        <picklist>Attitude_Consommateur__c</picklist>
+        <values>
+            <fullName>Agressif et revendicatif</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alerte l%27entreprise</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compréhensif</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connait les recours</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Epaulé par un avocat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fait du chantage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Menace média etc%2E%2E%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ne doit pas se reproduire</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Category__c</picklist>
+        <values>
+            <fullName>Claim</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Information request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Claim_Cause__c</picklist>
+        <values>
+            <fullName>Allgemein %2F offen %2F unbekannt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Baulicher Mangel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dienstleister von B%26B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FinanceHead Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Office Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Operations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RenovationSales %26 Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Selbstverschulden Gast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sonstiges</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Systemfehler %28online%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technische%2Fr Störung%2FFehler</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Umweltschutz</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eCommerce</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>höhere Gewalt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>nicht änderbare Gegebenheit</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Compensation_type__c</picklist>
+        <values>
+            <fullName>Clubcard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Head Office Partial Refund</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Head Office Refund</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hotel Partial Refund</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hotel Refund</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>To be decided</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Voucher</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Voucher %2B Refund</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Concerned_country__c</picklist>
+        <values>
+            <fullName>AD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AQ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BJ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BQ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DJ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ET</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FJ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GQ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ID</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IQ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ME</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ML</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MQ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SJ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ST</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TJ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>US</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ZA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ZM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ZW</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Confirmation_of_deletion__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Customer_feedback_reason__c</picklist>
+        <values>
+            <fullName>AIR CONDITIONER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ARRIVAL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BAD CLEANLINESS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BATHROOM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BEDBUGS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BEDROOM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BILL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BONUSHEFT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BOOKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BREAKFAST</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BUILDING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CANCELLATION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CAR PARK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CLEANLINESS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CLUB CARD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CREDIT CARD FEES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CUSTOMER WRONGDOING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DISEASE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DOUBLE PAYMENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EARLY BOOKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EQUIPMENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FIRE ALARM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FLIGHT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FRIENDLINESS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FRONT OFFICE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GENERAL CLEANLINESS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HOT WATER OUTAGE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSECT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INSURANCE CLAIM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KIOSK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LOST OBJECT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NOISE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ODOUR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ONLINE REGISTRATION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OPENING HOURS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OUTDOOR INSTALLATION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRICE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RENOVATION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SERVICE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SERVICE AGENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SHOW NO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SMOKING %2F NON-SMOKING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SNACK %2F BEVERAGE MACHINE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TV%2C SKY %2E%2E%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WIFI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WRONGDOING HOTEL</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Customer_objection_channel__c</picklist>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Gravit_Objective__c</picklist>
+        <values>
+            <fullName>Dommage corp%2E sani%2E Moral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Erreur entreprise</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Faute entreprise</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Hotel_Selected__c</picklist>
+        <values>
+            <fullName>Aachen Wuerselen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aschaffenburg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Augsburg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bad Homburg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Baden Airpark</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Berlin Airport</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Berlin Alexanderplatz</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Berlin Potsdamer Platz</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Berlin Sued Genshagen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Berlin Tiergarten</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bielefeld</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bochum Herne</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Boeblingen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bonn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Braunschweig City</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Braunschweig Nord</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bremen Hbf</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Darmstadt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dortmund City</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dortmund Messe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dresden</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duesseldorf Airport</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duesseldorf City</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duesseldorf Hbf</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duisburg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Erfurt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Erlangen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Essen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Frankfurt City Ost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Frankfurt Hahn Airport</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Frankfurt Hbf</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Frankfurt Niederrad</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Frankfurt Nord</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Frankfurt West</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Freiburg Nord</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Freiburg Sued</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Goettingen City</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Goettingen West</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Halle Saale</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hamburg Altona</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hamburg City Ost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hamburg Harburg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hamburg Nord</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hamm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hannover</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hannover Garbsen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Heidelberg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Heilbronn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Holledau</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ingolstadt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kaiserslautern</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Karlsruhe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kassel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kiel City</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Koblenz</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Koeln Airport</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Koeln Frechen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Koeln Messe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Konstanz</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Krefeld</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leipzig City</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leipzig Nord</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ludwigshafen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Luebeck</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lueneburg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Magdeburg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mainz Hbf</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mainz Hechtsheim</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mannheim</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Moenchengladbach</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Muelheim An Der Ruhr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Muenchen Airport</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Muenchen City Nord</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Muenchen City Ost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Muenchen City West</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Muenchen Messe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Muenster Hafen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neu Ulm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nuernberg City</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nuernberg Hbf</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oberhausen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offenburg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oldenburg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Osnabrueck</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paderborn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Passau</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pegnitz</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Potsdam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Regensburg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rhynern Nord</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rhynern Sued</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rosenheim</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Saarbruecken</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schweinfurt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stuttgart City</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stuttgart Vaihingen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ulm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weil Am Rhein</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weimar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wiesbaden</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wuerzburg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wuppertal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Imputation_Comptable__c</picklist>
+        <values>
+            <fullName>Hôtel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Siège</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>MOTIFS_2__c</picklist>
+        <values>
+            <fullName>10%25 non appliqués</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ANCV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Abords de l%27hôtel bruyants</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Abords peu accueillants</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accueil désagréable au pdj</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accueil désagréable au restau</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accès handicapés%2Fparking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Adhésion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Agression</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aménagements personnes hand%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Animaux</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Annulation carte eclub</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Annulation commande</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Approvisionnement distributeur</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Article défectueux</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Article non reçu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ascenseur hs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ascenseur sale ou encombré</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Attend son dédommagement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Augmentation saisonnière</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Augmentation évènement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autre bug</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autre imprévu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Best Price</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biens oubliés ou perdus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Breaks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Buffet mal approvisionné</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bug CL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CB expirée</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Changement nom porteur %28société%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Changement planning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chauffage en panne%2Finefficace</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chute%2C blessure%2C etc</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clim en panne%2Finefficace</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Code ouverture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Code partenaire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commande client %28effectué par service%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compatibilité Safari</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compliment sur la réponse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Couette trop chaude</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Crazy tarifs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DAC HS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DLC dépassée</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dde de confirmation de résa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dde de doc eclub</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dde de réservation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dde info utilisation echeque</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dde infos parking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dde infos résa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dde vérification du statut</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Debit frauduleux</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Debit sans facture hotelus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Declenchement alarme incendie</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demande annulation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demande de factures</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demande de relevé mensuel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demande le rbt de pdj pas pris</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demande modification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deux mois supplèmentaires</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Distributeurs en panne</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Divers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Divers Avis Clients</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Douche bouchée</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Douchette%2Fflexible</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicata de facture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Débit inexpliqué</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dépublication</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Détail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Early</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email associé à plusieurs comptes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email pour plusieurs comptes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Environnement peu rassurant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Erreur dans relevé mensuel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Erreur du client Special Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Erreur nbre de chambres</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Erreur nbre de nuits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Erreur nbre de pdj</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Erreur type de chambre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Erreur-param%2E type de chambre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Explications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facture téléphone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fusion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Garantie CL annulée par hôtel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Go</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grève</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hall peu accueillant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Horaires pdj non respectés</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hosp%2E Décès Maladie</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Identification compte web</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Identification web</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Impayé Eclub</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insatisfait réponse gérant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Installation élec défectueuse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intrusion dans la chambre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>J-3 non appliqué</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lavabo bouché</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lit bébé</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Literie inconfortable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Matériel détérioré</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mauvais article reçu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mode clim%2Fchauffage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Modification coordonnées</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Modifié</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monétisation du site</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mot de passe oublié</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Motif non recevable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Moucherons%2C fourmis%2C autres</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%C2%B0 surtaxé</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N2 confusion entre hôtels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NS5 suite bug internet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NS6 suite erreur résa date</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NS7 suite erreur résa hôtel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NS8 suite pb annulation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Navettes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nombre d%27oreillers insuffisant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nombre serviettes insuffisant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non respect %22Ne pas déranger%22</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Odeur peinture%2C colle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Odeur tabac</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Odeurs autres</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offre été</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ophones</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oups%2C double résa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paiement echeque impossible</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paiement à l%27arrivée impossible</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Panne d%27électricité</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Panne%2Fabsence tv%2Ftélécommande</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parrainage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pas d%27eau chaude</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pas reçu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pas reçu le sms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pas reçue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pb fenêtre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pb porte %28chambre ou sdb%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pb volet%2C occultant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Perdue ou volée</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personnel accueillant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personnel peu aimable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Peu efficace</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plafond CB atteint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portail parking défectueux</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Problème Identification%2FInternet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Procédure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Procédure commande</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Propreté chambre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Propreté du linge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Propreté salle de bain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pub mensongère</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Publié</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Punaises</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Périmé%2FPrologation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualité produits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualité produits%2Fdlc dépassé</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quantité insuffisante</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reglage difficile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Remerciements</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renouvellement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Restriction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retour NPAI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Robinetterie hs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Réduction sur adhésion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Régul suite remise à zéro</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Régularisation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Régularisation CL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Régularisation autre CB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Résa annulée par l%27hôtel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Résa partielle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Saisie manuelle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salle pdj mal agencée</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Satisfait du produit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Signalétique%2Flocalisation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Souhait du client non respecté</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Suppression</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tapage nocturne</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tarif confirmé non appliqué</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Travaux en cours dans l%27hôtel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vmc%2C clim%2C chauffage bruyants</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vol dans la chambre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vol dans la voiture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wifi - Pas d%27accès</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wifi trop compliqué</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wifi- outlook</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>accueil peu aimable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>attend son rbt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>aucune solution proposée</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>bug du site%2C site indisponible</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>cb étrangère refusée</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ch1-Chambre déjà occupée</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ch2-Chambre mal agencée</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ch3-Chambre mal insonorisée</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ch4-Ch pas prête à l%27arrivée</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>check-in à distance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>confusion hôtels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>coupure eau</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>encaissement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>er1-Erreur de facturation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>fuite d%27eau</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>fuite%2Fchasse d%27eau</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>mauvaise utilisation DAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>pb navettes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>peu ergonomique</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>relogés dans un autre hôtel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>salle de bain mal agencée</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>solution trouvée sur place</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>téléopératrice peu aimable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>wc bouchés</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>MOTIFS_3__c</picklist>
+        <values>
+            <fullName>10%25 non appliqués</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ANCV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Abords de l%27hôtel bruyants</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Abords peu accueillants</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accueil désagréable au pdj</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accueil désagréable au restau</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accès handicapés%2Fparking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Adhésion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Agression</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aménagements personnes hand%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Animaux</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Annulation carte eclub</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Annulation commande</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Approvisionnement distributeur</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Article défectueux</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Article non reçu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ascenseur hs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ascenseur sale ou encombré</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Attend son dédommagement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Augmentation saisonnière</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Augmentation évènement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autre bug</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autre imprévu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Best Price</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biens oubliés ou perdus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Breaks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Buffet mal approvisionné</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bug CL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CB expirée</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Changement nom porteur %28société%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Changement planning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chauffage en panne%2Finefficace</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chute%2C blessure%2C etc</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clim en panne%2Finefficace</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Code ouverture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Code partenaire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commande client %28effectué par service%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compatibilité Safari</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compliment sur la réponse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Couette trop chaude</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Crazy tarifs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DAC HS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DLC dépassée</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dde de confirmation de résa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dde de doc eclub</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dde de réservation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dde info utilisation echeque</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dde infos parking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dde infos résa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dde vérification du statut</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Debit frauduleux</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Debit sans facture hotelus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Declenchement alarme incendie</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demande annulation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demande de factures</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demande de relevé mensuel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demande le rbt de pdj pas pris</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demande modification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deux mois supplèmentaires</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Distributeurs en panne</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Divers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Divers Avis Clients</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Douche bouchée</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Douchette%2Fflexible</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicata de facture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Débit inexpliqué</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dépublication</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Détail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Early</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email associé à plusieurs comptes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email pour plusieurs comptes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Environnement peu rassurant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Erreur dans relevé mensuel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Erreur du client Special Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Erreur nbre de chambres</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Erreur nbre de nuits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Erreur nbre de pdj</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Erreur type de chambre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Erreur-param%2E type de chambre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Explications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facture téléphone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fusion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Garantie CL annulée par hôtel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Go</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grève</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hall peu accueillant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Horaires pdj non respectés</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hosp%2E Décès Maladie</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Identification compte web</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Identification web</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Impayé Eclub</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insatisfait réponse gérant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Installation élec défectueuse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intrusion dans la chambre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>J-3 non appliqué</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lavabo bouché</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lit bébé</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Literie inconfortable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Matériel détérioré</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mauvais article reçu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mode clim%2Fchauffage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Modification coordonnées</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Modifié</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monétisation du site</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mot de passe oublié</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Motif non recevable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Moucherons%2C fourmis%2C autres</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%C2%B0 surtaxé</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N2 confusion entre hôtels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NS5 suite bug internet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NS6 suite erreur résa date</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NS7 suite erreur résa hôtel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NS8 suite pb annulation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Navettes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nombre d%27oreillers insuffisant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nombre serviettes insuffisant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non respect %22Ne pas déranger%22</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Odeur peinture%2C colle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Odeur tabac</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Odeurs autres</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offre été</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ophones</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oups%2C double résa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paiement echeque impossible</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paiement à l%27arrivée impossible</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Panne d%27électricité</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Panne%2Fabsence tv%2Ftélécommande</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parrainage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pas d%27eau chaude</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pas reçu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pas reçu le sms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pas reçue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pb fenêtre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pb porte %28chambre ou sdb%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pb volet%2C occultant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Perdue ou volée</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personnel accueillant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personnel peu aimable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Peu efficace</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plafond CB atteint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portail parking défectueux</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Problème Identification%2FInternet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Procédure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Procédure commande</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Propreté chambre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Propreté du linge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Propreté salle de bain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pub mensongère</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Publié</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Punaises</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Périmé%2FPrologation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualité produits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualité produits%2Fdlc dépassé</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quantité insuffisante</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reglage difficile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Remerciements</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renouvellement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Restriction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retour NPAI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Robinetterie hs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Réduction sur adhésion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Régul suite remise à zéro</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Régularisation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Régularisation CL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Régularisation autre CB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Résa annulée par l%27hôtel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Résa partielle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Saisie manuelle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salle pdj mal agencée</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Satisfait du produit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Signalétique%2Flocalisation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Souhait du client non respecté</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Suppression</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tapage nocturne</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tarif confirmé non appliqué</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Travaux en cours dans l%27hôtel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vmc%2C clim%2C chauffage bruyants</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vol dans la chambre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vol dans la voiture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wifi - Pas d%27accès</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wifi trop compliqué</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wifi- outlook</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>accueil peu aimable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>attend son rbt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>aucune solution proposée</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>bug du site%2C site indisponible</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>cb étrangère refusée</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ch1-Chambre déjà occupée</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ch2-Chambre mal agencée</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ch3-Chambre mal insonorisée</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ch4-Ch pas prête à l%27arrivée</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>check-in à distance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>confusion hôtels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>coupure eau</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>encaissement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>er1-Erreur de facturation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>fuite d%27eau</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>fuite%2Fchasse d%27eau</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>mauvaise utilisation DAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>pb navettes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>peu ergonomique</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>relogés dans un autre hôtel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>salle de bain mal agencée</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>solution trouvée sur place</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>téléopératrice peu aimable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>wc bouchés</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>MOTIFS__c</picklist>
+        <values>
+            <fullName>4000</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4001</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4002</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4003</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4004</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4005</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4006</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4007</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4008</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4009</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4010</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4011</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4012</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4013</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4015</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4016</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4017</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4018</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4019</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4020</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4021</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4022</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4023</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4024</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4025</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4026</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4027</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4028</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4029</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4030</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4031</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4032</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4033</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4034</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4035</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4036</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4037</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4038</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4040</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4041</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4042</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4043</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4044</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4045</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4046</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4047</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4048</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4049</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4050</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4051</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4052</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4053</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4054</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4055</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4056</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4057</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4058</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4059</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4060</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4061</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4062</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4063</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4064</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4065</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4066</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4067</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4068</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4069</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4070</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4071</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4072</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4073</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4074</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4075</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4076</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4077</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4078</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4079</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4080</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4081</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4082</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4083</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4084</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4085</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4086</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4087</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4088</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4089</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4090</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4091</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4092</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4093</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4094</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4095</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4096</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4097</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4098</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4099</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4100</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4101</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4102</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4103</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4104</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4105</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4106</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4107</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4108</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4109</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4110</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4111</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4112</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4113</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4114</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4115</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4116</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4117</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4118</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4119</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4120</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4121</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4122</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4123</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4124</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4125</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4126</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4127</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4128</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4129</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4130</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4131</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4132</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4133</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4134</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4135</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4136</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4137</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4138</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4139</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4140</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4141</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4142</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4143</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4144</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4145</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4147</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4148</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4149</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4150</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4151</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4152</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4153</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4154</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4155</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4156</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4157</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4158</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4159</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4160</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4161</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4162</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4163</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4164</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4165</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4166</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4167</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4168</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4169</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4170</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4171</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4172</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4173</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4174</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4175</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4176</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4177</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4178</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4179</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4180</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4181</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4182</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4183</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4184</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4185</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4186</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4187</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4188</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4189</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4190</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4191</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4192</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4193</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4194</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4195</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4196</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4197</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4198</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4199</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4200</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4201</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4202</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4203</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4204</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4205</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4206</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4207</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4208</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4209</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4210</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4211</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Mode_paiement__c</picklist>
+        <values>
+            <fullName>Chèque</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TPE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Virement</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Motif__c</picklist>
+        <values>
+            <fullName>%2E%2E%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OBJETS_2__c</picklist>
+        <values>
+            <fullName>Abords de l%27hôtel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accessibilité de la chambre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accueil au pdj</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accueil au restaurant Disney</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accueil à l%27arrivée</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Annulation client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Annulation%2Fmodif pour imprévu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ascenseur</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aucune signification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Augmentation saisonnière</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Augmentation évènement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Avantages eclub</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Avis mensonger</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bug du site</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Carte eclub</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commande cadeau</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compliment Accueil</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compliment Hôtel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compliment SRC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compliment sur la réponse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conditions  de  la  promo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conditions de la  promo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conditions de la promo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Confort de la chambre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dde infos résa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Distributeurs boissons en-cas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Divers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Divers Avis Clients</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Divers récla</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dommages corporels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Douche</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Débit frauduleux</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Débit inexpliqué</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dédommagement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E-chèque</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Echec paiement hôtel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electricité-eau</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Erreur  du  client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Erreur de facturation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Erreur du  client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Erreur du client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Erreur hôtel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Explications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facture téléphone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Factures</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hall d%27accueil%2C sanitaires</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Impayé Eclub</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Informations personnelles</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Injures%2C grossièretés</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insectes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lavabo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Le buffet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Le buffet Disney</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Linge de toilette linge de lit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Localisation%2Faccessibilité%2FGPS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Modification client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%C2%B0 surtaxé</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non application de la promo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nuisances sonores</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nuits%2FPoints</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Odeurs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oubli%2Fperte</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ouvertures</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pas de consommation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pdj pas pris</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Problème Identification%2FInternet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Propreté</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Relevé mensuel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Réponse du gérant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Saisie manuelle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salle pdj</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service d%27assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Situation de la chambre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tarif confirmé non appliqué</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Température ambiante</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vol</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wifi-TV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>accueil</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>attend son rbt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>confusion hôtels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>erreur de paramétrage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>erreur de résa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>femmes de chambre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>pas de réservation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>pb navettes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>site web</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OBJETS_3__c</picklist>
+        <values>
+            <fullName>Abords de l%27hôtel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accessibilité de la chambre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accueil au pdj</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accueil au restaurant Disney</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accueil à l%27arrivée</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Annulation client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Annulation%2Fmodif pour imprévu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ascenseur</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aucune signification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Augmentation saisonnière</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Augmentation évènement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Avantages eclub</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Avis mensonger</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bug du site</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Carte eclub</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commande cadeau</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compliment Accueil</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compliment Hôtel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compliment SRC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compliment sur la réponse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conditions  de  la  promo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conditions de la  promo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conditions de la promo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Confort de la chambre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dde infos résa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Distributeurs boissons en-cas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Divers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Divers Avis Clients</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Divers récla</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dommages corporels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Douche</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Débit frauduleux</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Débit inexpliqué</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dédommagement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E-chèque</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Echec paiement hôtel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electricité-eau</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Erreur  du  client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Erreur de facturation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Erreur du  client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Erreur du client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Erreur hôtel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Explications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facture téléphone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Factures</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hall d%27accueil%2C sanitaires</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Impayé Eclub</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Informations personnelles</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Injures%2C grossièretés</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insectes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lavabo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Le buffet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Le buffet Disney</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Linge de toilette linge de lit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Localisation%2Faccessibilité%2FGPS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Modification client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%C2%B0 surtaxé</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non application de la promo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nuisances sonores</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nuits%2FPoints</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Odeurs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oubli%2Fperte</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ouvertures</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pas de consommation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pdj pas pris</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Problème Identification%2FInternet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Propreté</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Relevé mensuel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Réponse du gérant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Saisie manuelle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salle pdj</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service d%27assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Situation de la chambre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tarif confirmé non appliqué</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Température ambiante</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vol</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wifi-TV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>accueil</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>attend son rbt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>confusion hôtels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>erreur de paramétrage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>erreur de résa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>femmes de chambre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>pas de réservation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>pb navettes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>site web</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OBJETS__c</picklist>
+        <values>
+            <fullName>3000</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3001</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3002</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3003</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3004</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3005</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3006</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3007</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3008</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3009</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3010</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3011</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3012</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3013</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3015</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3016</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3017</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3018</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3019</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3021</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3022</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3023</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3024</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3025</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3026</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3027</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3028</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3029</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3030</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3031</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3032</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3033</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3034</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3035</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3036</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3037</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3038</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3039</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3040</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3041</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3042</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3043</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3044</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3045</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3046</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3047</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3048</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3049</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3050</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3051</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3052</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3053</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3054</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3055</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3056</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3057</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3058</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3059</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3060</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3061</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3062</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3063</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3064</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3065</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3066</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3067</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3068</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3069</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3070</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3071</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3072</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3073</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3074</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3075</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3076</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3077</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3078</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3079</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3080</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3081</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3082</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3083</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3084</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3085</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Origin</picklist>
+        <values>
+            <fullName>Avis client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Courrier</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Face à Face</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facebook</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invitation IR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Média social</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rapport d%E2%80%99incident</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>via call center formulaire web</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>via call center mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>via grands comptes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Platform__c</picklist>
+        <values>
+            <fullName>Booking%2Ecom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facebook</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Google</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Holidaycheck</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tripadvisor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TrustYou</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason</picklist>
+        <values>
+            <fullName>Fonctionnalité complexe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>L%E2%80%99utilisateur n%E2%80%99a pas assisté à la forma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manque de clarté des instructions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nouveau problème</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Problème actuel</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason_for_deletion__c</picklist>
+        <values>
+            <fullName>Hate speech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incorrect facts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Individual insult</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Racist or sexual content</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spam</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Responsabilit__c</picklist>
+        <values>
+            <fullName>Chaine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hotel</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Room_type__c</picklist>
+        <values>
+            <fullName>Disable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Double</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Family</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Simple</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Triple</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Twin</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>TYPES_2__c</picklist>
+        <values>
+            <fullName>ARRIVEE SUR LE SITE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AVIS CLIENTS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Annulation%2Fmodification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compliments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compliments Avis Clients</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DOMMAGES %2FSINISTRES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ECLUB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FACTURATION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facturation CL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LA CHAMBRE ET LA SALLE DE BAIN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LE PETIT DEJEUNER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OFFRE NOEL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OFFRE NOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OFFRES PROMOS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PARTIES COMMUNES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Problème Identification%2FInternet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RBT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RESERVATION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RESTAURATION DISNEY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recouvrement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SPECIAL EVENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Signalement client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Signalement hôtelier</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>TYPES_3__c</picklist>
+        <values>
+            <fullName>ARRIVEE SUR LE SITE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AVIS CLIENTS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Annulation%2Fmodification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compliments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compliments Avis Clients</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DOMMAGES %2FSINISTRES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ECLUB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FACTURATION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facturation CL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LA CHAMBRE ET LA SALLE DE BAIN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LE PETIT DEJEUNER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OFFRE NOEL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OFFRE NOW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OFFRES PROMOS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PARTIES COMMUNES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Problème Identification%2FInternet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RBT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RESERVATION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RESTAURATION DISNEY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recouvrement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SPECIAL EVENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Signalement client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Signalement hôtelier</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>TYPES__c</picklist>
+        <values>
+            <fullName>2000</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2001</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2002</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2003</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2004</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2005</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2006</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2007</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2008</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2009</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2010</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2011</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2012</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2013</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2015</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2016</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2017</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2018</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2019</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2020</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2021</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2022</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>BB Hotels Club Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Booking confirmation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Carte logée</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compliment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer claim</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer feedbacks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demandes réseau</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate Invoice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eclub program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Garantie-RI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Information request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lost Property</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Médiation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prévention</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recouvrement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Report review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Réclamation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Traitement hôtel</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type_D_dommagement__c</picklist>
+        <values>
+            <fullName>Avoir</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invitation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rbt%2FInvit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Remboursement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>régul eclub</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Voucher_Product__c</picklist>
+        <values>
+            <fullName>Bed %26 Breakfast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Breakfast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Room</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X1_Personne_s_alerter__c</picklist>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X1_Service_en_charge__c</picklist>
+        <values>
+            <fullName>Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Call center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dommages%2Fsinistres</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E-club</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hygiène et sécurié</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hôtel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hôtel %2F call center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Informatique CB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Informatique DAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Informatique HOT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Informatique WEB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Informatique WIFI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maintenance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maintenance ou reno</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maximiles</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Produit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Produit JM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rénovation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web design</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X2_Personne_s_alerter__c</picklist>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X2_Service_en_charge__c</picklist>
+        <values>
+            <fullName>Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Call center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dommages%2Fsinistres</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E-club</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hygiène et sécurié</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hôtel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hôtel %2F call center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Informatique CB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Informatique DAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Informatique HOT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Informatique WEB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Informatique WIFI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maintenance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maintenance ou reno</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maximiles</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Produit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Produit JM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rénovation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web design</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X3_Personne_s_alerter__c</picklist>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X3_Service_en_charge__c</picklist>
+        <values>
+            <fullName>Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Call center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dommages%2Fsinistres</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E-club</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hygiène et sécurié</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hôtel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hôtel %2F call center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Informatique CB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Informatique DAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Informatique HOT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Informatique WEB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Informatique WIFI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maintenance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maintenance ou reno</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maximiles</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Produit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Produit JM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rénovation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web design</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Rapport d&apos;opportunité / réservation avec des équipes d&apos;opportunité / réservation</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Rapports d&apos;opportunité / réservation avec des équipes d&apos;opportunité / réservatio</value>
+    </caseValues>
+    <gender>Masculine</gender>
+    <name>opportunity_team_product_report</name>
+    <startsWith>Consonant</startsWith>
+</CustomFieldTranslation>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TYPES__c</fullName>
+    <externalId>false</externalId>
+    <label>TYPES 1</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>2000</fullName>
+                <default>false</default>
+                <label>Annulation/modification</label>
+            </value>
+            <value>
+                <fullName>2001</fullName>
+                <default>false</default>
+                <label>Facturation CL</label>
+            </value>
+            <value>
+                <fullName>2002</fullName>
+                <default>false</default>
+                <label>Problème Identification/Internet</label>
+            </value>
+            <value>
+                <fullName>2003</fullName>
+                <default>false</default>
+                <label>Compliments</label>
+            </value>
+            <value>
+                <fullName>2004</fullName>
+                <default>false</default>
+                <label>Compliments Avis Clients</label>
+            </value>
+            <value>
+                <fullName>2005</fullName>
+                <default>false</default>
+                <label>Recouvrement</label>
+            </value>
+            <value>
+                <fullName>2006</fullName>
+                <default>false</default>
+                <label>AVIS CLIENTS</label>
+            </value>
+            <value>
+                <fullName>2007</fullName>
+                <default>false</default>
+                <label>OFFRES PROMOS</label>
+            </value>
+            <value>
+                <fullName>2008</fullName>
+                <default>false</default>
+                <label>SPECIAL EVENT</label>
+            </value>
+            <value>
+                <fullName>2009</fullName>
+                <default>false</default>
+                <label>OFFRE NOEL</label>
+            </value>
+            <value>
+                <fullName>2010</fullName>
+                <default>false</default>
+                <label>OFFRE NOW</label>
+            </value>
+            <value>
+                <fullName>2011</fullName>
+                <default>false</default>
+                <label>RESERVATION</label>
+            </value>
+            <value>
+                <fullName>2012</fullName>
+                <default>false</default>
+                <label>ARRIVEE SUR LE SITE</label>
+            </value>
+            <value>
+                <fullName>2013</fullName>
+                <default>false</default>
+                <label>PARTIES COMMUNES</label>
+            </value>
+            <value>
+                <fullName>2014</fullName>
+                <default>false</default>
+                <label>LA CHAMBRE ET LA SALLE DE BAIN</label>
+            </value>
+            <value>
+                <fullName>2015</fullName>
+                <default>false</default>
+                <label>RESTAURATION DISNEY</label>
+            </value>
+            <value>
+                <fullName>2016</fullName>
+                <default>false</default>
+                <label>LE PETIT DEJEUNER</label>
+            </value>
+            <value>
+                <fullName>2017</fullName>
+                <default>false</default>
+                <label>FACTURATION</label>
+            </value>
+            <value>
+                <fullName>2018</fullName>
+                <default>false</default>
+                <label>DOMMAGES /SINISTRES</label>
+            </value>
+            <value>
+                <fullName>2019</fullName>
+                <default>false</default>
+                <label>RBT</label>
+            </value>
+            <value>
+                <fullName>2020</fullName>
+                <default>false</default>
+                <label>CLUB</label>
+            </value>
+            <value>
+                <fullName>2021</fullName>
+                <default>false</default>
+                <label>Signalement client</label>
+            </value>
+            <value>
+                <fullName>2022</fullName>
+                <default>false</default>
+                <label>Signalement hôtelier</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

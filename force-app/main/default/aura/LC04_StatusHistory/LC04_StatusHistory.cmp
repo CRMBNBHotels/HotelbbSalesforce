@@ -1,0 +1,5 @@
+<!-- LC04_StatusHistory -->
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,force:hasSObjectName,flexipage:availableForAllPageTypes">
+	<aura:attribute type="String" name="recordId" />
+    <c:LC02_WSDataTable recordId="{!v.recordId}" bbObjectName="booking"/>
+</aura:component>

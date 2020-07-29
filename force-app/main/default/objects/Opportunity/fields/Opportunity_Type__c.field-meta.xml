@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Opportunity Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>RFP</fullName>
+                <default>false</default>
+                <label>RFP</label>
+            </value>
+            <value>
+                <fullName>National contract</fullName>
+                <default>false</default>
+                <label>National contract</label>
+            </value>
+            <value>
+                <fullName>Carte Logée</fullName>
+                <default>false</default>
+                <label>Carte Logée</label>
+            </value>
+            <value>
+                <fullName>EClub</fullName>
+                <default>false</default>
+                <label>EClub</label>
+            </value>
+            <value>
+                <fullName>Local Contract</fullName>
+                <default>false</default>
+                <label>Local Contract</label>
+            </value>
+            <value>
+                <fullName>Work Council Contract</fullName>
+                <default>false</default>
+                <label>Work Council Contract</label>
+            </value>
+            <value>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <label>Training</label>
+            </value>
+            <value>
+                <fullName>Inter Council Contract</fullName>
+                <default>false</default>
+                <label>Inter Council Contract</label>
+            </value>
+            <value>
+                <fullName>Chain Discount</fullName>
+                <default>false</default>
+                <label>Chain Discount</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

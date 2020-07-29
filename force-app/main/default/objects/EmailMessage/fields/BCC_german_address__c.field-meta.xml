@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BCC_german_address__c</fullName>
+    <externalId>false</externalId>
+    <label>BCC</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>feedback-de@hotelbb.com</fullName>
+                <default>false</default>
+                <label>feedback-de@hotelbb.com</label>
+            </value>
+            <value>
+                <fullName>khadija.benabdellah@ei-technologies.com</fullName>
+                <default>false</default>
+                <label>khadija.benabdellah@ei-technologies.com</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

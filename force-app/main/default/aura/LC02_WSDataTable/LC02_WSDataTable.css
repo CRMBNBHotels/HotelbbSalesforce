@@ -1,0 +1,14 @@
+.THIS .slds-modal__container{
+    height : auto;
+    width: 70%;
+    max-width: 70rem;
+    margin-top:180px;
+}
+.THIS .modal-body{
+    height : 500px !important;
+    max-height: 500px !important;
+}
+
+.THIS .customFooter{
+    display: inline !important;
+}

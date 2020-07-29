@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Leisure</fullName>
+    <active>true</active>
+    <businessProcess>Business Process</businessProcess>
+    <label>Leisure</label>
+    <picklistValues>
+        <picklist>Context__c</picklist>
+        <values>
+            <fullName>Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leisure</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ForecastCategoryName</picklist>
+        <values>
+            <fullName>Best Case</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Omitted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pipeline</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LeadSource</picklist>
+        <values>
+            <fullName>Advertisement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employee Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Google AdWords</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purchased List</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trade Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Loss_Reason__c</picklist>
+        <values>
+            <fullName>Lost to Competitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Budget %2F Lost Funding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Decision %2F Non-Responsive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Lost_against__c</picklist>
+        <values>
+            <fullName>Adagio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Appartcity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Balladins</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Best Western</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Britt hotel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Campanile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Comfort</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>F1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fasthotel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ibis %28rouge%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ibis Style</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ibis budget</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Independant hotel 2*</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Independant hotel 3*</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Independant hotel 4*</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Independant hotel 5*</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Indépendant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kyriad</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P%E2%80%99tit Dej</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Première classe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>inter hotel</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Opportunity_Scope__c</picklist>
+        <values>
+            <fullName>International</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Local</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>National</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Opportunity_Type__c</picklist>
+        <values>
+            <fullName>Carte Logée</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chain Discount</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EClub</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inter Council Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Local Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>National contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RFP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Work Council Contract</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Pay__c</picklist>
+        <values>
+            <fullName>After departure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deposit payment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Down payment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre payment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VCC</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RFA__c</picklist>
+        <values>
+            <fullName>NO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YES</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Existing Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Business</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type_city_tax__c</picklist>
+        <values>
+            <fullName>Exclusive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inclusive</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Wallet_Status__c</picklist>
+        <values>
+            <fullName>Burned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Earned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

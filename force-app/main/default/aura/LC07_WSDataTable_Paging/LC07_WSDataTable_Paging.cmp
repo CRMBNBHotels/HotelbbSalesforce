@@ -1,0 +1,21 @@
+<!-- LC07_WSDataTable_Paging -->
+<aura:component>
+    <aura:attribute name="pageNumber" type="Integer" default="1"/>
+    <aura:attribute name="pageKey" type="String" default=""/>
+    <aura:attribute name="pageDateKey" type="String" default=""/>
+    <aura:attribute name="mapPages" type="Map" default=""/>
+    <aura:attribute name="mapPagesDate" type="Map" default=""/>
+    <aura:attribute name="bDataLoaded" type="boolean" default="false"/>
+    <aura:attribute name="bDisableLeftButton" type="boolean" default="true"/>
+    <aura:attribute name="bDisableRightButton" type="boolean" default="true"/>
+    
+    <aura:attribute name="listRecords" type="List" default=""/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.onPageLoad}"/>
+    
+    <div style="text-align:right;width:100%;">
+        <lightning:button iconName="utility:left" title="Next Page" class="paging-btn left" onclick="{!c.previousPage}" disabled="{!v.bDisableLeftButton}"/>        
+        <lightning:button iconName="utility:right" title="Previous Page" class="paging-btn right" onclick="{!c.nextPage}" disabled="{!(v.pageKey == null)}"/>
+        <br/>
+    </div>
+</aura:component>

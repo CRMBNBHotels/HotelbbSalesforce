@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Lead</entityName>
+    <fieldName>Status</fieldName>
+    <masterLabel>Default</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>Description</fieldNames>
+        <fieldNames>Title</fieldNames>
+        <fieldNames>Email</fieldNames>
+        <fieldNames>MobilePhone</fieldNames>
+        <fieldNames>Phone</fieldNames>
+        <info>&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; style=&quot;width: 1199px;&quot;&gt;&lt;colgroup&gt;&lt;col&gt;&lt;/col&gt;&lt;/colgroup&gt;&lt;tbody&gt;&lt;tr style=&quot;height: 96px;&quot;&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;height: 96px; width: 1199px;&quot;&gt;&lt;strong&gt;Vérifiez les coordonnées de votre piste et qualifiez-la.&lt;/strong&gt;&lt;br&gt;			&lt;br&gt;			Rassemblez le plus de coordonnées possible. Obtenez des conseils de pro sur l’importance de qualifier votre piste.
+			&lt;ul&gt;&lt;li&gt;Obtenez l’adresse e-mail, le numéro de téléphone et la fonction de votre piste afin de l’inclure dans vos prochaines campagnes.&lt;/li&gt;&lt;li&gt;Envoyez d’abord un e-mail à votre piste puis assurez immédiatement un suivi téléphonique.&lt;/li&gt;&lt;li&gt;Répétez vos scripts d’appel pour avoir l’air confiant et pour que votre flot de paroles soit plus naturel.&lt;/li&gt;&lt;/ul&gt;
+			&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</info>
+        <picklistValueName>Actif</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Rating</fieldNames>
+        <info>&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; style=&quot;width: 1199px;&quot;&gt;&lt;colgroup&gt;&lt;col&gt;&lt;/col&gt;&lt;/colgroup&gt;&lt;tbody&gt;&lt;tr style=&quot;height: 112px;&quot;&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;height: 112px; width: 1199px;&quot;&gt;&lt;strong&gt;Soyez aux petits soins pour votre piste afin de rester dans son esprit.&lt;/strong&gt;&lt;br&gt;			&lt;br&gt;			Envoyez des e-mails à intervalles réguliers et en fonction des actions de vos pistes sur notre site internet. Soigner ses pistes permet d’avoir plus de temps pour se concentrer sur d’autres opportunités dans votre encours.
+			&lt;ul&gt;&lt;li&gt;Attribuez une note à votre piste en fonction de ce que vous avez appris lors du processus de qualification.&lt;/li&gt;&lt;li&gt;Collaborez avec le marketing afin d’ajouter votre piste aux campagnes pour développer la relation.&lt;/li&gt;&lt;li&gt;Avant d’indiquer votre piste comme Non qualifiée, planifiez six tâches de suivi de votre piste par e-mail ou tél&amp;amp;eac&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</info>
+        <picklistValueName>Développer</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Description</fieldNames>
+        <fieldNames>LeadSource</fieldNames>
+        <info>&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; style=&quot;width: 1199px;&quot;&gt;&lt;colgroup&gt;&lt;col&gt;&lt;/col&gt;&lt;/colgroup&gt;&lt;tbody&gt;&lt;tr style=&quot;height: 96px;&quot;&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;height: 96px; width: 1199px;&quot;&gt;&lt;strong&gt;Si votre piste n’a ni l’intention ni le pouvoir d’acheter vos produits, veuillez indiquer la piste comme étant Non qualifiée.&lt;/strong&gt;&lt;br&gt;			&lt;br&gt;			Ne perdez pas de temps avec les pistes non qualifiées.
+			&lt;ul&gt;&lt;li&gt;Recueillez des informations sur l’origine de la piste avant de prendre le temps de lui vendre un produit qui ne l’intéresse pas.&lt;/li&gt;&lt;li&gt;Assurez-vous de comprendre le niveau de décision de la piste en formulant des exigences en matière de pouvoir et de solutions.&lt;/li&gt;&lt;li&gt;Déterminez si votre piste est susceptible d’acheter vos produits.&lt;/li&gt;&lt;/ul&gt;
+			&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</info>
+        <picklistValueName>Non qualifié</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Company</fieldNames>
+        <fieldNames>Website</fieldNames>
+        <fieldNames>Industry</fieldNames>
+        <fieldNames>AnnualRevenue</fieldNames>
+        <fieldNames>NumberOfEmployees</fieldNames>
+        <info>&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; style=&quot;width: 1199px;&quot;&gt;&lt;colgroup&gt;&lt;col&gt;&lt;/col&gt;&lt;/colgroup&gt;&lt;tbody&gt;&lt;tr style=&quot;height: 112px;&quot;&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;height: 112px; width: 1199px;&quot;&gt;&lt;strong&gt;Recueillez des informations sur votre nouvelle piste et contactez-la rapidement.&lt;/strong&gt;&lt;br&gt;			Utilisez les pistes de Salesforce afin de séparer les prospects des contacts de Salesforce qui ont déjà acheté vos produits.&lt;br&gt;			Répondez à votre piste en cinq minutes afin d’améliorer vos chances de la transformer en opportunité.
+			&lt;ul&gt;&lt;li&gt;Allez voir le site internet de votre piste afin de recueillir des informations sur son activité et son secteur d&amp;#39;activité.&lt;/li&gt;&lt;li&gt;Trouvez votre piste sur les réseaux sociaux afin de connaître la meilleure façon d’entrer en contact avec elle.&lt;/li&gt;&lt;/ul&gt;
+			&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</info>
+        <picklistValueName>Nouveau</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p class=&quot;p1&quot;&gt;&lt;strong&gt;Félicitations !&lt;/strong&gt; Il est désormais temps de transformer la piste en opportunité. Poursuivez ensuite le processus de qualification avec votre nouveau contact.&lt;/p&gt;</info>
+        <picklistValueName>Qualifié</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

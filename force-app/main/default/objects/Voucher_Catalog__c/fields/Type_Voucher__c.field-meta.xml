@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_Voucher__c</fullName>
+    <externalId>false</externalId>
+    <label>Type Voucher</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ECLUB</fullName>
+                <default>false</default>
+                <label>ECLUB</label>
+            </value>
+            <value>
+                <fullName>OPCO</fullName>
+                <default>false</default>
+                <label>OPCO</label>
+            </value>
+            <value>
+                <fullName>RI</fullName>
+                <default>false</default>
+                <label>RI</label>
+            </value>
+            <value>
+                <fullName>FREEL</fullName>
+                <default>false</default>
+                <label>FREEL</label>
+            </value>
+            <value>
+                <fullName>CLAIM</fullName>
+                <default>false</default>
+                <label>CLAIM</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

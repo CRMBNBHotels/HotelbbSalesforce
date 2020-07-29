@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Masterbooking_compact_layout</fullName>
+    <fields>Confirmation_Number__c</fields>
+    <fields>Person_Account__c</fields>
+    <fields>Hotel_Name_MB__c</fields>
+    <fields>Min_Arrival__c</fields>
+    <fields>Max_Departure__c</fields>
+    <fields>Invoiced_amount__c</fields>
+    <fields>Channel__c</fields>
+    <label>Masterbooking compact layout</label>
+</CompactLayout>

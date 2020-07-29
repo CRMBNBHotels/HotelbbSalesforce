@@ -1,0 +1,144 @@
+<!-- CRMSS - 12 TMA-EI JK *22/03/2019* LC08_LoyaltyPoint -->
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,force:hasSObjectName" controller="LCC08_LoyaltyPoint">
+    <!-- Set Attributes -->
+    <aura:attribute type="String" name="Type" />
+    <aura:attribute type="String" name="TypeName" />
+    <aura:attribute type="String" name="Ajout" />
+    <aura:attribute type="String" name="Suppression" />
+    <aura:attribute type="String" name="AnnulationEchangeCadeau" />
+    <aura:attribute type="String" name="RegularisationPoints" />
+    <aura:attribute type="String" name="TransfertPointCompteFusionne" />
+    <aura:attribute type="String" name="AnnulationPointsCreditesRecouvrement" />
+    <aura:attribute type="String" name="AnnulationPointCreditee" />
+    <aura:attribute type="String" name="PointsOffertsDedommagement" />
+    <aura:attribute type="String" name="RegulDePointsSuiteRemiseAZero" />
+    <aura:attribute type="String" name="NBPoint" default=""/>
+    <aura:attribute type="String" name="NBPointName" default=""/>
+    <aura:attribute type="String" name="Raison" default=""/>
+    <aura:attribute type="String" name="RaisonName" default=""/>
+    <aura:attribute type="String" name="SaveName" default=""/>
+    <aura:attribute type="String" name="CancelName" default=""/>
+    <aura:attribute type="String" name="ModifPTName" default=""/>
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute type="boolean" name="isError" default="false"/>
+    <aura:attribute type="boolean" name="DisplayForm" default="true"/>
+    <aura:attribute type="String" name="ErrorMessage" />
+    <aura:attribute type="String" name="ErrorMessageType" />
+    <aura:attribute type="String" name="ErrorMessageRaison" />
+    <aura:attribute type="String" name="ErrorMessageNbPoint" />
+    <aura:attribute type="integer" name="ApexNbPoint" />
+    <aura:attribute type="String" name="DescriptionName" />
+    <aura:attribute type="String" name="Description" default=""/>
+    
+  <!--   <aura:attribute type="String" name="ErrorMessageNbPoint" />
+     End Set Attributes -->
+    
+    <!-- initialize values -->
+    <aura:handler name="init" value="{!this}" action="{!c.loadData}" />
+    <!-- / initialize values -->
+    
+    <!-- Error Modal -->
+    <div aria-hidden="true" aura:id="ModalError" role="dialog" class="slds-modal slds-fade-in-open hideDiv">
+        <div class="slds-modal__container">
+            <div class="slds-modal__header">
+                <h2 id="header43" class="slds-text-heading--medium">Error</h2>
+            </div>
+            <div class="slds-modal__content slds-p-around--medium">
+                <center>
+                    <p>{!v.ErrorMessage}</p>
+                </center>
+            </div>
+            <div class="slds-modal__footer">
+                <ui:button label="Ok" class="slds-button slds-button--brand" press="{!c.hideModal}"/>
+            </div>
+        </div>
+    </div>
+    <!-- / Error Modal -->
+    
+        <div class="slds-modal__content " aura:id="modalbody" id="modalbody">
+            <!--  If Error -->
+            <aura:renderIf isTrue="{!v.isError}">
+                <div>
+                    <ui:message title="Error" severity="error" closable="false">
+                        {!v.ErrorMessage}
+                    </ui:message>
+                </div>
+            </aura:renderIf>
+            <!-- </aura:renderIf> -->
+            
+            <aura:renderIf isTrue="{!v.DisplayForm}">
+                <!-- Header -->
+                <div class="slds-page-header">
+                    <div class="slds-align--absolute-center" >
+                        <div class="slds-text-heading--large">
+                            <lightning:icon iconName="standard:custom"  alternativeText="Modify"/>
+                           {!v.ModifPTName}
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <!-- End Header -->
+                
+                <!-- Body -->
+                
+                <center>
+                  
+                    <form class="slds-form--stacked">
+                        <lightning:layout  class="slds-p-horizontal--small slds-text-align_left">
+                            
+                            <!-- Type -->
+                            <div  style="text-align:left;width:50%">
+                                <abbr class="slds-required" title="required">*</abbr>
+                                <ui:outputText class="slds-form-element--label" value="{!v.TypeName}"/>
+                                <ui:inputSelect class="single" aura:id = "typeFld">                                
+                                    <ui:inputSelectOption text=""  value="true"/>
+                                    <ui:inputSelectOption text="{!v.Ajout}" />
+                                    <ui:inputSelectOption text="{!v.Suppression}"/>
+                                </ui:inputSelect>
+                                <ui:outputText aura:id="RequiredType" value="{!v.ErrorMessageType}" class="slds-required"/> <br/>
+                                <!-- /Type -->
+                                <!-- Nombre de Points -->
+                                <abbr class="slds-required" title="required">*</abbr>
+                                <ui:outputText class="slds-form-element--label" value="{!v.NBPointName}"/>
+                                <ui:inputNumber  value="{!v.NBPoint}" /> <br/> 
+                                <ui:outputText aura:id="RequiredNBPoint" value="{!v.ErrorMessageNbPoint}" class="slds-required"/> <br/>
+                                <!-- /Nombre de Points -->
+                                <!-- Raison -->
+                                <abbr class="slds-required" title="required">*</abbr>
+                                <ui:outputText class="slds-form-element--label" value="{!v.RaisonName}"/>
+                                <ui:inputSelect class="single" aura:id = "raisonFld">                                
+                                    <ui:inputSelectOption text=""  value="true"/>
+                                    <ui:inputSelectOption text="{!v.AnnulationEchangeCadeau}" />
+                                    <ui:inputSelectOption text="{!v.RegularisationPoints}"/>
+                                    <ui:inputSelectOption text="{!v.TransfertPointCompteFusionne}"/>
+                                    <ui:inputSelectOption text="{!v.AnnulationPointCreditee}"/>
+                                    <ui:inputSelectOption text="{!v.AnnulationPointsCreditesRecouvrement}"/>
+                                    <ui:inputSelectOption text="{!v.PointsOffertsDedommagement}"/>
+                                    <ui:inputSelectOption text="{!v.RegulDePointsSuiteRemiseAZero}"/>
+                                </ui:inputSelect>
+                                <!--ui:inputText class="slds-input" value="{!v.Raison}" /-->
+                                <ui:outputText aura:id="RequiredRaison" value="{!v.ErrorMessageRaison}" class="slds-required"/> <br/>
+                                <!-- /Raison -->
+                                <!-- Added by TMA Cynthia Geagea - CRMSS 260 - 27/08/2019 - Start -->
+                                <!-- Description-->
+                                <ui:outputText class="slds-form-element--label" value="{!v.DescriptionName}"/>
+                                <ui:inputText class="single" aura:id = "descriptionFld"/> 
+                                <!-- /Description-->
+                                <!-- Added by TMA Cynthia Geagea - CRMSS 260 - 27/08/2019 - End -->
+                            </div>
+                        </lightning:layout>
+                    </form>
+                </center>
+                
+                <!-- End Body -->
+                
+                <div style="Width:100%;text-align:Center;padding:5%">                    
+                    <ui:button label="{!v.CancelName}" class="slds-button slds-button--neutral cuf-publisherCancelButton uiButton" press="{!c.cancelBtn}"/>
+                    <ui:button label="{!v.SaveName}" class="slds-button slds-button--neutral cuf-publisherCancelButton uiButton" press="{!c.SaveBtn}"/>
+                    <br/>
+                </div>
+            </aura:renderIf>
+        </div>
+   
+</aura:component>

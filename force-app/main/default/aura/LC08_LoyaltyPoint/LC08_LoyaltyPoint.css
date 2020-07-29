@@ -1,0 +1,16 @@
+.THIS .slds-modal__content:last-child{
+    box-shadow: none;
+}
+.THIS .cInputLookup .myInput{
+        margin-bottom: 10px;
+}
+
+.THIS .uiInput--select {
+    margin-bottom: 10px;
+}
+.THIS .slds-text-align_left{
+    margin-top: 10px; 
+}
+.THIS.hideDiv {
+    display: none;
+}

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Accepted</masterLabel>
+        <translation>Aceptado</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Booked</masterLabel>
+        <translation>reservado</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cancelled</masterLabel>
+        <translation>Cancelado</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Checked</masterLabel>
+        <translation>Comprobado</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Closed</masterLabel>
+        <translation>Cerrado</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Closed Lost</masterLabel>
+        <translation>cerrado perdido</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Closed Won</masterLabel>
+        <translation>cerrado Won</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Error</masterLabel>
+        <translation><!-- Error --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Failed</masterLabel>
+        <translation>Ha fallado</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Modified</masterLabel>
+        <translation>Modificado</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Needs Analysis</masterLabel>
+        <translation>Necesita analisis</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Negotiation</masterLabel>
+        <translation>Negociaci�n</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>No Show</masterLabel>
+        <translation><!-- No Show --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>No-Go</masterLabel>
+        <translation><!-- No-Go --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Open</masterLabel>
+        <translation>Abierto</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Proposal</masterLabel>
+        <translation>Propuesta</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Qualification</masterLabel>
+        <translation>Calificaci�n</translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

@@ -1,0 +1,6 @@
+<aura:event type="Component">
+    <aura:attribute name="checkbox" type="Aura.Component">
+        <p>Default</p>
+    </aura:attribute> 
+    <aura:attribute name="address" type="string"/>
+</aura:event>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Modification_Suppression_avis_client_Case</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Modification/Suppression avis client</label>
+    <queue>Modification_Suppression_avis_client</queue>
+    <sharedTo>
+        <allInternalUsers/>
+    </sharedTo>
+</ListView>

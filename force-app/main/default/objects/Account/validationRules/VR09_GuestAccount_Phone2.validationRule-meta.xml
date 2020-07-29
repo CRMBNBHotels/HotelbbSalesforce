@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR09_GuestAccount_Phone2</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+$User.FirstName !=&apos;Technical&apos;, 
+OR($User.LastName !=&apos;User&apos;, $User.LastName !=&apos;User2&apos;), 
+   !$User.BypassValidationRule__c ,
+NOT(REGEX(Mobile_Phone_Number_2__pc, &quot;([+]\\d{1,4}\\s[0-9]{1}\\d{1,20})?&quot;))
+)</errorConditionFormula>
+    <errorDisplayField>Mobile_Phone_Number_2__pc</errorDisplayField>
+    <errorMessage>Phone number must be in the format + {country code} {phone number} 
+example: 06 32 34 45 89 should be written +33 632344589</errorMessage>
+</ValidationRule>

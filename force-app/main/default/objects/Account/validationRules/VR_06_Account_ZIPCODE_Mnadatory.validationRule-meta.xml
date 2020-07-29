@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_06_Account_ZIPCODE_Mnadatory</fullName>
+    <active>true</active>
+    <description>Zip code is mandatory during creation account</description>
+    <errorConditionFormula>AND(
+$RecordType.DeveloperName &lt;&gt; &quot;PersonAccount&quot;, 
+!$User.BypassValidationRule__c ,
+ ISBLANK( BillingPostalCode )
+)</errorConditionFormula>
+    <errorDisplayField>BillingPostalCode</errorDisplayField>
+    <errorMessage>Zip Code is mandatory For the Account creation</errorMessage>
+</ValidationRule>

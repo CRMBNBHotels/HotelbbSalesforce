@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSetTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <valueTranslation>
+        <masterLabel>Accepted</masterLabel>
+        <translation>Akzeptiert</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Booked</masterLabel>
+        <translation>Gebucht</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Cancelled</masterLabel>
+        <translation>Abgebrochen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Checked</masterLabel>
+        <translation>Überprüft</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Closed</masterLabel>
+        <translation>Geschlossen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Closed Lost</masterLabel>
+        <translation>geschlossen verloren</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Closed Won</masterLabel>
+        <translation>geschlossen Won</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Error</masterLabel>
+        <translation><!-- Error --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Failed</masterLabel>
+        <translation>Gescheitert</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Modified</masterLabel>
+        <translation>Geändert</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Needs Analysis</masterLabel>
+        <translation>Muss analysiert werden</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Negotiation</masterLabel>
+        <translation>Verhandlung</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>No Show</masterLabel>
+        <translation><!-- No Show --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>No-Go</masterLabel>
+        <translation><!-- No-Go --></translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Open</masterLabel>
+        <translation>Öffnen</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Proposal</masterLabel>
+        <translation>Vorschlag</translation>
+    </valueTranslation>
+    <valueTranslation>
+        <masterLabel>Qualification</masterLabel>
+        <translation>Qualifikation</translation>
+    </valueTranslation>
+</StandardValueSetTranslation>

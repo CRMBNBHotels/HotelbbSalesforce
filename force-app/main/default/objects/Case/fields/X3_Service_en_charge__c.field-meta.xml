@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X3_Service_en_charge__c</fullName>
+    <externalId>false</externalId>
+    <label>3 - Service en charge</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Assistance</fullName>
+                <default>false</default>
+                <label>Assistance</label>
+            </value>
+            <value>
+                <fullName>Call center</fullName>
+                <default>false</default>
+                <label>Call center</label>
+            </value>
+            <value>
+                <fullName>Dommages/sinistres</fullName>
+                <default>false</default>
+                <label>Dommages/sinistres</label>
+            </value>
+            <value>
+                <fullName>E-club</fullName>
+                <default>false</default>
+                <label>E-club</label>
+            </value>
+            <value>
+                <fullName>Hygiène et sécurié</fullName>
+                <default>false</default>
+                <label>Hygiène et sécurié</label>
+            </value>
+            <value>
+                <fullName>Hôtel</fullName>
+                <default>false</default>
+                <label>Hôtel</label>
+            </value>
+            <value>
+                <fullName>Hôtel / call center</fullName>
+                <default>false</default>
+                <label>Hôtel / call center</label>
+            </value>
+            <value>
+                <fullName>Informatique CB</fullName>
+                <default>false</default>
+                <label>Informatique CB</label>
+            </value>
+            <value>
+                <fullName>Informatique DAC</fullName>
+                <default>false</default>
+                <label>Informatique DAC</label>
+            </value>
+            <value>
+                <fullName>Informatique HOT</fullName>
+                <default>false</default>
+                <label>Informatique HOT</label>
+            </value>
+            <value>
+                <fullName>Informatique WEB</fullName>
+                <default>false</default>
+                <label>Informatique WEB</label>
+            </value>
+            <value>
+                <fullName>Informatique WIFI</fullName>
+                <default>false</default>
+                <label>Informatique WIFI</label>
+            </value>
+            <value>
+                <fullName>Maintenance</fullName>
+                <default>false</default>
+                <label>Maintenance</label>
+            </value>
+            <value>
+                <fullName>Maintenance ou reno</fullName>
+                <default>false</default>
+                <label>Maintenance ou reno</label>
+            </value>
+            <value>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+                <label>Marketing</label>
+            </value>
+            <value>
+                <fullName>Maximiles</fullName>
+                <default>false</default>
+                <label>Maximiles</label>
+            </value>
+            <value>
+                <fullName>Produit</fullName>
+                <default>false</default>
+                <label>Produit</label>
+            </value>
+            <value>
+                <fullName>Produit JM</fullName>
+                <default>false</default>
+                <label>Produit JM</label>
+            </value>
+            <value>
+                <fullName>Rénovation</fullName>
+                <default>false</default>
+                <label>Rénovation</label>
+            </value>
+            <value>
+                <fullName>Web design</fullName>
+                <default>false</default>
+                <label>Web design</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

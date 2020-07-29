@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nature_de_la_demande__c</fullName>
+    <externalId>false</externalId>
+    <label>Nature de la demande</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Manifestation sportive</fullName>
+                <default>false</default>
+                <label>Manifestation sportive</label>
+            </value>
+            <value>
+                <fullName>Animation</fullName>
+                <default>false</default>
+                <label>Animation</label>
+            </value>
+            <value>
+                <fullName>Prospection commerciale</fullName>
+                <default>false</default>
+                <label>Prospection commerciale</label>
+            </value>
+            <value>
+                <fullName>Offre mariage</fullName>
+                <default>false</default>
+                <label>Offre mariage</label>
+            </value>
+            <value>
+                <fullName>Réclamation</fullName>
+                <default>false</default>
+                <label>Réclamation</label>
+            </value>
+            <value>
+                <fullName>Prolongation IR-OC</fullName>
+                <default>false</default>
+                <label>Prolongation IR-OC</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR_email_S_Manager</fullName>
+    <active>false</active>
+    <errorConditionFormula>(($User.FirstName !=&apos;Technical&apos; &amp;&amp;
+$User.LastName !=&apos;User2&apos;) &amp;&amp; (ISCHANGED(Email__pc) || 
+ISCHANGED(E_mail_address_2__pc)))&amp;&amp;!$User.BypassValidationRule__c</errorConditionFormula>
+    <errorMessage>l&apos;email ne peut pas être modifier</errorMessage>
+</ValidationRule>

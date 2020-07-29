@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailServicesFunction xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <apexClass xsi:nil="true"/>
+    <attachmentOption>All</attachmentOption>
+    <authenticationFailureAction>Bounce</authenticationFailureAction>
+    <authorizationFailureAction>Discard</authorizationFailureAction>
+    <emailServicesAddresses>
+        <developerName>0Y000000kXHT</developerName>
+        <isActive>true</isActive>
+        <localPart>grp-sf2c</localPart>
+        <runAsUser>omar.bensouda.ext@hotelbb.com</runAsUser>
+    </emailServicesAddresses>
+    <emailServicesAddresses>
+        <developerName>esp_info</developerName>
+        <isActive>true</isActive>
+        <localPart>esp-info</localPart>
+        <runAsUser>omar.bensouda.ext@hotelbb.com</runAsUser>
+    </emailServicesAddresses>
+    <emailServicesAddresses>
+        <developerName>bbeitechnologies</developerName>
+        <isActive>true</isActive>
+        <localPart>bbeitechnologies</localPart>
+        <runAsUser>omar.bensouda.ext@hotelbb.com</runAsUser>
+    </emailServicesAddresses>
+    <functionInactiveAction>Bounce</functionInactiveAction>
+    <functionName>EmailToCase</functionName>
+    <isActive>true</isActive>
+    <isAuthenticationRequired>false</isAuthenticationRequired>
+    <isErrorRoutingEnabled>false</isErrorRoutingEnabled>
+    <isTextAttachmentsAsBinary>true</isTextAttachmentsAsBinary>
+    <isTlsRequired>false</isTlsRequired>
+    <overLimitAction>Bounce</overLimitAction>
+</EmailServicesFunction>

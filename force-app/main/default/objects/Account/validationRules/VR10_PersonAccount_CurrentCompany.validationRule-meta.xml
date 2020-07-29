@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR10_PersonAccount_CurrentCompany</fullName>
+    <active>true</active>
+    <errorConditionFormula>Current_Compagny__pr.RecordTypeId ==  $Label.PersonAccountRecordTypeId</errorConditionFormula>
+    <errorDisplayField>Current_Compagny__pc</errorDisplayField>
+    <errorMessage>A guest account cannot be related to another guest account</errorMessage>
+</ValidationRule>

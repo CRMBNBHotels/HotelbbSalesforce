@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR07_Account_Country_Mandatory</fullName>
+    <active>true</active>
+    <description>Country is mandatory during Account Creation</description>
+    <errorConditionFormula>AND(
+ $RecordType.DeveloperName &lt;&gt; &quot;PersonAccount&quot;, 
+!$User.BypassValidationRule__c , 
+ISBLANK(BillingCountry) 
+)</errorConditionFormula>
+    <errorDisplayField>BillingCountry</errorDisplayField>
+    <errorMessage>Country field is mandatory</errorMessage>
+</ValidationRule>

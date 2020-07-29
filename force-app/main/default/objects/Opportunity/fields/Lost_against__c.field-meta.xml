@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lost_against__c</fullName>
+    <externalId>false</externalId>
+    <label>Lost against</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Independant hotel 2*</fullName>
+                <default>false</default>
+                <label>Independant hotel 2*</label>
+            </value>
+            <value>
+                <fullName>Independant hotel 3*</fullName>
+                <default>false</default>
+                <label>Independant hotel 3*</label>
+            </value>
+            <value>
+                <fullName>Independant hotel 4*</fullName>
+                <default>false</default>
+                <label>Independant hotel 4*</label>
+            </value>
+            <value>
+                <fullName>Independant hotel 5*</fullName>
+                <default>false</default>
+                <label>Independant hotel 5*</label>
+            </value>
+            <value>
+                <fullName>F1</fullName>
+                <default>false</default>
+                <label>F1</label>
+            </value>
+            <value>
+                <fullName>Ibis (rouge)</fullName>
+                <default>false</default>
+                <label>Ibis (rouge)</label>
+            </value>
+            <value>
+                <fullName>Ibis Style</fullName>
+                <default>false</default>
+                <label>Ibis Style</label>
+            </value>
+            <value>
+                <fullName>Ibis budget</fullName>
+                <default>false</default>
+                <label>Ibis budget</label>
+            </value>
+            <value>
+                <fullName>Première classe</fullName>
+                <default>false</default>
+                <label>Première classe</label>
+            </value>
+            <value>
+                <fullName>Campanile</fullName>
+                <default>false</default>
+                <label>Campanile</label>
+            </value>
+            <value>
+                <fullName>Quality</fullName>
+                <default>false</default>
+                <label>Quality</label>
+            </value>
+            <value>
+                <fullName>Kyriad</fullName>
+                <default>false</default>
+                <label>Kyriad</label>
+            </value>
+            <value>
+                <fullName>Comfort</fullName>
+                <default>false</default>
+                <label>Comfort</label>
+            </value>
+            <value>
+                <fullName>Best Western</fullName>
+                <default>false</default>
+                <label>Best Western</label>
+            </value>
+            <value>
+                <fullName>Indépendant</fullName>
+                <default>false</default>
+                <label>Indépendant</label>
+            </value>
+            <value>
+                <fullName>Fasthotel</fullName>
+                <default>false</default>
+                <label>Fasthotel</label>
+            </value>
+            <value>
+                <fullName>Britt hotel</fullName>
+                <default>false</default>
+                <label>Britt hotel</label>
+            </value>
+            <value>
+                <fullName>P’tit Dej</fullName>
+                <default>false</default>
+                <label>P’tit Dej</label>
+            </value>
+            <value>
+                <fullName>Balladins</fullName>
+                <default>false</default>
+                <label>Balladins</label>
+            </value>
+            <value>
+                <fullName>inter hotel</fullName>
+                <default>false</default>
+                <label>inter hotel</label>
+            </value>
+            <value>
+                <fullName>Appartcity</fullName>
+                <default>false</default>
+                <label>Appartcity</label>
+            </value>
+            <value>
+                <fullName>Adagio</fullName>
+                <default>false</default>
+                <label>Adagio</label>
+            </value>
+            <value>
+                <fullName>1</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>1</label>
+            </value>
+            <value>
+                <fullName>2</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>2</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

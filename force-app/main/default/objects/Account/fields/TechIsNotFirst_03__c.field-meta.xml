@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TechIsNotFirst_03__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field is used to flag company accounts being processed in the batch Batch_PartnershipFieldsUpdate</description>
+    <externalId>false</externalId>
+    <label>TechIsNotFirst_03</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

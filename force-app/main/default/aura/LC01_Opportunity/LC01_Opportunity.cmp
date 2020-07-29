@@ -1,0 +1,34 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,force:hasSObjectName" controller="AP01_Opportunity">
+    
+    <aura:attribute name="Selectedhotels" type="Hotel__c[]"/> 
+    <aura:attribute name="address" type="string"/>
+    <aura:attribute name="disabled" type="boolean" default="false" />
+    <aura:handler name="E01_Opportunity_Body" event="c:E01_Opportunity_Body" 
+                  action="{!c.E01_Opportunity}"/>
+    
+    <div aura:id="thecontainer" class="thecontainer" id="thecontainer">
+        <div role="dialog" tabindex="-1" aria-labelledby="header43" 
+             class="slds-modal slds-fade-in-open slds-modal--large" >
+            <div class="slds-modal__container">
+                <div class="slds-modal__header">
+                    <h2 id="header43" class="slds-text-heading--medium">Add Hotels</h2>
+                </div>                                           
+                <div class="slds-modal__content slds-p-top--x-large slds-p-around--medium" 
+                     aura:id="modalbody" id="modalbody">                                   
+                    <c:LC01_Opportunity_Body />
+                </div>                
+                <div class="slds-modal__footer">
+                    <lightning:button label="Add Hotels"
+                                      class="slds-m-top--medium"
+                                      disabled="{!v.disabled}"
+                                      onclick="{!c.clickCreateHotels}"/>
+                    <lightning:button label="Cancel"
+                                      class="slds-m-top--medium"
+                                      variant="brand"
+                                      onclick="{!c.Cancel}"/>
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+    </div>      
+</aura:component>

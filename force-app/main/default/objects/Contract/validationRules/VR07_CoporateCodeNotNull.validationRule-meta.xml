@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR07_CoporateCodeNotNull</fullName>
+    <active>true</active>
+    <description>You should have the corporate code</description>
+    <errorConditionFormula>AND(ISNULL( Corporate_Code__c ),RecordType.Name=&apos;Corporate&apos;)</errorConditionFormula>
+    <errorMessage>You should have the corporate code</errorMessage>
+</ValidationRule>

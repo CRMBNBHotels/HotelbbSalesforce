@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hotel_Selected__c</fullName>
+    <externalId>false</externalId>
+    <label>Hotel Selected</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Aachen Wuerselen</fullName>
+                <default>false</default>
+                <label>Aachen Wuerselen</label>
+            </value>
+            <value>
+                <fullName>Aschaffenburg</fullName>
+                <default>false</default>
+                <label>Aschaffenburg</label>
+            </value>
+            <value>
+                <fullName>Augsburg</fullName>
+                <default>false</default>
+                <label>Augsburg</label>
+            </value>
+            <value>
+                <fullName>Bad Homburg</fullName>
+                <default>false</default>
+                <label>Bad Homburg</label>
+            </value>
+            <value>
+                <fullName>Baden Airpark</fullName>
+                <default>false</default>
+                <label>Baden Airpark</label>
+            </value>
+            <value>
+                <fullName>Berlin Airport</fullName>
+                <default>false</default>
+                <label>Berlin Airport</label>
+            </value>
+            <value>
+                <fullName>Berlin Alexanderplatz</fullName>
+                <default>false</default>
+                <label>Berlin Alexanderplatz</label>
+            </value>
+            <value>
+                <fullName>Berlin Potsdamer Platz</fullName>
+                <default>false</default>
+                <label>Berlin Potsdamer Platz</label>
+            </value>
+            <value>
+                <fullName>Berlin Sued Genshagen</fullName>
+                <default>false</default>
+                <label>Berlin Sued Genshagen</label>
+            </value>
+            <value>
+                <fullName>Berlin Tiergarten</fullName>
+                <default>false</default>
+                <label>Berlin Tiergarten</label>
+            </value>
+            <value>
+                <fullName>Bielefeld</fullName>
+                <default>false</default>
+                <label>Bielefeld</label>
+            </value>
+            <value>
+                <fullName>Bochum Herne</fullName>
+                <default>false</default>
+                <label>Bochum Herne</label>
+            </value>
+            <value>
+                <fullName>Boeblingen</fullName>
+                <default>false</default>
+                <label>Boeblingen</label>
+            </value>
+            <value>
+                <fullName>Bonn</fullName>
+                <default>false</default>
+                <label>Bonn</label>
+            </value>
+            <value>
+                <fullName>Braunschweig City</fullName>
+                <default>false</default>
+                <label>Braunschweig City</label>
+            </value>
+            <value>
+                <fullName>Braunschweig Nord</fullName>
+                <default>false</default>
+                <label>Braunschweig Nord</label>
+            </value>
+            <value>
+                <fullName>Bremen Hbf</fullName>
+                <default>false</default>
+                <label>Bremen Hbf</label>
+            </value>
+            <value>
+                <fullName>Darmstadt</fullName>
+                <default>false</default>
+                <label>Darmstadt</label>
+            </value>
+            <value>
+                <fullName>Dortmund City</fullName>
+                <default>false</default>
+                <label>Dortmund City</label>
+            </value>
+            <value>
+                <fullName>Dortmund Messe</fullName>
+                <default>false</default>
+                <label>Dortmund Messe</label>
+            </value>
+            <value>
+                <fullName>Dresden</fullName>
+                <default>false</default>
+                <label>Dresden</label>
+            </value>
+            <value>
+                <fullName>Duesseldorf Airport</fullName>
+                <default>false</default>
+                <label>Duesseldorf Airport</label>
+            </value>
+            <value>
+                <fullName>Duesseldorf City</fullName>
+                <default>false</default>
+                <label>Duesseldorf City</label>
+            </value>
+            <value>
+                <fullName>Duesseldorf Hbf</fullName>
+                <default>false</default>
+                <label>Duesseldorf Hbf</label>
+            </value>
+            <value>
+                <fullName>Duisburg</fullName>
+                <default>false</default>
+                <label>Duisburg</label>
+            </value>
+            <value>
+                <fullName>Erfurt</fullName>
+                <default>false</default>
+                <label>Erfurt</label>
+            </value>
+            <value>
+                <fullName>Erlangen</fullName>
+                <default>false</default>
+                <label>Erlangen</label>
+            </value>
+            <value>
+                <fullName>Essen</fullName>
+                <default>false</default>
+                <label>Essen</label>
+            </value>
+            <value>
+                <fullName>Frankfurt City Ost</fullName>
+                <default>false</default>
+                <label>Frankfurt City Ost</label>
+            </value>
+            <value>
+                <fullName>Frankfurt Hahn Airport</fullName>
+                <default>false</default>
+                <label>Frankfurt Hahn Airport</label>
+            </value>
+            <value>
+                <fullName>Frankfurt Hbf</fullName>
+                <default>false</default>
+                <label>Frankfurt Hbf</label>
+            </value>
+            <value>
+                <fullName>Frankfurt Niederrad</fullName>
+                <default>false</default>
+                <label>Frankfurt Niederrad</label>
+            </value>
+            <value>
+                <fullName>Frankfurt Nord</fullName>
+                <default>false</default>
+                <label>Frankfurt Nord</label>
+            </value>
+            <value>
+                <fullName>Frankfurt West</fullName>
+                <default>false</default>
+                <label>Frankfurt West</label>
+            </value>
+            <value>
+                <fullName>Freiburg Nord</fullName>
+                <default>false</default>
+                <label>Freiburg Nord</label>
+            </value>
+            <value>
+                <fullName>Freiburg Sued</fullName>
+                <default>false</default>
+                <label>Freiburg Sued</label>
+            </value>
+            <value>
+                <fullName>Goettingen City</fullName>
+                <default>false</default>
+                <label>Goettingen City</label>
+            </value>
+            <value>
+                <fullName>Goettingen West</fullName>
+                <default>false</default>
+                <label>Goettingen West</label>
+            </value>
+            <value>
+                <fullName>Halle Saale</fullName>
+                <default>false</default>
+                <label>Halle Saale</label>
+            </value>
+            <value>
+                <fullName>Hamburg Altona</fullName>
+                <default>false</default>
+                <label>Hamburg Altona</label>
+            </value>
+            <value>
+                <fullName>Hamburg City Ost</fullName>
+                <default>false</default>
+                <label>Hamburg City Ost</label>
+            </value>
+            <value>
+                <fullName>Hamburg Harburg</fullName>
+                <default>false</default>
+                <label>Hamburg Harburg</label>
+            </value>
+            <value>
+                <fullName>Hamburg Nord</fullName>
+                <default>false</default>
+                <label>Hamburg Nord</label>
+            </value>
+            <value>
+                <fullName>Hamm</fullName>
+                <default>false</default>
+                <label>Hamm</label>
+            </value>
+            <value>
+                <fullName>Hannover</fullName>
+                <default>false</default>
+                <label>Hannover</label>
+            </value>
+            <value>
+                <fullName>Hannover Garbsen</fullName>
+                <default>false</default>
+                <label>Hannover Garbsen</label>
+            </value>
+            <value>
+                <fullName>Heidelberg</fullName>
+                <default>false</default>
+                <label>Heidelberg</label>
+            </value>
+            <value>
+                <fullName>Heilbronn</fullName>
+                <default>false</default>
+                <label>Heilbronn</label>
+            </value>
+            <value>
+                <fullName>Holledau</fullName>
+                <default>false</default>
+                <label>Holledau</label>
+            </value>
+            <value>
+                <fullName>Ingolstadt</fullName>
+                <default>false</default>
+                <label>Ingolstadt</label>
+            </value>
+            <value>
+                <fullName>Kaiserslautern</fullName>
+                <default>false</default>
+                <label>Kaiserslautern</label>
+            </value>
+            <value>
+                <fullName>Karlsruhe</fullName>
+                <default>false</default>
+                <label>Karlsruhe</label>
+            </value>
+            <value>
+                <fullName>Kassel</fullName>
+                <default>false</default>
+                <label>Kassel</label>
+            </value>
+            <value>
+                <fullName>Kiel City</fullName>
+                <default>false</default>
+                <label>Kiel City</label>
+            </value>
+            <value>
+                <fullName>Koblenz</fullName>
+                <default>false</default>
+                <label>Koblenz</label>
+            </value>
+            <value>
+                <fullName>Koeln Airport</fullName>
+                <default>false</default>
+                <label>Koeln Airport</label>
+            </value>
+            <value>
+                <fullName>Koeln Frechen</fullName>
+                <default>false</default>
+                <label>Koeln Frechen</label>
+            </value>
+            <value>
+                <fullName>Koeln Messe</fullName>
+                <default>false</default>
+                <label>Koeln Messe</label>
+            </value>
+            <value>
+                <fullName>Konstanz</fullName>
+                <default>false</default>
+                <label>Konstanz</label>
+            </value>
+            <value>
+                <fullName>Krefeld</fullName>
+                <default>false</default>
+                <label>Krefeld</label>
+            </value>
+            <value>
+                <fullName>Leipzig City</fullName>
+                <default>false</default>
+                <label>Leipzig City</label>
+            </value>
+            <value>
+                <fullName>Leipzig Nord</fullName>
+                <default>false</default>
+                <label>Leipzig Nord</label>
+            </value>
+            <value>
+                <fullName>Ludwigshafen</fullName>
+                <default>false</default>
+                <label>Ludwigshafen</label>
+            </value>
+            <value>
+                <fullName>Luebeck</fullName>
+                <default>false</default>
+                <label>Luebeck</label>
+            </value>
+            <value>
+                <fullName>Lueneburg</fullName>
+                <default>false</default>
+                <label>Lueneburg</label>
+            </value>
+            <value>
+                <fullName>Magdeburg</fullName>
+                <default>false</default>
+                <label>Magdeburg</label>
+            </value>
+            <value>
+                <fullName>Mainz Hbf</fullName>
+                <default>false</default>
+                <label>Mainz Hbf</label>
+            </value>
+            <value>
+                <fullName>Mainz Hechtsheim</fullName>
+                <default>false</default>
+                <label>Mainz Hechtsheim</label>
+            </value>
+            <value>
+                <fullName>Mannheim</fullName>
+                <default>false</default>
+                <label>Mannheim</label>
+            </value>
+            <value>
+                <fullName>Moenchengladbach</fullName>
+                <default>false</default>
+                <label>Moenchengladbach</label>
+            </value>
+            <value>
+                <fullName>Muelheim An Der Ruhr</fullName>
+                <default>false</default>
+                <label>Muelheim An Der Ruhr</label>
+            </value>
+            <value>
+                <fullName>Muenchen Airport</fullName>
+                <default>false</default>
+                <label>Muenchen Airport</label>
+            </value>
+            <value>
+                <fullName>Muenchen City Nord</fullName>
+                <default>false</default>
+                <label>Muenchen City Nord</label>
+            </value>
+            <value>
+                <fullName>Muenchen City Ost</fullName>
+                <default>false</default>
+                <label>Muenchen City Ost</label>
+            </value>
+            <value>
+                <fullName>Muenchen City West</fullName>
+                <default>false</default>
+                <label>Muenchen City West</label>
+            </value>
+            <value>
+                <fullName>Muenchen Messe</fullName>
+                <default>false</default>
+                <label>Muenchen Messe</label>
+            </value>
+            <value>
+                <fullName>Muenster Hafen</fullName>
+                <default>false</default>
+                <label>Muenster Hafen</label>
+            </value>
+            <value>
+                <fullName>Neu Ulm</fullName>
+                <default>false</default>
+                <label>Neu Ulm</label>
+            </value>
+            <value>
+                <fullName>Nuernberg City</fullName>
+                <default>false</default>
+                <label>Nuernberg City</label>
+            </value>
+            <value>
+                <fullName>Nuernberg Hbf</fullName>
+                <default>false</default>
+                <label>Nuernberg Hbf</label>
+            </value>
+            <value>
+                <fullName>Oberhausen</fullName>
+                <default>false</default>
+                <label>Oberhausen</label>
+            </value>
+            <value>
+                <fullName>Offenburg</fullName>
+                <default>false</default>
+                <label>Offenburg</label>
+            </value>
+            <value>
+                <fullName>Oldenburg</fullName>
+                <default>false</default>
+                <label>Oldenburg</label>
+            </value>
+            <value>
+                <fullName>Osnabrueck</fullName>
+                <default>false</default>
+                <label>Osnabrueck</label>
+            </value>
+            <value>
+                <fullName>Paderborn</fullName>
+                <default>false</default>
+                <label>Paderborn</label>
+            </value>
+            <value>
+                <fullName>Passau</fullName>
+                <default>false</default>
+                <label>Passau</label>
+            </value>
+            <value>
+                <fullName>Pegnitz</fullName>
+                <default>false</default>
+                <label>Pegnitz</label>
+            </value>
+            <value>
+                <fullName>Potsdam</fullName>
+                <default>false</default>
+                <label>Potsdam</label>
+            </value>
+            <value>
+                <fullName>Regensburg</fullName>
+                <default>false</default>
+                <label>Regensburg</label>
+            </value>
+            <value>
+                <fullName>Rhynern Nord</fullName>
+                <default>false</default>
+                <label>Rhynern Nord</label>
+            </value>
+            <value>
+                <fullName>Rhynern Sued</fullName>
+                <default>false</default>
+                <label>Rhynern Sued</label>
+            </value>
+            <value>
+                <fullName>Rosenheim</fullName>
+                <default>false</default>
+                <label>Rosenheim</label>
+            </value>
+            <value>
+                <fullName>Saarbruecken</fullName>
+                <default>false</default>
+                <label>Saarbruecken</label>
+            </value>
+            <value>
+                <fullName>Schweinfurt</fullName>
+                <default>false</default>
+                <label>Schweinfurt</label>
+            </value>
+            <value>
+                <fullName>Stuttgart City</fullName>
+                <default>false</default>
+                <label>Stuttgart City</label>
+            </value>
+            <value>
+                <fullName>Stuttgart Vaihingen</fullName>
+                <default>false</default>
+                <label>Stuttgart Vaihingen</label>
+            </value>
+            <value>
+                <fullName>Ulm</fullName>
+                <default>false</default>
+                <label>Ulm</label>
+            </value>
+            <value>
+                <fullName>Weil Am Rhein</fullName>
+                <default>false</default>
+                <label>Weil Am Rhein</label>
+            </value>
+            <value>
+                <fullName>Weimar</fullName>
+                <default>false</default>
+                <label>Weimar</label>
+            </value>
+            <value>
+                <fullName>Wiesbaden</fullName>
+                <default>false</default>
+                <label>Wiesbaden</label>
+            </value>
+            <value>
+                <fullName>Wuerzburg</fullName>
+                <default>false</default>
+                <label>Wuerzburg</label>
+            </value>
+            <value>
+                <fullName>Wuppertal</fullName>
+                <default>false</default>
+                <label>Wuppertal</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

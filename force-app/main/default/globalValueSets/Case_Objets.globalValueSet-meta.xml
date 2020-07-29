@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Annulation client</fullName>
+        <default>false</default>
+        <label>Annulation client</label>
+    </customValue>
+    <customValue>
+        <fullName>Erreur hôtel</fullName>
+        <default>false</default>
+        <label>Erreur hôtel</label>
+    </customValue>
+    <customValue>
+        <fullName>Modification client</fullName>
+        <default>false</default>
+        <label>Modification client</label>
+    </customValue>
+    <customValue>
+        <fullName>Echec paiement hôtel</fullName>
+        <default>false</default>
+        <label>Echec paiement hôtel</label>
+    </customValue>
+    <customValue>
+        <fullName>Factures</fullName>
+        <default>false</default>
+        <label>Factures</label>
+    </customValue>
+    <customValue>
+        <fullName>Relevé mensuel</fullName>
+        <default>false</default>
+        <label>Relevé mensuel</label>
+    </customValue>
+    <customValue>
+        <fullName>Problème Identification/Internet</fullName>
+        <default>false</default>
+        <label>Problème Identification/Internet</label>
+    </customValue>
+    <customValue>
+        <fullName>Compliment SRC</fullName>
+        <default>false</default>
+        <label>Compliment SRC</label>
+    </customValue>
+    <customValue>
+        <fullName>Compliment Accueil</fullName>
+        <default>false</default>
+        <label>Compliment Accueil</label>
+    </customValue>
+    <customValue>
+        <fullName>Compliment Hôtel</fullName>
+        <default>false</default>
+        <label>Compliment Hôtel</label>
+    </customValue>
+    <customValue>
+        <fullName>Compliment sur la réponse</fullName>
+        <default>false</default>
+        <label>Compliment sur la réponse</label>
+    </customValue>
+    <customValue>
+        <fullName>Impayé Eclub</fullName>
+        <default>false</default>
+        <label>Impayé Eclub</label>
+    </customValue>
+    <customValue>
+        <fullName>Divers Avis Clients</fullName>
+        <default>false</default>
+        <label>Divers Avis Clients</label>
+    </customValue>
+    <customValue>
+        <fullName>Dédommagement</fullName>
+        <default>false</default>
+        <label>Dédommagement</label>
+    </customValue>
+    <customValue>
+        <fullName>Réponse du gérant</fullName>
+        <default>false</default>
+        <label>Réponse du gérant</label>
+    </customValue>
+    <customValue>
+        <fullName>Bug du site</fullName>
+        <default>false</default>
+        <label>Bug du site</label>
+    </customValue>
+    <customValue>
+        <fullName>Débit frauduleux</fullName>
+        <default>false</default>
+        <label>Débit frauduleux</label>
+    </customValue>
+    <customValue>
+        <fullName>Erreur du client</fullName>
+        <default>false</default>
+        <label>Erreur du client</label>
+    </customValue>
+    <customValue>
+        <fullName>Annulation/modif pour imprévu</fullName>
+        <default>false</default>
+        <label>Annulation/modif pour imprévu</label>
+    </customValue>
+    <customValue>
+        <fullName>Conditions de la promo</fullName>
+        <default>false</default>
+        <label>Conditions de la promo</label>
+    </customValue>
+    <customValue>
+        <fullName>accueil</fullName>
+        <default>false</default>
+        <label>accueil</label>
+    </customValue>
+    <customValue>
+        <fullName>pas de réservation</fullName>
+        <default>false</default>
+        <label>pas de réservation</label>
+    </customValue>
+    <customValue>
+        <fullName>erreur de résa</fullName>
+        <default>false</default>
+        <label>erreur de résa</label>
+    </customValue>
+    <customValue>
+        <fullName>erreur de paramétrage</fullName>
+        <default>false</default>
+        <label>erreur de paramétrage</label>
+    </customValue>
+    <customValue>
+        <fullName>site web</fullName>
+        <default>false</default>
+        <label>site web</label>
+    </customValue>
+    <customValue>
+        <fullName>Divers récla</fullName>
+        <default>false</default>
+        <label>Divers récla</label>
+    </customValue>
+    <customValue>
+        <fullName>N° surtaxé</fullName>
+        <default>false</default>
+        <label>N° surtaxé</label>
+    </customValue>
+    <customValue>
+        <fullName>Dde infos résa</fullName>
+        <default>false</default>
+        <label>Dde infos résa</label>
+    </customValue>
+    <customValue>
+        <fullName>Accueil à l&apos;arrivée</fullName>
+        <default>false</default>
+        <label>Accueil à l&apos;arrivée</label>
+    </customValue>
+    <customValue>
+        <fullName>Localisation/accessibilité/GPS</fullName>
+        <default>false</default>
+        <label>Localisation/accessibilité/GPS</label>
+    </customValue>
+    <customValue>
+        <fullName>Abords de l&apos;hôtel</fullName>
+        <default>false</default>
+        <label>Abords de l&apos;hôtel</label>
+    </customValue>
+    <customValue>
+        <fullName>Service d&apos;assistance</fullName>
+        <default>false</default>
+        <label>Service d&apos;assistance</label>
+    </customValue>
+    <customValue>
+        <fullName>DAC</fullName>
+        <default>false</default>
+        <label>DAC</label>
+    </customValue>
+    <customValue>
+        <fullName>confusion hôtels</fullName>
+        <default>false</default>
+        <label>confusion hôtels</label>
+    </customValue>
+    <customValue>
+        <fullName>pb navettes</fullName>
+        <default>false</default>
+        <label>pb navettes</label>
+    </customValue>
+    <customValue>
+        <fullName>Hall d&apos;accueil, sanitaires</fullName>
+        <default>false</default>
+        <label>Hall d&apos;accueil, sanitaires</label>
+    </customValue>
+    <customValue>
+        <fullName>Ascenseur</fullName>
+        <default>false</default>
+        <label>Ascenseur</label>
+    </customValue>
+    <customValue>
+        <fullName>Distributeurs boissons en-cas</fullName>
+        <default>false</default>
+        <label>Distributeurs boissons en-cas</label>
+    </customValue>
+    <customValue>
+        <fullName>Propreté</fullName>
+        <default>false</default>
+        <label>Propreté</label>
+    </customValue>
+    <customValue>
+        <fullName>Température ambiante</fullName>
+        <default>false</default>
+        <label>Température ambiante</label>
+    </customValue>
+    <customValue>
+        <fullName>Wifi-TV</fullName>
+        <default>false</default>
+        <label>Wifi-TV</label>
+    </customValue>
+    <customValue>
+        <fullName>Electricité-eau</fullName>
+        <default>false</default>
+        <label>Electricité-eau</label>
+    </customValue>
+    <customValue>
+        <fullName>Linge de toilette linge de lit</fullName>
+        <default>false</default>
+        <label>Linge de toilette linge de lit</label>
+    </customValue>
+    <customValue>
+        <fullName>Accessibilité de la chambre</fullName>
+        <default>false</default>
+        <label>Accessibilité de la chambre</label>
+    </customValue>
+    <customValue>
+        <fullName>Nuisances sonores</fullName>
+        <default>false</default>
+        <label>Nuisances sonores</label>
+    </customValue>
+    <customValue>
+        <fullName>Insectes</fullName>
+        <default>false</default>
+        <label>Insectes</label>
+    </customValue>
+    <customValue>
+        <fullName>Odeurs</fullName>
+        <default>false</default>
+        <label>Odeurs</label>
+    </customValue>
+    <customValue>
+        <fullName>Confort de la chambre</fullName>
+        <default>false</default>
+        <label>Confort de la chambre</label>
+    </customValue>
+    <customValue>
+        <fullName>Ouvertures</fullName>
+        <default>false</default>
+        <label>Ouvertures</label>
+    </customValue>
+    <customValue>
+        <fullName>femmes de chambre</fullName>
+        <default>false</default>
+        <label>femmes de chambre</label>
+    </customValue>
+    <customValue>
+        <fullName>Situation de la chambre</fullName>
+        <default>false</default>
+        <label>Situation de la chambre</label>
+    </customValue>
+    <customValue>
+        <fullName>Douche</fullName>
+        <default>false</default>
+        <label>Douche</label>
+    </customValue>
+    <customValue>
+        <fullName>Lavabo</fullName>
+        <default>false</default>
+        <label>Lavabo</label>
+    </customValue>
+    <customValue>
+        <fullName>WC</fullName>
+        <default>false</default>
+        <label>WC</label>
+    </customValue>
+    <customValue>
+        <fullName>Le buffet Disney</fullName>
+        <default>false</default>
+        <label>Le buffet Disney</label>
+    </customValue>
+    <customValue>
+        <fullName>Accueil au restaurant Disney</fullName>
+        <default>false</default>
+        <label>Accueil au restaurant Disney</label>
+    </customValue>
+    <customValue>
+        <fullName>Accueil au pdj</fullName>
+        <default>false</default>
+        <label>Accueil au pdj</label>
+    </customValue>
+    <customValue>
+        <fullName>Le buffet</fullName>
+        <default>false</default>
+        <label>Le buffet</label>
+    </customValue>
+    <customValue>
+        <fullName>Salle pdj</fullName>
+        <default>false</default>
+        <label>Salle pdj</label>
+    </customValue>
+    <customValue>
+        <fullName>Pdj pas pris</fullName>
+        <default>false</default>
+        <label>Pdj pas pris</label>
+    </customValue>
+    <customValue>
+        <fullName>Erreur de facturation</fullName>
+        <default>false</default>
+        <label>Erreur de facturation</label>
+    </customValue>
+    <customValue>
+        <fullName>Tarif confirmé non appliqué</fullName>
+        <default>false</default>
+        <label>Tarif confirmé non appliqué</label>
+    </customValue>
+    <customValue>
+        <fullName>No show</fullName>
+        <default>false</default>
+        <label>No show</label>
+    </customValue>
+    <customValue>
+        <fullName>Saisie manuelle</fullName>
+        <default>false</default>
+        <label>Saisie manuelle</label>
+    </customValue>
+    <customValue>
+        <fullName>Débit inexpliqué</fullName>
+        <default>false</default>
+        <label>Débit inexpliqué</label>
+    </customValue>
+    <customValue>
+        <fullName>Explications</fullName>
+        <default>false</default>
+        <label>Explications</label>
+    </customValue>
+    <customValue>
+        <fullName>Non application de la promo</fullName>
+        <default>false</default>
+        <label>Non application de la promo</label>
+    </customValue>
+    <customValue>
+        <fullName>Augmentation saisonnière</fullName>
+        <default>false</default>
+        <label>Augmentation saisonnière</label>
+    </customValue>
+    <customValue>
+        <fullName>Augmentation évènement</fullName>
+        <default>false</default>
+        <label>Augmentation évènement</label>
+    </customValue>
+    <customValue>
+        <fullName>Facture téléphone</fullName>
+        <default>false</default>
+        <label>Facture téléphone</label>
+    </customValue>
+    <customValue>
+        <fullName>Vol</fullName>
+        <default>false</default>
+        <label>Vol</label>
+    </customValue>
+    <customValue>
+        <fullName>Dommages corporels</fullName>
+        <default>false</default>
+        <label>Dommages corporels</label>
+    </customValue>
+    <customValue>
+        <fullName>Oubli/perte</fullName>
+        <default>false</default>
+        <label>Oubli/perte</label>
+    </customValue>
+    <customValue>
+        <fullName>attend son rbt</fullName>
+        <default>false</default>
+        <label>attend son rbt</label>
+    </customValue>
+    <customValue>
+        <fullName>Avantages eclub</fullName>
+        <default>false</default>
+        <label>Avantages eclub</label>
+    </customValue>
+    <customValue>
+        <fullName>Carte eclub</fullName>
+        <default>false</default>
+        <label>Carte eclub</label>
+    </customValue>
+    <customValue>
+        <fullName>Commande cadeau</fullName>
+        <default>false</default>
+        <label>Commande cadeau</label>
+    </customValue>
+    <customValue>
+        <fullName>Divers</fullName>
+        <default>false</default>
+        <label>Divers</label>
+    </customValue>
+    <customValue>
+        <fullName>E-chèque</fullName>
+        <default>false</default>
+        <label>E-chèque</label>
+    </customValue>
+    <customValue>
+        <fullName>Nuits/Points</fullName>
+        <default>false</default>
+        <label>Nuits/Points</label>
+    </customValue>
+    <customValue>
+        <fullName>Aucune signification</fullName>
+        <default>false</default>
+        <label>Aucune signification</label>
+    </customValue>
+    <customValue>
+        <fullName>Avis mensonger</fullName>
+        <default>false</default>
+        <label>Avis mensonger</label>
+    </customValue>
+    <customValue>
+        <fullName>Informations personnelles</fullName>
+        <default>false</default>
+        <label>Informations personnelles</label>
+    </customValue>
+    <customValue>
+        <fullName>Injures, grossièretés</fullName>
+        <default>false</default>
+        <label>Injures, grossièretés</label>
+    </customValue>
+    <customValue>
+        <fullName>Pas de consommation</fullName>
+        <default>false</default>
+        <label>Pas de consommation</label>
+    </customValue>
+    <customValue>
+        <fullName>Erreur du  client</fullName>
+        <default>false</default>
+        <label>Erreur du  client</label>
+    </customValue>
+    <customValue>
+        <fullName>Conditions de la  promo</fullName>
+        <default>false</default>
+        <label>Conditions de la  promo</label>
+    </customValue>
+    <customValue>
+        <fullName>Conditions  de  la  promo</fullName>
+        <default>false</default>
+        <label>Conditions  de  la  promo</label>
+    </customValue>
+    <customValue>
+        <fullName>Erreur  du  client</fullName>
+        <default>false</default>
+        <label>Erreur  du  client</label>
+    </customValue>
+    <masterLabel>Case_Objets</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

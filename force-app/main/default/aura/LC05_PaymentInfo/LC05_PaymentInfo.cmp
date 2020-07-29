@@ -1,0 +1,12 @@
+<!-- LC05_PaymentInfo -->
+<aura:component controller="BB_PaymentObject" implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,force:hasSObjectName,flexipage:availableForAllPageTypes">
+    <aura:attribute type="String" name="recordId" />
+    <aura:attribute type="Object" name="acceptedPayment" />
+    <aura:handler name="init" value="{!this}" action="{!c.loadInformation}"/>
+    
+    <lightning:card variant="Narrow" title="Payment Information" iconName="standard:calibration"/>
+    Token: <ui:outputText value="{!v.acceptedPayment.PaymentCard.EncryptionKey}"/><br/>
+    Four last digits of the credit card: <ui:outputText value="{!v.acceptedPayment.PaymentCard.MaskedCardNumber}"/><br/>
+    Name of the card holder: <ui:outputText value="{!v.acceptedPayment.PaymentCard.CardHolderName}"/><br/>
+    Merchand account: <ui:outputText value="{!v.acceptedPayment.PaymentCard.CardIssuerName.BankID}"/>
+</aura:component>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR05_Voucher_1IR_Pour_CaseLinkedToIR</fullName>
+    <active>true</active>
+    <errorConditionFormula>Demande_d_assistance__r.tech_NumberOfIR__c &gt;1</errorConditionFormula>
+    <errorMessage>You cannot add more than 1 IR on Case related to IR</errorMessage>
+</ValidationRule>

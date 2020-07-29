@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Booking_channel_declarative__c</fullName>
+    <externalId>false</externalId>
+    <label>Booking channel (declarative)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Direct Hotel</fullName>
+                <default>false</default>
+                <label>Direct Hotel</label>
+            </value>
+            <value>
+                <fullName>Website B&amp;B</fullName>
+                <default>false</default>
+                <label>Website B&amp;B</label>
+            </value>
+            <value>
+                <fullName>Individual booking</fullName>
+                <default>false</default>
+                <label>Individual booking</label>
+            </value>
+            <value>
+                <fullName>Group booking</fullName>
+                <default>false</default>
+                <label>Group booking</label>
+            </value>
+            <value>
+                <fullName>GDS</fullName>
+                <default>false</default>
+                <label>GDS</label>
+            </value>
+            <value>
+                <fullName>Channel manager</fullName>
+                <default>false</default>
+                <label>Channel manager</label>
+            </value>
+            <value>
+                <fullName>OTA</fullName>
+                <default>false</default>
+                <label>OTA</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>
