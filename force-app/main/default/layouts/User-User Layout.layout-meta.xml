@@ -31,12 +31,8 @@
                 <field>et4ae5__ExactTargetForAppExchangeUser__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>et4ae5__ExactTargetUsername__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>et4ae5__ValidExactTargetUser__c</field>
+                <behavior>Readonly</behavior>
+                <field>User_Status__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns/>
