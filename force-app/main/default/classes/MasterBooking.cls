@@ -25,6 +25,7 @@ global without sharing virtual class MasterBooking {
     webservice double InvoicedCityTax;
     webservice String FieldsToNull;
     webservice double InvoicedAmount;
+    webservice String CurrencyIsoCode;
      
     
     public Opportunity mapSFFields() {
@@ -44,6 +45,9 @@ global without sharing virtual class MasterBooking {
         }
         if(String.isNotBlank(Channel) || setFieldsToNull.contains('Channel')) {
             masterBooking.Channel__c = Channel;
+        }
+        if(String.isNotBlank(CurrencyIsoCode) || setFieldsToNull.contains('CurrencyIsoCode')) {
+            masterBooking.CurrencyIsoCode = CurrencyIsoCode;
         }
         if(String.isNotBlank(ChannelDescription) || setFieldsToNull.contains('ChannelDescription')) {
             masterBooking.Channel_description__c = ChannelDescription;

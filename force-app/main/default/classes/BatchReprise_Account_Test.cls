@@ -1,6 +1,6 @@
 /*
-* Description: Test class for BatchReprise_Account_DataHist2
-* @author: TMA Cynthia Geagea
+* Description: Test class for BatchReprise_Account
+* @author: Cynthia Geagea
 * @date: 26/06/2019
 */
 

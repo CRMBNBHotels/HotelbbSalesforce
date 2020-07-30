@@ -10,3 +10,6 @@ declare module "@salesforce/apex/AP01_Opportunity.getlocationlatlong" {
 declare module "@salesforce/apex/AP01_Opportunity.Filter" {
   export default function Filter(param: {latlong: any}): Promise<any>;
 }
+declare module "@salesforce/apex/AP01_Opportunity.createHotel" {
+  export default function createHotel(param: {sfdcId: any, ListHotel: any, address: any}): Promise<any>;
+}

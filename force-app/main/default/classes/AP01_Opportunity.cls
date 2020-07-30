@@ -5,7 +5,7 @@
 * @Test class: AP01_Opportunity_Test
 * @Lightning Components: LC01_Opportunity / LC01_Opportunity_Body 
 */
-public without sharing class AP01_Opportunity {    
+public class AP01_Opportunity {    
     //Method called on the initiation and when the value of the filter is chosen
     //on the component LC01_Opportunity_Body to get the list of hotels filtered by country
     @AuraEnabled
@@ -91,8 +91,6 @@ public without sharing class AP01_Opportunity {
         }   
         return listHotel;              
     }
-    
-    /*Method Commented by TMA-EIL CG CRMSS-448 23/01/2020
     //Method to create Opportunity_Hotel_Junction__c depending on the chosen Hotels and create an attachement containing all the infos of the chosen hotels  
     @AuraEnabled
     public static void createHotel(string sfdcId,List<Hotel__c> ListHotel,string address){
@@ -125,5 +123,5 @@ public without sharing class AP01_Opportunity {
         attachment.Name = label.HotelsDot + oppName + label.DotCSV;
         attachment.ParentId = sfdcId; 
         insert attachment;
-    }*/
+    }   
 }

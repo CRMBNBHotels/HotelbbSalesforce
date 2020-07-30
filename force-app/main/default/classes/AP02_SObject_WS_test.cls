@@ -26,19 +26,13 @@ public class AP02_SObject_WS_test {
         update PersonAccount;
         map<String ,sobject> mapobj = new map<String ,sobject>();
         mapobj.put(PersonAccount.id,PersonAccount);
-        //NAT to raise code coverage
-        Map<String,String> mapType = new Map<String,String>();
-        mapType.put(PersonAccount.id,'Person Account');
-        Map<String,Integer> mapNBPT = new Map<String,Integer>();
-        mapNBPT.put(PersonAccount.id,1000);
-        //NAT END
         Set<String> setfields = new set<String>();
         setfields.add('PersonMailingCity');
          setfields.add('PersonMobilePhone');
          setfields.add('E_Club_Status__c');
          setfields.add('E_club_Expiration_date__pc');
          setfields.add('FirstName');
-        map<String,String> mapjson = AP02_SObject_WS.Serialize(mapobj,mapType,mapNBPT);
+        map<String,String> mapjson = AP02_SObject_WS.Serialize(mapobj,null,null);
         map<String, ap02_sobject_ws.SerializeObject> mapserOb = ap02_sobject_ws.Deserialize(mapjson);
         map<Id,Map<String,String>> mapIdJson = ap02_sobject_ws.GetFieldAndValueMap(mapserOb);
         Sobject sobj = PersonAccount;

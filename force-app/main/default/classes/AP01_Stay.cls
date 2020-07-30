@@ -5,19 +5,16 @@
 * @Test: AP01_Stay_Test
 */
 public class AP01_Stay {
-    /*
     public static void UpdateTypeAccount(List<Stay__c> triggerNew, Map<Id,Stay__c> oldMap, List<Stay__c> triggerOld){
-        System.debug('##### AP01_Stay Start');
-        Set<Id> ListAccountId = new Set<Id>();
+        List<Id> ListAccountId = new List<Id>();
         //get the list of accounts affected by the trigger on insert and update
         if(triggerNew != null){
             for(Stay__c stay: triggerNew){  
                 Stay__c oldStay=oldMap==null ? stay : oldMap.get(stay.Id);   
-                 if(oldMap==null && String.isNotBlank(stay.Guest_account__c)) ListAccountId.add(stay.Guest_account__c);                
+                ListAccountId.add(stay.Guest_account__c);                
                 //If we update an opportunity by updating its account                       
                 if(oldMap!=null && oldStay.Guest_account__c!=stay.Guest_account__c){
-                  if(String.isNotBlank(stay.Guest_Account__c))listAccountId.add(stay.Guest_account__c); 
-                  if(String.isNotBlank(oldStay.Guest_account__c)) ListAccountId.add(oldStay.Guest_account__c);                              
+                    ListAccountId.add(oldStay.Guest_account__c);                              
                 }   
             }
         }
@@ -25,10 +22,13 @@ public class AP01_Stay {
         else{
             for(Stay__c stay:triggerOld){
                 if(stay.Trip_Context__c!=null){
-                   if(String.isNotBlank(stay.Guest_account__c)) ListAccountId.add(stay.Guest_account__c);
+                    ListAccountId.add(stay.Guest_account__c);
                 }
             }
         }
+        //Remove duplicates in the two lists
+        Set<Id> setAccount = new Set<Id>(ListAccountId);
+        ListAccountId = new List<Id>(setAccount);
         //foreach account get the list of opportunities
         if(ListAccountId.Size() > 0){
             Map<Account,AccountWrapper> mapAccountWrapper = new Map<Account,AccountWrapper>();
@@ -37,8 +37,7 @@ public class AP01_Stay {
                                                   From Stays__r
                                                   Where Trip_Context__c != null)
                                                  from Account
-                                                 where Id IN: ListAccountId ];
-            System.debug('##### AP01_Stay listSelectedAccount' + listSelectedAccount);
+                                                 where Id IN: ListAccountId];
             for(Account acc:listSelectedAccount){
                 List<Stay__c> ListStay = new List<Stay__c>();              
                 ListStay = acc.Stays__r;   
@@ -84,5 +83,5 @@ public class AP01_Stay {
             BusinessCount = 0;
             LeisureCount = 0;
         }
-    }*/
+    }
 }

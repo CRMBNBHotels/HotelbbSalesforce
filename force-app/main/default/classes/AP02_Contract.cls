@@ -54,11 +54,11 @@ public without sharing class AP02_Contract {
             system.debug('### mapOppToUpdate ' + mapOppToUpdate);
         }
         for(Contract cont : listNewContracts){
+            system.debug('### cont ' + cont);
             if(cont.opportunity__c != null && mapOppToUpdate.containsKey(cont.opportunity__c)){
                 cont.AccountId = mapOppToUpdate.get(cont.opportunity__c).AccountId;
                 cont.contact__c = mapOppToUpdate.get(cont.opportunity__c).Contact__c;
             }else if(mapOldContracts!=null && mapOldContracts.get(cont.id).Opportunity__c!=null && cont.Opportunity__c != mapOldContracts.get(cont.id).Opportunity__c){
-                system.debug('### cont ' + cont.Opportunity__c + ' ' + mapOldContracts.get(cont.id).Opportunity__c);
                 cont.AccountId = null;
                 cont.contact__c = null;
             }

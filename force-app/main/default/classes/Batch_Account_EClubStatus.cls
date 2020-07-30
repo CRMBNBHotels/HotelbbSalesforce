@@ -6,7 +6,7 @@
 * @Coverage: 100%
 */
 
-Global without sharing class Batch_Account_EClubStatus implements Database.Batchable<sObject>{
+Global class Batch_Account_EClubStatus implements Database.Batchable<sObject>{
     
     global Database.QueryLocator start(Database.BatchableContext bc){
         system.debug('@@@@ batch start');

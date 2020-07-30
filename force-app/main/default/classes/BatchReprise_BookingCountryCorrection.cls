@@ -10,7 +10,7 @@ global class BatchReprise_BookingCountryCorrection  implements Database.Batchabl
     {
         List<Hotel__c> hotelToUpdate = new List<Hotel__c>();
             for(Hotel__c hot: listHot){
-                if(hot.Country__c =='France'){
+                if(hot.Country__c =='France'){ 
                     hot.Country__c = 'FR';
                 }
                 if(hot.Country__c =='Italy'){

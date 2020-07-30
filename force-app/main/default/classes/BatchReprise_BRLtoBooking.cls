@@ -70,7 +70,7 @@ Global without sharing class BatchReprise_BRLtoBooking implements Database.Batch
                     
             for(Booking_Room_Line__c brl: listBRLs){
                 
-                lstBookingsId.add(brl.Booking_FK__c);
+                lstBookingsId.add(brl.id);
             }
         
         
@@ -79,7 +79,7 @@ Global without sharing class BatchReprise_BRLtoBooking implements Database.Batch
             list<Booking_Room_Line__c> listBRLinLot = new list<Booking_Room_Line__c>([select id, Room_code__c, Quantity__c, Booking_FK__c, Booking_FK__r.Chambre__c, Booking_FK__r.Breakfasts__c
                                                                                       // tkt 485, Tech_Booking_Breakfasts__c, TechBookingChambre__c,IsDeleted 
                                                                                      from Booking_Room_Line__c 
-                                                                                     where Booking_FK__c in : lstBookingsId// ALL ROWS
+                                                                                     where id in : lstBookingsId// ALL ROWS
                                                                                      ]);
             listBRLs.addAll(listBRLinLot);
         }

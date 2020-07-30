@@ -2,8 +2,8 @@
 * Description: Class to track history on certain field
 * @author: TMA-EI JK
 * @date: 30/07/2019
-* @Test class: AP06_Account_Test
-* @Coverage: 82%
+* @Test class: 
+* @Coverage: 
 */
 public without sharing class AP06_Account {
     
@@ -31,6 +31,7 @@ public without sharing class AP06_Account {
                     if(mapAccOld.get(acc.Id).E_club_Creation_channel__pc == Label.AP06_Account_Dashboard){
                         system.debug('### cg here 1');
                         history.Oldvalue__c = mapAccOld.get(acc.Id).E_club_Creation_channel__pc + ' - ' + acc.Hotel_Name__c;
+                        system.debug('### cg history.Oldvalue__c'+history.Oldvalue__c);
                     }
                     else{
                         system.debug('### cg here 2');
@@ -54,7 +55,7 @@ public without sharing class AP06_Account {
         }
         
         if(ListHistory != null && ListHistory.size() > 0){
-           
+           system.debug('### cg ListHistory'+ListHistory);
             insert ListHistory;
         }
     }

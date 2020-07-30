@@ -7,7 +7,6 @@
 @isTest
 public class AP06_Stay_Test 
 {
-    /*
     public static testMethod void InsertUpdateDeleteBookingRoomLine()
     {
         //insert Hotel_Room_Option__c
@@ -85,5 +84,5 @@ public class AP06_Stay_Test
                Where Id =: PersonAccount.Id];
         system.assertEquals(null,acc.Favorites_option_3_label__pc);
         test.stopTest();
-    }*/
+    }
 }

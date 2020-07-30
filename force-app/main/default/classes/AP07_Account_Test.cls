@@ -35,7 +35,7 @@ public class AP07_Account_Test {
         insert lstToInsert; 
         
         test.starttest();
-        PartnerAccount.Hotelid_club_subscription__c = '4713345';
+        PartnerAccount.Hotelid_club_subscription__c = '4713';
         update PartnerAccount;
         test.stoptest();
     }

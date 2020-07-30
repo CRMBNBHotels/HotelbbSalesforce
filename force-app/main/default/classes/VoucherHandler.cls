@@ -55,10 +55,10 @@ public without sharing class VoucherHandler {
         //Voucher_Handler.handle(newRecords,null);   //TMA EI 9-9-2019 PG 275
         
         //end
-        system.debug('### cg UtilsBypass.getUserBypassApexClass()'+UtilsBypass.getUserBypassApexClass().contains('AP05_Voucher'));
+        
         //Added by TMA-EIL CG CRMSS-474 06/03/2020 Start
-        if((UtilsBypass.getUserBypassApexClass() != null && !UtilsBypass.getUserBypassApexClass().contains('AP05_Voucher')) || !UtilsBypass.canISkipApexClass('AP05_Voucher') || !UtilsBypass.canISkipApexMethod('fillVoucherOpco')){
-            system.debug('### cg UtilsBypass.getUserBypassApexClass()'+UtilsBypass.getUserBypassApexClass());
+       if((UtilsBypass.getUserBypassApexClass() != null && !UtilsBypass.getUserBypassApexClass().contains('AP05_Voucher')) || !UtilsBypass.canISkipApexClass('AP05_Voucher') || !UtilsBypass.canISkipApexMethod('fillVoucherOpco')){
+            
             list<voucher__c> listFilteredVouch = new list<Voucher__c>();
             
             for(Voucher__c vouch : newRecords){
@@ -134,10 +134,10 @@ public without sharing class VoucherHandler {
                 
                 AP05_Voucher.fillVoucherOpco(listFilteredVouch);
             }
-        }
+        } 
         //Added by TMA-EIL CG CRMSS-474 06/03/2020 Start
     }
-    
+ 
     public void OnAfterUpdate(Voucher__c[] oldRecords, Voucher__c[] updatedRecords, Map<ID, Voucher__c> recordMap,  Map<ID, Voucher__c> recordMapOld){  
                 
         if((UtilsBypass.getUserBypassApexClass() != null && !UtilsBypass.getUserBypassApexClass().contains('AP03_voucher')) 

@@ -17,7 +17,6 @@ public without sharing class AP01_Account
                 listAccount.add(acc);
             }
         }
-        system.debug('### ' + listAccount.Size());
         if(listAccount.Size() > 0)
         {
             list<Account> listAccToUpdate = new list<Account>();

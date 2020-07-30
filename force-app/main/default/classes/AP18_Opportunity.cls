@@ -8,7 +8,7 @@
 
 public without sharing class AP18_Opportunity {
     
-    //method to fill th field opco of a masterbooking on after insert of a booking
+    //method to fill the field opco of a masterbooking on after insert of a booking
     public static void fillMBOpco(list<opportunity> listNewOpp){
 
         Id bookingRTId = Schema.SObjectType.Opportunity.getRecordTypeInfosByDeveloperName().get('Booking').getRecordTypeId();
@@ -21,9 +21,9 @@ public without sharing class AP18_Opportunity {
             
             for(opportunity opp : listNewOpp){
                 
+                //retrieve each booking's masterbooking 
                 if(opp.RecordTypeId == bookingRTId && opp.HotelCountry__c != null && string.isNotBlank(opp.HotelCountry__c) && opp.Master_Booking_FK__c != null && string.isNotBlank(opp.Master_Booking_FK__c)){
                     
-                    //retrieve each booking's masterbooking 
                     if(!mapBookIdMBId.containsKey(opp.Master_Booking_FK__c)){
                         
                         list<opportunity> listToPut = new list<opportunity>();

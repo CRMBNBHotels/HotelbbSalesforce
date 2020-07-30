@@ -28,8 +28,9 @@ public without sharing class AP04_Account {
         Integer totalNights;
         decimal totalRevenue;
          for(Account guestAccount : listGuestAccounts) {
-            bUpdateGuestAcc = false;
-            dataHistoryObjToUpdate = AccountDataHistory.parse(guestAccount.Data_History__c);
+             bUpdateGuestAcc = false;
+             if(guestAccount.Data_History__c != null)
+                 dataHistoryObjToUpdate = AccountDataHistory.parse(guestAccount.Data_History__c);
             guestAccountInformationObject =  mapGuestIdDataHistory.get(guestAccount.Id);
             
             // Update Customer Type field

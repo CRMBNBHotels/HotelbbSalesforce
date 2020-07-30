@@ -222,15 +222,7 @@ public without sharing class AP03_Opportunity
                 
                 for(Account acc : listAccNightsRevenue){
                     
-                    if(!mapAccsToUpdate.containsKey(acc.Id)){
-                        
-                        mapAccsToUpdate.put(acc.Id, acc);
-                    }
-                    else{
-                        
-                        acc.Total_Transactions_PartnerShip__c = mapAccsToUpdate.get(acc.Id).Total_Transactions_PartnerShip__c;
-                        mapAccsToUpdate.put(acc.Id, acc);
-                    }
+                    mapAccsToUpdate.put(acc.Id, acc);
                 }
             }
         }

@@ -53,7 +53,7 @@ public class AP02_Contract_Test
             
             opp2.AccountId = compAcc2.id;
             update opp2;
-             //added	
+            //added
             delete listContracts;
             test.stopTest();
             

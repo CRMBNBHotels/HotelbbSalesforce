@@ -28,7 +28,7 @@ public class BatchReprise_VoucherOpco_Test {
             UtilsBypass.SKIP_APEXCLASS_MAP.put('AP05_Voucher','skipClass');
             UtilsBypass.SKIP_METHOD_MAP.put('fillVoucherOpco','skipMethod');
             
-            Id Voucher_RT_EClub_Id = Schema.SObjectType.Voucher__c.getRecordTypeInfosByDeveloperName().get('Eclub_voucher').getRecordTypeId();
+            Id Voucher_RT_EClub_Id = Schema.SObjectType.Voucher__c.getRecordTypeInfosByDeveloperName().get('Eclub').getRecordTypeId();
             
             Account acc = new Account();
             acc.RecordTypeId=Schema.SObjectType.Account.getRecordTypeInfosByDeveloperName().get('PersonAccount').getRecordTypeId();

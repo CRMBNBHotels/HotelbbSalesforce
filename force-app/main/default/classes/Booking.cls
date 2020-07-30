@@ -1,4 +1,5 @@
-global without sharing class Booking {
+//test class: WS02_BookingInfo_Test
+global class Booking {
      
     webservice String Account;
     webservice String BookingDevice;
@@ -58,6 +59,7 @@ global without sharing class Booking {
     webservice String GuestAccount3;
     webservice String GuestAccount4;
     webservice String GuestAccount5;
+    webservice String CurrencyIsoCode;
     
     public Opportunity mapSFFields() {
         Opportunity booking = new Opportunity();
@@ -79,6 +81,9 @@ global without sharing class Booking {
         if(String.isNotBlank(BookingDevice) || setFieldsToNull.contains('BookingDevice')) {
             booking.BookerDevice__c = BookingDevice;
         }
+            if(String.isNotBlank(CurrencyIsoCode) || setFieldsToNull.contains('CurrencyIsoCode')) {
+                booking.CurrencyIsoCode = CurrencyIsoCode;
+            }
         if(String.isNotBlank(BookingComment) || setFieldsToNull.contains('BookingComment')) {
             booking.BookingComment__c = BookingComment;
         }
@@ -130,11 +135,18 @@ global without sharing class Booking {
             booking.Name = Name;
         }        
         if(String.isNotBlank(PartnerCode) || setFieldsToNull.contains('PartnerCode')) {
+            system.debug('else remove ______ +++++');
             //booking.Partner_Code__c = PartnerCode;
             //Ticket CRMSS-286 Start
-            accountObj = new Account(Partner_Code__c = PartnerCode);
-            booking.PartnerCode__r = accountObj;
-            //Ticket CRMSS-286 End
+            if(PartnerCode != null) { 
+                accountObj = new Account(Partner_Code__c = PartnerCode);
+                booking.PartnerCode__r = accountObj;
+                system.debug('#### accountObj ' + accountObj);
+                //Ticket CRMSS-286 End
+            }else if(setFieldsToNull.contains('PartnerCode')) {
+                system.debug('else remove ______');
+                booking.PartnerCode__c = null;
+            }
         }
         if(String.isNotBlank(PersonAccount) || setFieldsToNull.contains('PersonAccount')) {
             if(PersonAccount != null) {
@@ -286,7 +298,7 @@ global without sharing class Booking {
             booking.Invoiced_city_tax__c = InvoicedCityTax;
         }
         if(AmountCityTax != null || setFieldsToNull.contains('AmountCityTax')) {
-            booking.Amount_City_Tax__c = AmountCityTax;
+           // booking.Amount_City_Tax__c = AmountCityTax;
         }
         if(EarnPoint != null || setFieldsToNull.contains('EarnPoint')) {
             booking.Earn_Point__c = EarnPoint;

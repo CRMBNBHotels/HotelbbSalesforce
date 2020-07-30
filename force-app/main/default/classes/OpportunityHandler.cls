@@ -122,7 +122,7 @@ public without sharing class OpportunityHandler {
                 }
                 
                 if(book.Booking_Person_account__c != null && book.StageName == Label.StageNameBooking_Checked && book.Hotel_Name__c != null && book.Hotel_Name__c != '' && !book.IsDeleted){
-                    
+                     
                     if(!mapPAlistBooking.containskey(book.Booking_Person_account__c)){
                         list<Opportunity> listToPut = new list<opportunity>();
                         listToPut.add(book);
@@ -150,7 +150,7 @@ public without sharing class OpportunityHandler {
     
     //Added by TMA-EIL JKA CRMSS-401 - 18/12/2019 - End
     
-    //Added by TMA-EIL JKA CRMSS-285 - 02/01/2020 - Start
+    //Added by TMA-EIL JKA CRMSS-285 - 02/02/2020 - Start
     public static Map<String,String> filterBookings_Batch_PartnershipFieldsUpdate(List<Opportunity> listBookings){
         
         String masterBookingRTId = Schema.SObjectType.Opportunity.getRecordTypeInfosByDeveloperName().get('Master_Booking').getRecordTypeId();
@@ -163,7 +163,7 @@ public without sharing class OpportunityHandler {
         if(listBookings != null && listBookings.size()>0){
             
             for(Opportunity book : listBookings){
-                
+
                 if(book.RecordTypeId == bookingRTId && book.PartnerCode__c != null && book.OnTheCurrentYear__c && book.StageName == Label.StageNameBooking_Checked 
                    && (book.Invoiced_amount__c != null || book.Number_of_nights__c != null || book.Master_Booking_FK__c != null) ){
                        
@@ -193,6 +193,5 @@ public without sharing class OpportunityHandler {
         return mapAccIdErrors;
     }
     
-    //Added by TMA-EIL JKA CRMSS-285 - 02/01/2020 - End
-    
+    //Added by TMA-EIL JKA CRMSS-285 - 02/02/2020 - End
 }

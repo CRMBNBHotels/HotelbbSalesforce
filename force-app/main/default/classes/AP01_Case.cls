@@ -10,162 +10,296 @@ public without sharing class AP01_Case {
     
     //Send an Email to the concerned hotel when a web-to-case is created
     public static void SendEmailToHotel(list<case> triggerNew)
+        
     {
+        List<String> listHotelSFID = new List<String>();
         system.debug('@@@ ap01 case SendEmailToHotel');
         //Select the case in order to have the updated case with the contactId
-        list<case> listCaseUpdated = [Select Id,Hotel_ID__c,Origin,ContactId, Type,ContactEmail,RecordTypeID,Concerned_country__c  //Modified TMAEI - JK - Ticket 76 Add RecordTypeID                             
+        
+        system.debug('On new case ' + triggerNew);
+        list<case> listCaseUpdated = [Select Id,Hotel_ID__c,Hotel__c,Origin,ContactId, Type,ContactEmail,RecordTypeID,Concerned_country__c,Salesforce_Case_Type__c  //Modified TMAEI - JK - Ticket 76 Add RecordTypeID                             
                                       From Case
                                       Where Id IN: triggerNew];
+        
+        OrgWideEmailAddress orgEmailAddress = [SELECT Id, Address, DisplayName FROM OrgWideEmailAddress where DisplayName like '%noreply%' limit 1];
+        
         list<case> listCase = new list<case>();
         list<string> listHotelId = new list<string>();  
         
-        for(Case cas: listCaseUpdated)
-        {  
-            if(!string.isBlank(cas.Hotel_ID__c) && cas.Origin==label.CaseWebOrigin && !string.isBlank(cas.ContactId) 
-               && ((cas.Type==label.Booking_Confirmation|| cas.Type==label.Duplicate_Invoice 
-                    || cas.Type==label.Lost_Property) && 
-                   ((cas.Concerned_country__c == 'FR'|| cas.Concerned_country__c == 'France' || cas.Concerned_country__c == 'IT') && cas.RecordTypeId == Label.Case_RT_CustomersRequestFeedback)) || 
-               ((cas.Concerned_country__c == 'FR' || cas.Concerned_country__c == 'France') && cas.Type==label.Information_request) ||
-               (cas.Concerned_country__c == 'IT' && cas.RecordTypeId == Label.Case_RT_CustomersRequestFeedback && (cas.Type==label.Case_Type_CustomerClaim  || cas.Type==label.Case_Type_CustomerFeedback ))
-               || ((cas.Concerned_country__c == 'ES'|| cas.Concerned_country__c == 'CA') && ( cas.Type==label.Case_Type_CustomerClaim || cas.Type==label.Case_Type_CustomerFeedback ) && cas.RecordTypeId == Label.Case_RT_CustomersRequestFeedback)
-               ||(cas.Concerned_country__c == 'DE'))
+         //String bookingRTId = Schema.SObjectType.Opportunity.getRecordTypeInfosByDeveloperName().get('Booking').getRecordTypeId();
+        //string ptRecordTypeId =  Schema.SObjectType.Case.getRecordTypeInfosByDeveloperName().get('Customer_Request_Claim_Feedback_Spain_Portugal').getRecordTypeId();
+        
+        for(Case cas: listCaseUpdated){ 
+            
+            // && cas.Origin==label.CaseWebOrigin Crmss-643 // !string.isBlank(cas.Hotel_ID__c) &&
+            if(!string.isBlank(cas.ContactId) 
+               &&
+               // TMA JK - 698 start
+              	/* ((cas.Type==label.Booking_Confirmation|| cas.Type==label.Duplicate_Invoice || cas.Type==label.Lost_Property)
+                   &&(( cas.Concerned_country__c == 'IT') && cas.RecordTypeId == Label.Case_RT_CustomersRequestFeedback))
+               || 
+             	  (cas.Concerned_country__c == 'IT' && cas.RecordTypeId == Label.Case_RT_CustomersRequestFeedback 
+              	  && (cas.Type==label.Case_Type_CustomerClaim  || cas.Type==label.Case_Type_CustomerFeedback ))       
+               */
+               ( (cas.Type==label.Booking_Confirmation || cas.Type==label.Case_Type_CustomerFeedback || cas.Type== label.Case_type_HotelJobApplication 
+                  || cas.Type== label.Case_type_FeedbackOnYourStay || cas.Type== label.Case_type_ProblemWithBooking  || cas.Type== label.Case_type_CommercialTopic
+                  || cas.Type== label.Case_type_ForgottenObject)
+                 &&(cas.Concerned_country__c == 'IT') )
+               // TMA JK - 698 end
+               || 
+             	  ((cas.Concerned_country__c == 'ES'|| cas.Concerned_country__c == 'CA') 
+               	 && ( cas.Type==label.Case_Type_CustomerClaim || cas.Type==label.Case_Type_CustomerFeedback )
+               	 && cas.RecordTypeId == Label.Case_RT_CustomersRequestFeedback)
+               //Added by TMA-EIL CG CRMSS-764 13/07/2020 Start
+               || 
+             	  (cas.Concerned_country__c == 'PT' 
+                   && (cas.Salesforce_Case_Type__c == Label.Case_SFType_GeneralRequest || cas.Salesforce_Case_Type__c == Label.Case_SFType_FeedbackStay 
+                       || cas.Salesforce_Case_Type__c == Label.Case_SFType_BookingConfirmation || cas.Salesforce_Case_Type__c == Label.Case_SFType_ProbBooking 
+                       || cas.Salesforce_Case_Type__c == Label.Case_SFType_ProbInvoice || cas.Salesforce_Case_Type__c == Label.Case_SFType_ForgottenObject
+                       || cas.Salesforce_Case_Type__c == Label.Case_SFType_Companies || cas.Salesforce_Case_Type__c == Label.Case_SFType_Groups 
+                       || cas.Salesforce_Case_Type__c == Label.Case_SFType_BBHClub) 
+                   && cas.RecordTypeId == Label.Case_RT_CustomersRequestFeedback_ES_PT)
+               //Added by TMA-EIL CG CRMSS-764 13/07/2020 End
+               ||
+               		(cas.Concerned_country__c == 'DE') 
+               || 
+             	  (cas.concerned_country__c == 'FR' && (cas.Salesforce_Case_Type__c  == 'General request' || cas.Salesforce_Case_Type__c=='Booking confirmation' 
+                                                         || cas.Salesforce_Case_Type__c  == 'Duplicate invoice' ||   cas.Salesforce_Case_Type__c  == 'Forgotten object')))
             {
                 listCase.add(cas);
-                listHotelId.add(cas.Hotel_ID__c);
+                
+                if(!string.isBlank(cas.Hotel_ID__c)){
+                    
+                    listHotelId.add(cas.Hotel_ID__c);
+                }
+                //get the hotel SF id if case created manually Added by JK CRMMS-683 
+                if(!string.isBlank(cas.Hotel__c) ){
+                    
+                    listHotelSFID.add(cas.Hotel__c);
+                }
+                
                 
             }
-        }system.debug('listHotelId'+listHotelId);
-        if(listCase.size() > 0)
-        {                 
+        }
+        
+        if(listCase.size() > 0){    
+            
             list<Case> listCaseToUpdate = new list<Case>();
             Case caseToUpdate;
             //Get the email of each Hotel_ID__c
             list<Hotel__c> listHotel = [Select Email__c,Hotel_ID__c,Country__c
                                         From Hotel__c
-                                        Where Hotel_ID__c IN: listHotelId];
+                                        Where Hotel_ID__c IN: listHotelId or id in :listHotelSFID];
+            
             map<string,HotelWrapper> mapHotelIdToHotelWrapper = new map<string, HotelWrapper>();
+            map<string,String> mapIDToHotelId = new map<string, String>();
             string hotelId;
             HotelWrapper hotelWrapper;
-            for(Hotel__c hotel:listHotel)
-            {
+            
+            for(Hotel__c hotel:listHotel){
+                
                 hotelId = hotel.Hotel_ID__c;
                 hotelWrapper = new HotelWrapper();
                 hotelWrapper.hotelEmail = hotel.Email__c;    
                 hotelWrapper.hotelCountry = hotel.Country__c;
                 //hotelWrapper.emailTemplateId = getHotelSpokenLanguage(hotel.Country__c);
-                if(!mapHotelIdToHotelWrapper.containsKey(hotelId))
-                {
+                system.debug('mapHotelIdToHotelWrapper.containsKey(hotelId) ' + mapHotelIdToHotelWrapper.containsKey(hotelId));
+                if(!mapHotelIdToHotelWrapper.containsKey(hotelId)){
+                    
                     mapHotelIdToHotelWrapper.put(hotelId,hotelWrapper);
-                }               
+                }       
+                //get the hotel external id from hotel ID Added by JK CRMMS-683
+                mapIDToHotelId.put(hotel.id,hotelId);
             }
-            
-            for(Case cas:listCase)
-            {   
-                if(mapHotelIdToHotelWrapper.containsKey(cas.Hotel_ID__c))
-                {
+            //list that we should send email to
+            for(Case cas:listCase){  
+                
+                system.debug('mapHotelIdToHotelWrapper ' + mapHotelIdToHotelWrapper);
+                
+                caseToUpdate = new Case(Id = cas.Id);
+                
+                //If case created manually, update the hotel id of the case based on the linked hotel to get the email using the method above
+                if(cas.Hotel_ID__c == null && cas.Hotel__c != null){
+                    
+                    caseToUpdate.Hotel_ID__c = mapIDToHotelId.get(cas.Hotel__c);
+                    cas.Hotel_ID__c = mapIDToHotelId.get(cas.Hotel__c);
+                }
+                
+                if(mapHotelIdToHotelWrapper.containsKey(cas.Hotel_ID__c)){
+                    
                     hotelWrapper = mapHotelIdToHotelWrapper.get(cas.Hotel_ID__c);
                     hotelWrapper.CaseId = cas.id;
                     hotelWrapper.emailTemplateId = getHotelSpokenLanguage(hotelWrapper.hotelCountry,cas.RecordTypeId);
-                    //Attach Case to the hotel if hotel Id is in the map
-                    caseToUpdate = new Case(Id = cas.Id);
+                    
                     //caseToUpdate.putSObject('Hotel__r',new Hotel__c(Hotel_Id__c=cas.Hotel_ID__c));   
                     if(cas.Concerned_country__c != 'DE'){
+                        
                         caseToUpdate.Status = label.WaitingHotel;
                     }else
                         if(cas.Concerned_country__c == 'DE'){
                             if(cas.type == Label.AP01_RealEstateOffer){
+                                
                                 caseToUpdate.Status = Label.AP01_Case_waitingDev;
                                 hotelWrapper.emailTemplateId=Label.AP01_Case_TemplateDev;
                             } else
                                 if(cas.type == Label.AP01_Case_ApplyHotel){
+                                    
                                     caseToUpdate.Status = Label.AP01_Case_waitingOps;
                                     hotelWrapper.emailTemplateId=label.AP01_Case_TemplateOps;
                                 } else
-                                    if(cas.type == Label.AP01_Case_InvoiceRequest || cas.type == Label.AP01_Case_JobApp || cas.type == Label.AP01_Case_CancellationRequest){
+                                    if(cas.type == Label.AP01_Case_InvoiceRequest || cas.type == Label.AP01_Case_JobApp || cas.type == Label.AP01_Case_CancellationRequest || cas.type == 'General Hotel Request'){
+                                        
                                         caseToUpdate.Status = label.WaitingHotel;
                                         hotelWrapper.emailTemplateId=Label.AP01_Case_TemplateHotel;
                                     } else 
-                                        if(cas.type == Label.AP01_Case_CustomerFeedback){
+                                        if(cas.type == Label.AP01_Case_CustomerFeedback || cas.type == 'Feedback on your stay'){
+                                            
                                             hotelWrapper.emailTemplateId=Label.AP01_Case_TemplateCustomerFeedback;
                                         }
                         }
+                    
                     listCaseToUpdate.add(caseToUpdate);
                     //Send Email to the hotel email if the hotel has an email
-                    
-                    
                 }
-            }  
-            update listCaseToUpdate;   
-            for(Case cas:listCase)
-            {
-                System.debug('@@: '+cas.Hotel_ID__c);
-                System.debug('@@: '+mapHotelIdToHotelWrapper.get(cas.Hotel_ID__c));
-                string emailHotel = mapHotelIdToHotelWrapper.get(cas.Hotel_ID__c).hotelEmail;
-                string templateId = mapHotelIdToHotelWrapper.get(cas.Hotel_ID__c).emailTemplateId;
-                if(hotelWrapper.hotelCountry == label.AP01_Case_CA  || hotelWrapper.hotelCountry == label.AP01_Case_ES){
-                    emailHotel = label.AP01_Case_SpainEmail;
-                }
-                if(cas.Concerned_country__c == 'DE'){
-                    emailhotel = '';
-                    if(cas.type == Label.AP01_RealEstateOffer){
-                        emailhotel = Label.AP01_Case_devEmail;
-                    } else
-                        if(cas.type == Label.AP01_Case_ApplyHotel){
-                            emailhotel = Label.AP01_Case_OpsEmail;
+            } 
+            
+            if(listCaseToUpdate != null && listCaseToUpdate.size()>0){
+                
+                update listCaseToUpdate; 
+            }
+            
+            for(Case cas:listCase){
+                
+                if (cas.Hotel_ID__c != null && mapHotelIdToHotelWrapper.get(cas.Hotel_ID__c) != null){
+                    
+                    string emailHotel = mapHotelIdToHotelWrapper.get(cas.Hotel_ID__c).hotelEmail;
+                    string templateId = mapHotelIdToHotelWrapper.get(cas.Hotel_ID__c).emailTemplateId;
+                    
+                    if(cas.Concerned_country__c == label.AP01_Case_ES ){
+                        
+                         if(cas.Salesforce_Case_Type__c == Label.Case_SFType_GeneralRequest || cas.Salesforce_Case_Type__c == Label.Case_SFType_FeedbackStay || cas.Salesforce_Case_Type__c == Label.Case_SFType_ProbBooking
+                           || cas.Salesforce_Case_Type__c == Label.Case_SFType_Companies || cas.Salesforce_Case_Type__c == Label.Case_SFType_Groups || cas.Salesforce_Case_Type__c == Label.Case_SFType_BBHClub){
+                               
+                               emailHotel = Label.AP01_Case_SpainEmail;
+                           }
+                        else{
+                            
+                            emailHotel = mapHotelIdToHotelWrapper.get(cas.Hotel_ID__c).hotelEmail;
+                        }
+                    }
+                    system.debug('### cg hotelWrapper.hotelCountry'+hotelWrapper.hotelCountry);
+                    //Added by TMA-EIL CG CRMSS-764 13/07/2020 Start
+                    if(cas.Concerned_country__c == label.AP01_Case_PT){
+                        
+                        if(cas.Salesforce_Case_Type__c == Label.Case_SFType_GeneralRequest || cas.Salesforce_Case_Type__c == Label.Case_SFType_FeedbackStay || cas.Salesforce_Case_Type__c == Label.Case_SFType_ProbBooking
+                           || cas.Salesforce_Case_Type__c == Label.Case_SFType_Companies || cas.Salesforce_Case_Type__c == Label.Case_SFType_Groups || cas.Salesforce_Case_Type__c == Label.Case_SFType_BBHClub){
+                               
+                               emailHotel = Label.AP01_Case_PortugalHotel;
+                               //emailHotel = 'cynthia.geagea@ei-technologies.com';
+                               system.debug('### cg emailHotel 1'+emailHotel);
+                           }
+                        else{
+                            
+                            emailHotel = mapHotelIdToHotelWrapper.get(cas.Hotel_ID__c).hotelEmail;
+                            system.debug('### cg emailHotel 2'+emailHotel);
+                        }
+                    }
+                    //Added by TMA-EIL CG CRMSS-764 13/07/2020 End
+                    
+                    if(cas.Concerned_country__c == 'DE'){
+                        
+                        emailhotel = '';
+                        
+                        if(cas.type == Label.AP01_RealEstateOffer){
+                            
+                            emailhotel = Label.AP01_Case_devEmail;
                         } else
-                            if(cas.type == Label.AP01_Case_InvoiceRequest || cas.type == Label.AP01_Case_JobApp || cas.type == Label.AP01_Case_CancellationRequest){
-                                emailHotel = mapHotelIdToHotelWrapper.get(cas.Hotel_ID__c).hotelEmail;
-                            }else 
-                                if(cas.type == Label.AP01_Case_CustomerFeedback){
-                                            emailHotel = Label.AP01_Case_CustomerCareEmail;
-                                        }
-                }
-                if(!string.isBlank(emailHotel))
-                {   
-                    string[] toAddresses = new String[]{emailHotel};    
-                        //string[] CcAddresses = new string[]{label.SupportEmail}; 
+                            if(cas.type == Label.AP01_Case_ApplyHotel){
+                                
+                                emailhotel = Label.AP01_Case_OpsEmail;
+                            } else
+                                if(cas.type == Label.AP01_Case_InvoiceRequest || cas.type == Label.AP01_Case_JobApp || cas.type == Label.AP01_Case_CancellationRequest || cas.type == 'General Hotel Request'){
+                                    
+                                    emailHotel = mapHotelIdToHotelWrapper.get(cas.Hotel_ID__c).hotelEmail;
+                                }else 
+                                    if(cas.type == Label.AP01_Case_CustomerFeedback){
+                                        
+                                        emailHotel = Label.AP01_Case_CustomerCareEmail;
+                                    }
+                    }
+                    // TMA JK - 698 start
+                    if(cas.Concerned_country__c == 'IT')
+                    {     
+                       if(cas.Type== 'Hotel job application') 
+                        {
+                            emailHotel = 'hr-italia@yopmail.com'; //'hr-italia@hotelbb.com';
+                        }
+                        else if(cas.Type== 'Commercial topic')
+                        { 
+                            emailHotel = 'commerciale@yopmail.com'; //commerciale@hotelbb.com
+                        }
+                        else
+                        {
+                           emailHotel = mapHotelIdToHotelWrapper.get(cas.Hotel_ID__c).hotelEmail;
+                        }
+                    }
+                    // TMA JK - 698 end
+                    
+                    system.debug('emailHotel' + emailHotel);
+                    if(!string.isBlank(emailHotel)){   
+                        
+                        string[] toAddresses = new String[]{emailHotel};    
+                            //string[] CcAddresses = new string[]{label.SupportEmail}; 
+                            system.debug('toAddresses' + toAddresses);
+                        system.debug('cas.contactId' + cas.contactId);
+                        system.debug('templateId' + templateId);
+                        system.debug('cas.contactEmail' + cas.contactEmail);
                         Messaging.SingleEmailMessage singleEmailMessage = Utils.CreateSingleEmailMessage(toAddresses,null,
                                                                                                          cas.contactId,cas.Id,templateId,cas.ContactEmail);
-                    singleEmailMessage.setTreatTargetObjectAsRecipient(false);
-                    singleEmailMessage.setSaveAsActivity(false);
-                    Messaging.sendEmail(new Messaging.Email[] { singleEmailMessage });
-                }
+                        singleEmailMessage.setTreatTargetObjectAsRecipient(false);
+                        singleEmailMessage.setSaveAsActivity(true);
+                        singleEmailMessage.setSenderDisplayName(null);
+                        singleEmailMessage.setOrgWideEmailAddressId(orgEmailAddress.id);
+                        Messaging.sendEmail(new Messaging.Email[] { singleEmailMessage });
+                    } 
+                }  
             }
         }
     } 
     //get the template email id from the hotel spoken languages or country
-    public static string getHotelSpokenLanguage(string hotelCountry, String caseRT)
-    {
+    public static string getHotelSpokenLanguage(string hotelCountry, String caseRT){
+        
         string emailLanguage;
         string language;
-        string emailTemplateId;       
-        if(hotelCountry == label.DE || hotelCountry == label.FR || hotelCountry == label.AP01_Case_CA  || hotelCountry == label.AP01_Case_ES  || hotelCountry == label.IT )
-        {
+        string emailTemplateId;  
+        
+        if(hotelCountry == label.DE || hotelCountry == label.FR || hotelCountry == label.AP01_Case_CA || hotelCountry == 'PT' || hotelCountry == label.AP01_Case_ES  || hotelCountry == label.IT ){
+            
             emailLanguage = hotelCountry;
         }
-        else
-        {
+        else{
+            
             emailLanguage = label.EN;
         }                  
         
-        if(emailLanguage == label.DE)
-        {
+        if(emailLanguage == label.DE){
+            
             emailTemplateId = label.WebCaseGermanEmailTemplateId;
         }else
-            if(emailLanguage == Label.FR)
-        {
-            emailTemplateId = label.WebCaseFrenchEmailTemplateId;
-        }else
-            if(emailLanguage == label.EN)
-        {
-            emailTemplateId = label.WebCaseEnglishEmailTemplateId;
-        }
-        if(emailLanguage == label.IT)
-        {
+            if(emailLanguage == Label.FR){
+                
+                emailTemplateId = label.WebCaseFrenchEmailTemplateId;
+            }else
+                if(emailLanguage == label.EN){
+                    
+                    emailTemplateId = label.WebCaseEnglishEmailTemplateId;
+                }
+        if(emailLanguage == label.IT){
+            
             emailTemplateId = label.WebCaseItalyEmailTemplateID;
         }
         else 
-            if (emailLanguage == label.AP01_Case_CA || emailLanguage == label.AP01_Case_ES){
+            if (emailLanguage == label.AP01_Case_CA || emailLanguage == label.AP01_Case_ES || emailLanguage == 'PT'){
                 // if (caseRT.substring(0, 15) == label.Case_GroupRequestRT.substring(0, 15) || caseRT.substring(0, 15) == label.Case_ompanyRequestRT.substring(0, 15)){
                 //    emailTemplateId = label.WebCaseSpanishEmailTemplateIdCompanyGroupReq;
                 // } 
@@ -175,27 +309,87 @@ public without sharing class AP01_Case {
             }
         return emailTemplateId;
     }
+    
     //fill hotel based on hotelID TMAEI-JK CRMSS-140 Start
     Public static void FillHotelID(List<Case> listCase){
+        
         system.debug('@@@ ap01 case in FillHotelID');
         List<String> listHotelID = new List<String>();
+        List<String> listHotelSFID = new List<String>();
+        
         for(case cas:listCase){
-            if(!string.isBlank(cas.Hotel_ID__c) && cas.Origin==label.CaseWebOrigin){
+            //fill case sf type
+            if(cas.Concerned_country__c == 'FR'){
+                
+                if(cas.type == 'BB Hotels Club Program' || cas.type == 'A question about your B&B Hotels CLUB subscription'){
+                    
+                    cas.Salesforce_Case_Type__c = 'Club'; 
+                }else if(cas.type == 'Update/delete customer opinion'){
+                    
+                    cas.Salesforce_Case_Type__c = 'Signalement avis client';
+                }else if(cas.type == 'Forgotten object'){
+                    
+                    cas.Salesforce_Case_Type__c = 'Forgotten object';
+                }else if(cas.type == 'Duplicate Invoice'){
+                    
+                    cas.Salesforce_Case_Type__c = 'Duplicate Invoice';
+                }else if(cas.type == 'Booking confirmation'){
+                    
+                    cas.Salesforce_Case_Type__c = 'Booking confirmation';
+                }else if(cas.type == 'Feedback regarding your stay' || cas.type == 'Problem with a booking'){
+                    
+                    cas.Salesforce_Case_Type__c = 'Réclamation'; 
+                }else if(cas.type == 'General request'){
+                    
+                    cas.Salesforce_Case_Type__c = 'General request';
+                }
+            }
+            //Added by TMA-EIL CG CRMSS-764 13/07/2020 Start
+            else if (cas.Concerned_country__c == 'PT' || cas.Concerned_country__c == 'ES'){
+                
+                if(cas.type == 'Information request' || cas.type == 'General request'){
+                    
+                    cas.Salesforce_Case_Type__c = 'General request';
+                }
+                else if(cas.type == 'Customer feedbacks' || cas.type == 'Feedback regarding your stay'){
+                    
+                    cas.Salesforce_Case_Type__c = 'Feedback regarding your stay';
+                }
+                else if(cas.type == 'B&B Hotels CLUB' || cas.type == 'Groups' || cas.type == 'Companies' || 
+                        cas.type == 'Problem with an invoice' || cas.type == 'Forgotten object' || cas.type == 'Problem with a booking' 
+                        || cas.type == 'Booking confirmation'){
+                    
+                    cas.Salesforce_Case_Type__c = cas.type;
+                }
+            }
+            //Added by TMA-EIL CG CRMSS-764 13/07/2020 End
+            
+            //&& cas.Origin==label.CaseWebOrigin removed crmss-643
+            if(!string.isBlank(cas.Hotel_ID__c) ){
+                
                 listHotelId.add(cas.Hotel_ID__c);            
+            }else if(!string.isBlank(cas.Hotel__c) ){
+                
+                listHotelSFID.add(cas.Hotel__c);
             }
         }
-        if(listHotelId != null && listHotelId.size() > 0){
+        if((listHotelId != null && listHotelId.size() > 0) || (listHotelSFID != null && listHotelSFID.size()>0)){
+            
             Map<String,String> mapHotelExtID = new Map<String,String>();
+            
             list<Hotel__c> listHotel = [Select Email__c,Hotel_ID__c,Country__c
                                         From Hotel__c
-                                        Where Hotel_ID__c IN: listHotelId];
+                                        Where Hotel_ID__c IN: listHotelId or id IN :listHotelSFID];
+            
             for(Hotel__c hotel : listHotel){
+                
                 mapHotelExtID.put(hotel.Hotel_ID__c , hotel.id);
             }
             
             for(Case cas:listCase)
             {
                 if(mapHotelExtID.containskey(cas.Hotel_ID__c)){
+                    
                     cas.Hotel__c = mapHotelExtID.get(cas.Hotel_ID__c);
                 }
                 
@@ -203,41 +397,43 @@ public without sharing class AP01_Case {
         }
     }
     //TMAEI-JK CRMSS-140 END
-    public class HotelWrapper
-    {
+    public class HotelWrapper{
+        
         public string hotelEmail{get;set;}
         public string hotelCountry{get;set;}
         public string emailTemplateId{get;set;}
         public string CaseId{get;set;}
-        public HotelWrapper()
-        {
+        
+        public HotelWrapper(){
+            
             hotelEmail = null;
             emailTemplateId = null;
             CaseId = null;
             hotelCountry = null;
         }
-        
     }
+    
     //Create a person account when a web to case is created and the web account does not exist
-    public static void CreatePersonAccount(list<Case> triggerNew)
-    {
+    public static void CreatePersonAccount(list<Case> triggerNew){
+        
         system.debug('@@@ ap01 case  CreatePersonAccount');
         list<Case> listCase = new list<Case>();
         set<string> setEmail = new set<string>();
         string lowerCaseEmail;
         //Get all the web Case that don't have a contactId
-        for(Case cas: triggerNew)
-        {    
-            if(cas.Origin==label.CaseWebOrigin && !string.isBlank(cas.SuppliedEmail) && (cas.ContactId==null || !cas.Contact.IsPersonAccount))
-            {                
+        for(Case cas: triggerNew){
+            
+            //removed crmss-643 cas.Origin==label.CaseWebOrigin &&
+            if( !string.isBlank(cas.SuppliedEmail) && (cas.ContactId==null || !cas.Contact.IsPersonAccount)){   
+                
                 listCase.add(cas);
                 lowerCaseEmail = cas.SuppliedEmail;
                 lowerCaseEmail = lowerCaseEmail.toLowerCase();
                 setEmail.add(lowerCaseEmail);
             }
         }
-        if(listCase.size() > 0)
-        {
+        if(listCase.size() > 0){
+            
             list<Case> listCaseToUpdate = new list<case>();
             //If the email is duplicated (person account and contact), get the person account related to it 
             list<Account> listPersonAccount = [Select Id,PersonEmail,PersonContactId
@@ -245,22 +441,31 @@ public without sharing class AP01_Case {
                                                Where IsPersonAccount = true
                                                And PersonEmail IN: setEmail];
             map<string,Id> mapEmailPersonContactId = new map<string,Id>();
-            for(Account acc: listPersonAccount)
-            {
-                if(!mapEmailPersonContactId.containsKey(acc.PersonEmail))
-                {
+            
+            for(Account acc: listPersonAccount){
+                
+                if(!mapEmailPersonContactId.containsKey(acc.PersonEmail)){
+                    
                     mapEmailPersonContactId.put(acc.PersonEmail,acc.PersonContactId);
                 }
             }
             //Create a Person Account for the case with no contactId or with a contactId = contact(not personAccount)
             list<Account> listAccountToInsert = new list<Account>();          
-            for(Case cas: listCase)
-            {
-                if(!mapEmailPersonContactId.containsKey((cas.SuppliedEmail).toLowerCase()))
-                {
+            for(Case cas: listCase){
+                
+                if(!mapEmailPersonContactId.containsKey((cas.SuppliedEmail).toLowerCase())){
+                    
                     Account acc = new Account();
                     acc.FirstName = cas.First_Name__c;
-                    acc.LastName = cas.Last_Name__c;
+                    
+                    if (cas.Last_Name__c != null && cas.Last_Name__c != ''){
+                        
+                        acc.LastName = cas.Last_Name__c; 
+                    }else{
+                        
+                        acc.LastName = 'LastName';
+                    }
+                    
                     acc.PersonEmail = cas.SuppliedEmail;
                     acc.Email__pc = cas.SuppliedEmail;
                     acc.accountSource = 'Website';
@@ -276,10 +481,10 @@ public without sharing class AP01_Case {
                                          From Account
                                          Where Id IN: listAccountToInsert];
             //Map the email to the corresponding personContactId            
-            for(Account acc: listAccount)
-            {
-                if(!mapEmailPersonContactId.containsKey(acc.PersonEmail))
-                {
+            for(Account acc: listAccount){
+                
+                if(!mapEmailPersonContactId.containsKey(acc.PersonEmail)){
+                    
                     mapEmailPersonContactId.put(acc.PersonEmail,acc.PersonContactId);
                 }
             }
@@ -288,13 +493,17 @@ public without sharing class AP01_Case {
                                                 From Case
                                                 Where Id IN: listCase];
             //update the cases
-            for(case cas:listCaseWithNoContact)
-            {
+            for(case cas:listCaseWithNoContact){
+                
                 cas.ContactId =  mapEmailPersonContactId.get((cas.SuppliedEmail).toLowerCase());
                 cas.AccountId = cas.Contact.AccountId;
                 listCaseToUpdate.add(cas);
             }
-            update listCaseToUpdate; 
+            
+            if(listCaseToUpdate != null && listCaseToUpdate.size()>0){
+                
+                update listCaseToUpdate; 
+            }
         }
     }
     

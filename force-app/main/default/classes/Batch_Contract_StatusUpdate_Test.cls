@@ -20,6 +20,7 @@ public class Batch_Contract_StatusUpdate_Test {
         userTest.BypassWorkflow__c = true;
         insert userTest;
        date TodayDate = date.today();
+        system.debug('@@@@@ test TODAY '+TodayDate);
         System.runAs(userTest){
 
             Id CompanyAccountRTId = Schema.SObjectType.Account.getRecordTypeInfosByDeveloperName().get('Company').getRecordTypeId();system.debug('### cg CompanyAccountRTId'+CompanyAccountRTId);
@@ -39,14 +40,18 @@ public class Batch_Contract_StatusUpdate_Test {
                 
                 Contract cont = Utils.CreateContract();
                 cont.RecordTypeId = CorporateRTI2;
-                cont.StartDate = date.valueOf('2018-08-26');
+                cont.StartDate = TodayDate.addMonths(-3);
+                cont.StartDate = cont.StartDate.adddays(+1);
                 cont.Status = 'Draft';
+                cont.ContractTerm = 5;
                 cont.name = 'dbfbf'+ i;
-                cont.Expiration_Date__c = TodayDate.addMonths(2);
+                //cont.enddate = TodayDate.addMonths(-5);
                 cont.AccountId = acc.Id;
                 cont.Opportunity__c = opp.Id;
                 cont.Corporate_Code__c = '1242r'+i;
                 system.debug('### jka AccountId'+cont.AccountId);
+                system.debug('@@@@@ test Expiration_Date__c '+cont.enddate);
+                system.debug('@@@@@ test22222 TODAY '+TodayDate.addMonths(2));
                 listContracts.add(cont);
             }
             

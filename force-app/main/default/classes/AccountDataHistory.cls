@@ -1,4 +1,4 @@
-public without sharing class AccountDataHistory {
+public class AccountDataHistory {
     
     public CustomerType customerType;
     public CountryPercentage countryPercentage;
@@ -9,32 +9,32 @@ public without sharing class AccountDataHistory {
     
     
     /*public void setTotalNights() {
-        totalNights = 0;
-        Integer index = 0;
-        Night night;
-        for(Id bookingId : mapBookingNight.keySet()) {
-            night = mapBookingNight.get(bookingId);
-            if(night.year == Date.today().Year()) {
-                totalNights += night.nbrNights;
-            } else {
-                mapBookingNight.remove(bookingId);
-            } 
-        }
-    }
-    
-    public void setTotalRevenue() {
-        totalRevenue = 0;
-        Integer index = 0;
-        Revenue revenue;
-        for(Id bookingId : mapBookingRevenue.keySet()) {
-            revenue = mapBookingRevenue.get(bookingId);
-            if(revenue.year == Date.today().Year()) {
-                totalRevenue += revenue.bookingRevenue;
-            } else {
-                mapBookingRevenue.remove(bookingId);
-            } 
-        }
-    }*/
+totalNights = 0;
+Integer index = 0;
+Night night;
+for(Id bookingId : mapBookingNight.keySet()) {
+night = mapBookingNight.get(bookingId);
+if(night.year == Date.today().Year()) {
+totalNights += night.nbrNights;
+} else {
+mapBookingNight.remove(bookingId);
+} 
+}
+}
+
+public void setTotalRevenue() {
+totalRevenue = 0;
+Integer index = 0;
+Revenue revenue;
+for(Id bookingId : mapBookingRevenue.keySet()) {
+revenue = mapBookingRevenue.get(bookingId);
+if(revenue.year == Date.today().Year()) {
+totalRevenue += revenue.bookingRevenue;
+} else {
+mapBookingRevenue.remove(bookingId);
+} 
+}
+}*/
     
     
     
@@ -50,6 +50,7 @@ public without sharing class AccountDataHistory {
     public static AccountDataHistory parse(String json) {
         return (AccountDataHistory) System.JSON.deserialize(json.unescapeHtml4(), AccountDataHistory.class);
     }
+    
 
     public class Night {
         public Integer year{get;set;}
@@ -143,5 +144,5 @@ public without sharing class AccountDataHistory {
             others += othersCounter;
         }
     }
-   
+    
 }

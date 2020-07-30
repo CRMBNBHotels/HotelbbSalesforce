@@ -71,6 +71,9 @@ Global without sharing class Batch_UpdateMB_ConfNb_HotelName implements Database
             queryMBsBooks = 'select id, RecordTypeId, Master_Booking_FK__c, Master_Booking_FK__r.Confirmation_Number__c, Master_Booking_FK__r.Hotel_Name_MB__c, Confirmation_Number__c, Hotel_Name__c, IsDeleted, LastModifiedDate from Opportunity where Master_Booking_FK__c IN: setMBIds All ROWS';
         }
         
+        //String queryMBsBooks = 'select id , RecordtypeId, Master_Booking_FK__c, StageName, Number_of_nights__c, Chambre__c, Master_Booking_FK__r.Number_of_nights_master__c, Master_Booking_FK__r.Rooms__c, Master_Booking_FK__r.Bookings_Booked_Count__c, Master_Booking_FK__r.Bookings_Cancelled_Count__c, Master_Booking_FK__r.Bookings_Checked_Count__c, Master_Booking_FK__r.Bookings_Error_Count__c, Master_Booking_FK__r.Bookings_No_Show_Count__c, LastModifiedDate, IsDeleted, Master_Booking_FK__r.TechIsNotFirst_01__c from Opportunity where  RecordType.DeveloperName = \'Booking\' and Master_Booking_FK__c != null and (Confirmation_Number__c != null or Hotel_Name__c != null) and (Master_Booking_FK__r.Confirmation_Number__c = null or Master_Booking_FK__r.Hotel_Name_MB__c = null)';
+        
+        
         return Database.getQueryLocator(queryMBsBooks);
     }
     

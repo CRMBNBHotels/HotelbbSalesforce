@@ -7,18 +7,6 @@
 @isTest
 public class BRLTriggerHandler_Test {
     
-    //added by TMA EIL CRMSS-469 24-02-2020 Start
-    @testVisible static List<BookingLinesCustomSettingsmdt__mdt> customMetadata {    
-        
-        get {
-            if ( customMetadata == null )
-                customMetadata = [select Id, DeveloperName, MasterLabel, Language, NamespacePrefix, Label, QualifiedApiName, Breakfast_Room_Code__c, Chamre_Room_Code__c from BookingLinesCustomSettingsmdt__mdt]; 
-            return customMetadata;
-            
-        } set;
-    }
-    //added by TMA EIL CRMSS-469 24-02-2020 end
-    
     @isTest
     static void testBRLTriggerHandler(){	
         
@@ -53,30 +41,27 @@ public class BRLTriggerHandler_Test {
         listBookings.add(book2);
         
         insert listBookings;
-        
+
         
         
         
         Booking_Room_Line__c roomLine = Utils.CreateBookingRoomLine(book1.Id);
-        
+
         
         roomLine.Quantity__c = 3;
         roomLine.Room_code__c = 'BREAKFAST';
-        
-        //added by TMA EIL CRMSS-469 24-02-2020 Start
-        
-        /*
-BookingLinesCustomSettings__c broomCode= new BookingLinesCustomSettings__c(name = 'BREAKFAST',Breakfast_Room_Code__c='BREAKFAST');
-insert broomCode;
-BookingLinesCustomSettings__c chambreCode1= new BookingLinesCustomSettings__c(name = 'F112T',ChamreRoomCode__c='F112T');
-insert chambreCode1;
-BookingLinesCustomSettings__c chambreCode= new BookingLinesCustomSettings__c(name = 'F112',ChamreRoomCode__c='F112');
-insert chambreCode;
 
-BookingLinesCustomSettings__c broomCode1= new BookingLinesCustomSettings__c(name = 'BKF-ECLUB',Breakfast_Room_Code__c='BKF-ECLUB');
-insert broomCode1;
-*/
-        //added by TMA EIL CRMSS-469 24-02-2020 end
+
+        
+        BookingLinesCustomSettings__c broomCode= new BookingLinesCustomSettings__c(name = 'BREAKFAST',Breakfast_Room_Code__c='BREAKFAST');
+        insert broomCode;
+        BookingLinesCustomSettings__c chambreCode1= new BookingLinesCustomSettings__c(name = 'F112T',ChamreRoomCode__c='F112T');
+        insert chambreCode1;
+        BookingLinesCustomSettings__c chambreCode= new BookingLinesCustomSettings__c(name = 'F112',ChamreRoomCode__c='F112');
+        insert chambreCode;
+        
+        BookingLinesCustomSettings__c broomCode1= new BookingLinesCustomSettings__c(name = 'BKF-ECLUB',Breakfast_Room_Code__c='BKF-ECLUB');
+        insert broomCode1;
         
         Test.startTest();
         insert roomLine;

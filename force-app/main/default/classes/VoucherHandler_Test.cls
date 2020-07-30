@@ -6,13 +6,13 @@
 */
 @isTest
 public class VoucherHandler_Test {
- @isTest
+    @isTest
     public static void testVoucherHandler()
     {
-         //Insert PA
+        //Insert PA
         Account PersonAccount =  Utils.CreatePersonAccount('Person', null);                      
         insert PersonAccount;
-                
+        
         //Create Hotel
         Hotel__c hotel = Utils.CreateHotel('789');
         insert hotel;        
@@ -20,10 +20,12 @@ public class VoucherHandler_Test {
         //Insert an IR invitation
         Voucher__c voucher = new Voucher__c();
         Voucher.Guest_Account__c = PersonAccount.id;
+        
         voucher.Types__c = '2003';
         voucher.Objet__c = '3007';
-        //voucher.Motif__c = 'Remerciements';
+        voucher.Motif__c = 'Remerciements';
         voucher.Prestation_offerte__c = '6004';
+        
         voucher.Email_du_client__c = 'test@email.com';
         voucher.Service__c = 'Hotel';
         voucher.Hotel__c = hotel.id;
@@ -35,5 +37,5 @@ public class VoucherHandler_Test {
         delete voucher;
         undelete voucher;
     }
-
+    
 }

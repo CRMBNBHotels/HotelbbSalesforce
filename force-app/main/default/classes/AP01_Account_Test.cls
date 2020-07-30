@@ -23,8 +23,6 @@ public class AP01_Account_Test
         booking.StageName = label.StatusChecked;
         booking.Min_Arrival__c = date.Today();
         insert booking;
-        personaccount.Status_Text__c = 'Customer';
-        update personaccount;
         //Stay__c stay = Utils.CreateStay(PersonAccount.Id, booking.Id);
         //insert stay;
         Account acc = [Select Id,Status__c,Status_Text__c
@@ -34,7 +32,6 @@ public class AP01_Account_Test
         acc = [Select Id,Lifecycle_status__pc,Status_Text__c
                From Account
                Where Id =: PersonAccount.Id];
-        system.debug('### ' + acc.Status_Text__c+' '+acc.Lifecycle_status__pc);
-        system.assertequals('Customer',acc.Lifecycle_status__pc);
+        system.assertequals(acc.Status_Text__c,acc.Lifecycle_status__pc);
     }   
 }

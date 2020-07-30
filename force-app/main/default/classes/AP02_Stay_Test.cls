@@ -6,7 +6,6 @@
 */
 @isTest
 public class AP02_Stay_Test {
-    /*
     private static testMethod void InsertUpdateDeleteStay(){
         //insert Account      
         Account PartnerAccount = Utils.CreatePartnerAccount('Partner',null);      
@@ -38,20 +37,20 @@ public class AP02_Stay_Test {
         Account acc=[Select Id,Total_nights__pc
                      From Account
                      Where Id=:PersonAccount.Id];            
-       // System.assertEquals(3,acc.Total_nights__pc);
+        System.assertEquals(3,acc.Total_nights__pc);
         //Delete Opportunity
         delete (stay2);
         acc=[Select Id,Total_nights__pc
              From Account
              Where Id=:PersonAccount.Id];             
-        //System.assertEquals(1,acc.Total_nights__pc);
+        System.assertEquals(1,acc.Total_nights__pc);
         //update Opportunity    
         stay1.Booking__c = opp2.Id;      
         update (stay1);
         acc=[Select Id,Total_nights__pc
              From Account
              Where Id=:PersonAccount.Id];        
-        //System.assertEquals(2,acc.Total_nights__pc);
+        System.assertEquals(2,acc.Total_nights__pc);
         test.stopTest();
-    }*/
+    }
 }

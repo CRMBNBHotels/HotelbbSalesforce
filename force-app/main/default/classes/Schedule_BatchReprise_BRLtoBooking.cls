@@ -10,7 +10,7 @@
 * @Coverage: 100%
 */
 
-global without sharing class Schedule_BatchReprise_BRLtoBooking implements Schedulable {
+global class Schedule_BatchReprise_BRLtoBooking implements Schedulable {
     
     global void execute(SchedulableContext ctx) {
        String jobId = Database.executeBatch(new BatchReprise_BRLtoBooking(null,0), 50);

@@ -6,9 +6,9 @@
 */
 @isTest
 public class AP03_Stay_Test {
-    /*
+    
     private static testMethod void InsertUpdateDeleteOpportunity()
-    {
+    {/*
         //insert Account
         list<Account> listAccount = new list<Account>();      
         Account PartnerAccount = Utils.CreatePartnerAccount('Partner',null);   
@@ -85,6 +85,6 @@ public class AP03_Stay_Test {
              From Account
              Where Id=:PersonAccount1.Id];        
         System.assertEquals(900,acc.Total_Revenue__pc);
-        
-    }*/
+      */  
+    }
 }

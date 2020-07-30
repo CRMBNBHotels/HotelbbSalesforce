@@ -30,10 +30,10 @@ public without sharing class ContractHandler {
     }
     
     public void OnAfterInsert(Contract[] newRecords,Map<ID, Contract> recordMap, Map<ID, Contract> recordMapOld){
-          if((UtilsBypass.getUserBypassApexClass() != null && !UtilsBypass.getUserBypassApexClass().contains('AP01_Contract') )
+        if((UtilsBypass.getUserBypassApexClass() != null && !UtilsBypass.getUserBypassApexClass().contains('AP01_Contract') )
            || !UtilsBypass.canISkipApexClass('AP01_Contract') 
            || !UtilsBypass.canISkipApexMethod('UpdateNumberOfContracts')){
-              AP01_Contract.UpdateNumberOfContracts(newRecords, null, null);
+               AP01_Contract.UpdateNumberOfContracts(newRecords, null, null);
            }
     }
     
@@ -53,13 +53,13 @@ public without sharing class ContractHandler {
     }
     
     public void OnAfterUpdate(Contract[] oldRecords, Contract[] updatedRecords, Map<ID, Contract> recordMap,  Map<ID, Contract> recordMapOld){ 
-         if((UtilsBypass.getUserBypassApexClass() != null && !UtilsBypass.getUserBypassApexClass().contains('AP01_Contract') )
+        if((UtilsBypass.getUserBypassApexClass() != null && !UtilsBypass.getUserBypassApexClass().contains('AP01_Contract') )
            || !UtilsBypass.canISkipApexClass('AP01_Contract') 
            || !UtilsBypass.canISkipApexMethod('UpdateNumberOfContracts')){
-              AP01_Contract.UpdateNumberOfContracts(updatedRecords, recordMapOld,oldRecords);
+               AP01_Contract.UpdateNumberOfContracts(updatedRecords, recordMapOld,oldRecords);
                
            } 
-
+        
     }
     
     @future public static void OnAfterUpdateAsync(Set<ID> updatedRecordIDs){

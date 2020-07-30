@@ -62,34 +62,43 @@ public class AP03_Case_Test {
             cas2.Origin = 'Web';
             cas2.Status = 'Open';
             cas2.Type = label.Information_request;
-            //cas2.SuppliedEmail = 'customerTest2@asce.com';
+            cas2.SuppliedEmail = 'customerTest2@asce.com';
             cas.RecordTypeId = Label.Case_RT_CustomersRequestFeedback;
-            //cas2.Hotel_ID__c = hotel.Hotel_ID__c;
+            cas2.Hotel_ID__c = hotel.Hotel_ID__c;
             cas2.First_Name__c = 'First2';
             cas2.Last_Name__c = 'Last2';
             cas2.Concerned_country__c = 'ES';
-            cas2.E_club_ID__c = 'E-club ID';
-            cas2.SuppliedPhone = '123456';
-            cas2.Guest_Adress__c = 'testAddress';
-            cas2.Zip_code__c = '000';
-            cas2.City__c = 'testCity';
-            cas2.Country__c = 'testCountry';
-            cas2.Description = 'testDescription';
-            cas2.Arrival_Date__c = date.today() + 1;
-            cas.Departure_date__c = date.today();
             //cas2.setOptions(dmo);
             listCaseToInsert.add(cas2);
+            
+            Case cas3 = Utils.CreateCase();
+            cas3.Origin = 'Web';
+            cas3.Status = 'Open';
+            cas3.Type = label.Information_request;
+            cas3.SuppliedEmail = 'customerTest3@asce.com';
+            cas3.RecordTypeId = Label.Case_RT_CustomersRequestFeedback;
+            cas3.Hotel_ID__c = hotel.Hotel_ID__c;
+            cas3.First_Name__c = 'First3';
+            cas3.Last_Name__c = 'Last3';
+            cas3.Concerned_country__c = 'DE';
+            //cas2.setOptions(dmo);
+            listCaseToInsert.add(cas3);
             
             insert listCaseToInsert;
             
             List<Group> queueIds = [Select Id from Group
-                                    Where Name = 'Italy Service Agent' or Name = 'French Queue hotel case' or Name = 'Spain Queue Hotel Case' ];
+                                    Where Name = 'Italy Service Agent' or Name = 'French Queue hotel case' or Name = 'Spain Queue Hotel Case' or name like '%German%'];
             
-            listCaseToInsert[0].OwnerId = queueIds[0].Id;
-            listCaseToInsert[1].OwnerId = queueIds[1].Id;
-            listCaseToInsert[2].OwnerId = queueIds[2].Id;
-            
-            update listCaseToInsert;
+            if(queueIds.size()>3){
+                listCaseToInsert[0].OwnerId = queueIds[0].Id;
+                listCaseToInsert[1].OwnerId = queueIds[1].Id;
+                listCaseToInsert[2].OwnerId = queueIds[2].Id;
+                
+                for(case ca: listCaseToInsert){
+                    system.debug('ca' + ca);
+                }
+                update listCaseToInsert;
+            }
             
             
         }

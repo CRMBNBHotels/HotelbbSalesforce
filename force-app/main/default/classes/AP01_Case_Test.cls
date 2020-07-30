@@ -9,7 +9,10 @@ public class AP01_Case_Test
 {
     static testMethod void InsertWebCase()
     {
-        Account PartnerAccount = Utils.CreatePartnerAccount('Partner',null);      
+        String compRecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Company').getRecordTypeId();
+        
+        /*Account PartnerAccount = Utils.CreatePartnerAccount('Partner',null);    
+        PartnerAccount.RecordTypeId = compRecordTypeId;
         insert PartnerAccount;
         
         Account PersonAccount = Utils.CreatePersonAccount('Person', PartnerAccount.Id);
@@ -23,7 +26,7 @@ public class AP01_Case_Test
         Contact cont1 = Utils.CreateContact('ContactTest1', PartnerAccount.Id, 'FR');
         cont1.Email = 'Person@hotmail.com';
         listContactToInsert.add(cont1);
-        insert listContactToInsert;        
+        insert listContactToInsert; */       
         
         Hotel__c hotel = Utils.CreateHotel('Hotel 1');
         hotel.Email__c = 'hotel1@gmail.com';
@@ -90,7 +93,7 @@ public class AP01_Case_Test
         
         Case cas3 = Utils.CreateCase();
         cas3.Origin = 'Web';
-        cas3.SuppliedEmail = 'Person@hotmail.com';//'Person2@hotmail.com';
+        cas3.SuppliedEmail = 'Personn@hotmail.com';//'Person2@hotmail.com';
         cas3.RecordTypeId = Label.Case_RT_CustomersRequestFeedback;
         cas3.Hotel_ID__c = hotel3.Hotel_ID__c;
         cas3.First_Name__c = 'First3';
@@ -100,7 +103,7 @@ public class AP01_Case_Test
         
         Case cas4 = Utils.CreateCase();
         cas4.Origin = 'Web';
-        cas4.SuppliedEmail = 'Person@hotmail.com';//'Person2@hotmail.com';
+        cas4.SuppliedEmail = 'Personnn@hotmail.com';//'Person2@hotmail.com';
         cas4.RecordTypeId = Label.Case_RT_CustomersRequestFeedback;
         cas4.Hotel_ID__c = hotel4.Hotel_ID__c;
         cas4.First_Name__c = 'First3';
@@ -108,6 +111,17 @@ public class AP01_Case_Test
         cas4.Concerned_country__c = 'ES';
         listCaseToInsert.add(cas4); 
         
+        Case cas5 = Utils.CreateCase();
+        cas5.Origin = 'Web';
+        cas5.SuppliedEmail = 'Personnn2@hotmail.com';//'Person2@hotmail.com';
+        cas5.RecordTypeId = Label.Case_RT_CustomersRequestFeedback_ES_PT;
+        cas5.Hotel_ID__c = hotel4.Hotel_ID__c;
+        cas5.First_Name__c = 'First3';
+        cas5.Last_Name__c = 'Last3';
+        cas5.Concerned_country__c = 'PT';
+        cas5.type = 'Information request';
+        cas5.Description = 'testing';
+        listCaseToInsert.add(cas5); 
         
         insert listCaseToInsert;
         

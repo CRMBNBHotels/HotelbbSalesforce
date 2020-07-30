@@ -78,8 +78,8 @@ public class AP03_Opportunity_Test
         acc=[Select Id,Total_Nights_PartnerShip__c,Total_Revenue_PartnerShip__c
              From Account
              Where Id=:PartnerAccount.Id];    
-       // system.assertEquals(5,acc.Total_Nights_PartnerShip__c);
-       // system.assertEquals(900,acc.Total_Revenue_PartnerShip__c); 
+        //system.assertEquals(5,acc.Total_Nights_PartnerShip__c);
+        //system.assertEquals(900,acc.Total_Revenue_PartnerShip__c); 
         MasterBooking.Min_Arrival__c = date.Today() - 400;
         update MasterBooking;
         acc=[Select Id,Total_Transactions_PartnerShip__c

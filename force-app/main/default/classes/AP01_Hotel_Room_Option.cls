@@ -4,9 +4,8 @@
 * @date: 05/01/2018
 * @Test: AP01_Hotel_Room_Option_Test
 */
-public without sharing class AP01_Hotel_Room_Option 
+public class AP01_Hotel_Room_Option 
 {
-    /*Commented by TMA-EIL CG CRMSS-448 23/01/2020 Start
     public static void updateBookingRoomLine(list<Hotel_Room_Option__c> triggerNew, list<Hotel_Room_Option__c> triggerOld,map<Id,Hotel_Room_Option__c> oldMap)
     {
         list<string> listRoomCode = new list<string>();
@@ -58,5 +57,4 @@ public without sharing class AP01_Hotel_Room_Option
             update listBookingRoomLineToUpdate;
         }
     }
-    Commented by TMA-EIL CG CRMSS-448 23/01/2020 Start */
 }

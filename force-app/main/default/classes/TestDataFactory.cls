@@ -26,7 +26,7 @@ public class TestDataFactory {
                     
         Map<String, user> userMap = new Map<String, user>();
         
-        ID standardUserProfileID = [SELECT ID, Name FROM Profile WHERE Name='French Service Manager'].ID;
+        ID standardUserProfileID = [SELECT ID, Name FROM Profile WHERE Name='System Administrator'].ID;
         
         for(Integer i=1 ; i <= j ; i++ ){                            
             User user1 = new User(FirstName         = 'John Test' + i, 

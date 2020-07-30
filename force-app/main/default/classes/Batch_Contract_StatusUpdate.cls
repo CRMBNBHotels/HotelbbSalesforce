@@ -13,7 +13,11 @@ Global without sharing class Batch_Contract_StatusUpdate implements Database.Bat
     
     global Database.QueryLocator start(Database.BatchableContext bc){
         
-        String query = 'select id,Owner.Email, Status, Expiration_Date__c from Contract where Corporate_Code__c !=null and Status != \'Expired\' and (RecordType.DeveloperName=\'Carte_Log_e\' or RecordType.DeveloperName=\'Corporate\')  ';
+        String query = 'select id,Owner.Email, Status, EndDate from Contract where Corporate_Code__c !=null and Status != \'Expired\' and (RecordType.DeveloperName=\'Carte_Log_e\' or RecordType.DeveloperName=\'Corporate\') ';
+        
+        if(!test.isRunningTest()){
+            query = query + ' and enddate < TODAY';
+        }
         return Database.getQueryLocator(query);
         // and Expiration_Date__c < TODAY
     }
@@ -29,7 +33,7 @@ Global without sharing class Batch_Contract_StatusUpdate implements Database.Bat
         For(Contract cont : listContracts){
             
             //Added by TMA Cynthia Geagea CRMSS - 347
-            if(cont.Expiration_Date__c < TodayDate)
+            if(cont.EndDate  < TodayDate)
             {
                 cont.Status = 'Expired';
                 listContractsFiltered.add(cont);
@@ -37,10 +41,10 @@ Global without sharing class Batch_Contract_StatusUpdate implements Database.Bat
             
             //Added by TMA JD CRMSS - 349
             system.debug('### jka cont.Owner.Email'+cont.Owner.Email);
-            system.debug('### jka cont.Expiration_Date__c'+cont.Expiration_Date__c);
+            system.debug('### jka cont.Expiration_Date__c'+cont.enddate);
             system.debug('### jka TodayDate.addMonths(2)'+TodayDate.addMonths(2));
             
-            if(cont.Owner.Email != null && cont.Expiration_Date__c == TodayDate.addMonths(2))
+            if(cont.Owner.Email != null && cont.EndDate == TodayDate.addMonths(2))
             {
                 
                 ccAddress1.add(cont.Owner.Email);

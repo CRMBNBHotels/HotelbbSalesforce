@@ -6,10 +6,10 @@
 * @ Test: AP05_Opportunity_Test 90%
 */
 public class AP07_Stay {
-    /*
+    
     public static void UpdateCountryPercentages(list<Stay__c> triggerNew, map<Id, Stay__c> oldMap, list<Stay__c> triggerOld)
     {
-        if(UserInfo.getUserId().contains('0050Y000000gQke')){  return;  }
+         if(UserInfo.getUserId().contains('0050Y000000gQke')){  return;  }
         
         List<id>lstDeletedOPP = new List<Id>();
         List<id> lstDeleteStays = new List<Id>();
@@ -154,5 +154,5 @@ public class AP07_Stay {
             Update listAccToUpdate;  
         }
         
-    }*/
+    }
 }

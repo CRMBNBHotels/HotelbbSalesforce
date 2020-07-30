@@ -22,17 +22,16 @@ public without sharing class BBUS_DataHistoryManager {
             when 'payment'{
                 objectWrapper = new BB_PaymentObject();
             }
-            //Added by TMA-EIL CG CRMSS-430 18-02/2020 Start
-            when 'contract'{
-                objectWrapper = new BB_ContractObject();
+            when 'bills'{
+                objectWrapper = new BB_BillObject();
             }
-            //Added by TMA-EIL CG CRMSS-430 18-02/2020 End
+            
         }
         String strEndPoint = null;
         String strBody = null;
         String strMethod = null;
         Map<String, String> mapHeaders = null;
-        system.debug('### ' + objectWrapper);
+        system.debug('objectWrapper ' + objectWrapper);
         if(objectWrapper != null) {
             strEndPoint = objectWrapper.initializeRequestEndpoint();
             strBody = objectWrapper.initializeRequestBody(includePaging, pageKey, sfdcId,fieldToInclude,pageDateKey);
@@ -45,9 +44,11 @@ public without sharing class BBUS_DataHistoryManager {
         system.debug('@@@ HTTP RESP '+response);
         String strResponse = response.getBody();
         if(response.getStatusCode() == 200) {
+             system.debug('Good response');
 			retWrapper = objectWrapper.createTableFromResponse(strResponse);
         }
         else if(response.getStatusCode() != 200){
+             system.debug('bad response');
             retWrapper = objectWrapper.createTableFromBadResponse(strResponse, response.getStatusCode());
         }
         return retWrapper;
@@ -55,7 +56,7 @@ public without sharing class BBUS_DataHistoryManager {
     }
     
     public static HttpResponse doHttpCallout(string strEndpoint, string strMethod, string strBody, Map<String, String> mapRequestHeaders){ //private
-        system.debug('### cg strEndpoint'+strEndpoint);
+        system.debug('HttpResponse');
         HttpRequest req = new HttpRequest();
         HttpResponse retVal = new HttpResponse();            
         Http http = new Http();
@@ -111,25 +112,19 @@ public without sharing class BBUS_DataHistoryManager {
                 objectWrapper = new BB_AccountObjectPoints();
                 log.WSName__c = 'Account Points Synchronisation';
             }
-            //Added by TMA-EIL CG CRMSS-430 18-02/2020 Start
-            when 'contract'{
-                objectWrapper = new BB_ContractObject();system.debug('### ### objectWrapper 1'+objectWrapper);
-                log.WSName__c = 'Contract Link Generation';
-            }
-            //Added by TMA-EIL CG CRMSS-430 18-02/2020 End
         }
         String strEndPoint = null;
         String strBody = null;
         String strMethod = null;
         Map<String, String> mapHeaders = null;
-        if(objectWrapper != null) {system.debug('### ### objectWrapper != null');
+        if(objectWrapper != null) {
             strEndPoint = objectWrapper.initializeRequestEndpointUpdate();
-            strBody = objectWrapper.initializeRequestBody(includePaging, pageKey, sfdcId,fieldToInclude,null);system.debug('### ### strBody'+strBody);
+            strBody = objectWrapper.initializeRequestBody(includePaging, pageKey, sfdcId,fieldToInclude,null);
             strMethod = objectWrapper.initializeRequestMethod();
-            mapHeaders = objectWrapper.initializeRequestHeader();system.debug('### ### objectWrapper 2'+objectWrapper);
+            mapHeaders = objectWrapper.initializeRequestHeader();
         }
         log.JsonMessage__c = strBody;
-        log.ExternalID__c = sfdcId;system.debug('### cg sfdcId'+sfdcId);
+        log.ExternalID__c = sfdcId;
         log.FromSalesforce__c = true;
         HttpResponse response = doHttpCallout(strEndPoint, strMethod, strBody, mapHeaders);
         system.debug('@@@@ responsee BBUS DATAH'+response);

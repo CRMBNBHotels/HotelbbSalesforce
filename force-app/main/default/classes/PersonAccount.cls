@@ -3,6 +3,14 @@ global without sharing class PersonAccount {
     webservice boolean OptinNL;
     webservice String OptinEmail;
     webservice String OptinSMS;
+    
+    //Added by TMA-EIL CG CRMSS-503 09/04/2020 Start
+    webservice boolean OptinEmailMC;
+    webservice boolean OptinEmailTempMC;
+    webservice boolean OptinSMSMC;
+    webservice boolean OptinSMSTempMC;
+    //Added by TMA-EIL CG CRMSS-503 09/04/2020 End
+    
     webservice String Fax;
     webservice boolean AuthorizedLogeCard;
     webservice Date PersonBirthdate;
@@ -73,19 +81,25 @@ global without sharing class PersonAccount {
     webservice String AdditionToAddress;
     webservice String FieldsToNull;
     webservice Date DateOfFirstClubPurchase;
+    webservice String CurrencyIsoCode;
+    webservice Boolean TokenAvailable;
     
     //Added by TMA Cynthia Geagea - CRMSS-237 - 22/07/2019 - Start
-    
     webservice String EClubCountryCode;
     webservice String HotelidClubSubscription;
-    
     //Added by TMA Cynthia Geagea - CRMSS-237 - 22/07/2019 - End
     
+    //Added by TMA-EIL CG BBUS-1255 21/04/2020 Start
+    webservice String vatNumber;
+    //Added by TMA-EIL CG BBUS-1255 21/04/2020 End
     
     public Account mapSFFields() {
+        
         Account account = new Account();
         Set<String> setFieldsToNull = new Set<String>();
+        
         if(String.isNotBlank(FieldsToNull)) {
+            
             for(String field : FieldsToNull.split(',')) {
                 setFieldsToNull.add(field);
             }
@@ -97,12 +111,39 @@ global without sharing class PersonAccount {
         if(OptinNL != null || setFieldsToNull.contains('OptinNL')) {
             account.Optin_NL__c = OptinNL;
         }
+        if(TokenAvailable != null || setFieldsToNull.contains('TokenAvailable')) {
+            account.Token_Available__pc  = TokenAvailable;
+        }
         if(String.isNotBlank(OptinEmail) || setFieldsToNull.contains('OptinEmail')) {
             account.OptinEmail__c = OptinEmail;
+        }
+        if(CurrencyIsoCode != null || setFieldsToNull.contains('CurrencyIsoCode')) {
+            account.CurrencyIsoCode = CurrencyIsoCode;
         }
         if(String.isNotBlank(OptinSMS) || setFieldsToNull.contains('OptinSMS')) {
             account.OptinSms__c = OptinSMS;
         }
+        
+        //Added by TMA-EIL CG CRMSS-503 09/04/2020 Start
+        if(OptinEmailMC != null || setFieldsToNull.contains('OptinEmailMC')) {
+            account.Optin_Email_MC__c = OptinEmailMC;
+        }
+        if(OptinEmailTempMC != null || setFieldsToNull.contains('OptinEmailTempMC')) {
+            account.Optin_Email_Temp_MC__c = OptinEmailTempMC;
+        }
+        if(OptinSMSMC != null || setFieldsToNull.contains('OptinSMSMC')) {
+            account.Optin_SMS_MC__c = OptinSMSMC;
+        }
+        if(OptinSMSTempMC != null || setFieldsToNull.contains('OptinSMSTempMC')) {
+            account.Optin_SMS_Temp_MC__c = OptinSMSTempMC;
+        }
+        //Added by TMA-EIL CG CRMSS-503 09/04/2020 End
+        
+        //Added by TMA-EIL CG BBUS-1255 21/04/2020 Start
+        if(vatNumber != null || setFieldsToNull.contains('vatNumber')) {
+            account.VAT_Number__c = vatNumber;
+        }
+        //Added by TMA-EIL CG BBUS-1255 21/04/2020 End
         
         if(String.isNotBlank(Fax) || setFieldsToNull.contains('Fax')) {
             account.Fax = Fax;

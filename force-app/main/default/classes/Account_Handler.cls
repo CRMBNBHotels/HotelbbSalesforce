@@ -1,26 +1,29 @@
 /*
-* @Author: TMA-EI PG
-* @Description: Handle the parameters that the method will use
-* @Date: 13/09/2019
+* Description: Handle the parameters that the method will use
+* @author: TMA-EI PG
+* @date: 13/09/2019
 * @Test class: 
-* @Coverage: Account_Handler_Test
+* @Coverage: 
 */
 
-public without sharing class Account_Handler {
-    
+public class Account_Handler {
     public static void handle(List<Account> listAcc,map<Id,Account> mapOldAcc)
     {
-        system.debug('@@@ handle');
-        system.debug('trigger new ' + listAcc);
-        system.debug('trigger old ' + mapOldAcc);
         List<Account> listFilteredAccountsEClubStatus=new List<Account>();
-      if(listAcc!=null &&listAcc.size()>0)
+        if(listAcc!=null && mapOldAcc!=null && listAcc.size()>0 && mapOldAcc.size()>0){
+            for(Account acc:listAcc)
+            {
+                //CRMSS-276
+                    listFilteredAccountsEClubStatus.add(acc);
+                
+            }
+            
+        }
+        else if(mapOldAcc==null && listAcc!=null &&listAcc.size()>0)
         {
             for(Account acc:listAcc)
             {
-                if(mapOldAcc==null || (acc.E_club_Expiration_date__pc != mapOldAcc.get(acc.id).E_club_Expiration_date__pc)){
                 listFilteredAccountsEClubStatus.add(acc);
-                }
             }
         }
         

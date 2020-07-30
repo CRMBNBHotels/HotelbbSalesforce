@@ -7,9 +7,9 @@
 @isTest
 public class AP05_Stay_Test 
 {
-    /*
+    
     private static testMethod void InsertUpdateDeleteOpportunity()
-    {
+    {/*
         //insert Account      
         Account PartnerAccount = Utils.CreatePartnerAccount('Partner',null);
         PartnerAccount.BillingCountry='France';
@@ -59,6 +59,6 @@ public class AP05_Stay_Test
         acc=[Select Id,MaxBookingMinArrival__c
              From Account
              Where Id=:PartnerAccount.Id];        
-        System.assertEquals(date.Today()+3,acc.MaxBookingMinArrival__c);
-    }*/
+        System.assertEquals(date.Today()+3,acc.MaxBookingMinArrival__c);*/
+    }
 }

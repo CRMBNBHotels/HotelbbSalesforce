@@ -33,12 +33,8 @@ public class Utils_Test {
       insert hotel;
       Case cas = Utils.CreateCase();
       insert cas;
-      
-      /*Commented by TMA-EIL CG CRMSS-448 23/01/2020 Start
-      Hotel_Room_Option__c hotelRoomOptionAndCode = Utils.CreateHotelRoomOptionAndCode();
-      insert hotelRoomOptionAndCode;
-      Commented by TMA-EIL CG CRMSS-448 23/01/2020 End */
-      
+      //Hotel_Room_Option__c hotelRoomOptionAndCode = Utils.CreateHotelRoomOptionAndCode();
+      //insert hotelRoomOptionAndCode;
       Product2 prod = Utils.CreateProduct();
       prod.Name = 'prod1';
       insert prod;

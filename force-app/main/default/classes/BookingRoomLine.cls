@@ -28,6 +28,7 @@ global without sharing class BookingRoomLine {
     webservice double TVARateAndPrice;
     webservice String FieldsToNull;
     webservice boolean Obsolete;
+    webservice String CurrencyIsoCode;
     
     public Booking_Room_Line__c mapSFFields() {
         Booking_Room_Line__c bookingRoomLine = new Booking_Room_Line__c();
@@ -43,6 +44,9 @@ global without sharing class BookingRoomLine {
         }
         if(Arrival != null || setFieldsToNull.contains('Arrival')) {
             bookingRoomLine.Arrival__c = Arrival;
+        }
+        if(CurrencyIsoCode != null || setFieldsToNull.contains('CurrencyIsoCode')) {
+            bookingRoomLine.CurrencyIsoCode = CurrencyIsoCode;
         }
         if(String.isNotBlank(Booking) || setFieldsToNull.contains('Booking')) {
             if(Booking != null) {

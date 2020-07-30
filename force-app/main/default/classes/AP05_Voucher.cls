@@ -10,7 +10,7 @@ public without sharing class AP05_Voucher {
     
     //method to fill th field opco of a voucher on before insert or update
     public static void fillVoucherOpco(list<voucher__c> listNewVouch){
-        system.debug('### cg im here');
+        
         map<string, string> mapVouchIdHotelId = new map<string, string>();//map each voucher with its hotel
         map<string, string> mapHotelIdCountry = new map<string, string>();//map each hotel retrieved with its country
         map<string, string> mapVouchIdHotelCountry = new map<string, string>();//map each voucher with its hotel's country

@@ -41,7 +41,7 @@ Global without sharing class Batch_PartnershipFieldsUpdate implements Database.B
         system.debug('@@@ mapAccountId '+mapAccountId);
         if((mapAccountId == null || mapAccountId.size() == 0) && (liststaticId == null || liststaticId.size() == 0)){
             
-            query = 'select id, PartnerCode__c, RecordtypeId, Master_Booking_FK__c, Master_Booking_FK__r.Bookings_Checked_Count__c,IsDeleted from opportunity '+System.Label.Batch_PartnershipFieldsUpdate_WhereClause+'ALL ROWS';// and LastModifiedDate>=YESTERDAY
+            query = 'select id, PartnerCode__c, RecordtypeId, Master_Booking_FK__c, Master_Booking_FK__r.Bookings_Checked_Count__c,IsDeleted from opportunity '+System.Label.Batch_PartnershipFieldsUpdate_WhereClause+' ALL ROWS';// and LastModifiedDate>=YESTERDAY
         }
         else if(mapAccountId != null && mapAccountId.size()>0){
             
@@ -113,7 +113,7 @@ Global without sharing class Batch_PartnershipFieldsUpdate implements Database.B
         //If the batch reached 3, we send an email with failed PA Ids, to be filled manually in the label Batch_HotelCountChecked
         else{
             
-            String[] toAddresses = new String[] {'joanna.karam@ei-technologies.com'};
+            String[] toAddresses = new String[] {Label.EmaiForBatchesErrors};
                 String Subject = 'Batch Error : Batch_PartnershipFieldsUpdate ';
             Utils_Email.sendEmailApex(toAddresses, Subject, mapAccountId);
         }
