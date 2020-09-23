@@ -59,7 +59,7 @@ public with sharing class CTRL01_GoogleReviews{
             caseToSFDC.Language__c		= googleReview.reviews.get(i).comments.get(0).userComment.reviewerLanguage;
             caseToSFDC.Description 		= googleReview.reviews.get(i).comments.get(0).userComment.text;  
             caseToSFDC.Origin 			= 'GooglePlayApp';
-            caseToSFDC.RecordTypeId     = '0120Q000000DJ2LQAW';
+            caseToSFDC.RecordTypeId     = Schema.SObjectType.Case.getRecordTypeInfosByName().get('App').getRecordTypeId();
             cases.add(caseToSFDC);
         }
         Upsert cases reviewId__c;
