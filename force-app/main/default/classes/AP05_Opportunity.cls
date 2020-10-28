@@ -52,21 +52,29 @@ public without sharing class AP05_Opportunity {
 
     
     public static void doCalculateCountryPercentage(Opportunity booking, Map<Id, AccountDataHistory> mapGuestIdNewData, String actionType, String strOldHotelCountry, Set<Integer> setGuestAccountFields) {
+        
         system.debug('@@@ ap05 new doCalculateCountryPercentage');
+        
         String strHotelCountry = strOldHotelCountry == null ? booking.HotelCountry__c : strOldHotelCountry;
+        
         if(String.isNotEmpty(strHotelCountry) && (booking.StageName.equalsIgnoreCase(Label.StageChecked) || booking.StageName.equalsIgnoreCase(Label.StageBooked) )) {
-            setCountryCodes = new Set<String>{'FR', 'IT', 'DE' , 'ES' , 'PL' , 'others'};
-                Integer counter = actionType.equals(actionAdd) ? 1 : -1;
+            
+            setCountryCodes = new Set<String>{'FR', 'IT', 'DE' , 'ES' , 'PL' , 'others', 'AT'};//Modified by TMA-EIL CG CRMSS-851 04/09/2020
+            Integer counter = actionType.equals(actionAdd) ? 1 : -1;
             Integer countryCounter = 0;
             String fieldName = null;
             String personAcctId = null;
+            
             if(!setCountryCodes.contains(strHotelCountry)) {
+                
                 strHotelCountry = 'others';
             }
             //for(Integer i : setGuestAccountFields) { 
             //   fieldName = 'Guest_Account_' + i + '__c';
             personAcctId = (String)booking.get('person_Account__c');
+            
             if(personAcctId != null) {
+                
                 if(!mapGuestIdNewData.containsKey(personAcctId)) {
                     mapGuestIdNewData.put(personAcctId, new AccountDataHistory());
                 }
@@ -89,6 +97,11 @@ public without sharing class AP05_Opportunity {
                 else if(strHotelCountry.equals('others')) {
                     mapGuestIdNewData.get(personAcctId).countryPercentage.others += counter;
                 }
+                //Added by TMA-EIL CG CRMSS-851 04/09/2020 Start
+                else if(strHotelCountry.equals('AT')) {
+                    mapGuestIdNewData.get(personAcctId).countryPercentage.austria += counter;
+                }
+                //Added by TMA-EIL CG CRMSS-851 04/09/2020 End
             }
             // }
         }

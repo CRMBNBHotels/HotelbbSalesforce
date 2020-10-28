@@ -18,7 +18,7 @@ Global without sharing class Batch_pourcentageBooking  implements Database.Batch
     global void execute(Database.BatchableContext bc, list<Opportunity> listBookings){
         
         List<Opportunity> listCurrBook = [select id,person_account__c,HotelCountry__c,person_account__r.Booking_FranceNB__c,person_account__r.Booking_GermanyNb__c,
-                                          person_account__r.Booking_ItalyNb__c,person_account__r.Booking_OthersNb__c,person_account__r.Booking_PolandNb__c,person_account__r.Booking_SpainNb__c 
+                                          person_account__r.Booking_ItalyNb__c,person_account__r.Booking_OthersNb__c,person_account__r.Booking_PolandNb__c,person_account__r.Booking_SpainNb__c,person_account__r.Booking_AustriaNB__c 
                                           from Opportunity where id in :listBookings];
         
         Map<String,AccountDataHistory.CountryPercentage> mapPAId = new Map<String,AccountDataHistory.CountryPercentage>();
@@ -33,6 +33,7 @@ Global without sharing class Batch_pourcentageBooking  implements Database.Batch
             AccountDataHistory.CountryPercentage percentage = mapPAId.get(book.Person_Account__c);
             
             if(book.Person_Account__c == '0011v00002AdS5cAAF' || test.isRunningTest()){
+                
                 Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
                 String[] toAddresses = new String[] {'joanna.karam@ei-technologies.com'};
                     mail.setToAddresses(toAddresses);
@@ -64,7 +65,23 @@ Global without sharing class Batch_pourcentageBooking  implements Database.Batch
                         
                         percentage.france++;
                     }
-                }else 
+                }else //Added by TMA-EIL CG CRMSS-851 04/09/2020 Start
+                    if(book.HotelCountry__c == 'AT'){
+                        
+                        if(percentage.austria == 0){
+                            
+                            if(book.Person_Account__r.Booking_AustriaNb__c == null){
+                                
+                                percentage.austria = 1;
+                            }else{
+                                percentage.austria = (Integer)book.Person_Account__r.Booking_AustriaNb__c++;
+                            }
+                        }
+                        else{
+                            
+                            percentage.austria++;
+                        }//Added by TMA-EIL CG CRMSS-851 04/09/2020 End
+                    }else 
                     if(book.HotelCountry__c == 'DE'){
                         
                         if(percentage.germany == 0){
@@ -162,6 +179,11 @@ Global without sharing class Batch_pourcentageBooking  implements Database.Batch
             if(percentage.Germany == 0 && book.Person_Account__r.Booking_GermanyNb__c != null){
                 percentage.Germany = (Integer)book.Person_Account__r.Booking_GermanyNb__c;
             }
+            //Added by TMA-EIL CG CRMSS-851 04/09/2020 Start
+            if(percentage.Austria == 0 && book.Person_Account__r.Booking_AustriaNb__c != null){
+                percentage.Austria = (Integer)book.Person_Account__r.Booking_AustriaNb__c;
+            }
+            //Added by TMA-EIL CG CRMSS-851 04/09/2020 End
             if(percentage.france == 0 && book.Person_Account__r.Booking_FranceNb__c != null){
                 percentage.france = (Integer)book.Person_Account__r.Booking_FranceNb__c;
             }
@@ -193,6 +215,10 @@ Global without sharing class Batch_pourcentageBooking  implements Database.Batch
             system.debug('#### ACC ' + acc);
             if(mapPAId.get(accId).france != 0) 
                 acc.Booking_FranceNB__c = mapPAId.get(accId).france;
+            //Added by TMA-EIL CG CRMSS-851 04/09/2020 Start
+            if(mapPAId.get(accId).austria != 0) 
+                acc.Booking_AustriaNB__c = mapPAId.get(accId).austria;
+            //Added by TMA-EIL CG CRMSS-851 04/09/2020 End
             if(mapPAId.get(accId).germany != 0)
                 acc.Booking_GermanyNb__c = mapPAId.get(accId).germany;
             if(mapPAId.get(accId).poland != 0)

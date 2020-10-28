@@ -40,6 +40,7 @@ public without sharing class HotelHandler {
         if((UtilsBypass.getUserBypassApexClass() != null && !UtilsBypass.getUserBypassApexClass().contains('AP01_Hotel'))
            || !UtilsBypass.canISkipApexClass('AP01_Hotel') 
            || !UtilsBypass.canISkipApexMethod('updateBookingsCountryPercentages')){
+               
                AP01_Hotel.updateBookingsCountryPercentages(updatedRecords, recordMapOld);
            }	
     }

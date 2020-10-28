@@ -11,7 +11,7 @@ public without sharing class AP04_Voucher {
     
     //Filtering the list before calling the CalculateVoucher function
     public static void vouchHelper(List<Voucher__c> ListNewVouchers , map<Id,Voucher__c> oldMapVoucher){
-        
+        system.debug('jul in AP04');
         Map<id, list<Voucher__c>> MapCaseByIRVoucher = new  Map<id, list<Voucher__c>>();
         Map<id, list<Voucher__c>> MapCaseByIRVoucherUpdate = new  Map<id, list<Voucher__c>>();
         
@@ -22,16 +22,16 @@ public without sharing class AP04_Voucher {
         Map<id,Decimal> MapVouchCalculated = new Map<id,Decimal>();
         
         Id Voucher_RT_IR_Id = Schema.SObjectType.Voucher__c.getRecordTypeInfosByDeveloperName().get('IR').getRecordTypeId();
-        Id Case_RT_Case_linked_to_IR_Id = Schema.SObjectType.Case.getRecordTypeInfosByDeveloperName().get('Case_linked_to_IR').getRecordTypeId();
+        system.debug('Voucher_RT_IR_Id'+Voucher_RT_IR_Id);
+        //Id Case_RT_Case_linked_to_IR_Id = Schema.SObjectType.Case.getRecordTypeInfosByDeveloperName().get('Case_linked_to_IR').getRecordTypeId();
         
         if(ListNewVouchers != null && ListNewVouchers.size()>0){
-            
             for(Voucher__c vouch : ListNewVouchers){
-                
                 //Insert Voucher
                 if(oldMapVoucher == null){
                     system.debug('@@@@@@@@@ in insert');
-                    if(vouch.RecordTypeId==Voucher_RT_IR_Id && vouch.Demande_d_assistance__c!=null && vouch.tech_CaseRecTypeId__c == Case_RT_Case_linked_to_IR_Id ){
+                    if(vouch.RecordTypeId==Voucher_RT_IR_Id && vouch.Demande_d_assistance__c!=null && vouch.Origin_Demande_Assistance__c == Label.Invitation_IR ){
+					system.debug('@@@@@@@@@ in insert here ');
                         if(MapCaseByIRVoucher.ContainsKey(vouch.Demande_d_assistance__c)){
                             InsertListVouch  = MapCaseByIRVoucher.get(vouch.Demande_d_assistance__c);
                         }
@@ -42,17 +42,13 @@ public without sharing class AP04_Voucher {
                 
                 //Update Voucher  
                 //v.Demande_d_assistance__c !=oldMapVoucher.get(v.Id).Demande_d_assistance__c get the old voucher and then access the case 
-                else if(oldMapVoucher != null && vouch.Demande_d_assistance__c !=oldMapVoucher.get(vouch.Id).Demande_d_assistance__c  && (vouch.tech_CaseRecTypeId__c == Case_RT_Case_linked_to_IR_Id || oldMapVoucher.get(vouch.Id).tech_CaseRecTypeId__c ==Case_RT_Case_linked_to_IR_Id)){
-                    system.debug('@@@@@@@@@ in update');
-                    System.debug('###new jka in Ap04_voucher vouch.Demande_d_assistance__c new'+ vouch.Demande_d_assistance__c);
-                    System.debug('###new jka in Ap04_voucher oldMapVoucher.get(vouch.Id).Demande_d_assistance__c new '+oldMapVoucher.get(vouch.Id).Demande_d_assistance__c);
-                    System.debug('###new jka vouch.tech_CaseRecTypeId__c new'+vouch.tech_CaseRecTypeId__c );
-                    System.debug('###new jka Case_RT_Case_linked_to_IR_Id '+Case_RT_Case_linked_to_IR_Id );
-                    System.debug('###new jka oldMapVoucher.get(vouch.Id).tech_CaseRecTypeId__c new'+oldMapVoucher.get(vouch.Id).tech_CaseRecTypeId__c );
-                    System.debug('###new jka Case_RT_Case_linked_to_IR_Id new'+Case_RT_Case_linked_to_IR_Id );
-                    
+                else if(oldMapVoucher != null && vouch.Demande_d_assistance__c !=oldMapVoucher.get(vouch.Id).Demande_d_assistance__c 
+                        && (vouch.Origin_Demande_Assistance__c == Label.Invitation_IR || oldMapVoucher.get(vouch.Id).Origin_Demande_Assistance__c == label.Invitation_IR)){
+						system.debug('@@@@@@@@@ in update here ');
                     //old Voucher
                     if(oldMapVoucher.get(vouch.Id).Demande_d_assistance__c != null && MapCaseByIRVoucherUpdate.ContainsKey(oldMapVoucher.get(vouch.Id).Demande_d_assistance__c)){
+                                            system.debug('@@@@@@@@demande assistance'+vouch.Demande_d_assistance__c);
+
                         UpdateOldListVouch  = MapCaseByIRVoucherUpdate.get(oldMapVoucher.get(vouch.Id).Demande_d_assistance__c);
                     }
                     UpdateOldListVouch.add(oldMapVoucher.get(vouch.Id));
@@ -75,7 +71,7 @@ public without sharing class AP04_Voucher {
         else if(ListNewVouchers == null && oldMapVoucher != null && oldMapVoucher.size()>0){
             for(String vouchId : oldMapVoucher.keySet()){
                 Voucher__c vouch = oldMapVoucher.get(vouchId);
-                if(vouch.RecordTypeId==Voucher_RT_IR_Id && vouch.Demande_d_assistance__c!=null && vouch.tech_CaseRecTypeId__c == Case_RT_Case_linked_to_IR_Id ){
+                if(vouch.RecordTypeId==Voucher_RT_IR_Id && vouch.Demande_d_assistance__c!=null && vouch.Origin_Demande_Assistance__c == Label.Invitation_IR ){
                     if(MapCaseByIRVoucher.ContainsKey(vouch.Demande_d_assistance__c)){
                         DeleteListVouch.add(oldMapVoucher.get(vouchId));
                     }

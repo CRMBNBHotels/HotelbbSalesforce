@@ -111,14 +111,14 @@ global without sharing class PersonAccount {
         if(OptinNL != null || setFieldsToNull.contains('OptinNL')) {
             account.Optin_NL__c = OptinNL;
         }
+        if(CurrencyIsoCode != null || setFieldsToNull.contains('CurrencyIsoCode')) {
+            account.CurrencyIsoCode = CurrencyIsoCode;
+        }
         if(TokenAvailable != null || setFieldsToNull.contains('TokenAvailable')) {
             account.Token_Available__pc  = TokenAvailable;
         }
         if(String.isNotBlank(OptinEmail) || setFieldsToNull.contains('OptinEmail')) {
             account.OptinEmail__c = OptinEmail;
-        }
-        if(CurrencyIsoCode != null || setFieldsToNull.contains('CurrencyIsoCode')) {
-            account.CurrencyIsoCode = CurrencyIsoCode;
         }
         if(String.isNotBlank(OptinSMS) || setFieldsToNull.contains('OptinSMS')) {
             account.OptinSms__c = OptinSMS;

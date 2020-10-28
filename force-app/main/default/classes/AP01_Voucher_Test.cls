@@ -21,7 +21,10 @@ public class AP01_Voucher_Test {
         
         //Create Hotel
         Hotel__c hotel = Utils.CreateHotel('789');
+        hotel.country__c = 'FR';
         insert hotel;        
+        
+        
         
         //Insert an IR invitation
         Voucher__c voucher = new Voucher__c();
@@ -31,11 +34,14 @@ public class AP01_Voucher_Test {
         voucher.Types__c = '2003';
         voucher.Objet__c = '3007';
         voucher.Motif__c = '4014';
-
+        
         voucher.Prestation_offerte__c = 'Un petit déjeuner';
         voucher.Email_du_client__c = 'test@email.com';
         voucher.Service__c = 'Hotel';
         voucher.Hotel__c = hotel.id;
+        voucher.Responsabilite__c = '11000';
+        voucher.Hotel_emetteur__c = 'Test Hotel Emetteur';
+            
         insert voucher;
         
         /*voucher.Statut__c = 'Generated';

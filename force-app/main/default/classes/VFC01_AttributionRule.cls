@@ -12,6 +12,7 @@ public without sharing class VFC01_AttributionRule {
     private Map<Id, String> selectedUsersMap;
     String ProfileName;
     Public String ProfileManagerName;
+    Public List<String> ListProfil = new List<String>(); 
     
     public  VFC01_AttributionRule() {
         
@@ -38,6 +39,7 @@ public without sharing class VFC01_AttributionRule {
             if(AgentManager.containskey(Userprofile.name)){
                 
                 ProfileName=AgentManager.get(Userprofile.name).Agent__c; 
+                ListProfil = ProfileName.split(';');
                 ProfileManagerName = Userprofile.name;
                 system.debug('ProfileName###'+ProfileName);
                 system.debug('ProfileManagerName'+ProfileManagerName);
@@ -87,7 +89,7 @@ public without sharing class VFC01_AttributionRule {
                 system.debug('TesttttProf##'+u.profile.name);
                 system.debug('ProfileName###'+ProfileName);
                 system.debug('ProfileManagerName'+ProfileManagerName);
-                if(u.profile.name==ProfileName || (u.profile.name == ProfileManagerName && (ProfileManagerName == 'Italy Service Manager' || ProfileManagerName == 'Spain Service Manager' || ProfileManagerName == 'French Service Manager'))){
+                if(ListProfil.contains(u.profile.name) || (u.profile.name == ProfileManagerName && (ProfileManagerName == 'Italy Service Manager' || ProfileManagerName == 'Spain Service Manager' || ProfileManagerName == 'French Service Manager' ||ProfileManagerName == 'Generic View' ))){
                     system.debug('Done###');
                     system.debug('u.profile.name'+u.profile.name);
                     system.debug('u.Name'+u.Name);
@@ -166,7 +168,7 @@ public without sharing class VFC01_AttributionRule {
             }
             system.debug('ProfileName###'+ProfileName);
             system.debug('gids###'+gids);
-            list<user> urs = [SELECT id, Name,profile.name FROM User where IsActive = true AND id NOT IN:gids AND Name!='Chatter Expert' and (profile.name =:ProfileName or profile.name =:ProfileManagerName) and profile.name!='' order by Name Asc];
+            list<user> urs = [SELECT id, Name,profile.name FROM User where IsActive = true AND id NOT IN:gids AND Name!='Chatter Expert' and (profile.name in:listprofil or profile.name =:ProfileManagerName) and profile.name!='' order by Name Asc];
             system.debug('Userr###'+urs);
             for(user u : urs){
                 

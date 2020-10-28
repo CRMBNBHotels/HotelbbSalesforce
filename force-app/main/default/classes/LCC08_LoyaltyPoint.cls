@@ -19,6 +19,9 @@ public without sharing class LCC08_LoyaltyPoint {
     
     @AuraEnabled
     public static void DoCalculation(String accountId, string type, integer NumberPoints, integer ApexNbPoint, string Reason, String Description) {
+        system.debug('#####reason '+Reason);
+                system.debug('#####Description '+Description);
+
         system.debug('### cyn Description'+Description);
         if(accountId != null){
             

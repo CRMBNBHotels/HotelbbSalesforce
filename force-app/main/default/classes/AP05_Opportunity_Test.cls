@@ -72,6 +72,8 @@ private class AP05_Opportunity_Test {
         update hotel;
         hotel.Country__c = 'AU';
         update hotel;
+        hotel.Country__c = 'AT';
+        update hotel;
         delete hotel;
         guestAccount = [SELECT Id,Booking_France__c, Booking_Germany__c,Booking_Italy__c,Booking_Others__c,Booking_Poland__c,Booking_Spain__c
                         FROM Account

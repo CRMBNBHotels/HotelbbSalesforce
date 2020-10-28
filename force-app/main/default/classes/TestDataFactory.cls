@@ -154,7 +154,7 @@ public class TestDataFactory {
         booking.EmailAddressBooking = 'obk.georges@gmail.com';
         booking.ConfirmationNumber = 'CN123'; 
         booking.CheckinBySMS = true;
-        booking.InvoicedCityTax = 10;
+        //booking.InvoicedCityTax = 10;
         booking.AmountCityTax = 12.50;
         booking.WalletStatus = 'Pending';
         booking.EarnPoint = 200;

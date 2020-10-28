@@ -5,6 +5,7 @@
 * @author: Jenny Jawhar
 * @date: 14/10/2017
 * @Test: AP01_Case_Test
+* @Coverage: 78%
 */
 public without sharing class AP01_Case {    
     
@@ -48,23 +49,22 @@ public without sharing class AP01_Case {
                // TMA JK - 698 end
                || 
              	  ((cas.Concerned_country__c == 'ES'|| cas.Concerned_country__c == 'CA') 
-               	 && ( cas.Type==label.Case_Type_CustomerClaim || cas.Type==label.Case_Type_CustomerFeedback )
-               	 && cas.RecordTypeId == Label.Case_RT_CustomersRequestFeedback)
+               	 && ( cas.Type==label.Case_SFType_GeneralRequest || cas.Type==label.Case_SFType_FeedbackStay || cas.Type==label.Case_SFType_BookingConfirmation || cas.Type==label.Case_SFType_ProbBooking ||                   cas.Type==label.Case_SFType_ProbInvoice || cas.Type==label.Case_type_ForgottenObject || cas.Type==label.Case_SFType_Companies || cas.Type==label.Case_SFType_Groups ||  cas.Type==label.Case_SFType_BBHClub))
                //Added by TMA-EIL CG CRMSS-764 13/07/2020 Start
                || 
-             	  (cas.Concerned_country__c == 'PT' 
+             	  (cas.Concerned_country__c == Label.AP01_Case_PT 
                    && (cas.Salesforce_Case_Type__c == Label.Case_SFType_GeneralRequest || cas.Salesforce_Case_Type__c == Label.Case_SFType_FeedbackStay 
                        || cas.Salesforce_Case_Type__c == Label.Case_SFType_BookingConfirmation || cas.Salesforce_Case_Type__c == Label.Case_SFType_ProbBooking 
                        || cas.Salesforce_Case_Type__c == Label.Case_SFType_ProbInvoice || cas.Salesforce_Case_Type__c == Label.Case_SFType_ForgottenObject
                        || cas.Salesforce_Case_Type__c == Label.Case_SFType_Companies || cas.Salesforce_Case_Type__c == Label.Case_SFType_Groups 
-                       || cas.Salesforce_Case_Type__c == Label.Case_SFType_BBHClub) 
-                   && cas.RecordTypeId == Label.Case_RT_CustomersRequestFeedback_ES_PT)
+                       || cas.Salesforce_Case_Type__c == Label.Case_SFType_BBHClub) )
                //Added by TMA-EIL CG CRMSS-764 13/07/2020 End
                ||
-               		(cas.Concerned_country__c == 'DE') 
-               || 
+               		(cas.Concerned_country__c == Label.DE || cas.Concerned_country__c == Label.AT || cas.Concerned_country__c == Label.PL) //Modified by TMA-EIL CG CRMSS-847 01/09/2020
+               ||//Modified by TMA-EIL CG CRMSS-852
              	  (cas.concerned_country__c == 'FR' && (cas.Salesforce_Case_Type__c  == 'General request' || cas.Salesforce_Case_Type__c=='Booking confirmation' 
-                                                         || cas.Salesforce_Case_Type__c  == 'Duplicate invoice' ||   cas.Salesforce_Case_Type__c  == 'Forgotten object')))
+                                                         || cas.Salesforce_Case_Type__c  == 'Duplicate invoice' ||   cas.Salesforce_Case_Type__c  == 'Forgotten object'
+                                                      	 || cas.Salesforce_Case_Type__c  == 'Promotional booking modification')))
             {
                 listCase.add(cas);
                 
@@ -126,17 +126,17 @@ public without sharing class AP01_Case {
                 }
                 
                 if(mapHotelIdToHotelWrapper.containsKey(cas.Hotel_ID__c)){
-                    
+                   
                     hotelWrapper = mapHotelIdToHotelWrapper.get(cas.Hotel_ID__c);
                     hotelWrapper.CaseId = cas.id;
                     hotelWrapper.emailTemplateId = getHotelSpokenLanguage(hotelWrapper.hotelCountry,cas.RecordTypeId);
                     
                     //caseToUpdate.putSObject('Hotel__r',new Hotel__c(Hotel_Id__c=cas.Hotel_ID__c));   
-                    if(cas.Concerned_country__c != 'DE'){
+                    if(cas.Concerned_country__c != Label.DE && cas.Concerned_country__c != Label.AT && cas.Concerned_country__c != Label.PL){//Modified by TMA-EIL CG CRMSS-847 01/09/2020
                         
                         caseToUpdate.Status = label.WaitingHotel;
                     }else
-                        if(cas.Concerned_country__c == 'DE'){
+                        if(cas.Concerned_country__c == Label.DE || cas.Concerned_country__c == Label.AT || cas.Concerned_country__c == Label.PL){//Modified by TMA-EIL CG CRMSS-847 01/09/2020
                             if(cas.type == Label.AP01_RealEstateOffer){
                                 
                                 caseToUpdate.Status = Label.AP01_Case_waitingDev;
@@ -152,7 +152,7 @@ public without sharing class AP01_Case {
                                         caseToUpdate.Status = label.WaitingHotel;
                                         hotelWrapper.emailTemplateId=Label.AP01_Case_TemplateHotel;
                                     } else 
-                                        if(cas.type == Label.AP01_Case_CustomerFeedback || cas.type == 'Feedback on your stay'){
+                                        if(cas.type == Label.AP01_Case_CustomerFeedback){
                                             
                                             hotelWrapper.emailTemplateId=Label.AP01_Case_TemplateCustomerFeedback;
                                         }
@@ -174,7 +174,6 @@ public without sharing class AP01_Case {
                     
                     string emailHotel = mapHotelIdToHotelWrapper.get(cas.Hotel_ID__c).hotelEmail;
                     string templateId = mapHotelIdToHotelWrapper.get(cas.Hotel_ID__c).emailTemplateId;
-                    
                     if(cas.Concerned_country__c == label.AP01_Case_ES ){
                         
                          if(cas.Salesforce_Case_Type__c == Label.Case_SFType_GeneralRequest || cas.Salesforce_Case_Type__c == Label.Case_SFType_FeedbackStay || cas.Salesforce_Case_Type__c == Label.Case_SFType_ProbBooking
@@ -206,7 +205,7 @@ public without sharing class AP01_Case {
                     }
                     //Added by TMA-EIL CG CRMSS-764 13/07/2020 End
                     
-                    if(cas.Concerned_country__c == 'DE'){
+                    if(cas.Concerned_country__c == Label.DE || cas.Concerned_country__c == Label.AT || cas.Concerned_country__c == Label.PL){//Modified by TMA-EIL CG CRMSS-847 01/09/2020
                         
                         emailhotel = '';
                         
@@ -232,11 +231,11 @@ public without sharing class AP01_Case {
                     {     
                        if(cas.Type== 'Hotel job application') 
                         {
-                            emailHotel = 'hr-italia@yopmail.com'; //'hr-italia@hotelbb.com';
+                            emailHotel = label.AP01_Case_HRItalia_Email;
                         }
                         else if(cas.Type== 'Commercial topic')
                         { 
-                            emailHotel = 'commerciale@yopmail.com'; //commerciale@hotelbb.com
+                            emailHotel = label.AP01_Case_commerciale_Email; 
                         }
                         else
                         {
@@ -254,8 +253,14 @@ public without sharing class AP01_Case {
                         system.debug('cas.contactId' + cas.contactId);
                         system.debug('templateId' + templateId);
                         system.debug('cas.contactEmail' + cas.contactEmail);
+                        //Modified by TMA-EIL CG CRMSS-852
+                         if(cas.concerned_country__c == 'FR' && (cas.type == 'Promotional booking modification'||cas.Salesforce_Case_Type__c == 'Promotional booking modification') )
+                        {
+                            templateId = label.WebCaseFrenchEmailTemplateId2;
+                        }
                         Messaging.SingleEmailMessage singleEmailMessage = Utils.CreateSingleEmailMessage(toAddresses,null,
                                                                                                          cas.contactId,cas.Id,templateId,cas.ContactEmail);
+                 
                         singleEmailMessage.setTreatTargetObjectAsRecipient(false);
                         singleEmailMessage.setSaveAsActivity(true);
                         singleEmailMessage.setSenderDisplayName(null);
@@ -273,7 +278,8 @@ public without sharing class AP01_Case {
         string language;
         string emailTemplateId;  
         
-        if(hotelCountry == label.DE || hotelCountry == label.FR || hotelCountry == label.AP01_Case_CA || hotelCountry == 'PT' || hotelCountry == label.AP01_Case_ES  || hotelCountry == label.IT ){
+        //Modified by TMA-EIL CG CRMSS-847 01/09/2020
+        if(hotelCountry == label.DE || hotelCountry == label.AT || hotelCountry == label.PL || hotelCountry == label.FR || hotelCountry == label.AP01_Case_CA || hotelCountry == Label.AP01_Case_PT || hotelCountry == label.AP01_Case_ES  || hotelCountry == label.IT ){
             
             emailLanguage = hotelCountry;
         }
@@ -282,13 +288,19 @@ public without sharing class AP01_Case {
             emailLanguage = label.EN;
         }                  
         
-        if(emailLanguage == label.DE){
+        if(emailLanguage == label.DE || emailLanguage == label.AT || emailLanguage == label.PL){//Modified by TMA-EIL CG CRMSS-847 01/09/2020
             
             emailTemplateId = label.WebCaseGermanEmailTemplateId;
         }else
             if(emailLanguage == Label.FR){
-                
-                emailTemplateId = label.WebCaseFrenchEmailTemplateId;
+                //Modified by TMA-EIL CG CRMSS-852
+              /*  if(IsPromotional)
+                {
+                    emailTemplateId = label.WebCaseFrenchEmailTemplateId2;//'00X0Q000000JztZ';
+                }
+                else{
+               */     emailTemplateId = label.WebCaseFrenchEmailTemplateId;
+               // } 
             }else
                 if(emailLanguage == label.EN){
                     
@@ -299,7 +311,7 @@ public without sharing class AP01_Case {
             emailTemplateId = label.WebCaseItalyEmailTemplateID;
         }
         else 
-            if (emailLanguage == label.AP01_Case_CA || emailLanguage == label.AP01_Case_ES || emailLanguage == 'PT'){
+            if (emailLanguage == label.AP01_Case_CA || emailLanguage == label.AP01_Case_ES || emailLanguage == Label.AP01_Case_PT){
                 // if (caseRT.substring(0, 15) == label.Case_GroupRequestRT.substring(0, 15) || caseRT.substring(0, 15) == label.Case_ompanyRequestRT.substring(0, 15)){
                 //    emailTemplateId = label.WebCaseSpanishEmailTemplateIdCompanyGroupReq;
                 // } 
@@ -343,15 +355,20 @@ public without sharing class AP01_Case {
                     
                     cas.Salesforce_Case_Type__c = 'General request';
                 }
+                //Modified by TMA-EIL CG CRMSS-852
+                else if(cas.type == 'Promotional booking modification'){
+                    
+                    cas.Salesforce_Case_Type__c = 'Promotional booking modification';
+                }
             }
             //Added by TMA-EIL CG CRMSS-764 13/07/2020 Start
-            else if (cas.Concerned_country__c == 'PT' || cas.Concerned_country__c == 'ES'){
+            else if (cas.Concerned_country__c != 'FR'){
                 
-                if(cas.type == 'Information request' || cas.type == 'General request'){
+                if(cas.type == 'General request'){
                     
                     cas.Salesforce_Case_Type__c = 'General request';
                 }
-                else if(cas.type == 'Customer feedbacks' || cas.type == 'Feedback regarding your stay'){
+                else if(cas.type == 'Feedback regarding your stay'){
                     
                     cas.Salesforce_Case_Type__c = 'Feedback regarding your stay';
                 }

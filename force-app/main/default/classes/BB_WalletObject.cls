@@ -1,11 +1,11 @@
-public class BB_WalletObject extends BB_Object implements BB_Object_Interface{
+public without sharing class BB_WalletObject extends BB_Object implements BB_Object_Interface{
     
     public String initializeRequestEndpointUpdate() {
         //String endPoint = Label.BBUS_WebservicesLink + Label.BBUS_LoyaltyEndpoint;
         return null;
     }
     
-     public String initializeRequestEndpoint() {
+    public String initializeRequestEndpoint() {
         String endPoint = Label.BBUS_WebservicesLink + Label.BBUS_LoyaltyEndpoint;
         return endPoint;
         //return endPoint;
@@ -17,7 +17,8 @@ public class BB_WalletObject extends BB_Object implements BB_Object_Interface{
                           WHERE Id =:sfdcId];
         string emailClient = accObj.Email__pc;
         string idClient = accObj.Externalid__c;
-        
+        system.debug('### pageKey ' + pageKey);
+        system.debug('### includePaging ' + includePaging);
         BBWalletRequestWrapper walletWrapper = new BBWalletRequestWrapper();
         walletWrapper.Headers = new Headers();
         walletWrapper.Headers.ApiKey = getApiKey();
@@ -42,108 +43,107 @@ public class BB_WalletObject extends BB_Object implements BB_Object_Interface{
     }
     
     public DataTableWrapper createTableFromResponse(String strResponse) {
-        system.debug('### on good response strResponse' + strResponse);
         DataTableWrapper tableWrapper = new DataTableWrapper();
         
         strResponse = cleanResponse(strResponse);
         
         //Added by TMA Cynthia Geagea - CRMSS 229 - 17/07/2019 - Start
-        strResponse = strResponse.replace('"Date"', '"DateRS"');
+        strResponse = strResponse.replace('"UpdatedAt"', '"DateRS"'); //Modified by TMA-EIL CRMSS-818 13/08/2020
         //Added by TMA Cynthia Geagea - CRMSS 229 - 17/07/2019 - End
         
         BBWalletResponseWrapper responseWrapper = (BBWalletResponseWrapper)JSON.deserialize(strResponse, BBWalletResponseWrapper.class);
-         
-        system.debug('#### responseWrapper' +responseWrapper);
         if(responseWrapper.LoyaltyPointRS.LoyaltyPoints == null || responseWrapper.LoyaltyPointRS.LoyaltyPoints.PageDateKey == null) {
-           tableWrapper.pageDateKey = null;
-       }
-       else {
-           tableWrapper.pageDateKey = responseWrapper.LoyaltyPointRS.LoyaltyPoints.PageDateKey;
-       }
+            tableWrapper.pageDateKey = null;
+        }
+        else {
+            tableWrapper.pageDateKey = responseWrapper.LoyaltyPointRS.LoyaltyPoints.PageDateKey;
+        }
         if(responseWrapper.LoyaltyPointRS.LoyaltyPoints == null || responseWrapper.LoyaltyPointRS.LoyaltyPoints.PageKey == null) {
             tableWrapper.pageKey = null;
         }
         else {
             tableWrapper.pageKey = responseWrapper.LoyaltyPointRS.LoyaltyPoints.PageKey;
         }
-            // check for Success
-            // start creating the table
-            // fill list of headers
-            tableWrapper.listHeaders = fillListHeaders();
-            // fill records
-            Set<String> setBookingIds = new Set<String>();
-            Set<String> setHotelIds = new Set<String>();         
-            for(LoyaltyPoint loyaltyPoint : responseWrapper.LoyaltyPointRS.LoyaltyPoints.LoyaltyPoint) {
-                if(loyaltyPoint.BookingID != null) {
-                    setBookingIds.add(loyaltyPoint.BookingID);
-                }
-                if(loyaltyPoint.HotelCode != null) {
-                    setHotelIds.add(loyaltyPoint.HotelCode);
-                }
+        
+        // check for Success
+        // start creating the table
+        // fill list of headers
+        tableWrapper.listHeaders = fillListHeaders();
+        // fill records
+        Set<String> setBookingIds = new Set<String>();
+        Set<String> setHotelIds = new Set<String>();         
+        for(LoyaltyPoint loyaltyPoint : responseWrapper.LoyaltyPointRS.LoyaltyPoints.LoyaltyPoint) {
+            if(loyaltyPoint.BookingID != null) {
+                setBookingIds.add(loyaltyPoint.BookingID);
             }
-            Map<String, String> mapBookings = new Map<String, String>();
-            for(Opportunity booking :[SELECT Id, ExternalId__c
-                                      FROM Opportunity
-                                      WHERE ExternalId__c IN :setBookingIds
-                                     ] ) {
-                                         mapBookings.put(booking.ExternalId__c, booking.Id);
-                                     }
-            
-            Map<String, String> mapHotels = new Map<String, String>();
-            for(Hotel__c hotel :[SELECT Id, Hotel_Id__c
-                                 FROM Hotel__c
-                                 WHERE Hotel_Id__c IN :setHotelIds
-                                ] ) {
-                                    mapHotels.put(hotel.Hotel_Id__c, hotel.Id);
-                                }
-            
-            tableWrapper.listRecords = new List<DataTableWrapper.TableRecord>();
-            DataTableWrapper.TableRecord record = new DataTableWrapper.TableRecord();
-            List<DataTableWrapper.TableField> listFields = null;
-            String bookingId;
-            String hotelId;
-            String reason;
-            Date endDate;
-            String strWalletDate;
-            
-            for(LoyaltyPoint loyaltyPoint : responseWrapper.LoyaltyPointRS.LoyaltyPoints.LoyaltyPoint) {
-                record = new DataTableWrapper.TableRecord();
-                bookingId = null;
-                hotelId = null;
-                endDate = null;
-                listFields = new List<DataTableWrapper.TableField>();
-                
-                /*if( loyaltyPoint.TimeSpan != null && loyaltyPoint.TimeSpan.EndTime != null) {
-                    endDate = Date.valueOf(loyaltyPoint.TimeSpan.EndTime);
-                    if(endDate != null) {
-                        strWalletDate = endDate.format();
-                    }
-                }*/
-                
-                //Added by TMA Cynthia Geagea - CRMSS 229 - 17/07/2019 - Start
-                if(loyaltyPoint.DateRS != null){
-                    
-                    strWalletDate = Date.valueOf(loyaltyPoint.DateRS).format();
-                }
-                //Added by TMA Cynthia Geagea - CRMSS 229 - 17/07/2019 - End
-
-                listFields.add(new DataTableWrapper.TableField(strWalletDate, null, null));
-                listFields.add(new DataTableWrapper.TableField(loyaltyPoint.NumberPoint, null, null));
-                if(loyaltyPoint.HotelCode != null && mapHotels.containsKey(loyaltyPoint.HotelCode)) {
-                    hotelId = mapHotels.get(loyaltyPoint.HotelCode);
-                }
-                if(loyaltyPoint.BookingID != null && mapBookings.containsKey(loyaltyPoint.BookingID)) {
-                    bookingId = mapBookings.get(loyaltyPoint.BookingID);
-                }
-                if(loyaltyPoint.Reason != null && mapBookings.containsKey(loyaltyPoint.Reason)) {
-                    reason = mapBookings.get(loyaltyPoint.Reason);
-                }
-                //listFields.add(new DataTableWrapper.TableField(loyaltyPoint.HotelCode, 'link', hotelId));
-                //listFields.add(new DataTableWrapper.TableField(loyaltyPoint.BookingId, 'link', bookingId));
-                listFields.add(new DataTableWrapper.TableField(loyaltyPoint.Reason, null, null));
-                record.listFields = listFields;
-                tableWrapper.listRecords.add(record);
+            if(loyaltyPoint.HotelCode != null) {
+                setHotelIds.add(loyaltyPoint.HotelCode);
             }
+        }
+        Map<String, String> mapBookings = new Map<String, String>();
+        for(Opportunity booking :[SELECT Id, ExternalId__c
+                                  FROM Opportunity
+                                  WHERE ExternalId__c IN :setBookingIds
+                                 ] ) {
+                                     mapBookings.put(booking.ExternalId__c, booking.Id);
+                                 }
+        
+        Map<String, String> mapHotels = new Map<String, String>();
+        for(Hotel__c hotel :[SELECT Id, Hotel_Id__c
+                             FROM Hotel__c
+                             WHERE Hotel_Id__c IN :setHotelIds
+                            ] ) {
+                                mapHotels.put(hotel.Hotel_Id__c, hotel.Id);
+                            }
+        
+        tableWrapper.listRecords = new List<DataTableWrapper.TableRecord>();
+        DataTableWrapper.TableRecord record = new DataTableWrapper.TableRecord();
+        List<DataTableWrapper.TableField> listFields = null;
+        String bookingId;
+        String hotelId;
+        String reason;
+        Date endDate;
+        Date UpdatedAt;
+        String strWalletDate;
+        
+        for(LoyaltyPoint loyaltyPoint : responseWrapper.LoyaltyPointRS.LoyaltyPoints.LoyaltyPoint) {
+            record = new DataTableWrapper.TableRecord();
+            bookingId = null;
+            hotelId = null;
+            endDate = null;
+            listFields = new List<DataTableWrapper.TableField>();
+            
+            /*if(loyaltyPoint.TimeSpan != null && loyaltyPoint.TimeSpan.EndTime != null) {
+                endDate = Date.valueOf(loyaltyPoint.TimeSpan.EndTime);
+                if(endDate != null) {
+                    strWalletDate = endDate.format();
+                }
+            }*/
+            
+            //Added by TMA Cynthia Geagea - CRMSS 229 - 17/07/2019 - Start
+            if(loyaltyPoint.DateRS != null){
+                
+               strWalletDate = Date.valueOf(loyaltyPoint.DateRS).format();
+            }
+            //Added by TMA Cynthia Geagea - CRMSS 229 - 17/07/2019 - End
+            
+            listFields.add(new DataTableWrapper.TableField(strWalletDate, null, null));
+            listFields.add(new DataTableWrapper.TableField(loyaltyPoint.NumberPoint, null, null));
+            if(loyaltyPoint.HotelCode != null && mapHotels.containsKey(loyaltyPoint.HotelCode)) {
+                hotelId = mapHotels.get(loyaltyPoint.HotelCode);
+            }
+            if(loyaltyPoint.BookingID != null && mapBookings.containsKey(loyaltyPoint.BookingID)) {
+                bookingId = mapBookings.get(loyaltyPoint.BookingID);
+            }
+            if(loyaltyPoint.Reason != null && mapBookings.containsKey(loyaltyPoint.Reason)) {
+                reason = mapBookings.get(loyaltyPoint.Reason);
+            }
+            //listFields.add(new DataTableWrapper.TableField(loyaltyPoint.HotelCode, 'link', hotelId));
+            //listFields.add(new DataTableWrapper.TableField(loyaltyPoint.BookingId, 'link', bookingId));
+            listFields.add(new DataTableWrapper.TableField(loyaltyPoint.Reason, null, null));
+            record.listFields = listFields;
+            tableWrapper.listRecords.add(record);
+        }
         
         system.debug('tableWrapper ' + tableWrapper);
         return tableWrapper;
@@ -173,7 +173,7 @@ public class BB_WalletObject extends BB_Object implements BB_Object_Interface{
     
     private List<String> fillListHeaders() {
         List<String> lstHeaders = new List<String>();
-        lstHeaders.add('Date');
+        lstHeaders.add('Date addition/withdrawal of points');//Modified by TMA-EIL CRMSS-818 13/08/2020
         lstHeaders.add('Number of points');
         //lstHeaders.add('Hotel Id');
         //lstHeaders.add('Booking Id');
@@ -228,8 +228,8 @@ public class BB_WalletObject extends BB_Object implements BB_Object_Interface{
     
     public class LoyaltyPoints{
         public List<LoyaltyPoint> LoyaltyPoint {get;set;}
-        public String PageKey {get;set;} 
-        public String PageDateKey {get;set;}
+        public String PageKey {get;set;}   
+        public String PageDateKey {get;set;} 
     }
     
     public class LoyaltyPoint {

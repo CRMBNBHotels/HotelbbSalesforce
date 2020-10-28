@@ -18,20 +18,40 @@ public without sharing class AP01_Hotel {
         Set<Id> setHotelsToTreat = new Set<Id>();
         String country;
         String oldCountry;
+        
+        //Added by TMA-EIL CG MS-5094 15/09/2020 Start
+        String lowerCountry;
+        String lowerOldCountry;
+        //Added by TMA-EIL CG MS-5094 15/09/2020 End
+        
         Hotel__c oldHotel;
+        
         for(Hotel__c hotel : listHotels) {
+            
             oldHotel = mapOldHotels.get(hotel.Id);
             country  = hotel.Country__c == null ? '' : hotel.Country__c;
             oldCountry = oldHotel.Country__c == null ? '' : oldHotel.Country__c;
-            if(!country.equalsIgnoreCase(oldCountry)) {
+            
+            //Added by TMA-EIL CG MS-5094 15/09/2020 Start
+            lowerCountry = country.toLowercase();
+            lowerOldCountry = oldCountry.toLowerCase();
+            //Added by TMA-EIL CG MS-5094 15/09/2020 End
+                
+            if(lowerCountry != lowerOldCountry){//Condition modified by TMA-EIL CG MS-5094 15/09/2020
+                
                setHotelsToTreat.add(hotel.Id); 
             }    
         }
-        if(setHotelsToTreat.size() > 0) { 
+        system.debug('### cg listHotels.size: '+listHotels.size());
+        system.debug('### cg setHotelsToTreat.size: '+setHotelsToTreat.size());
+        
+        if(setHotelsToTreat.size() > 0) {
+            
             Map<Id, AccountDataHistory> mapGuestIdDataHistory = new Map<Id, AccountDataHistory>();
             String strOldHotelCountry;
+            
             // iterate over all bookings in the hotels to treat
-            for(Opportunity booking : [SELECT Id,Hotel__c,Person_Account__c,HotelCountry__c, Guest_Account_1__c,Guest_Account_2__c,Guest_Account_3__c, Guest_Account_4__c, Guest_Account_5__c, StageName
+            for(Opportunity booking : [SELECT Id,Hotel__c,HotelCountry__c, Guest_Account_1__c,Guest_Account_2__c,Guest_Account_3__c, Guest_Account_4__c, Guest_Account_5__c, StageName,Person_Account__c
                                        FROM Opportunity
                                        WHERE RecordTypeId = :booking_RT AND Hotel__c IN :setHotelsToTreat 
                                        AND (StageName =: Label.StageBooked OR StageName =: Label.StageChecked)

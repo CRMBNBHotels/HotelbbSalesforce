@@ -67,7 +67,7 @@ global without sharing class WS02_BookingInfo {
         //Added by TMA-JK - CRMSS-173 End
         list<BookingRoomLine> listBookingRoomLines = new list<BookingRoomLine>(); 
         list<Booking> listBookings = new list<Booking>();
-        list<MasterBooking> listMasterBookings = new list<MasterBooking>(); 
+        list<MasterBooking> listMasterBookings = new list<MasterBooking>();	
         list<PersonAccount> listGuestAccounts = new list<PersonAccount>();
         
         map<String, String> mapObjIdMbId = new map<string, string>(); // used to map every object's extID with the MB's ExtId attached to it
@@ -938,7 +938,7 @@ mapResponses.put(rowIndex, null);
                 
                 System.debug('### mapExternalAccountsToTreat.values() from BookingInfo' + mapExternalAccountsToTreat.values());
                 System.debug('### mapExternalAccountsToTreat.values() from mapResponses before modif' + mapResponses.values());
-            }       
+            }		
             system.debug('mapExternalAccountsToTreat ###' + mapExternalAccountsToTreat);
             system.debug('mapResponses ###' + mapResponses);
             doUpsertRecords(mapExternalAccountsToTreat.values(), 'Account', mapResponses, mapPersonRowIndex);  

@@ -14,7 +14,7 @@ public class LCC13_BookingHeader {
         
         if(bookingId != null){
             
-            Booking__c book = [Select Id,Stage__c, Arrival_date__c, Departure_date__c, Hotel_V2__c, Hotel_V2__r.name, Invoiced_amount_TTC__c, CAD_Status__c, PMS_booking_ID__c, ID_CRS_VB__c, Modifiable_Reservation_Date__c, Cancellable_Booking__c
+            Booking__c book = [Select Id,Stage__c, Arrival_date__c, Departure_date__c, Hotel__c,Hotel__r.Commercial_Hotel_Name__c , Invoiced_amount_TTC__c, CAD_Status__c, PMS_booking_ID__c, ID_CRS_VB__c, Modifiable_Reservation_Date__c, Cancellable_Booking__c
                                from booking__c 
                                where id=:bookingId];
             

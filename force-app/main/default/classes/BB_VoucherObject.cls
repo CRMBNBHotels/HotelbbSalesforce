@@ -73,12 +73,13 @@ public without sharing class BB_VoucherObject extends BB_Object implements BB_Ob
         
         else{
             
-            Voucher__c vouchObj = [Select Id, Code__c, Statut__c, Externalid__c, RecordtypeId
+            Voucher__c vouchObj = [Select Id, Code__c, Statut__c, Externalid__c, RecordtypeId,expireDate__c
                                    From Voucher__c
                                    Where Externalid__c =: sfdcId];
             
             string GeneratedCode = vouchObj.Code__c;
             string Status = vouchObj.Statut__c;
+            String expireDate = String.valueof(vouchObj.expireDate__c);
             
             String strBody;
             
@@ -89,6 +90,7 @@ public without sharing class BB_VoucherObject extends BB_Object implements BB_Ob
                 voucherWrapper.UpdateVoucherRQ.voucherRQS = new VoucherRQS();
                 voucherWrapper.UpdateVoucherRQ.voucherRQS.GeneratedCode = GeneratedCode;
                 voucherWrapper.UpdateVoucherRQ.voucherRQS.Status = Status;
+                voucherWrapper.UpdateVoucherRQ.voucherRQS.ExpireDate = expireDate;
                 
                 
                 strBody = JSON.serialize(voucherWrapper);
@@ -96,6 +98,7 @@ public without sharing class BB_VoucherObject extends BB_Object implements BB_Ob
                 strBody = strBody.replace('"VoucherRQS":', '"bb:Voucher":');
                 strBody = strBody.replace('"GeneratedCode":', '"@GeneratedCode":');
                 strBody = strBody.replace('"Status":', '"@Status":');
+                strBody = strBody.replace('"ExpireDate":', '"@ExpireDate":');
             }
             else if(vouchObj.RecordTypeId == IRRecordTypeID){
                 
@@ -104,6 +107,7 @@ public without sharing class BB_VoucherObject extends BB_Object implements BB_Ob
                 refundVoucherWrapper.UpdateRefundVoucherRQ.RefundVoucherRQS = new RefundVoucherRQS();
                 refundVoucherWrapper.UpdateRefundVoucherRQ.RefundVoucherRQS.GeneratedCode = GeneratedCode;
                 refundVoucherWrapper.UpdateRefundVoucherRQ.RefundVoucherRQS.Status = Status;
+                refundVoucherWrapper.UpdateRefundVoucherRQ.RefundVoucherRQS.ExpireDate = expireDate;
                 
                 
                 strBody = JSON.serialize(refundVoucherWrapper);
@@ -111,6 +115,8 @@ public without sharing class BB_VoucherObject extends BB_Object implements BB_Ob
                 strBody = strBody.replace('"RefundVoucherRQS":', '"bb:Voucher":');
                 strBody = strBody.replace('"GeneratedCode":', '"@GeneratedCode":');
                 strBody = strBody.replace('"Status":', '"@Status":');
+                strBody = strBody.replace('"ExpireDate":', '"@ExpireDate":');
+                
             }
             system.debug('strBody2' + strBody);
             return strBody;
@@ -245,6 +251,7 @@ public without sharing class BB_VoucherObject extends BB_Object implements BB_Ob
                 
                 vouch.Statut__c = (String)OldDataWrapper.sobj.get('Statut__c');
             }
+            
         }
         
         //Added by TMA-CG CRMSS-203 20/06/2019 start
@@ -330,6 +337,7 @@ public without sharing class BB_VoucherObject extends BB_Object implements BB_Ob
     public class VoucherRQS {
         public String GeneratedCode {get;set;}
         public String Status {get;set;}
+        public String ExpireDate {get;set;}
     }
     // end of request wrappers - ticket CRMSS-129
     
@@ -345,6 +353,7 @@ public without sharing class BB_VoucherObject extends BB_Object implements BB_Ob
     public class RefundVoucherRQS {
         public String GeneratedCode {get;set;}
         public String Status {get;set;}
+        public String ExpireDate {get;set;}
     }
     // end of request wrappers - ticket CRMSS-423
     //Added by TMA-EIL CG - CRMSS 423 - 09/01/2020 - End

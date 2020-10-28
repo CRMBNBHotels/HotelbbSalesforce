@@ -59,7 +59,8 @@ public without sharing class CaseHandler {
            || !UtilsBypass.canISkipApexClass('AP03_Case') 
            || !UtilsBypass.canISkipApexMethod('AssignCaseToUser')){
                //TMA Cynthia geagea - CRMSS-161
-                //Modified by TMA-EIL CG CRMSS-774 06/07/2020 Start
+               
+               //Modified by TMA-EIL CG CRMSS-774 06/07/2020 Start
                list<case> listCases = new list <case>();
                
                for(case cas : updatedRecords){
@@ -90,7 +91,6 @@ public without sharing class CaseHandler {
            || !UtilsBypass.canISkipApexMethod('SendEmailToCaseOwner')){
                //TMA Cynthia geagea - CRMSS-161
                system.debug('@@@ in casehandlerr ap03');
-               system.debug('@@@ in casehandlerr ap03 updatedRecords'+updatedRecords);
                //TMA - Cynthia Geagea 11/06/2019 - CRMSS-161
                AP03_Case.SendEmailToCaseOwner(updatedRecords, recordMapOld);
            } 
@@ -106,7 +106,7 @@ public without sharing class CaseHandler {
                    
                    if(currCase.concerned_country__c == 'DE' && currCase.ownerid != recordMapOld.get(currCase.id).ownerid 
                       && OwnerId.substring(0,3) == '00G' && currCase.Type != recordMapOld.get(currCase.id).Type){//Type Modfication condition added by TMA-EIL CG CRMSS-717 09/06/2020
-                         
+                          
                           listCaseRecordToTreat.add(currCase);
                       }
                }

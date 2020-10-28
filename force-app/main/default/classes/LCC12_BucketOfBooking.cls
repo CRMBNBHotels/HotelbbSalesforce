@@ -3,7 +3,7 @@
 * @author: TMA-EI JK
 * @date: 11/06/2020
 * @Test class: LCC12_BucketOfBooking_Test
-* @Coverage:
+* @Coverage: 100%
 * @Lightning Components: LC12_BucketOfBooking
 */
 public class LCC12_BucketOfBooking {

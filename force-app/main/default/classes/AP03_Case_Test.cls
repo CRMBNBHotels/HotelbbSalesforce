@@ -23,6 +23,12 @@ public class AP03_Case_Test {
         
         system.runAs(u){
             
+            string deCaseRecordtypeId = Schema.SObjectType.Case.getRecordTypeInfosByName().get('Customers Request / Claim / Feedback (Germany/Austria)').getRecordTypeId();
+            string itCaseRecordtypeId = Schema.SObjectType.Case.getRecordTypeInfosByName().get('Customers Request / Claim / Feedback (Italy)').getRecordTypeId();
+            string frCaseRecordtypeId = Schema.SObjectType.Case.getRecordTypeInfosByName().get('Customers Request / Claim / Feedback (France)').getRecordTypeId();
+            string esCaseRecordtypeId = Schema.SObjectType.Case.getRecordTypeInfosByName().get('Customer Request / Claim / Feedback (Spain/Portugal)').getRecordTypeId();
+
+            
             Hotel__c hotel = Utils.CreateHotel('Hotel');
             hotel.Email__c = 'hotel@asce.com';
             hotel.Country__c = label.FR;
@@ -34,8 +40,9 @@ public class AP03_Case_Test {
             Case cas = Utils.CreateCase();
             cas.Origin = 'Web';
             cas.Type = label.Information_request;
+            cas.Salesforce_Case_Type__c = 'General request';
             cas.Status = 'Open';
-            cas.RecordTypeId = Label.Case_RT_CustomersRequestFeedback;
+            cas.RecordTypeId = itCaseRecordtypeId;
             cas.Hotel_ID__c = hotel.Hotel_ID__c;
             cas.SuppliedEmail = 'customerTest@asce.com';
             cas.First_Name__c = 'First';
@@ -47,8 +54,9 @@ public class AP03_Case_Test {
             Case cas1 = Utils.CreateCase();
             cas1.Origin = 'Web';
             cas1.Type = label.Information_request;
+            cas1.Salesforce_Case_Type__c = 'General request';
             cas1.Status = 'Open';
-            cas.RecordTypeId = Label.Case_RT_CustomersRequestFeedback;
+            cas.RecordTypeId = frCaseRecordtypeId;
             cas1.Hotel_ID__c = hotel.Hotel_ID__c;
             
             cas1.SuppliedEmail = 'customerTest1@asce.com';
@@ -62,8 +70,9 @@ public class AP03_Case_Test {
             cas2.Origin = 'Web';
             cas2.Status = 'Open';
             cas2.Type = label.Information_request;
+            cas2.Salesforce_Case_Type__c = 'General request';
             cas2.SuppliedEmail = 'customerTest2@asce.com';
-            cas.RecordTypeId = Label.Case_RT_CustomersRequestFeedback;
+            cas2.RecordTypeId = esCaseRecordtypeId;
             cas2.Hotel_ID__c = hotel.Hotel_ID__c;
             cas2.First_Name__c = 'First2';
             cas2.Last_Name__c = 'Last2';
@@ -75,30 +84,26 @@ public class AP03_Case_Test {
             cas3.Origin = 'Web';
             cas3.Status = 'Open';
             cas3.Type = label.Information_request;
+            cas3.Salesforce_Case_Type__c = 'General request';
             cas3.SuppliedEmail = 'customerTest3@asce.com';
-            cas3.RecordTypeId = Label.Case_RT_CustomersRequestFeedback;
+            cas3.RecordTypeId = deCaseRecordtypeId;
             cas3.Hotel_ID__c = hotel.Hotel_ID__c;
             cas3.First_Name__c = 'First3';
             cas3.Last_Name__c = 'Last3';
-            cas3.Concerned_country__c = 'DE';
-            //cas2.setOptions(dmo);
+            cas3.Concerned_country__c = 'AT';
+            //cas3.setOptions(dmo);
             listCaseToInsert.add(cas3);
             
             insert listCaseToInsert;
             
             List<Group> queueIds = [Select Id from Group
-                                    Where Name = 'Italy Service Agent' or Name = 'French Queue hotel case' or Name = 'Spain Queue Hotel Case' or name like '%German%'];
+                                    Where Name = 'Italy Service Agent' or Name = 'French Queue hotel case' or Name = 'Spain Queue Hotel Case' ];
             
-            if(queueIds.size()>3){
-                listCaseToInsert[0].OwnerId = queueIds[0].Id;
-                listCaseToInsert[1].OwnerId = queueIds[1].Id;
-                listCaseToInsert[2].OwnerId = queueIds[2].Id;
-                
-                for(case ca: listCaseToInsert){
-                    system.debug('ca' + ca);
-                }
-                update listCaseToInsert;
-            }
+            listCaseToInsert[0].OwnerId = queueIds[0].Id;
+            listCaseToInsert[1].OwnerId = queueIds[1].Id;
+            listCaseToInsert[2].OwnerId = queueIds[2].Id;
+            
+            update listCaseToInsert;
             
             
         }

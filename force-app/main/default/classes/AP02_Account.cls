@@ -114,7 +114,7 @@ public class AP02_Account
             AP02_Stay.UpdateTotalNights(listStayToUpdate , null,null);
             AP03_Stay.UpdateTotalRevenue(listStayToUpdate , null,null);
             AP05_Stay.UpdateMaxBookingMinArrival(listStayToUpdate , null,null);
-            //AP04_Opportunity.UpdateTotalTransactions(listOpportunityToUpdate, null, null); Commented by TMA-EIL CRMSS-579 16/04/2020 
+            AP04_Opportunity.UpdateTotalTransactions(listOpportunityToUpdate, null, null);
             update listBusinessAccountToUpdate;
         }
     }
@@ -139,8 +139,7 @@ public class AP02_Account
     }
     public static void updatePartnerShipFieldsWhenPartnerCodeChange(list<Account> triggerNew, map<Id,Account> oldMap)
     {
-        //Commented by TMA-EIL CRMSS-579 16/04/2020 
-       /* list<String> listPartnerCode = new list<string>();
+        list<String> listPartnerCode = new list<string>();
         for(Account acc:triggerNew)
         {
             if(acc.RecordTypeId != label.PersonAccountRecordTypeId && (oldMap==null || oldMap.get(acc.Id).Partner_Code__c != acc.Partner_Code__c))
@@ -151,7 +150,6 @@ public class AP02_Account
                 }
             }
         }
-        
         if(listPartnerCode.size() > 0)
         {
             list<Opportunity> listBookingAffected = [Select Id,Partner_Code__c,recordTypeId
@@ -160,6 +158,6 @@ public class AP02_Account
             AP03_Opportunity.UpdateTotalNightsPartnerShip(listBookingAffected ,null, null);
             AP03_Opportunity.UpdateTotalRevenuePartnerShip(listBookingAffected ,null, null);
             AP03_Opportunity.UpdateTotalTransactionsPartnerShip(listBookingAffected,null,null);
-        }*/
+        }
     }
 }

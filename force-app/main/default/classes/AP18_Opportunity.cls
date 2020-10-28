@@ -8,7 +8,7 @@
 
 public without sharing class AP18_Opportunity {
     
-    //method to fill the field opco of a masterbooking on after insert of a booking
+    //method to fill th field opco of a masterbooking on after insert of a booking
     public static void fillMBOpco(list<opportunity> listNewOpp){
 
         Id bookingRTId = Schema.SObjectType.Opportunity.getRecordTypeInfosByDeveloperName().get('Booking').getRecordTypeId();

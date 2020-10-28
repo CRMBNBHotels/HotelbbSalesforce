@@ -21,9 +21,10 @@ public without sharing class AP03_voucher {
         
         for(Id VoucherId : MapOldVouchers.Keyset()){
             
-            if(MapVouchers.get(VoucherId).Statut__c != MapOldVouchers.get(VoucherId).Statut__c){
+            if(MapVouchers.get(VoucherId).Statut__c != MapOldVouchers.get(VoucherId).Statut__c || MapVouchers.get(VoucherId).expireDate__c != MapOldVouchers.get(VoucherId).expireDate__c){
                 
                 SetOfFields.add('Statut__c');
+                SetOfFields.add('expireDate__c');
                 
                 if(SetOfFields != null && SetOfFields.size()>0){
                     
@@ -37,7 +38,7 @@ public without sharing class AP03_voucher {
         for (id Idcurr : MapVouchers.keySet())
         {
             String ConnectedUserId = userinfo.getUserId();
-            if(MapVouchers.get(Idcurr).Statut__c != MapOldVouchers.get(Idcurr).Statut__c 
+            if((MapVouchers.get(Idcurr).Statut__c != MapOldVouchers.get(Idcurr).Statut__c || MapVouchers.get(Idcurr).expireDate__c != MapOldVouchers.get(Idcurr).expireDate__c)
                && MapVouchers.get(Idcurr).Status_change_request__c ==  MapOldVouchers.get(Idcurr).Status_change_request__c
                && ConnectedUserId.substring(0,15) != label.technical_user_2_id )
             { 
@@ -65,10 +66,10 @@ public without sharing class AP03_voucher {
                 //If the info modified is related to personal info, set a list of fields modified and call a future method to perform the callout for BBUS
                 if((newMap.get(Idcurr).Status_change_request__c =='Processing' || 
                     newMap.get(Idcurr).Status_change_request__c == oldMap.get(Idcurr).Status_change_request__c ) && 
-                   newMap.get(Idcurr).Statut__c != oldMap.get(Idcurr).Statut__c){
+                   (newMap.get(Idcurr).Statut__c != oldMap.get(Idcurr).Statut__c || newMap.get(Idcurr).expireDate__c != oldMap.get(Idcurr).expireDate__c)){
                        
                        mapfieldModified.put('Statut__c',newMap.get(Idcurr).Statut__c);
-                       
+                       mapfieldModified.put('expireDate__c',string.valueof(newMap.get(Idcurr).expireDate__c));
                        //Call the future method
                        
                        system.debug('###cyn CallWSUpdateVoucherInfo newMap.get(Idcurr).externalID__c'+newMap.get(Idcurr).externalID__c);

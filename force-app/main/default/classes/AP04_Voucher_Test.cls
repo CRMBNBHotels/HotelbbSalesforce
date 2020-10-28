@@ -21,14 +21,14 @@ public class AP04_Voucher_Test {
         
         system.runAs(u){
             Id Voucher_RT_IR_Id = Schema.SObjectType.Voucher__c.getRecordTypeInfosByDeveloperName().get('IR').getRecordTypeId();
-            Id Case_RT_Case_linked_to_IR_Id = Schema.SObjectType.Case.getRecordTypeInfosByDeveloperName().get('Case_linked_to_IR').getRecordTypeId();
+            Id Case_Request_FR_Id = Schema.SObjectType.Case.getRecordTypeInfosByDeveloperName().get('Customers_Request_Feedback_France').getRecordTypeId();
             
             Account acc1=new Account();
             acc1.RecordTypeId=Schema.SObjectType.Account.getRecordTypeInfosByDeveloperName().get('PersonAccount').getRecordTypeId();
             acc1.LastName='test';
             insert acc1;
             
-            Case case1 = new Case(Status = 'Open', RecordTypeId=Case_RT_Case_linked_to_IR_Id);
+            Case case1 = new Case(Status = 'Open', RecordTypeId=Case_Request_FR_Id);
             insert case1;
             
             

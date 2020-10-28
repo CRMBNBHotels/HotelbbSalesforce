@@ -58,9 +58,7 @@ mapBookingRevenue.remove(bookingId);
         public Id bookingId {get;set;}
         
         public Night(Integer y, Integer nights, Id bkId) {
-            year = y;
-            nbrNights = nights;
-            bookingId = bkId;
+            year = y;  nbrNights = nights; bookingId = bkId;
         }
     }
     
@@ -70,9 +68,7 @@ mapBookingRevenue.remove(bookingId);
         public Id bookingId {get;set;}
         
         public Revenue(Integer y, decimal revenue, Id bkId) {
-            year = y;
-            bookingRevenue = revenue;
-            bookingId = bkId;
+            year = y;  bookingRevenue = revenue;  bookingId = bkId;
         }
     }
     
@@ -110,6 +106,7 @@ mapBookingRevenue.remove(bookingId);
         public Integer italy;
         public Integer poland;
         public Integer others;
+        public Integer austria; //Added by TMA-EIL CG CRMSS-851 04/09/2020
         
         public CountryPercentage() {
             france = 0;
@@ -118,6 +115,7 @@ mapBookingRevenue.remove(bookingId);
             italy = 0;
             poland = 0;
             others = 0; 
+            austria = 0;//Added by TMA-EIL CG CRMSS-851 04/09/2020
         }
         
         public void setFrance(Integer franceCounter) {
@@ -143,6 +141,12 @@ mapBookingRevenue.remove(bookingId);
         public void setOthers(Integer othersCounter) {
             others += othersCounter;
         }
+        
+        //Added by TMA-EIL CG CRMSS-851 04/09/2020 Start
+        public void setAustria(Integer austriaCounter) {
+            austria += austriaCounter;
+        }
+        //Added by TMA-EIL CG CRMSS-851 04/09/2020 End
     }
     
 }

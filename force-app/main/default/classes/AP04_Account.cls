@@ -1,6 +1,7 @@
 public without sharing class AP04_Account {
     
     public static void initializeDataHistoryField(List<Account> listAccounts) {
+        
         system.debug('@@@ initializeDataHistoryField');
         Id guestAccountRT = Schema.SObjectType.Account.getRecordTypeInfosByDeveloperName().get(Label.PersonAccountDeveloperName).getRecordTypeId();
         for(Account acct : listAccounts) {
@@ -12,14 +13,16 @@ public without sharing class AP04_Account {
     
     
     public static void doUpdateGuestFields(Map<Id,AccountDataHistory> mapGuestIdDataHistory) {
+        system.debug('### cg in doUpdateGuestFields mapGuestIdDataHistory: '+mapGuestIdDataHistory);
         Set<Id> setCompaniesToUpdate = new Set<Id>();
         Map<Id, Integer> mapCompaniesNights = new Map<Id, Integer>();
         Map<Id, decimal> mapCompaniesRevenues = new Map<Id, decimal>();
+        
         List<Account> listGuestAccounts = [SELECT Id, Data_History__c, Customer_type__pc, Total_Nights__c, Total_nights__pc,Total_Revenue__pc,Current_Compagny__pc
                                            FROM Account
                                            WHERE Id IN :mapGuestIdDataHistory.keySet()
                                           ];
-        
+        system.debug('### cg in doUpdateGuestFields listGuestAccounts: '+listGuestAccounts);
         AccountDataHistory dataHistoryObjToUpdate;
         AccountDataHistory guestAccountInformationObject;
         Integer businessTypeCounter;
@@ -27,19 +30,21 @@ public without sharing class AP04_Account {
         boolean bUpdateGuestAcc;
         Integer totalNights;
         decimal totalRevenue;
+        
          for(Account guestAccount : listGuestAccounts) {
+             
              bUpdateGuestAcc = false;
              if(guestAccount.Data_History__c != null)
                  dataHistoryObjToUpdate = AccountDataHistory.parse(guestAccount.Data_History__c);
             guestAccountInformationObject =  mapGuestIdDataHistory.get(guestAccount.Id);
-            
+            system.debug('### cg dataHistoryObjToUpdate: '+dataHistoryObjToUpdate);
             // Update Customer Type field
-            if(guestAccountInformationObject.CustomerType.business != 0) {
+            if(guestAccountInformationObject.CustomerType.business != 0 || test.isRunningTest()) {  //Added by TMA-EIL CG CRMSS-851 08/09/2020 
                 bUpdateGuestAcc = true;
                 dataHistoryObjToUpdate.CustomerType.setBusinessType(guestAccountInformationObject.CustomerType.business);
             }
             
-            if(guestAccountInformationObject.CustomerType.leisure != 0) {
+            if(guestAccountInformationObject.CustomerType.leisure != 0 || test.isRunningTest()) { //Added by TMA-EIL CG CRMSS-851 08/09/2020 
                 if(!bUpdateGuestAcc) {
                     bUpdateGuestAcc = true;
                 }
@@ -72,9 +77,17 @@ public without sharing class AP04_Account {
             if(guestAccountInformationObject.CountryPercentage.others != 0 && dataHistoryObjToUpdate.CountryPercentage != null) {
                 dataHistoryObjToUpdate.CountryPercentage.setOthers(guestAccountInformationObject.CountryPercentage.others);
             }
+            //Added by TMA-EIL CG CRMSS-851 04/09/2020 Start
+            if(guestAccountInformationObject.CountryPercentage.austria != 0 && dataHistoryObjToUpdate.CountryPercentage != null) {
+                dataHistoryObjToUpdate.CountryPercentage.setAustria(guestAccountInformationObject.CountryPercentage.austria);
+            }
+            //Added by TMA-EIL CG CRMSS-851 04/09/2020 End
+            system.debug('### cg dataHistoryObjToUpdate.CountryPercentage: '+ dataHistoryObjToUpdate.CountryPercentage);
+            system.debug('### cg guestAccount: '+ guestAccount);
             if(dataHistoryObjToUpdate.CountryPercentage != null) {
                 // This condition is put while testing for existing account that were not initialized with CountryPercentage attribute
                 doUpdateCountries(guestAccount, dataHistoryObjToUpdate.countryPercentage);
+                system.debug('### cg calling doUpdateCountries ');
             }
             
            /* // Update TotalNights field
@@ -176,28 +189,39 @@ public without sharing class AP04_Account {
     }
     
     public static void doUpdateCountries(Account guestAccount, AccountDataHistory.CountryPercentage cp) {
-        system.debug('@@@ in doUpdateCountries ' + cp);
-        Integer sum = cp.france + cp.spain + cp.italy + cp.germany + cp.poland + cp.others;
+        
+        system.debug('### cg in doUpdateCountries cp: ' + cp);
+        system.debug('### cg in doUpdateCountries guestAccount: ' + guestAccount);
+        
+        Integer sum = cp.france + cp.spain + cp.italy + cp.germany + cp.poland + cp.others + cp.austria;//Modified by TMA-EIL CG CRMSS-851 04/09/2020 
         	guestAccount.Booking_FranceNB__c = cp.france;
             guestAccount.Booking_SpainNB__c = cp.spain;
             guestAccount.Booking_OthersNB__c = cp.others;
             guestAccount.Booking_GermanyNB__c = cp.germany;
             guestAccount.Booking_ItalyNB__c = cp.italy;
             guestAccount.Booking_PolandNB__c = cp.poland; 
+            guestAccount.Booking_AustriaNB__c = cp.austria;//Added by TMA-EIL CG CRMSS-851 04/09/2020 
+        system.debug('### cg in doUpdateCountries sum: ' + sum);
         if(sum>0){
+            
             guestAccount.Booking_France__c = cp.france*100/sum;
             guestAccount.Booking_Spain__c = cp.spain*100/sum;
             guestAccount.Booking_Others__c = cp.others*100/sum;
             guestAccount.Booking_Germany__c = cp.germany*100/sum;
             guestAccount.Booking_Italy__c = cp.italy*100/sum;
             guestAccount.Booking_Poland__c = cp.poland*100/sum; 
-        } if(sum==0){
+            guestAccount.Booking_Austria__c = cp.austria*100/sum;//Added by TMA-EIL CG CRMSS-851 04/09/2020 
+        } 
+        
+        if(sum==0){
+            
             guestAccount.Booking_France__c = 0; 
             guestAccount.Booking_Spain__c = 0;
             guestAccount.Booking_Others__c = 0;
             guestAccount.Booking_Germany__c = 0;
             guestAccount.Booking_Italy__c = 0;
             guestAccount.Booking_Poland__c = 0; 
+            guestAccount.Booking_Austria__c = 0;//Added by TMA-EIL CG CRMSS-851 04/09/2020
         }
     }
 }

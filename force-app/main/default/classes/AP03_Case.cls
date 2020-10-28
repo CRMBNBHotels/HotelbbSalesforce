@@ -18,18 +18,18 @@ public without sharing class AP03_Case {
     }
     //method to assign a web case to the user with the least number of assigned open cases in the queue owning the case
     public static void AssignCaseToUser (List<Case> newList, Map<ID,Case> mapOldCases){
-        system.debug('@@@ ap03 case AssignCaseToUser'); 
+        
         Map<String,String> mapCaseQueue = new Map<String,String>();
         
         //Filter the cases to work on the ones that originate from the web, are open and owned by a queue only
         For(Case cas : newList){
             
             String OwnerIdString = cas.OwnerId;
-            system.debug('OwnerId'+cas.OwnerId);
+            
             if( (mapOldCases == null || (mapOldCases != null && mapOldCases.get(cas.id).ownerid!=cas.OwnerId) ) ){
                 if(mapOldCases != null && OwnerIdString.substring(0,3) == '005' ){
                     String OwnerIdStringOld = mapOldCases.get(cas.id).OwnerId;
-                    if(OwnerIdStringOld.substring(0,3) == '00G'){
+                    if(OwnerIdStringOld !=null && OwnerIdStringOld.substring(0,3) == '00G'){ 
                         cas.Tech_case_queue__c = mapOldCases.get(cas.id).Tech_old_queu_name__c;
                     }
                 }else if(OwnerIdString.substring(0,3) == '00G' ){
@@ -39,9 +39,9 @@ public without sharing class AP03_Case {
             }
             //if 
         }
-        system.debug('mapCaseQueue'+mapCaseQueue);
+        
         List<GroupMember> listUserQueue = [select Id, GroupId, UserOrGroupId from GroupMember where GroupId IN : mapCaseQueue.values()]; 
-        system.debug('listUserQueue'+listUserQueue);
+        
         Map<String,set<String>> mapQueueListUser = new Map<String,set<String>>();
         Set<String> setUserId = new Set<String>();
         Set<String> setQueueUsers;
@@ -54,12 +54,12 @@ public without sharing class AP03_Case {
                 setQueueUsers = new  Set<String>();
             }
             String UserOrGroupIdString = grpMbr.UserOrGroupId;
-            system.debug('UserOrGroupIdString first '+ UserOrGroupIdString);
+            
             if(UserOrGroupIdString.substring(0,3) == '005'){
                 if(!setUserId.contains(UserOrGroupIdString)){
                     setUserId.add(UserOrGroupIdString);
                 }
-                if(!setQueueUsers.contains(UserOrGroupIdString)){
+                if(!setQueueUsers.contains(UserOrGroupIdString) && UserOrGroupIdString != null){
                     setQueueUsers.add(UserOrGroupIdString);
                 }
                 mapQueueListUser.put(grpMbr.GroupId,setQueueUsers);
@@ -68,11 +68,12 @@ public without sharing class AP03_Case {
                 PublicGrpQueID.put(UserOrGroupIdString,grpMbr.GroupId);
             }
         }
-        system.debug('PublicGrpQueID first '+ PublicGrpQueID);
+        
         if(PublicGrpQueID != null && PublicGrpQueID.size()>0){
             List<GroupMember> listUserPG = [select Id, GroupId, UserOrGroupId from GroupMember where GroupId IN : PublicGrpQueID.keyset()]; 
-            system.debug('listUserPG first '+ listUserPG);
+            
             For(GroupMember grpMbr : listUserPG){
+                
                 //Modified by TMA-EIL CG CRMSS-774 06/07/2020 Start
                 if(mapQueueListUser.containsKey(PublicGrpQueID.get(grpMbr.GroupId)) && mapQueueListUser.get(PublicGrpQueID.get(grpMbr.GroupId)) != null){
                     
@@ -82,13 +83,16 @@ public without sharing class AP03_Case {
                     setQueueUsers = new Set<String>();
                 }
                 //Modified by TMA-EIL CG CRMSS-774 06/07/2020 End
+                
                 String UserOrGroupIdString = grpMbr.UserOrGroupId;
-                system.debug('UserOrGroupIdString second '+ UserOrGroupIdString);
                 if(UserOrGroupIdString.substring(0,3) == '005'){
+                    
                     if(!setUserId.contains(UserOrGroupIdString)){
+                        
                         setUserId.add(UserOrGroupIdString);
                     }
-                    if(!setQueueUsers.contains(UserOrGroupIdString)){
+                    if(!setQueueUsers.contains(UserOrGroupIdString) && UserOrGroupIdString!= null){
+                        
                         setQueueUsers.add(UserOrGroupIdString);
                     }
                     mapQueueListUser.put(PublicGrpQueID.get(grpMbr.GroupId),setQueueUsers);
@@ -96,12 +100,12 @@ public without sharing class AP03_Case {
                 }
             }
         }
-        system.debug('setQueueUsers  '+ setQueueUsers);
         //Retrieve all the open cases that are assigned to the members of the queue
+        
         List<Case> listCase = [Select Id, OwnerId
                                From Case
-                               Where OwnerId IN : setQueueUsers]; 
-        system.debug('listCase  '+ listCase);
+                               Where OwnerId IN : setQueueUsers and status != 'Closed' and status != 'Closed Done' and ClosedDate = null]; 
+        
         //Calculate the number of open cases assigned to each member of the queue
         Map<String, Integer> mapCount = new Map<String, integer>();
         
@@ -178,20 +182,16 @@ public without sharing class AP03_Case {
     
     //method to send an email to a user whenever a case is assigned to him
     public static void SendEmailToCaseOwner(List<Case> newList, map<Id,Case> oldMap){
-        system.debug('@@@ ap03 case SendEmailToCaseOwner');
+        
         Map<String,String> mapTypeValue = getItemsList();
         list<Case> listCase = new list<Case>();
         
         for(Case cas: newList)
         {
-            System.debug('@@@ cas.OwnerId'+cas.OwnerId);
-            System.debug('@@@ oldMap.get(cas.Id).OwnerId'+oldMap.get(cas.Id).OwnerId);
             if(cas.OwnerId != oldMap.get(cas.Id).OwnerId)
             {
-                System.debug('@@@ cas.OwnerId'+cas.OwnerId);
                 listCase.add(cas);
             }
-            System.debug('@@@ listCase'+listCase);
         }
         
         Map<String, String> mapCaseOwnerId = new Map<String, String>();
@@ -208,13 +208,13 @@ public without sharing class AP03_Case {
         }
         
         //Added by TMA-EIL CG CRMSS-712 30/06/2020 Start
-        list<Case> listQuerriedCase = new list<Case>([select id, OwnerId, SuppliedEmail,SuppliedPhone, contactId, contact.email__c, contact.MobilePhone, Hotel_Name_1__c, CaseNumber, Subject, Type, Last_Name__c, First_Name__c, E_club_ID__c, Guest_Adress__c,Zip_code__c,City__c,Country__c,Description,  Arrival_Date__c, Departure_date__c, ThreadId_Case__c 
+        list<Case> listQuerriedCase = new list<Case>([select id, OwnerId, concerned_country__c, SuppliedEmail,SuppliedPhone, contactId, contact.email__c, contact.MobilePhone, Hotel_Name_1__c, CaseNumber, Subject, Salesforce_Case_Type__c,Type, Last_Name__c, First_Name__c, E_club_ID__c, Guest_Adress__c,Zip_code__c,City__c,Country__c,Description,  Arrival_Date__c, Departure_date__c, ThreadId_Case__c 
                                                       from case
                                                       where id in:mapCaseOwnerId.KeySet()]);
         //Added by TMA-EIL CG CRMSS-712 30/06/2020 End
         
         List<User> listUser = [select id, Email, FirstName, LastName from user where Id IN : mapCaseOwnerId.values()];
-        system.debug('@@@ listUser'+listUser);
+        
         For(User user : listUser){
             
             mapOwnerIdEmail.put(user.id,user.Email);
@@ -231,11 +231,6 @@ public without sharing class AP03_Case {
         
         for(Case cas : listQuerriedCase){
             
-            system.debug('listCase ' + listCase);
-            system.debug('listCase.size() ' + listCase.size());
-            system.debug('listQuerriedCase ' + listQuerriedCase);
-            system.debug('listQuerriedCase.size() ' + listQuerriedCase.size());
-            
             if(mapOwnerIdEmail.ContainsKey(cas.OwnerId)){
                 
                 if(mapOwnerIdEmail.get(cas.OwnerId) != null){
@@ -245,14 +240,33 @@ public without sharing class AP03_Case {
                     Messaging.SingleEmailMessage mail = Utils.CreateSingleEmailMessage(sendTo,null,cas.OwnerId,null,emailTemplateObj.Id,Label.Email_NoReplyHotelBB);
                     mail.setSaveAsActivity(false);
                     mail.setTreatTargetObjectAsRecipient(false);
-                    system.debug('cas.Hotel_Name_1__c '+cas.Hotel_Name_1__c);
                     subject = subject.replace('{!Organization.Name}', orgName);
                     subject = subject.replace('{!Case.CaseNumber}', cas.CaseNumber);
-                    subject = subject.replace('{!Case.Subject}', mapTypeValue.containskey(cas.Type)?mapTypeValue.get(cas.Type):cas.Type);
-                    mail.setSubject(subject);
                     
+                    if(cas.concerned_country__c != 'FR' && cas.concerned_country__c != 'ES' && cas.concerned_country__c != 'PT'){ subject = subject.replace('{!Case.Subject}', mapTypeValue.containskey(cas.Type)?mapTypeValue.get(cas.Type):cas.Type);
+                    }
+                    else{
+                        //subject = subject.replace('{!Case.Subject}', mapTypeValue.containskey(cas.Salesforce_Case_Type__c)?mapTypeValue.get(cas.Salesforce_Case_Type__c):cas.Salesforce_Case_Type__c);
+                        if(mapTypeValue.containskey(cas.Salesforce_Case_Type__c)){
+                            subject = subject.replace('{!Case.Type}',mapTypeValue.get(cas.Salesforce_Case_Type__c));
+                        }
+                        else if(cas.Salesforce_Case_Type__c != null){subject = subject.replace('{!Case.Type}',cas.Salesforce_Case_Type__c);
+                        }
+                    }
+                    
+                    mail.setSubject(subject);
                     plainBody = plainBody.replace('{!Case.CaseNumber}', cas.CaseNumber);
-                    plainBody = plainBody.replace('{!Case.Type}', mapTypeValue.containskey(cas.Type)?mapTypeValue.get(cas.Type):cas.Type);
+                    if(cas.concerned_country__c != 'FR' && cas.concerned_country__c != 'ES' && cas.concerned_country__c != 'PT'){
+                        plainBody = plainBody.replace('{!Case.Type}', mapTypeValue.containskey(cas.Type)?mapTypeValue.get(cas.Type):cas.Type);
+                    } else {
+                        //plainBody = plainBody.replace('{!Case.Type}', mapTypeValue.containskey(cas.Salesforce_Case_Type__c)?mapTypeValue.get(cas.Salesforce_Case_Type__c):cas.Salesforce_Case_Type__c);
+                        
+                        if(mapTypeValue.containskey(cas.Salesforce_Case_Type__c)){plainBody = plainBody.replace('{!Case.Type}',mapTypeValue.get(cas.Salesforce_Case_Type__c));
+                        }
+                        else if(cas.Salesforce_Case_Type__c != null){plainBody = plainBody.replace('{!Case.Type}',cas.Salesforce_Case_Type__c);
+                        }
+                    }
+                    
                     if(cas.Hotel_Name_1__c != null){
                         //modified tkt MS-3072 21/02/2020
                         plainBody = plainBody.replace('{!Case.Hotel_Name_1__c}', cas.Hotel_Name_1__c);
@@ -261,6 +275,7 @@ public without sharing class AP03_Case {
                         plainBody = plainBody.replace('{!Case.Hotel_Name_1__c}', ' '); 
                     }
                     //end
+                    
                     if(cas.Last_Name__c != null){
                         plainBody = plainBody.replace('{!Case.Last_Name__c}', cas.Last_Name__c);
                     }
@@ -281,23 +296,23 @@ public without sharing class AP03_Case {
                     }
                     
                     //Added by TMA-EIL CG CRMSS-712 30/06/2020 Start
-                    if(cas.SuppliedEmail != null){system.debug('### cg cas.SuppliedEmail'+cas.SuppliedEmail);
+                    if(cas.SuppliedEmail != null){
                                                   plainBody = plainBody.replace('{!Case.SuppliedEmail}', cas.SuppliedEmail);
                                                  }
-                    else if(cas.SuppliedEmail == null && cas.contactId != null && cas.contact.Email__c != null){system.debug('### cg cas.contact.Email__c'+cas.contact.Email__c);
+                    else if(cas.SuppliedEmail == null && cas.contactId != null && cas.contact.Email__c != null){
                                                                                                                 plainBody = plainBody.replace('{!Case.SuppliedEmail}', cas.contact.Email__c); 
                                                                                                                }
-                    else{system.debug('### cg Case.SuppliedEmail empty'+cas.SuppliedEmail);system.debug('### cg cas.contact.Email__c with null supplied'+cas.contact.Email__c);
+                    else{
                          plainBody = plainBody.replace('{!Case.SuppliedEmail}', ' '); 
                         }
-                    if(cas.SuppliedPhone != null){system.debug('### cg cas.SuppliedPhone'+cas.SuppliedPhone);
+                    if(cas.SuppliedPhone != null){
                                                   plainBody = plainBody.replace('{!Case.SuppliedPhone}', cas.SuppliedPhone);
                                                  }
-                    else if(cas.SuppliedPhone == null && cas.contactId != null && cas.contact.MobilePhone != null){system.debug('### cg cas.contact.MobilePhone'+cas.contact.MobilePhone);
+                    else if(cas.SuppliedPhone == null && cas.contactId != null && cas.contact.MobilePhone != null){
                                                                                                                    plainBody = plainBody.replace('{!Case.SuppliedPhone}', cas.contact.MobilePhone); 
                                                                                                                   }
                     else{
-                        plainBody = plainBody.replace('{!Case.SuppliedPhone}', ' '); system.debug('### cg Case.SuppliedPhone empty'+cas.SuppliedPhone);system.debug('### cg cas.contact.MobilePhone with null supplied'+cas.contact.MobilePhone);
+                        plainBody = plainBody.replace('{!Case.SuppliedPhone}', ' '); 
                     }
                     //Added by TMA-EIL CG CRMSS-712 30/06/2020 End
                     
@@ -350,7 +365,6 @@ public without sharing class AP03_Case {
                 }
             }
         }
-        system.debug(' listMails ' + listMails);
         Messaging.sendEmail(listMails);    
         
         

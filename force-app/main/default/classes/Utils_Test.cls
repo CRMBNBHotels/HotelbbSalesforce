@@ -20,12 +20,12 @@ public class Utils_Test {
       Booking.Master_Booking_fk__c = MasterBooking.Id;
       Booking.StageName = label.ClosedWonStage;
       insert Booking;
-      //Stay__c stay = Utils.CreateStay(Person.Id,Booking.Id);
-      //insert stay;
+      Stay__c stay = Utils.CreateStay(Person.Id,Booking.Id);
+      insert stay;
       Booking_Room_Line__c roomLine = Utils.CreateBookingRoomLine(Booking.Id);
       insert roomLine;
-      //Booking_Room_Line_Price__c roomPrice = Utils.CreateBookingRoomLinePrice(roomLine.Id, 100);
-      //insert roomPrice;
+      Booking_Room_Line_Price__c roomPrice = Utils.CreateBookingRoomLinePrice(roomLine.Id, 100);
+      insert roomPrice;
       Contract contract = Utils.CreateContract();
       contract.AccountId = Partner.Id;
       insert contract;
@@ -33,8 +33,8 @@ public class Utils_Test {
       insert hotel;
       Case cas = Utils.CreateCase();
       insert cas;
-      //Hotel_Room_Option__c hotelRoomOptionAndCode = Utils.CreateHotelRoomOptionAndCode();
-      //insert hotelRoomOptionAndCode;
+      Hotel_Room_Option__c hotelRoomOptionAndCode = Utils.CreateHotelRoomOptionAndCode();
+      insert hotelRoomOptionAndCode;
       Product2 prod = Utils.CreateProduct();
       prod.Name = 'prod1';
       insert prod;

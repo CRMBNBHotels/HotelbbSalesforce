@@ -9,6 +9,7 @@ public without sharing class LC02_WSDataTable_Controller {
     @AuraEnabled
     public static ResultWrapper loadTableInformation(String bbObjectName, boolean includePaging, String pageKey, Id sfdcId, String PageDateKey) {
         system.debug('### pageKey ' + pageKey);
+        system.debug('### includePaging ' + includePaging);
         ResultWrapper wrapper = new ResultWrapper();
         try {
             system.debug('##### sfdcId ' + sfdcId);

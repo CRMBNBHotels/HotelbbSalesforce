@@ -5,7 +5,6 @@
 * @Test: Utils_Test
 */
 public class Utils {
-    
     public static Account CreatePersonAccount(string Name, string companyId){
         Account acc = new Account(lastName = Name, recordTypeId = Label.PersonAccountRecordTypeId,
                                   Current_Compagny__pc = companyId, BillingCountry = 'France');//, recordTypeId = Label.PersonAccountRecordTypeId
@@ -16,7 +15,7 @@ public class Utils {
         return cont;
     }
     public static Account CreatePartnerAccount(string Name, string partnerCode){
-        Account acc = new Account(recordTypeId = label.PartnerRecordTypeID,Name = Name,  Partner_Code__c = partnerCode, BillingPostalCode = '12345', BillingCountry = 'France');//recordTypeId = label.PartnerRecordTypeID,
+        Account acc = new Account(Name = Name,  Partner_Code__c = partnerCode, BillingPostalCode = '12345', BillingCountry = 'France');//recordTypeId = label.PartnerRecordTypeID,
         return acc;
     }
     public static Opportunity CreateBookingOpportunity(string Name){
@@ -32,10 +31,10 @@ public class Utils {
         Booking_Room_Line__c roomLine = new Booking_Room_Line__c(Booking_FK__c = bookingId);
         return roomLine;
     }
-    /*public static Booking_Room_Line_Price__c CreateBookingRoomLinePrice(string bookingRoomLineId, decimal price){
+    public static Booking_Room_Line_Price__c CreateBookingRoomLinePrice(string bookingRoomLineId, decimal price){
         Booking_Room_Line_Price__c roomPrice = new Booking_Room_Line_Price__c(Booking_Room_Line_FK__c = bookingRoomLineId, Price_euros__c = price);
         return roomPrice;
-    }*/
+    }
     public static Contract CreateContract(){
         Contract cont = new Contract();
         return cont;
@@ -52,14 +51,14 @@ public class Utils {
         Case cas = new Case();
         return cas;
     }
-    /*public static Hotel_Room_Option__c CreateHotelRoomOptionAndCode(){
+    public static Hotel_Room_Option__c CreateHotelRoomOptionAndCode(){
         Hotel_Room_Option__c hotelRoomOptionAndCode = new Hotel_Room_Option__c();
         return hotelRoomOptionAndCode;
     }
     public static Stay__c CreateStay(string AccountId, string BookingId){
         Stay__c stay = new Stay__c(Guest_Account__c = AccountId , Booking__c = BookingId);
         return stay;
-    }*/
+    }
     public static Messaging.SingleEmailMessage CreateSingleEmailMessage(string[] toAddresses,string[] CcAddresses,Id targetId,
                                                                         Id whatId,string templateId,string ReplyEmail){
         Messaging.SingleEmailMessage singleEmailMessage = new Messaging.SingleEmailMessage();                    
@@ -71,21 +70,5 @@ public class Utils {
         singleEmailMessage.SetReplyTo(ReplyEmail);  
         singleEmailMessage.setSenderDisplayName(ReplyEmail);
         return singleEmailMessage;
-    }
-    
-    //Added by JK 20/07/2020 new Data Model
-    public static Buket_of_booking__c CreateBucket(string PAccountId,String ExtId){
-        Buket_of_booking__c Bucket = new Buket_of_booking__c(Personal_Account__c = PAccountId, EXTERNALID__c = ExtId );
-        return Bucket;
-    }
-    
-    public static Booking__c CreateBooking(string BucketID,String ExtId){
-        Booking__c Booking = new Booking__c(Bucket_of_booking__c = BucketID, EXTERNALID__c = ExtId );
-        return Booking;
-    }
-    
-    public static Booking_Room_Line_V2__c CreateBRL(string BookingId,String ExtId){
-        Booking_Room_Line_V2__c BRL = new Booking_Room_Line_V2__c(Booking__c = BookingId, EXTERNALID__c = ExtId );
-        return BRL;
     }
 }

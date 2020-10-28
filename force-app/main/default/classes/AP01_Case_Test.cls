@@ -10,6 +10,10 @@ public class AP01_Case_Test
     static testMethod void InsertWebCase()
     {
         String compRecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Company').getRecordTypeId();
+        string deCaseRecordtypeId = Schema.SObjectType.Case.getRecordTypeInfosByName().get('Customers Request / Claim / Feedback (Germany/Austria)').getRecordTypeId();
+        string itCaseRecordtypeId = Schema.SObjectType.Case.getRecordTypeInfosByName().get('Customers Request / Claim / Feedback (Italy)').getRecordTypeId();
+        string frCaseRecordtypeId = Schema.SObjectType.Case.getRecordTypeInfosByName().get('Customers Request / Claim / Feedback (France)').getRecordTypeId();
+        string esCaseRecordtypeId = Schema.SObjectType.Case.getRecordTypeInfosByName().get('Customer Request / Claim / Feedback (Spain/Portugal)').getRecordTypeId();
         
         /*Account PartnerAccount = Utils.CreatePartnerAccount('Partner',null);    
         PartnerAccount.RecordTypeId = compRecordTypeId;
@@ -62,7 +66,7 @@ public class AP01_Case_Test
         Case cas = Utils.CreateCase();
         cas.Origin = 'Web';
         cas.Type = label.Information_request;
-        cas.RecordTypeId = Label.Case_RT_CustomersRequestFeedback;
+        cas.RecordTypeId = itCaseRecordtypeId;
         cas.Hotel_ID__c = hotel.Hotel_ID__c;
         cas.SuppliedEmail = 'customer1@gmail.com';
         cas.First_Name__c = 'First1';
@@ -73,7 +77,7 @@ public class AP01_Case_Test
         Case cas1 = Utils.CreateCase();
         cas1.Origin = 'Web';
         cas1.Type = label.Information_request;
-        cas.RecordTypeId = Label.Case_RT_CustomersRequestFeedback;
+        cas.RecordTypeId = frCaseRecordtypeId;
         cas1.Hotel_ID__c = hotel1.Hotel_ID__c;
         cas1.SuppliedEmail = 'customer@gmail.com';
         cas1.Concerned_country__c = 'FR';
@@ -84,7 +88,7 @@ public class AP01_Case_Test
         Case cas2 = Utils.CreateCase();
         cas2.Origin = 'Web';
         cas2.SuppliedEmail = 'Person@hotmail.com';//'Person2@hotmail.com';
-        cas.RecordTypeId = Label.Case_RT_CustomersRequestFeedback;
+        cas.RecordTypeId = esCaseRecordtypeId;
         cas1.Hotel_ID__c = hotel2.Hotel_ID__c;
         cas2.First_Name__c = 'First3';
         cas2.Last_Name__c = 'Last3';
@@ -94,7 +98,7 @@ public class AP01_Case_Test
         Case cas3 = Utils.CreateCase();
         cas3.Origin = 'Web';
         cas3.SuppliedEmail = 'Personn@hotmail.com';//'Person2@hotmail.com';
-        cas3.RecordTypeId = Label.Case_RT_CustomersRequestFeedback;
+        cas3.RecordTypeId = esCaseRecordtypeId;
         cas3.Hotel_ID__c = hotel3.Hotel_ID__c;
         cas3.First_Name__c = 'First3';
         cas3.Last_Name__c = 'Last3';
@@ -104,17 +108,17 @@ public class AP01_Case_Test
         Case cas4 = Utils.CreateCase();
         cas4.Origin = 'Web';
         cas4.SuppliedEmail = 'Personnn@hotmail.com';//'Person2@hotmail.com';
-        cas4.RecordTypeId = Label.Case_RT_CustomersRequestFeedback;
-        cas4.Hotel_ID__c = hotel4.Hotel_ID__c;
+        cas4.RecordTypeId = deCaseRecordtypeId;
+        cas4.Hotel_ID__c = hotel1.Hotel_ID__c;
         cas4.First_Name__c = 'First3';
         cas4.Last_Name__c = 'Last3';
-        cas4.Concerned_country__c = 'ES';
+        cas4.Concerned_country__c = 'DE';
         listCaseToInsert.add(cas4); 
         
         Case cas5 = Utils.CreateCase();
         cas5.Origin = 'Web';
         cas5.SuppliedEmail = 'Personnn2@hotmail.com';//'Person2@hotmail.com';
-        cas5.RecordTypeId = Label.Case_RT_CustomersRequestFeedback_ES_PT;
+        cas5.RecordTypeId = esCaseRecordtypeId;
         cas5.Hotel_ID__c = hotel4.Hotel_ID__c;
         cas5.First_Name__c = 'First3';
         cas5.Last_Name__c = 'Last3';
@@ -122,6 +126,30 @@ public class AP01_Case_Test
         cas5.type = 'Information request';
         cas5.Description = 'testing';
         listCaseToInsert.add(cas5); 
+        
+        Case cas6 = Utils.CreateCase();
+        cas6.Origin = 'Web';
+        cas6.SuppliedEmail = 'Personnn6@hotmail.com';//'Person2@hotmail.com';
+        cas6.RecordTypeId = itCaseRecordtypeId;
+        cas6.Hotel_ID__c = hotel4.Hotel_ID__c;
+        cas6.First_Name__c = 'First6';
+        cas6.Last_Name__c = 'Last6';
+        cas6.Concerned_country__c = 'IT';
+        cas6.type = label.Case_type_FeedbackOnYourStay;
+        cas6.Description = 'testing';
+        listCaseToInsert.add(cas6); 
+        
+        Case cas7 = Utils.CreateCase();
+        cas7.Origin = 'Web';
+        cas7.SuppliedEmail = 'Personnn7@hotmail.com';//'Person2@hotmail.com';
+        cas7.RecordTypeId = esCaseRecordtypeId;
+        cas7.Hotel_ID__c = hotel3.Hotel_ID__c;
+        cas7.First_Name__c = 'First7';
+        cas7.Last_Name__c = 'Last7';
+        cas7.Concerned_country__c = 'IT';
+        cas7.type = label.Case_Type_CustomerClaim;
+        cas7.Description = 'testing';
+        listCaseToInsert.add(cas7); 
         
         insert listCaseToInsert;
         

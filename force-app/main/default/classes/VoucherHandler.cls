@@ -31,7 +31,22 @@ public without sharing class VoucherHandler {
            || !UtilsBypass.canISkipApexClass('AP01_Voucher') 
            || !UtilsBypass.canISkipApexMethod('FillInvitationInformationOnCreation')){
                
-               AP01_Voucher.FillInvitationInformationOnCreation(Trigger.new);
+               String VoucherOCRT = Schema.SObjectType.Voucher__c.getRecordTypeInfosByName().get('OC').getRecordTypeId();
+               list<Voucher__c> listFilteredVouchers = new list<Voucher__c>();
+               
+               For(Voucher__c voucher : newRecords){
+                   
+                   if(voucher.RecordTypeId != VoucherOCRT){
+                       
+                       listFilteredVouchers.add(voucher);
+                   }
+               }
+               
+               if(listFilteredVouchers != null && listFilteredVouchers.size()>0){
+                   
+                   AP01_Voucher.FillInvitationInformationOnCreation(listFilteredVouchers);
+               }
+               
            }
         
         // UtilsMethodeForAccount.flowWithTheCommonValueFromAccountSetting(newRecords);
@@ -44,7 +59,7 @@ public without sharing class VoucherHandler {
         if((UtilsBypass.getUserBypassApexClass() != null && !UtilsBypass.getUserBypassApexClass().contains('AP04_Voucher') ) //
            || !UtilsBypass.canISkipApexClass('AP04_Voucher') 
            || !UtilsBypass.canISkipApexMethod('vouchHelper')){
-               
+               System.debug('jull Before insert ap04_voucher');
                AP04_Voucher.vouchHelper(Trigger.new, null);
            }
         
@@ -100,7 +115,21 @@ public without sharing class VoucherHandler {
            || !UtilsBypass.canISkipApexClass('AP01_Voucher') 
            || !UtilsBypass.canISkipApexMethod('FillInvitationInformationOnModification')){
                
-               AP01_Voucher.FillInvitationInformationOnModification(Trigger.new);
+               String VoucherOCRT = Schema.SObjectType.Voucher__c.getRecordTypeInfosByName().get('OC').getRecordTypeId();
+               list<Voucher__c> listFilteredVouchers = new list<Voucher__c>();
+               
+               For(Voucher__c voucher : updatedRecords){
+                   
+                   if(voucher.RecordTypeId != VoucherOCRT){
+                       
+                       listFilteredVouchers.add(voucher);
+                   }
+               }
+               
+               if(listFilteredVouchers != null && listFilteredVouchers.size()>0){
+                   
+                   AP01_Voucher.FillInvitationInformationOnModification(listFilteredVouchers);
+               }
            } 
         
         if((UtilsBypass.getUserBypassApexClass() != null && !UtilsBypass.getUserBypassApexClass().contains('AP03_voucher')) 
@@ -109,11 +138,13 @@ public without sharing class VoucherHandler {
                
                AP03_voucher.Voucher_update(recordMap, recordMapOld); // line added by jad 15-04-2019        
            } 
-        
+        system.debug('1 '+(UtilsBypass.getUserBypassApexClass() != null && !UtilsBypass.getUserBypassApexClass().contains('AP04_Voucher')));
+        system.debug('2 '+!UtilsBypass.canISkipApexClass('AP04_Voucher'));
+        system.debug('2 '+!UtilsBypass.canISkipApexClass('vouchHelper'));
         if((UtilsBypass.getUserBypassApexClass() != null && !UtilsBypass.getUserBypassApexClass().contains('AP04_Voucher')) 
            || !UtilsBypass.canISkipApexClass('AP04_Voucher') 
            || !UtilsBypass.canISkipApexMethod('vouchHelper')){
-               
+               System.debug('jull Before update ap04_voucher');
                AP04_Voucher.vouchHelper(updatedRecords, recordMapOld);
            }
         
