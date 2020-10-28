@@ -10,6 +10,10 @@
 public class Account_Handler_Test {
     public static testMethod void checkEClubStatus()
     {
+<<<<<<< HEAD
+=======
+        //it's a test CICIIII HIIIIII
+>>>>>>> 28bc8bc57d4ea3af682c1039e9298d63bf94550c
         Account acc1=new Account();
         acc1.RecordTypeId=Schema.SObjectType.Account.getRecordTypeInfosByDeveloperName().get('PersonAccount').getRecordTypeId();
         acc1.LastName='test';
