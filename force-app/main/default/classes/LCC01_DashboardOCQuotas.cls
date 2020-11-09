@@ -14,7 +14,7 @@ public with sharing class LCC01_DashboardOCQuotas {
 
         ReturnedInfo ret = new ReturnedInfo();
         List<Master_Voucher__c> listMV = new List<Master_Voucher__c>();
-        integer nbExistingVouchOc = 0;
+        Double nbExistingVouchOc = 0;
 
         list<Contact_Role__c> listContRole = new list<Contact_Role__c>([Select Id, Role__c, Contact__r.Email From Contact_Role__c Where Contact__r.Email =: userEmail Limit 1]);
 
@@ -22,7 +22,7 @@ public with sharing class LCC01_DashboardOCQuotas {
 
             listMV = [Select Id , Nombre_de_copie_s__c, Pr_nom_Nom_de_l_m_tteur__r.Email From Master_Voucher__c where Pr_nom_Nom_de_l_m_tteur__r.Email =: userEmail];
 
-            if(listMV != null && userEmail.size()>0){
+            if(listMV != null && listMV.size()>0){
 
                 for(Master_Voucher__c mvOC : listMV){
 
