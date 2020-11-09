@@ -38,6 +38,6 @@ public with sharing class LCC01_DashboardOCQuotas {
 
     public class ReturnedInfo{
         
-        @AuraEnabled public integer remainingVouchOC;
+        @AuraEnabled public double remainingVouchOC;
     }
 }
