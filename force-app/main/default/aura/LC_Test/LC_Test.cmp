@@ -54,7 +54,7 @@
                             <lightning:inputField fieldName="Valable_dans_cet_h_tel__c" />
                             <lightning:inputField fieldName="P_riode_de_validit__c" />
                             <lightning:inputField fieldName="Dur_e_de_validit__c" />
-                            <lightning:inputField fieldName="Nombre_de_copie_s__c" />
+                            <lightning:inputField aura:id = "copies" fieldName="Nombre_de_copie_s__c" />
                         </div>
                     </div>
                     <lightning:button class="slds-button slds-button_success Dashboard" type="submit" label="Sauvegarder" />

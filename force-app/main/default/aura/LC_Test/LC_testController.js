@@ -9,6 +9,9 @@
         event.preventDefault();       // stop the form from submitting
      
         //CRMSS-868 05/11/2020
+        var copies = component.find("copies").get('v.value');
+        component.set("v.nbVouchOC", copies);
+        
         var action = component.get("c.GetRemainingQuotas");
         action.setParams({ 
             userEmail : component.get('v.emitEmail'),
