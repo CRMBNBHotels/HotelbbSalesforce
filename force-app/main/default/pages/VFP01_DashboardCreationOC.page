@@ -6,7 +6,7 @@
         <div id="Con" />
         <script>
         //CRMSS-868 05/11/2020 
-        var emitEmail = "{!$CurrentPage.parameters.id}";
+        var emitEmail = "{!$CurrentPage.parameters.user_email}";
         $Lightning.use("c:LA01_MasterVoucher", function() {
             $Lightning.createComponent(
                 "c:LC_test",

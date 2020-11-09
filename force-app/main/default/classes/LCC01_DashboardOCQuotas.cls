@@ -10,7 +10,7 @@
 public with sharing class LCC01_DashboardOCQuotas {
 
     @AuraEnabled
-    public static GetRemainingQuotas(string userEmail, integer nbCopies) {
+    public static ReturnedInfo GetRemainingQuotas(string userEmail, integer nbCopies) {
 
         ReturnedInfo ret = new ReturnedInfo();
         List<Master_Voucher__c> listMV = new List<Master_Voucher__c>();

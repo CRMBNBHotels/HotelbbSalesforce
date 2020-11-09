@@ -1,4 +1,4 @@
-<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,lightning:isUrlAddressable">
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,lightning:isUrlAddressable" controller="LCC01_DashboardOCQuotas">
 
     <aura:attribute name="newRecordID" type="String"/>
     <aura:attribute name="consultMV" type="boolean" default="false"/>
@@ -6,6 +6,7 @@
     <!-- CRMSS-868 05/11/2020 Start-->
     <aura:attribute name="emitEmail" type="string"/>
     <aura:attribute name="nbVouchOC" type="integer"/>
+    <aura:attribute name="nbVouchOCremain" type="integer"/>
 
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     <!-- CRMSS-868 05/11/2020 End-->

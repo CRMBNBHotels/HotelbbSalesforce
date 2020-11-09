@@ -7,10 +7,50 @@
     handleSubmit: function(component, event, helper) {
        
         event.preventDefault();       // stop the form from submitting
+     
+        //CRMSS-868 05/11/2020
+        var action = component.get("c.GetRemainingQuotas");
+        action.setParams({ 
+            userEmail : component.get('v.emitEmail'),
+            nbCopies : component.get('v.nbVouchOC')
+        });
+
+        action.setCallback(this, function(response) {
+            
+            var state = response.getState();
+            
+            if(state === "SUCCESS") {
+                
+                var result = response.getReturnValue();   
+                console.log(result);
+                component.set("v.nbVouchOCremain", result.remainingVouchOC);
+
+                if(result.remainingVouchOC >= 0){
+
+                    var fields = event.getParam('fields');
+                    component.find('editForm').submit(fields);
+                }
+                else{
+                    helper.showErrorToast(component, event, helper);
+                }
+
+            }
+            
+            else if (state === "ERROR"){                
+                var errors = action.getError();
+                if (errors) {
+                    if (errors[0] && errors[0].message) {
+                        helper.setError(component, event, helper,errors[0].message,false);
+                    }
+                }
+            } 
+        });
         
-        component.set("v.nbVouchOC",record.Nombre_de_copie_s__c);//CRMSS-868 05/11/2020
-        var fields = event.getParam('fields');
-        component.find('editForm').submit(fields);
+        $A.enqueueAction(action);
+
+
+        //var fields = event.getParam('fields');
+        //component.find('editForm').submit(fields);
 		
     },
 
