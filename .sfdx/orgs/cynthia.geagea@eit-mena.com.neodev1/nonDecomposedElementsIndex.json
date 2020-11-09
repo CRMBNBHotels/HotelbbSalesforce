@@ -1,0 +1,607 @@
+{
+    "CustomLabels__AP01_Case_CA": {
+        "fullName": "AP01_Case_CA",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__AP01_Case_ES": {
+        "fullName": "AP01_Case_ES",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__AP01_Case_IT": {
+        "fullName": "AP01_Case_IT",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__AP01_Case_SpainEmail": {
+        "fullName": "AP01_Case_SpainEmail",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__AP06_Account_CreationChannel": {
+        "fullName": "AP06_Account_CreationChannel",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__AP06_Account_DatePurchase": {
+        "fullName": "AP06_Account_DatePurchase",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__AP06_Account_Hotel_Name_Subscription": {
+        "fullName": "AP06_Account_Hotel_Name_Subscription",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Account_CompteGenericID": {
+        "fullName": "Account_CompteGenericID",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__AutoCompleteKey": {
+        "fullName": "AutoCompleteKey",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__AutoCompleteSite": {
+        "fullName": "AutoCompleteSite",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__BBUS_BookingAPIKey": {
+        "fullName": "BBUS_BookingAPIKey",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__BBUS_BookingEndpoint": {
+        "fullName": "BBUS_BookingEndpoint",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__BBUS_HeaderAPIKey": {
+        "fullName": "BBUS_HeaderAPIKey",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__BBUS_LoyaltyEndpoint": {
+        "fullName": "BBUS_LoyaltyEndpoint",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__BBUS_NumberOfUnits": {
+        "fullName": "BBUS_NumberOfUnits",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__BBUS_UpdateAccountEClubEndpoint": {
+        "fullName": "BBUS_UpdateAccountEClubEndpoint",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__BBUS_UpdateAccountEndpoint": {
+        "fullName": "BBUS_UpdateAccountEndpoint",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__BBUS_VoucherAPIKey": {
+        "fullName": "BBUS_VoucherAPIKey",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__BBUS_VoucherEndpoint": {
+        "fullName": "BBUS_VoucherEndpoint",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__BBUS_VoucherEndpointUpdate": {
+        "fullName": "BBUS_VoucherEndpointUpdate",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__BBUS_WalletAPIKey": {
+        "fullName": "BBUS_WalletAPIKey",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__BBUS_WalletEndpointUpdate": {
+        "fullName": "BBUS_WalletEndpointUpdate",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__BBUS_WebservicesLink": {
+        "fullName": "BBUS_WebservicesLink",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__BatchHotelCountChecked_Ids": {
+        "fullName": "BatchHotelCountChecked_Ids",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__BatchRepAccountsBookingDates_Ids": {
+        "fullName": "BatchRepAccountsBookingDates_Ids",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__BatchRepBRLtoBooking_Ids": {
+        "fullName": "BatchRepBRLtoBooking_Ids",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__BatchRepBookingToMb_Ids": {
+        "fullName": "BatchRepBookingToMb_Ids",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__BatchReprise_BRLtoBooking_01": {
+        "fullName": "BatchReprise_BRLtoBooking_01",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__BatchSuppressionLogs_LimitDate": {
+        "fullName": "BatchSuppressionLogs_LimitDate",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__BatchUpdateMBIds_ConfNb_HotelName": {
+        "fullName": "BatchUpdateMBIds_ConfNb_HotelName",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__BatchUpdateMB_ConfNb_HotelName_WhereClause": {
+        "fullName": "BatchUpdateMB_ConfNb_HotelName_WhereClause",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__BodyAutoCompleteAddress": {
+        "fullName": "BodyAutoCompleteAddress",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__BodyLongLat": {
+        "fullName": "BodyLongLat",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__BookingRecordTypeId": {
+        "fullName": "BookingRecordTypeId",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__BookingRecordTypeName": {
+        "fullName": "BookingRecordTypeName",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Booking_Confirmation": {
+        "fullName": "Booking_Confirmation",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Booking_GenericID": {
+        "fullName": "Booking_GenericID",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__BusinessCustomerType": {
+        "fullName": "BusinessCustomerType",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__CaseWebOrigin": {
+        "fullName": "CaseWebOrigin",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Case_GroupRequestRT": {
+        "fullName": "Case_GroupRequestRT",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Case_RT_Case_linked_to_IR": {
+        "fullName": "Case_RT_Case_linked_to_IR",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Case_RT_CustomersRequestFeedback": {
+        "fullName": "Case_RT_CustomersRequestFeedback",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Case_Type_CustomerClaim": {
+        "fullName": "Case_Type_CustomerClaim",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Case_Type_CustomerFeedback": {
+        "fullName": "Case_Type_CustomerFeedback",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Case_ompanyRequestRT": {
+        "fullName": "Case_ompanyRequestRT",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__ClosedWonStage": {
+        "fullName": "ClosedWonStage",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__DE": {
+        "fullName": "DE",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__DataCleanFromMonth": {
+        "fullName": "DataCleanFromMonth",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__DotCSV": {
+        "fullName": "DotCSV",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Duplicate_Invoice": {
+        "fullName": "Duplicate_Invoice",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__EN": {
+        "fullName": "EN",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__EmailExpirationMessage": {
+        "fullName": "EmailExpirationMessage",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__EmailTemplate_SendNotifToOwner": {
+        "fullName": "EmailTemplate_SendNotifToOwner",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__ExcelHeaderLightning": {
+        "fullName": "ExcelHeaderLightning",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__FR": {
+        "fullName": "FR",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__GeocodeSite": {
+        "fullName": "GeocodeSite",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__HotelsDot": {
+        "fullName": "HotelsDot",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__IT": {
+        "fullName": "IT",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Information_request": {
+        "fullName": "Information_request",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__InterfaceID": {
+        "fullName": "InterfaceID",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__LC08_Ajout": {
+        "fullName": "LC08_Ajout",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__LC08_AnnulationEchangeCadeau": {
+        "fullName": "LC08_AnnulationEchangeCadeau",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__LC08_AnnulationPointCreditee": {
+        "fullName": "LC08_AnnulationPointCreditee",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__LC08_AnnulationPointsCreditesRecouvrement": {
+        "fullName": "LC08_AnnulationPointsCreditesRecouvrement",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__LC08_Cancel": {
+        "fullName": "LC08_Cancel",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__LC08_Description": {
+        "fullName": "LC08_Description",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__LC08_EClubCustomer": {
+        "fullName": "LC08_EClubCustomer",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__LC08_FillField": {
+        "fullName": "LC08_FillField",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__LC08_ModifierPoints": {
+        "fullName": "LC08_ModifierPoints",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__LC08_NBPoint": {
+        "fullName": "LC08_NBPoint",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__LC08_PointsOffertsDedommagement": {
+        "fullName": "LC08_PointsOffertsDedommagement",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__LC08_Raison": {
+        "fullName": "LC08_Raison",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__LC08_RegulDePointsSuiteRemiseAZero": {
+        "fullName": "LC08_RegulDePointsSuiteRemiseAZero",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__LC08_RegularisationPoints": {
+        "fullName": "LC08_RegularisationPoints",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__LC08_RequestBBUS": {
+        "fullName": "LC08_RequestBBUS",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__LC08_Save": {
+        "fullName": "LC08_Save",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__LC08_Suppression": {
+        "fullName": "LC08_Suppression",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__LC08_TransfertPointCompteFusionne": {
+        "fullName": "LC08_TransfertPointCompteFusionne",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__LC08_Type": {
+        "fullName": "LC08_Type",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__LC08_ValidateRequired": {
+        "fullName": "LC08_ValidateRequired",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__LeisureCustomerType": {
+        "fullName": "LeisureCustomerType",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Lost_Property": {
+        "fullName": "Lost_Property",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__MasterBookingRTDevName": {
+        "fullName": "MasterBookingRTDevName",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__MasterBookingRecordTypeId": {
+        "fullName": "MasterBookingRecordTypeId",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__MixedCustomerType": {
+        "fullName": "MixedCustomerType",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Opportunity_Corpo_RT": {
+        "fullName": "Opportunity_Corpo_RT",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__OverQueryLimit": {
+        "fullName": "OverQueryLimit",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__PartnerRecordTypeID": {
+        "fullName": "PartnerRecordTypeID",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__PersonAccountDeveloperName": {
+        "fullName": "PersonAccountDeveloperName",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__PersonAccountRecordTypeId": {
+        "fullName": "PersonAccountRecordTypeId",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__StageBooked": {
+        "fullName": "StageBooked",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__StageChecked": {
+        "fullName": "StageChecked",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__StageNameBooking_Booked": {
+        "fullName": "StageNameBooking_Booked",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__StageNameBooking_Cancelled": {
+        "fullName": "StageNameBooking_Cancelled",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__StageNameBooking_Checked": {
+        "fullName": "StageNameBooking_Checked",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__StageNameBooking_Error": {
+        "fullName": "StageNameBooking_Error",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__StageNameBooking_NoShow": {
+        "fullName": "StageNameBooking_NoShow",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__StatusChecked": {
+        "fullName": "StatusChecked",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__StatusComplete": {
+        "fullName": "StatusComplete",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__SupportEmail": {
+        "fullName": "SupportEmail",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__TechnicalUserId": {
+        "fullName": "TechnicalUserId",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__TypeCodeOption": {
+        "fullName": "TypeCodeOption",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__TypeCodeRoom": {
+        "fullName": "TypeCodeRoom",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__UnknownProduct": {
+        "fullName": "UnknownProduct",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__VoucherRecordType_EClub": {
+        "fullName": "VoucherRecordType_EClub",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Voucher_EClub_RT_Emission_Name": {
+        "fullName": "Voucher_EClub_RT_Emission_Name",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Voucher_Eclub_RT_OnCreation_Name": {
+        "fullName": "Voucher_Eclub_RT_OnCreation_Name",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Voucher_IR_RT_Emission_Name": {
+        "fullName": "Voucher_IR_RT_Emission_Name",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Voucher_IR_RT_OnCreation_Name": {
+        "fullName": "Voucher_IR_RT_OnCreation_Name",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Voucher_OC_RT_Emission_Name": {
+        "fullName": "Voucher_OC_RT_Emission_Name",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Voucher_OC_RT_OnCreation_Name": {
+        "fullName": "Voucher_OC_RT_OnCreation_Name",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__Voucher_RT_IR": {
+        "fullName": "Voucher_RT_IR",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__WaitingHotel": {
+        "fullName": "WaitingHotel",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__WebCaseEnglishEmailTemplateId": {
+        "fullName": "WebCaseEnglishEmailTemplateId",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__WebCaseFrenchEmailTemplateId": {
+        "fullName": "WebCaseFrenchEmailTemplateId",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__WebCaseGermanEmailTemplateId": {
+        "fullName": "WebCaseGermanEmailTemplateId",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__WebCaseItalyEmailTemplateID": {
+        "fullName": "WebCaseItalyEmailTemplateID",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__WebCaseSpanishEmailTemplateId": {
+        "fullName": "WebCaseSpanishEmailTemplateId",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__WebCaseSpanishEmailTemplateIdCompanyGroupReq": {
+        "fullName": "WebCaseSpanishEmailTemplateIdCompanyGroupReq",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__ZeroResult": {
+        "fullName": "ZeroResult",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    },
+    "CustomLabels__technical_user_2_id": {
+        "fullName": "technical_user_2_id",
+        "type": "CustomLabels",
+        "metadataFilePath": "c:\\Users\\cynthia.geagea.EITECH\\Documents\\TMA B&B\\BB_Git\\force-app\\main\\default\\labels\\CustomLabels.labels-meta.xml"
+    }
+}
