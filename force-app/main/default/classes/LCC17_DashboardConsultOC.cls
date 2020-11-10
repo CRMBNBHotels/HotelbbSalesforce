@@ -7,7 +7,7 @@
 * @Lightning Components: LC17_DashboardConsultOC
 */
 
-public class LCC17_DashboardConsultOC {
+public without sharing class LCC17_DashboardConsultOC {
     
     @AuraEnabled
     public static ReturnedInfo GetRelatedVouchers(string mvId) {

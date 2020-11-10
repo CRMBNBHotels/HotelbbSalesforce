@@ -1,5 +1,6 @@
 <aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,lightning:isUrlAddressable" controller="LCC01_DashboardOCQuotas">
-
+<aura:dependency resource="markup://force:showToast" type="EVENT,COMPONENT" />
+    
     <aura:attribute name="newRecordID" type="String"/>
     <aura:attribute name="consultMV" type="boolean" default="false"/>
     

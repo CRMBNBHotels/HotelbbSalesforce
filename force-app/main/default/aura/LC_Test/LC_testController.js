@@ -9,7 +9,7 @@
         event.preventDefault();       // stop the form from submitting
      
         //CRMSS-868 05/11/2020
-        var copies = component.find("copies").get('v.value');
+        var copies = component.find("copies").get('v.value');console.log("copies"+copies);
         component.set("v.nbVouchOC", copies);
         
         var action = component.get("c.GetRemainingQuotas");
@@ -21,20 +21,22 @@
         action.setCallback(this, function(response) {
             
             var state = response.getState();
-            
+            console.log("state"+state);
             if(state === "SUCCESS") {
                 
                 var result = response.getReturnValue();   
-                console.log(result);
+                console.log("result"+result);
+                console.log("result.remainingVouchOC"+result.remainingVouchOC);
                 component.set("v.nbVouchOCremain", result.remainingVouchOC);
 
                 if(result.remainingVouchOC >= 0){
-
+                    console.log("in success toast");
                     var fields = event.getParam('fields');
                     component.find('editForm').submit(fields);
                 }
-                else{
-                    helper.showErrorToast(component, event, helper);
+                else{console.log("in error toast");
+                    alert("Vous dépassez votre quotas, il vous reste "+result.nbAvailableVouch+" invitations. Si vous souhaitez augmentez votre quotas, contactez votre Service client ou votre directeur régional");
+                    //helper.showErrorToast(component, event, helper);
                 }
 
             }
@@ -43,7 +45,7 @@
                 var errors = action.getError();
                 if (errors) {
                     if (errors[0] && errors[0].message) {
-                        helper.setError(component, event, helper,errors[0].message,false);
+                        console.log(errors[0].message);
                     }
                 }
             } 
