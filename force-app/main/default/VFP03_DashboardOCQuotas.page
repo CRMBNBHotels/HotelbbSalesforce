@@ -1,0 +1,23 @@
+<apex:page standardController="Contact_Role__c" standardStylesheets="false" tabStyle="Contact_Role__c" showHeader="false" docType="html-5.0"  title="QuotasOC">
+
+    <div>
+        
+        <apex:includeLightning />
+        <div id="Con" />
+        <script>
+        var connectEmail = "{!$CurrentPage.parameters.user_email}";
+        $Lightning.use("c:LA03_MasterVoucher", function() {
+            $Lightning.createComponent(
+                "c:LC21_DashboardOCQuotasManagement",
+                {"connectEmail" : connectEmail},
+                "Con",
+                function(cmp) {
+                    console.log("Component is created!");
+                    console.log(cmp);
+                });
+        });        
+        </script>
+    
+    </div>
+
+</apex:page>
