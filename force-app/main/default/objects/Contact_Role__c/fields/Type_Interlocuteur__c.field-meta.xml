@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_Interlocuteur__c</fullName>
+    <externalId>false</externalId>
+    <label>Type Interlocuteur</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Gérant</fullName>
+                <default>false</default>
+                <label>Gérant</label>
+            </value>
+            <value>
+                <fullName>DR</fullName>
+                <default>false</default>
+                <label>DR</label>
+            </value>
+            <value>
+                <fullName>Assistant</fullName>
+                <default>false</default>
+                <label>Assistant</label>
+            </value>
+            <value>
+                <fullName>Directeur</fullName>
+                <default>false</default>
+                <label>Directeur</label>
+            </value>
+            <value>
+                <fullName>Réceptionniste</fullName>
+                <default>false</default>
+                <label>Réceptionniste</label>
+            </value>
+            <value>
+                <fullName>Co-gérant</fullName>
+                <default>false</default>
+                <label>Co-gérant</label>
+            </value>
+            <value>
+                <fullName>Personne du siège</fullName>
+                <default>false</default>
+                <label>Personne du siège</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

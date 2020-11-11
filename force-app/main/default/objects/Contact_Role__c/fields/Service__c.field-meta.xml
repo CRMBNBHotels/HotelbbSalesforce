@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service__c</fullName>
+    <externalId>false</externalId>
+    <label>Service</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Role__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>MARKETING</fullName>
+                <default>false</default>
+                <label>MARKETING</label>
+            </value>
+            <value>
+                <fullName>RESEAU</fullName>
+                <default>false</default>
+                <label>RESEAU</label>
+            </value>
+            <value>
+                <fullName>BUILD</fullName>
+                <default>false</default>
+                <label>BUILD</label>
+            </value>
+            <value>
+                <fullName>VENTES CORPORATE</fullName>
+                <default>false</default>
+                <label>VENTES CORPORATE</label>
+            </value>
+            <value>
+                <fullName>VENTES LOISIRS</fullName>
+                <default>false</default>
+                <label>VENTES LOISIRS</label>
+            </value>
+            <value>
+                <fullName>DIRECTION GENERALE</fullName>
+                <default>false</default>
+                <label>DIRECTION GENERALE</label>
+            </value>
+            <value>
+                <fullName>RH</fullName>
+                <default>false</default>
+                <label>RH</label>
+            </value>
+            <value>
+                <fullName>SRC</fullName>
+                <default>false</default>
+                <label>SRC</label>
+            </value>
+            <value>
+                <fullName>SRC Promos</fullName>
+                <default>false</default>
+                <label>SRC Promos</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>SRC</controllingFieldValue>
+            <valueName>MARKETING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SRC</controllingFieldValue>
+            <valueName>RESEAU</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SRC</controllingFieldValue>
+            <valueName>BUILD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SRC</controllingFieldValue>
+            <valueName>VENTES CORPORATE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SRC</controllingFieldValue>
+            <valueName>VENTES LOISIRS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SRC</controllingFieldValue>
+            <valueName>DIRECTION GENERALE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SRC</controllingFieldValue>
+            <valueName>RH</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SRC</controllingFieldValue>
+            <valueName>SRC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SRC</controllingFieldValue>
+            <valueName>SRC Promos</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

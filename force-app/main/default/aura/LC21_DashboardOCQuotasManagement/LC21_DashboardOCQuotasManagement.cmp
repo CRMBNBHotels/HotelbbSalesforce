@@ -1,28 +1,38 @@
 <!-- TMA-EIT CG *22/10/2020* LC21_DashboardOCQuotasManagement -->
-<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId,lightning:isUrlAddressable">
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId,lightning:isUrlAddressable" access="global" controller="LCC21_DashboardOCQuotasManagement">
 
      <!-- attributes -->
-     <aura:attribute name="connectEmail" type="String"/>
-     <aura:attribute name="quotaList" type="List"/>
+    <aura:attribute name="connectEmail" type="String"/>
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="recordId" type="String"/>
+    
+    <!-- This attribute will hold the update records from data table-->
+    <aura:attribute name="updatedRecord" type="Object[]" />
 
- 
-     <!-- handlers-->
-     <aura:handler name="init" value="{!this}" action="{!c.loadData}" />
- 
-     <div class="slds-p-around_medium">
-         <h1 class="slds-text-heading_large">Inline edit playground</h1>
-     </div>
- 
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    
+    <div style = "background-color:white;padding:2%;border-radius:5px;width:100%">
+        
+    <div class="demo-only" style="padding:0.5rem;background:#10a590">
+        <div class="slds-text-color_inverse">
+            <div class="slds-text-heading_medium">Opérations Commerciales - Quota par Hotel</div>
+        </div>
+    </div>
+    <br/><br/>
+    
      <!-- the container element determine the height of the datatable -->
-     <div style="height: 300px">
-         <lightning:datatable
-             columns="{! v.columns }"
-             data="{! v.data }"
-             keyField="id"
-             errors="{! v.errors }"
-             draftValues="{! v.draftValues }"
-             onsave="{! c.handleSaveEdition }"
-         />
-     </div>
+     <lightning:card >
+        <lightning:datatable
+                             aura:id="quotasDataTable"
+                             columns="{!v.columns}"
+                             data="{!v.data }"
+                             keyField="Id"
+                             onsave ="{!c.onSave}"
+                             hideCheckboxColumn="true"
+                             onrowaction="{!c.handleRowAction}" />
+    </lightning:card>
+        
+    </div>
 
-</aura:component>	
+</aura:component>

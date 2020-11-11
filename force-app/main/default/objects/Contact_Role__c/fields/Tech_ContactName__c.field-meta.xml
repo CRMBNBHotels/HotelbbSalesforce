@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tech_ContactName__c</fullName>
+    <description>Tech field used in the component LC21_DashboardOCQuotasManagement</description>
+    <externalId>false</externalId>
+    <formula>Contact__r.FirstName &amp; &apos; &apos; &amp; Contact__r.LastName</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Tech_ContactName</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
