@@ -12,6 +12,8 @@ public without sharing class LCC21_DashboardOCQuotasManagement {
     @AuraEnabled
     public static ReturnedInfo GetQuotas() {
 
+        ReturnedInfo ret = new ReturnedInfo();
+        
         ret.listContRole = [select Id, Role__c, Maximun_invitations__c, Hotel__r.Commercial_Hotel_Name__c, Contact__c, Contact__r.Name, contact__r.Email, CreatedDate 
                                from Contact_Role__c
                                order by CreatedDate Desc];
