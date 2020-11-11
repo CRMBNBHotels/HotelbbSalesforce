@@ -1,5 +1,5 @@
 ({
-    myAction : function(component, event, helper) {
-
-    }
+    loadData : function(component, event, helper) {
+		helper.loadDataHelper(component, event, helper);
+	},
 })
