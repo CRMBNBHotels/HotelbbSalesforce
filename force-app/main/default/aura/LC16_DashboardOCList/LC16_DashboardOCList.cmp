@@ -1,0 +1,76 @@
+<!-- TMA-EIT CG *22/10/2020* LC16_DashboardOCList -->
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" controller="LCC16_DashboardOCList">
+    
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="consult" type="boolean" default="false"/>
+    <aura:attribute name="MasterVoucherList" type="List" />
+    
+    <!-- initialize values -->
+    <aura:handler name="init" value="{!this}" action="{!c.loadData}" />
+    <!-- / initialize values -->
+    
+    <aura:if isTrue="{!not(v.consult)}">
+        
+        <div style = "background-color:white;padding:2%;border-radius:5px;width:100%">
+            
+            <div class="c-container">
+                <br/>
+                <div style="width:100%">
+                    <br/>
+                    <table>
+                        <tr style="width:100%;">
+                            <th style="width:17%;color:#10a590;"> Master Voucher OC</th>
+                            <th style="width:17%;color:#10a590;"> Nature de la demande </th>
+                            <th style="width:30%;color:#10a590;"> Préstation offerte </th>
+                            <th style="width:15%;color:#10a590;"> Durée de validité </th>
+                            <th style="width:15%;color:#10a590;"> Nombre de copies </th>
+                            <th style="width:20%;color:#10a590;"> Date de céation </th>
+                        </tr>
+                        <br/>
+                        <aura:iteration items="{!v.MasterVoucherList}" var="record">
+                            <tr style="width:100%;">
+                                <td class="slds-truncate" style="color:#10a590">
+                                    <div class="slds-truncate slds-cell-wrap" style="color:#10a590">
+                                        <div Id="{!record.Id}" onclick="{!c.goToConsultpage}" style="color:#10a590"><a>{!record.Name}</a></div>
+                                    </div>                         
+                                </td>    
+                                <td class="slds-truncate">
+                                    <div class="slds-truncate slds-cell-wrap" >
+                                        {!record.Nature_de_la_demande__c}
+                                    </div>                         
+                                </td>
+                                <td class="slds-truncate">
+                                    <div class="slds-truncate slds-cell-wrap" >
+                                        {!record.Prestation_Offerte__c}
+                                    </div>                         
+                                </td>
+                                <td class="slds-truncate">
+                                    <div class="slds-truncate slds-cell-wrap" >
+                                        {!record.Dur_e_de_validit__c}
+                                    </div>                         
+                                </td>
+                                <td class="slds-truncate">
+                                    <div class="slds-truncate slds-cell-wrap" >
+                                        {!record.Nombre_de_copie_s__c}
+                                    </div>                         
+                                </td>
+                                <td class="slds-truncate">
+                                    <div class="slds-truncate slds-cell-wrap" >
+                                        {!record.Tech_CreatedDate__c}
+                                    </div>                         
+                                </td>
+                            </tr>
+                        </aura:iteration>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <aura:set attribute="else">
+            <c:LC17_DashboardConsultOC mvrecordId = "{!v.recordId}"/>
+        </aura:set>
+         
+    </aura:if>
+    
+    
+</aura:component>

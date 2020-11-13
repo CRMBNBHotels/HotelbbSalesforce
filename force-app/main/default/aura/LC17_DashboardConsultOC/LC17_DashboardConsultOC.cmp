@@ -1,0 +1,150 @@
+<!-- TMA-EIT CG *22/10/2020* LC17_DashboardConsultOC -->
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,lightning:isUrlAddressable,force:lightningQuickAction" access="global" controller="LCC17_DashboardConsultOC">
+    
+    <aura:attribute name="vouchrecordId" type="String" />
+    <aura:attribute name="consultVouch" type="boolean" default="false"/>
+    <aura:attribute name="consult" type="boolean" default="true"/>
+    <aura:attribute name="RelatedVouchersList" type="List" />
+    <aura:attribute name="mvrecordId" type="String" />
+    
+    <!-- initialize values -->
+    <aura:handler name="init" value="{!this}" action="{!c.loadData}" />
+    
+    <aura:if isTrue="{!(v.consult)}">
+        
+        <aura:if isTrue="{!not(v.consultVouch)}">
+            
+            <div style = "background-color:white;padding:2%;border-radius:5px;width:100%">
+                
+                <!-- Generate PDF Button  -->
+                <lightning:button class="slds-button slds-button_success Dashboard" label="Générer un PDF" onclick="{!c.generatePDF}" />
+                <lightning:button class="slds-button slds-button_success Dashboard" label="Liste des Master Vouchers" onclick="{!c.goBack}"/>
+                <br/> <br/>
+                
+                <!-- display he master voucher's information  -->
+                <lightning:recordViewForm recordId="{!v.mvrecordId}" objectApiName="Master_Voucher__c" density="comfy">
+                    
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:outputField fieldName="Nombre_de_copie_s__c" />
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:outputField fieldName="Personal_account__c" />
+                        </div>
+                    </div>
+                    
+                    <div class="demo-only" style="padding:0.5rem;background:#10a590">
+                        <div class="slds-text-color_inverse">
+                            <div class="slds-text-heading_medium">Informations Invitation</div>
+                        </div>
+                    </div>
+                    
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:outputField fieldName="Prestation_Offerte__c" />
+                            <lightning:outputField fieldName="Valorisation__c" />
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:outputField fieldName="Hotel_Service_Emmetteur__c" />
+                            <lightning:outputField fieldName="Pr_nom_Nom_de_l_m_tteur__c" />
+                        </div>
+                    </div>
+                    
+                    <div class="demo-only" style="padding:0.5rem;background:#10a590">
+                        <div class="slds-text-color_inverse">
+                            <div class="slds-text-heading_medium">Informations Consommation</div>
+                        </div>
+                    </div>
+                    
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:outputField fieldName="Zone_de_validit__c" />
+                            <lightning:outputField fieldName="Valable_dans_cet_hotel_ComName__c" />
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:outputField fieldName="P_riode_de_validit__c" />
+                            <lightning:outputField fieldName="Dur_e_de_validit__c" />
+                            <lightning:outputField fieldName="Date_d_expiration__c" />
+                        </div>
+                    </div>
+                    
+                    <div class="demo-only" style="padding:0.5rem;background:#10a590">
+                        <div class="slds-text-color_inverse">
+                            <div class="slds-text-heading_medium">Informations Opération Commerciale</div>
+                        </div>
+                    </div>
+                    
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:outputField fieldName="Nom_Pr_nom_client__c" />
+                            <lightning:outputField fieldName="Email_client__c" />
+                            <lightning:outputField fieldName="Num_ro_de_t_l_phone_client__c" />
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:outputField fieldName="Nature_de_la_demande__c" />
+                            <lightning:outputField fieldName="Offert_l_occasion_de__c" />
+                        </div>
+                    </div>
+                    
+                    <div class="demo-only" style="padding:0.5rem;background:#10a590">
+                        <div class="slds-text-color_inverse">
+                            <div class="slds-text-heading_medium">Voucher(s) associé(s)</div>
+                        </div>
+                    </div>
+                    
+                </lightning:recordViewForm>
+                
+                <!-- display the master voucher's Voucher related list -->
+                <div class="c-container">
+                    <div style="width:100%">
+                        <br/>
+                        <table>
+                            <tr style="width:100%;">
+                                <th style="width:25%;color:#10a590;"> Détail du voucher </th>
+                                <th style="width:25%;color:#10a590;"> Numéro de l'invitation </th>
+                                <th style="width:25%;color:#10a590;"> Statut </th>
+                                <th style="width:25%;color:#10a590;"> Préstation offerte </th>
+                            </tr>
+                            <br/>
+                            <aura:iteration items="{!v.RelatedVouchersList}" var="record">
+                                <tr style="width:100%;">
+                                    <td class="slds-truncate">
+                                        <div class="slds-truncate slds-cell-wrap" >
+                                            <div Id="{!record.Id}" onclick="{!c.goToVoucherConsultpage}"><a>{!record.Name}</a></div>
+                                        </div>                         
+                                    </td>    
+                                    <td class="slds-truncate">
+                                        <div class="slds-truncate slds-cell-wrap" >
+                                            {!record.Code_OC__c}
+                                        </div>                         
+                                    </td>
+                                    <td class="slds-truncate">
+                                        <div class="slds-truncate slds-cell-wrap" >
+                                            {!record.Tech_Statut__c}
+                                        </div>                         
+                                    </td>
+                                    <td class="slds-truncate">
+                                        <div class="slds-truncate slds-cell-wrap" >
+                                            {!record.Prestation_offerte__c}
+                                        </div>                         
+                                    </td>
+                                </tr>
+                            </aura:iteration>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <aura:set attribute="else">
+                <c:LC18_DashboardConsultVoucherOC recordId = "{!v.vouchrecordId}" mvrecordId="{!v.mvrecordId}"/>
+            </aura:set>
+            
+        </aura:if>
+        
+        <aura:set attribute="else">
+            <c:LC16_DashboardOCList />
+        </aura:set>
+    </aura:if>
+    
+</aura:component>

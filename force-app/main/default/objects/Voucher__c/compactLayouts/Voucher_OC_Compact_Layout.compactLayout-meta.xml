@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Voucher_OC_Compact_Layout</fullName>
+    <fields>Type_d_invitation__c</fields>
+    <fields>Code_OC__c</fields>
+    <fields>Prestation_offerte__c</fields>
+    <fields>Booking__c</fields>
+    <fields>Master_Voucher_OC__c</fields>
+    <label>Voucher OC Compact Layout</label>
+</CompactLayout>

@@ -1,0 +1,102 @@
+<!-- TMA-EIT CG *22/10/2020* LC18_DashboardConsultVoucherOC -->
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,lightning:isUrlAddressable" access="global" >
+    
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="consultVouch" type="boolean" default="true"/>
+    <aura:attribute name="mvrecordId" type="String" />
+    
+    <aura:if isTrue="{!(v.consultVouch)}">
+        
+        <div style = "background-color:white;padding:2%;border-radius:5px;width:100%">
+            
+            <lightning:button class="slds-button slds-button_success Dashboard" label="Master Voucher" onclick="{!c.goBack}"/>
+            <br/> <br/>
+            
+            <!-- display he master voucher's information  -->
+            <lightning:recordViewForm recordId="{!v.recordId}" objectApiName="Voucher__c" density="comfy">
+                
+                <div class="demo-only" style="padding:0.5rem;background:#10a590">
+                    <div class="slds-text-color_inverse">
+                        <div class="slds-text-heading_medium">Informations Invitation</div>
+                    </div>
+                </div>
+                
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:outputField fieldName="Code_OC__c" />
+                        <lightning:outputField fieldName="Type_d_invitation__c" />
+                        <lightning:outputField fieldName="Prestation_offerte__c" />                    
+                        <lightning:outputField fieldName="Tech_Statut__c" />
+                        <lightning:outputField fieldName="Valorisation__c" />
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:outputField fieldName="Hotel_emetteur__c" />
+                        <lightning:outputField fieldName="Nom_de_l_m_tteur__c" />
+                    </div>
+                </div>
+                
+                <div class="demo-only" style="padding:0.5rem;background:#10a590">
+                    <div class="slds-text-color_inverse">
+                        <div class="slds-text-heading_medium">Informations Consommation</div>
+                    </div>
+                </div>
+                
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:outputField fieldName="Site_de_consommation__c" />
+                        <lightning:outputField fieldName="Date_de_consommation__c" />
+                        <lightning:outputField fieldName="Montant_de_Consommation__c" />
+                        <lightning:outputField fieldName="Date_d_annulation__c" />
+                        <lightning:outputField fieldName="expireDate__c" />
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:outputField fieldName="Zone_de_validite_OC__c" />
+                        <lightning:outputField fieldName="Hotel_Validite_France_ComName__c" />
+                        <lightning:outputField fieldName="Validite__c" />
+                        <lightning:outputField fieldName="Dur_e_de_validit__c" />
+                    </div>
+                </div>
+                
+                <div class="demo-only" style="padding:0.5rem;background:#10a590">
+                    <div class="slds-text-color_inverse">
+                        <div class="slds-text-heading_medium">Informations Opération Commerciale</div>
+                    </div>
+                </div>
+                
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:outputField fieldName="Nom_Prenom_du_client__c" />
+                        <lightning:outputField fieldName="Email_du_client__c" />
+                        <lightning:outputField fieldName="Telephone_du_client__c" />
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:outputField fieldName="Nature_de_la_demande__c" />
+                        <lightning:outputField fieldName="Offert_occasion_de__c" />
+                        <lightning:outputField fieldName="Account_Company__c" />
+                    </div>
+                </div>
+                
+                <div class="demo-only" style="padding:0.5rem;background:#10a590">
+                    <div class="slds-text-color_inverse">
+                        <div class="slds-text-heading_medium">Informations Système</div>
+                    </div>
+                </div>
+                
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:outputField fieldName="Status_change_request__c" />
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:outputField fieldName="Commentaires__c" />
+                    </div>
+                </div>
+                
+            </lightning:recordViewForm>
+            
+        </div>
+        
+        <aura:set attribute="else">
+            <c:LC17_DashboardConsultOC  mvrecordId="{!v.mvrecordId}"/>
+        </aura:set>
+    </aura:if>
+</aura:component>
