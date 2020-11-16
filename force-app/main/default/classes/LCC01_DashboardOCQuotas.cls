@@ -3,7 +3,7 @@
 * @author: TMA-EI CG
 * @date: 06/11/2020
 * @Test class: LCC01_DashboardOCQuotas_Test
-* @Coverage: 84%
+* @Coverage: 87%
 * @Lightning Components: LC_Test
 */
 
@@ -20,6 +20,7 @@ public without sharing class LCC01_DashboardOCQuotas {
         list<Contact_Role__c> listContRole = new list<Contact_Role__c>();
         Double nbExistingVouchOc = 0;
         string role = '';
+        string clientName = '';
         
         if(userEmail != null && userEmail !=''){
             
@@ -53,6 +54,7 @@ public without sharing class LCC01_DashboardOCQuotas {
                 ret.nbAvailableVouch = 200 - nbExistingVouchOc;
                 ret.remainingVouchOC = 200 - nbExistingVouchOc - nbCopies;system.debug('### cg apx ret.remainingVouchOC'+ret.remainingVouchOC);
             }
+            
         }
         
         system.debug('### cg listContRole'+listContRole);
@@ -66,4 +68,30 @@ public without sharing class LCC01_DashboardOCQuotas {
         @AuraEnabled public double remainingVouchOC;
         @AuraEnabled public double nbAvailableVouch;
     }
+    
+    @AuraEnabled
+    public static Id GetPersonAccount(string clientExtId){
+        
+        string clientName = '';
+        Id PASFId;
+        
+        if(clientExtId != null && clientExtId != ''){
+            
+            list<Account> listPA = new list<Account>([Select Id, FirstName, LastName, Externalid__pc
+                                                      From Account
+                                                      Where Externalid__pc =: clientExtId
+                                                      Limit 1]);
+            
+            if(listPA != null && listPA.size()>0){
+                
+                clientName = listPA[0].FirstName + ' ' + listPA[0].LastName;
+                PASFId = listPA[0].Id;
+                
+            }
+        }
+        
+        return PASFId;
+    }		
+
+    
 }

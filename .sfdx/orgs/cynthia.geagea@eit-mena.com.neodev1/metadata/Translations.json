@@ -1,0 +1,70 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "0050Y0000028Lz2QAE",
+      "createdByName": "API User",
+      "createdDate": "2017-08-03T08:57:18.000Z",
+      "fileName": "translations/fr.translation",
+      "fullName": "fr",
+      "id": "01h0Y000000g10tQAA",
+      "lastModifiedById": "0050Y000003kjHZQAY",
+      "lastModifiedByName": "Joanna Karam",
+      "lastModifiedDate": "2020-11-12T08:28:18.000Z",
+      "manageableState": "beta",
+      "type": "Translations"
+    },
+    {
+      "createdById": "0050Y0000028Lz2QAE",
+      "createdByName": "API User",
+      "createdDate": "2017-08-03T08:57:17.000Z",
+      "fileName": "translations/en_US.translation",
+      "fullName": "en_US",
+      "id": "01h0Y000000g10qQAA",
+      "lastModifiedById": "0050Y000003kjHZQAY",
+      "lastModifiedByName": "Joanna Karam",
+      "lastModifiedDate": "2020-11-12T08:28:17.000Z",
+      "manageableState": "beta",
+      "type": "Translations"
+    },
+    {
+      "createdById": "0050Y0000028Lz2QAE",
+      "createdByName": "API User",
+      "createdDate": "2017-08-03T08:57:18.000Z",
+      "fileName": "translations/it.translation",
+      "fullName": "it",
+      "id": "01h0Y000000g10uQAA",
+      "lastModifiedById": "0050Y000003kjHZQAY",
+      "lastModifiedByName": "Joanna Karam",
+      "lastModifiedDate": "2020-11-12T22:25:55.000Z",
+      "manageableState": "beta",
+      "type": "Translations"
+    },
+    {
+      "createdById": "0050Y0000028Lz2QAE",
+      "createdByName": "API User",
+      "createdDate": "2017-08-03T08:57:16.000Z",
+      "fileName": "translations/de.translation",
+      "fullName": "de",
+      "id": "01h0Y000000g10pQAA",
+      "lastModifiedById": "0050Y000003kjHZQAY",
+      "lastModifiedByName": "Joanna Karam",
+      "lastModifiedDate": "2020-11-12T22:26:06.000Z",
+      "manageableState": "beta",
+      "type": "Translations"
+    },
+    {
+      "createdById": "0050Y0000028Lz2QAE",
+      "createdByName": "API User",
+      "createdDate": "2017-08-03T08:57:17.000Z",
+      "fileName": "translations/es.translation",
+      "fullName": "es",
+      "id": "01h0Y000000g10rQAA",
+      "lastModifiedById": "0050Y000003kjHZQAY",
+      "lastModifiedByName": "Joanna Karam",
+      "lastModifiedDate": "2020-11-12T22:25:59.000Z",
+      "manageableState": "beta",
+      "type": "Translations"
+    }
+  ]
+}

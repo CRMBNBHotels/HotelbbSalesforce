@@ -8,6 +8,8 @@
     <aura:attribute name="emitEmail" type="string"/>
     <aura:attribute name="nbVouchOC" type="integer"/>
     <aura:attribute name="nbVouchOCremain" type="integer"/>
+    <aura:attribute name="clientId" type="string"/>
+    <aura:attribute name="clientSFId" type="string"/>
 
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     <!-- CRMSS-868 05/11/2020 End-->
@@ -17,7 +19,7 @@
         <br/>
         <div class="slds-m-right_xx-large" >
             <div class="slds-m-left_xx-large" >
-                <lightning:recordEditForm  aura:id = "editForm" objectApiName="Master_Voucher__c" recordTypeId="0121l000000DSOXAA4" density="comfy" onsubmit="{!c.handleSubmit}" onsuccess="{!c.handleSuccess}">
+                <lightning:recordEditForm  aura:id = "editForm" objectApiName="Master_Voucher__c" density="comfy" onsubmit="{!c.handleSubmit}" onsuccess="{!c.handleSuccess}">
                     <lightning:messages />
                     <div class="demo-only" style="padding:0.5rem;background:#10a590">
                         <div class="slds-text-color_inverse">
@@ -28,11 +30,12 @@
                         <div class="slds-col slds-size_1-of-2">
                             <lightning:inputField fieldName="Nom_Pr_nom_client__c" />
                             <lightning:inputField fieldName="Email_client__c" />
+                            <lightning:inputField fieldName="Num_ro_de_t_l_phone_client__c" />
                         </div>
                         
                         <div class="slds-col slds-size_1-of-2">
                             <lightning:inputField fieldName="Offert_l_occasion_de__c" />
-                            <lightning:inputField fieldName="Num_ro_de_t_l_phone_client__c" />
+                            <lightning:inputField fieldName="Personal_account__c" value="{!v.clientSFId}" />
                         </div>
                     </div>
                     
@@ -65,7 +68,7 @@
     </div>
         
         <aura:set attribute="else">
-            <c:LC17_DashboardConsultOC recordId = "{!v.newRecordID}"/>
+            <c:LC17_DashboardConsultOC mvrecordId = "{!v.newRecordID}"/>
         </aura:set>
         
     </aura:if>

@@ -1,7 +1,38 @@
 ({
     doInit : function(component, event, helper) {
-
+        
         var emitEmail = component.get("v.emitEmail");
+        var clientId = component.get("v.clientId");
+        
+        var action = component.get("c.GetPersonAccount");
+        action.setParams({ 
+            clientExtId : component.get('v.clientId')
+        });
+        
+        action.setCallback(this, function(response) {
+            
+            var state = response.getState();
+            console.log("state 0"+state);
+            if(state == "SUCCESS") {
+                
+                var result = response.getReturnValue();   
+                console.log("result: "+result);
+                component.set("v.clientSFId", result);
+
+            }
+            
+            else if (state == "ERROR"){                
+                var errors = action.getError();
+                if (errors) {
+                    if (errors[0] && errors[0].message) {
+                        console.log('errors');
+                    }
+                }
+            } 
+        });
+        
+        $A.enqueueAction(action);
+       
     },
 
     handleSubmit: function(component, event, helper) {
@@ -46,7 +77,7 @@
                 var errors = action.getError();
                 if (errors) {
                     if (errors[0] && errors[0].message) {
-                        console.log(errors[0].message);
+                        console.log('error');
                     }
                 }
             } 

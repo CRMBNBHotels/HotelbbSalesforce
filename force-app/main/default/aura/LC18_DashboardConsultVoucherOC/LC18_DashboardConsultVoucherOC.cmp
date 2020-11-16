@@ -72,7 +72,7 @@
                     <div class="slds-col slds-size_1-of-2">
                         <lightning:outputField fieldName="Nature_de_la_demande__c" />
                         <lightning:outputField fieldName="Offert_occasion_de__c" />
-                        <lightning:outputField fieldName="Account_Company__c" />
+                        <lightning:outputField fieldName="Person_Account__c" />
                     </div>
                 </div>
                 
