@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingGuestRules>
+        <fullName>SR01_Hotel_FR_DashBoardOC</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Grant dashboard OC guest users visibility to French hotels</description>
+        <label>SR01_Hotel_FR_DashBoardOC</label>
+        <sharedTo>
+            <guestUser>homepage</guestUser>
+        </sharedTo>
+        <criteriaItems>
+            <field>Country__c</field>
+            <operation>equals</operation>
+            <value>France</value>
+        </criteriaItems>
+    </sharingGuestRules>
+    <sharingGuestRules>
+        <fullName>SR02_Hotel_FR_DashBoardOC</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>SR02_Hotel_FR_DashBoardOC</label>
+        <sharedTo>
+            <guestUser>bbhotelsdashboard</guestUser>
+        </sharedTo>
+        <criteriaItems>
+            <field>Country__c</field>
+            <operation>equals</operation>
+            <value>France</value>
+        </criteriaItems>
+    </sharingGuestRules>
+</SharingRules>
