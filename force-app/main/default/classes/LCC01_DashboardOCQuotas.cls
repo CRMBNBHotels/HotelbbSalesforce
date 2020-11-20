@@ -3,7 +3,7 @@
 * @author: TMA-EI CG
 * @date: 06/11/2020
 * @Test class: LCC01_DashboardOCQuotas_Test
-* @Coverage: 87%
+* @Coverage: 90%
 * @Lightning Components: LC_Test
 */
 
@@ -18,47 +18,46 @@ public without sharing class LCC01_DashboardOCQuotas {
         ReturnedInfo ret = new ReturnedInfo();
         List<Master_Voucher__c> listMV = new List<Master_Voucher__c>();
         list<Contact_Role__c> listContRole = new list<Contact_Role__c>();
-        Double nbExistingVouchOc = 0;
+        
         string role = '';
-        string clientName = '';
+        double remainingHotelVouchOC = 0;
         
         if(userEmail != null && userEmail !=''){
             
-            listContRole = [Select Id, Role__c, Contact__r.Email From Contact_Role__c Where Contact__r.Email =: userEmail Limit 1];
+            //Specify the role of the connected user
+            listContRole = [Select Id, Role__c, Contact__r.Email, hotel__r.Invitations_Restantes__c 
+                            From Contact_Role__c 
+                            Where Contact__r.Email =: userEmail];
             
             if(listContRole != null && listContRole.size()>0){
                 
-                role = listContRole[0].Role__c;
-            }
-            
-            listMV = [Select Id , Nombre_de_copie_s__c, Pr_nom_Nom_de_l_m_tteur__r.Email From Master_Voucher__c where Pr_nom_Nom_de_l_m_tteur__r.Email =: userEmail];
-            system.debug('### cg listMV'+listMV);
-            
-            if(listMV != null && listMV.size()>0){
-                
-                for(Master_Voucher__c mvOC : listMV){
+                for(Contact_Role__c contRole : listContRole){
                     
-                    nbExistingVouchOc = nbExistingVouchOc + mvOC.Nombre_de_copie_s__c;
+                    if(contRole.Role__c == 'IR-OC'){
+                        
+                        role = contRole.Role__c;
+                        remainingHotelVouchOC = contRole.Hotel__r.Invitations_Restantes__c;
+                        break;
+                    }
                 }
             }
             
             if(role != null && role != '' && role == 'IR-OC'){
                 
-                ret.nbAvailableVouch = 10 - nbExistingVouchOc;
-                ret.remainingVouchOC = 10 - nbExistingVouchOc - nbCopies;
+                ret.nbAvailableVouch = remainingHotelVouchOC;
+                ret.remainingVouchOC = remainingHotelVouchOC - nbCopies;
                 system.debug('### cg apx ret.remainingVouchOC'+ret.remainingVouchOC);
-                system.debug('### cg apx nbExistingVouchOc'+nbExistingVouchOc);
             }
-            else{
+            else if(role == null || role == '' || role != 'IR-OC'){
                 
-                ret.nbAvailableVouch = 200 - nbExistingVouchOc;
-                ret.remainingVouchOC = 200 - nbExistingVouchOc - nbCopies;system.debug('### cg apx ret.remainingVouchOC'+ret.remainingVouchOC);
+                //If the connected user isn not an IR-OC hotelier, then return 1 which is a positive value always
+                ret.nbAvailableVouch = 1;
+                ret.remainingVouchOC = 1;
             }
             
         }
         
         system.debug('### cg listContRole'+listContRole);
-        system.debug('### cg listContRole[0].Role__c'+listContRole[0].Role__c);
         
         return ret;
     }

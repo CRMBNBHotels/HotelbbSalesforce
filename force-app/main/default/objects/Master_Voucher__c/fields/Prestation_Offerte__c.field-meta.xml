@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prestation_Offerte__c</fullName>
+    <externalId>false</externalId>
+    <label>Prestation Offerte</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Une nuit en chambre 1-2 personnes</fullName>
+                <default>false</default>
+                <label>Une nuit en chambre 1-2 personnes</label>
+            </value>
+            <value>
+                <fullName>Une nuit en chambre familiale</fullName>
+                <default>false</default>
+                <label>Une nuit en chambre familiale</label>
+            </value>
+            <value>
+                <fullName>Une nuit en chambre 1-2 personnes avec petits déjeuners</fullName>
+                <default>false</default>
+                <label>Une nuit en chambre 1-2 personnes avec petits déjeuners</label>
+            </value>
+            <value>
+                <fullName>Une nuit en chambre familiale avec petits déjeuners</fullName>
+                <default>false</default>
+                <label>Une nuit en chambre familiale avec petits déjeuners</label>
+            </value>
+            <value>
+                <fullName>Un petit déjeuner</fullName>
+                <default>false</default>
+                <label>Un petit déjeuner</label>
+            </value>
+            <value>
+                <fullName>Deux petits déjeuners</fullName>
+                <default>false</default>
+                <label>Deux petits déjeuners</label>
+            </value>
+            <value>
+                <fullName>Trois petits déjeuners</fullName>
+                <default>false</default>
+                <label>Trois petits déjeuners</label>
+            </value>
+            <value>
+                <fullName>Quatre petits déjeuners</fullName>
+                <default>false</default>
+                <label>Quatre petits déjeuners</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

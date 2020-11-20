@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR02_MasterVoucher_OC_NbOfCopies</fullName>
+    <active>true</active>
+    <description>The maximum number of copies for the voucher OC is 200</description>
+    <errorConditionFormula>Nombre_de_copie_s__c &gt; 200</errorConditionFormula>
+    <errorMessage>Le nombre maximale de copies possible est 200</errorMessage>
+</ValidationRule>

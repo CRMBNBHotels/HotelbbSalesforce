@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>P_riode_de_validit__c</fullName>
+    <externalId>false</externalId>
+    <label>Période de validité</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Du lundi au dimanche</fullName>
+                <default>false</default>
+                <label>Du lundi au dimanche</label>
+            </value>
+            <value>
+                <fullName>Les ven.; sam.;dim. ou fériés</fullName>
+                <default>false</default>
+                <label>Les ven., sam.,dim. ou fériés</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

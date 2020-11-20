@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR01_MasterVoucher_OC_HotelValiditeFR</fullName>
+    <active>true</active>
+    <description>If zone de validité is un hotel, the hotel must be filled.
+If it is France, the hotel shouldn&apos;t be filled.</description>
+    <errorConditionFormula>OR(AND(ISPICKVAL( Zone_de_validit__c , &quot;France&quot;),  Valable_dans_cet_h_tel__c != null, Valable_dans_cet_h_tel__c != &quot; &quot;), AND(ISPICKVAL(Zone_de_validit__c , &quot;Un hôtel&quot;), OR(Valable_dans_cet_h_tel__c == null, Valable_dans_cet_h_tel__c == &quot; &quot;)))</errorConditionFormula>
+    <errorMessage>L&apos;hotel validité doit ètre renseigné quand la zone de validité est &quot; Un hôtel&quot;</errorMessage>
+</ValidationRule>

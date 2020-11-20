@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Master_Voucher_OC</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>Master_Voucher_Compact_Layout</compactLayoutAssignment>
+    <description>Consultation of an OC Master Voucher</description>
+    <label>Master Voucher OC</label>
+    <picklistValues>
+        <picklist>Dur_e_de_validit__c</picklist>
+        <values>
+            <fullName>2 mois</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 mois</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Nature_de_la_demande__c</picklist>
+        <values>
+            <fullName>Animation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manifestation sportive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offre mariage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospection commerciale</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>P_riode_de_validit__c</picklist>
+        <values>
+            <fullName>Du lundi au dimanche</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Les ven%2E%3B sam%2E%3Bdim%2E ou fériés</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Prestation_Offerte__c</picklist>
+        <values>
+            <fullName>Deux petits déjeuners</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quatre petits déjeuners</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trois petits déjeuners</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Un petit déjeuner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Une nuit en chambre 1-2 personnes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Une nuit en chambre 1-2 personnes avec petits déjeuners</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Une nuit en chambre familiale</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Une nuit en chambre familiale avec petits déjeuners</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Zone_de_validit__c</picklist>
+        <values>
+            <fullName>France</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Un hôtel</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

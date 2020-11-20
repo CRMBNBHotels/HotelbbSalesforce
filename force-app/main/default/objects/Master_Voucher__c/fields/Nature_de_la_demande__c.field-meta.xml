@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nature_de_la_demande__c</fullName>
+    <externalId>false</externalId>
+    <label>Nature de la demande</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Manifestation sportive</fullName>
+                <default>false</default>
+                <label>Manifestation sportive</label>
+            </value>
+            <value>
+                <fullName>Animation</fullName>
+                <default>false</default>
+                <label>Animation</label>
+            </value>
+            <value>
+                <fullName>Prospection commerciale</fullName>
+                <default>false</default>
+                <label>Prospection commerciale</label>
+            </value>
+            <value>
+                <fullName>Offre mariage</fullName>
+                <default>false</default>
+                <label>Offre mariage</label>
+            </value>
+            <value>
+                <fullName>Réclamation (Réservé SRC)</fullName>
+                <default>false</default>
+                <label>Réclamation (Réservé SRC)</label>
+            </value>
+            <value>
+                <fullName>Prolongation IR-OC (SRC - DR)</fullName>
+                <default>false</default>
+                <label>Prolongation IR-OC (SRC - DR)</label>
+            </value>
+            <value>
+                <fullName>Prolongation IR-OC (CRC - DR)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Prolongation IR-OC (CRC - DR)</label>
+            </value>
+            <value>
+                <fullName>Réclamation (Réservé CRC)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Réclamation (Réservé CRC)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

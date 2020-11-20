@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dur_e_de_validit__c</fullName>
+    <defaultValue>&apos;2 mois&apos;</defaultValue>
+    <externalId>false</externalId>
+    <label>Durée de validité</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>6 mois</fullName>
+                <default>false</default>
+                <label>6 mois</label>
+            </value>
+            <value>
+                <fullName>2 mois</fullName>
+                <default>false</default>
+                <label>2 mois</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Zone_de_validit__c</fullName>
+    <externalId>false</externalId>
+    <label>Zone de validité</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>France</fullName>
+                <default>true</default>
+                <label>France</label>
+            </value>
+            <value>
+                <fullName>Un hôtel</fullName>
+                <default>false</default>
+                <label>Un hôtel</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

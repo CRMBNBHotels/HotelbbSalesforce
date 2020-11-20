@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR04_MasterVoucher_OC_NbrVoucher</fullName>
+    <active>true</active>
+    <errorConditionFormula>Case__c!= null &amp;&amp;  Nombre_de_copie_s__c != 1 &amp;&amp;  $User.BypassValidationRule__c</errorConditionFormula>
+    <errorMessage>Case can have only one voucher and voucher can have only one case.</errorMessage>
+</ValidationRule>

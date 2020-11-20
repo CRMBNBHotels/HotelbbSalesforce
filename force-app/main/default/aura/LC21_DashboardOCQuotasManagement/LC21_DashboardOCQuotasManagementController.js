@@ -4,11 +4,11 @@
         var connectEmail = component.get("v.connectEmail");
         
         component.set('v.columns', [
-            {label: 'Année courante', fieldName: 'Tech_CurrentYear__c', type: 'integer'},
-            {label: 'Hotel', fieldName: 'Tech_HotelName__c', type: 'text'},
-            {label: 'Hotelier', fieldName: 'Tech_ContactName__c', type: 'text'},
-            {label: 'Maximum d\'\invitations', fieldName: 'Maximun_invitations__c', editable:'true', type: 'integer'},
-            {label: 'Invitations restantes'}
+            {label: 'Année courante', fieldName: 'currentYear', type: 'double'},
+            {label: 'Hôtel', fieldName: 'hotelName', type: 'text'},
+            //{label: 'Hotelier', fieldName: 'hotelierName', type: 'text'}, //Commented because Hotelier Name must be removed from the component
+            {label: 'Maximum d\'\invitations', fieldName: 'maxInvit', editable:'true', type: 'double'},
+            {label: 'Invitations restantes', fieldName: 'remainInvit', type: 'double'}
         ]);        
         
         helper.getQuotasData(component, helper);

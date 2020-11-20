@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VR03_MasterVoucher_OC_NomClientOuOccasio</fullName>
+    <active>true</active>
+    <errorConditionFormula>Nom_Pr_nom_client__c == &apos;&apos; &amp;&amp;  Offert_l_occasion_de__c ==&apos;&apos;</errorConditionFormula>
+    <errorMessage>Le champ &apos;Nom/Prénom client&apos; ou le champ &apos;Offert à l&apos;occasion de&apos; doit être rempli</errorMessage>
+</ValidationRule>

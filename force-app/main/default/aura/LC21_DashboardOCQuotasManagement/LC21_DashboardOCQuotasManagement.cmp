@@ -3,12 +3,12 @@
 
      <!-- attributes -->
     <aura:attribute name="connectEmail" type="String"/>
-    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="data" type="QuotasObject"/>
     <aura:attribute name="columns" type="List"/>
     <aura:attribute name="recordId" type="String"/>
     
     <!-- This attribute will hold the update records from data table-->
-    <aura:attribute name="updatedRecord" type="Object[]" />
+    <aura:attribute name="updatedRecord" type="QuotasObject[]" />
 
     <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
     
@@ -16,7 +16,7 @@
         
     <div class="demo-only" style="padding:0.5rem;background:#10a590">
         <div class="slds-text-color_inverse">
-            <div class="slds-text-heading_medium">Opérations Commerciales - Quota par Hotel</div>
+            <div class="slds-text-heading_medium">Opérations Commerciales - Quotas par Hôtel</div>
         </div>
     </div>
     <br/><br/>
@@ -27,7 +27,7 @@
                              aura:id="quotasDataTable"
                              columns="{!v.columns}"
                              data="{!v.data }"
-                             keyField="Id"
+                             keyField="hotelId"
                              onsave ="{!c.onSave}"
                              hideCheckboxColumn="true"
                              onrowaction="{!c.handleRowAction}" />

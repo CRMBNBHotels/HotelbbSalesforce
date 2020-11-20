@@ -7,11 +7,11 @@
         });
         
         action.setCallback(this,function(response) {
-            var state = response.getState();
-            if (state === "SUCCESS") {
+            var state = response.getState();console.log(state);
+            if (state == "SUCCESS") {
                 var result = response.getReturnValue();   
                 console.log(result);
-                component.set("v.data", result.listContRole);
+                component.set("v.data", result.listQuotasObject);
             }
         });
         $A.enqueueAction(action);
@@ -23,11 +23,13 @@
      * and pass them back to server side controller
      * */
     saveDataTable : function(component, event, helper) {
+        
         var editedRecords =  component.find("quotasDataTable").get("v.draftValues");
+        console.log(editedRecords);
         var totalRecordEdited = editedRecords.length;
         var action = component.get("c.updateQuotas");
         action.setParams({
-            'listEditedQuotas' : editedRecords
+            'editedQuotas' : JSON.stringify(editedRecords)
         });
         action.setCallback(this,function(response) {
             var state = response.getState();
@@ -56,6 +58,7 @@
      * Show toast with provided params
      * */
     showToast : function(params){
+        
         var toastEvent = $A.get("e.force:showToast");
         if(toastEvent){
             toastEvent.setParams(params);
@@ -69,6 +72,7 @@
      * reload data table
      * */
     reloadDataTable : function(){
+        
     var refreshEvent = $A.get("e.force:refreshView");
         if(refreshEvent){
             refreshEvent.fire();
