@@ -4,9 +4,14 @@
         var emitEmail = component.get("v.emitEmail");
         var clientId = component.get("v.clientId");
         
-        var action = component.get("c.GetPersonAccount");
+        //CRMSS-960 26/11/2020
+        var hotelEmitId = component.get("v.hotelEmitId");
+        var serviceEmit = component.get("v.serviceEmit");
+        
+        var action = component.get("c.GetDefaultInfo");
         action.setParams({ 
-            clientExtId : component.get('v.clientId')
+            clientExtId : component.get('v.clientId'),
+            hotelEmitExtId : component.get('v.hotelEmitId')
         });
         
         action.setCallback(this, function(response) {
@@ -17,7 +22,8 @@
                 
                 var result = response.getReturnValue();   
                 console.log("result: "+result);
-                component.set("v.clientSFId", result);
+                component.set("v.clientSFId", result.personAccountSFID);
+                component.set("v.hotelEmitSFId", result.hotelEmitterSFID);
 
             }
             
@@ -25,7 +31,7 @@
                 var errors = action.getError();
                 if (errors) {
                     if (errors[0] && errors[0].message) {
-                        console.log('errors');
+                        alert(errors[0] && errors[0].message);
                     }
                 }
             } 
@@ -53,7 +59,7 @@
             
             var state = response.getState();
             console.log("state"+state);
-            if(state === "SUCCESS") {
+            if(state == "SUCCESS") {
                 
                 var result = response.getReturnValue();   
                 console.log("result"+result);
@@ -73,11 +79,11 @@
 
             }
             
-            else if (state === "ERROR"){                
+            else if (state == "ERROR"){                
                 var errors = action.getError();
                 if (errors) {
                     if (errors[0] && errors[0].message) {
-                        console.log('error');
+                        alert(errors[0] && errors[0].message);
                     }
                 }
             } 

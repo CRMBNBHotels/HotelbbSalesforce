@@ -40,7 +40,7 @@ public class AP01_Voucher_Test {
         voucher.Service__c = 'Hotel';
         voucher.Hotel__c = hotel.id;
         voucher.Responsabilite__c = '11000';
-        voucher.Hotel_emetteur__c = 'Test Hotel Emetteur';
+        voucher.Service_emetteur__c = 'MARKETING';
             
         insert voucher;
         

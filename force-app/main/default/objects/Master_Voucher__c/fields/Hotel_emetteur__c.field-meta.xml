@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hotel_emetteur__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Filled from dashboard uniquely with the emitting hotel</description>
+    <externalId>false</externalId>
+    <label>Hôtel émetteur</label>
+    <referenceTo>Hotel__c</referenceTo>
+    <relationshipLabel>Master Vouchers OC (Hôtel émetteur)</relationshipLabel>
+    <relationshipName>Master_Vouchers_OC</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

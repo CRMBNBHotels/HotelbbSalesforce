@@ -45,7 +45,8 @@ public without sharing class AP02_MasterVoucher {
                     VoucherToBeCreated.Type_d_invitation__c = Label.AP02_MasterVoucher_OperationCommerciale;
                     VoucherToBeCreated.Master_Voucher_OC__c = MasterVoucher.id;
                     VoucherToBeCreated.Nom_de_l_m_tteur__c = MasterVoucher.Pr_nom_Nom_de_l_m_tteur__c;
-                    VoucherToBeCreated.Hotel_emetteur__c = MasterVoucher.Hotel_Service_Emmetteur__c;
+                    VoucherToBeCreated.Service_emetteur__c = MasterVoucher.Service_emetteur__c;//Modified by TMA-EIT CG CRMSS-960 26/11/2020
+                    VoucherToBeCreated.Hotel_transmitter__c = MasterVoucher.Hotel_emetteur__c;//Added by TMA-EIT CG CRMSS-960 26/11/2020
                     VoucherToBeCreated.Hotel_Validite_France__c = MasterVoucher.Valable_dans_cet_h_tel__c;
                     VoucherToBeCreated.Dur_e_de_validit__c = MasterVoucher.Dur_e_de_validit__c;
                     VoucherToBeCreated.Validite__c = MasterVoucher.P_riode_de_validit__c;

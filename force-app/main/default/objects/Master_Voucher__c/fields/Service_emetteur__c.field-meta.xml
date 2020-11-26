@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service_emetteur__c</fullName>
+    <defaultValue>$User.Department</defaultValue>
+    <description>Filled by the user or automatically with the user&apos;s department if not filled by the user</description>
+    <externalId>false</externalId>
+    <label>Service émetteur</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>BUILD</fullName>
+                <default>false</default>
+                <label>BUILD</label>
+            </value>
+            <value>
+                <fullName>DIRECTION GENERALE</fullName>
+                <default>false</default>
+                <label>DIRECTION GENERALE</label>
+            </value>
+            <value>
+                <fullName>MARKETING</fullName>
+                <default>false</default>
+                <label>MARKETING</label>
+            </value>
+            <value>
+                <fullName>RH</fullName>
+                <default>false</default>
+                <label>RH</label>
+            </value>
+            <value>
+                <fullName>SRC</fullName>
+                <default>false</default>
+                <label>SRC</label>
+            </value>
+            <value>
+                <fullName>SRC Promos</fullName>
+                <default>false</default>
+                <label>SRC Promos</label>
+            </value>
+            <value>
+                <fullName>VENTE CORPORATE</fullName>
+                <default>false</default>
+                <label>VENTE CORPORATE</label>
+            </value>
+            <value>
+                <fullName>VENTE LOISIRS</fullName>
+                <default>false</default>
+                <label>VENTE LOISIRS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

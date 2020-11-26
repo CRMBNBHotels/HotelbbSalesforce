@@ -10,6 +10,12 @@
     <aura:attribute name="nbVouchOCremain" type="integer"/>
     <aura:attribute name="clientId" type="string"/>
     <aura:attribute name="clientSFId" type="string"/>
+    
+    <!-- CRMSS-960 26/11/2020 Start-->
+    <aura:attribute name="hotelEmitId" type="string"/>
+    <aura:attribute name="hotelEmitSFId" type="string"/>
+    <aura:attribute name="serviceEmit" type="string"/>
+    <!-- CRMSS-960 26/11/2020 End-->
 
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     <!-- CRMSS-868 05/11/2020 End-->
@@ -49,6 +55,8 @@
                         <div class="slds-col slds-size_1-of-2">
                             <lightning:inputField fieldName="Nature_de_la_demande__c" />
                             <lightning:inputField fieldName="Prestation_Offerte__c" />
+                            <lightning:inputField fieldName="Service_emetteur__c" value="{!v.serviceEmit}"/>
+                            <lightning:inputField fieldName="Hotel_emetteur__c" value="{!v.hotelEmitSFId}"/>
                             <lightning:inputField fieldName="Commentaires__c" />
                         </div>
                         <div class="slds-col slds-size_1-of-2">                            

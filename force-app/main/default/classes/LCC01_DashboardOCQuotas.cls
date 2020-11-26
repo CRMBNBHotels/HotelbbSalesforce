@@ -3,7 +3,7 @@
 * @author: TMA-EI CG
 * @date: 06/11/2020
 * @Test class: LCC01_DashboardOCQuotas_Test
-* @Coverage: 90%
+* @Coverage: 92%
 * @Lightning Components: LC_Test
 */
 
@@ -69,10 +69,12 @@ public without sharing class LCC01_DashboardOCQuotas {
     }
     
     @AuraEnabled
-    public static Id GetPersonAccount(string clientExtId){
+    public static ReturnedDefaultInfo GetDefaultInfo(string clientExtId, string hotelEmitExtId){
         
-        string clientName = '';
+        ReturnedDefaultInfo ret = new ReturnedDefaultInfo();
+        
         Id PASFId;
+        id HotelSFId;
         
         if(clientExtId != null && clientExtId != ''){
             
@@ -83,14 +85,34 @@ public without sharing class LCC01_DashboardOCQuotas {
             
             if(listPA != null && listPA.size()>0){
                 
-                clientName = listPA[0].FirstName + ' ' + listPA[0].LastName;
                 PASFId = listPA[0].Id;
-                
             }
         }
         
-        return PASFId;
+        if(hotelEmitExtId != null && hotelEmitExtId != ''){
+            
+            list<Hotel__c> listHotel = new list<Hotel__c>([Select Id,Hotel_ID__c 
+                                                           from Hotel__c 
+                                                           Where Hotel_ID__c =: hotelEmitExtId
+                                                           Limit 1]);
+            
+            if(listHotel != null && listHotel.size()>0){
+                
+                HotelSFId = listHotel[0].Id;
+            }
+        }
+        
+        ret.personAccountSFID = PASFId;
+        ret.hotelEmitterSFID = HotelSFId;
+        
+        return ret;
     }		
-
+    
+    public class ReturnedDefaultInfo{
+        
+        @AuraEnabled public Id personAccountSFID;
+        @AuraEnabled public Id hotelEmitterSFID;
+    }
+    
     
 }

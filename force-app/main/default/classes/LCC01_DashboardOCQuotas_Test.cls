@@ -39,13 +39,14 @@ public class LCC01_DashboardOCQuotas_Test {
 
             hotel__c hotelTest = new Hotel__c();
             hotelTest.Commercial_Hotel_Name__c = 'test hotel';
+            hotelTest.Hotel_ID__c = '483';
             insert hotelTest;
 
             Contact_role__c contRole = new Contact_role__c(Contact__c = cont.Id, Role__c = 'IR-OC', Hotel__c = hotelTest.Id);
             insert contRole;
 
             LCC01_DashboardOCQuotas.GetRemainingQuotas(cont.Email,12);
-            LCC01_DashboardOCQuotas.GetPersonAccount('12468');
+            LCC01_DashboardOCQuotas.GetDefaultInfo('12468','483');
 
         }
 
