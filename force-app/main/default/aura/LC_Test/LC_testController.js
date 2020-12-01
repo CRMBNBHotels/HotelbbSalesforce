@@ -38,6 +38,38 @@
         });
         
         $A.enqueueAction(action);
+        
+        //CRMSS-971 01/12/2020
+        var action2 = component.get("c.GetRemainingQuotas");
+        action2.setParams({ 
+            userEmail : component.get('v.emitEmail'),
+            nbCopies : component.get('v.nbVouchOC')
+        });
+
+        action2.setCallback(this, function(response) {
+            
+            var state = response.getState();
+            console.log("state"+state);
+            if(state == "SUCCESS") {
+                
+                var result = response.getReturnValue(); 
+                console.log(result);
+                component.set("v.nbVouchOCAvailable", result.nbAvailableVouch);
+                component.set("v.hotelierRole", result.hotelierEmitter);
+                console.log("result.nbAvailableVouch"+result.nbAvailableVouch);
+            }
+            
+            else if (state == "ERROR"){                
+                var errors = action.getError();
+                if (errors) {
+                    if (errors[0] && errors[0].message) {
+                        alert(errors[0] && errors[0].message);
+                    }
+                }
+            } 
+        });
+        
+        $A.enqueueAction(action2);
        
     },
 
@@ -61,10 +93,11 @@
             console.log("state"+state);
             if(state == "SUCCESS") {
                 
-                var result = response.getReturnValue();   
-                console.log("result"+result);
-                console.log("result.remainingVouchOC"+result.remainingVouchOC);
+                var result = response.getReturnValue(); 
                 component.set("v.nbVouchOCremain", result.remainingVouchOC);
+                console.log("result.remainingVouchOC"+result.remainingVouchOC);
+                component.set("v.nbVouchOCAvailable", result.nbAvailableVouch);
+                console.log("result.nbAvailableVouch"+result.nbAvailableVouch);
 
                 if(result.remainingVouchOC >= 0){
                     console.log("in success toast");

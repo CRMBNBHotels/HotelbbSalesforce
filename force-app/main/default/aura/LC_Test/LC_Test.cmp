@@ -16,15 +16,29 @@
     <aura:attribute name="hotelEmitSFId" type="string"/>
     <aura:attribute name="serviceEmit" type="string"/>
     <!-- CRMSS-960 26/11/2020 End-->
+    
+    <!-- CRMSS-971 01/12/2020 Start-->
+    <aura:attribute name="nbVouchOCAvailable" type="integer"/>
+    <aura:attribute name="hotelierRole" type="boolean"/>
+    <!-- CRMSS-971 01/12/2020 End-->
 
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     <!-- CRMSS-868 05/11/2020 End-->
 
     <aura:if isTrue="{!not(v.consultMV)}">
     <div class="slds-m-top_xx-large"> 
-        <br/>
         <div class="slds-m-right_xx-large" >
             <div class="slds-m-left_xx-large" >
+                
+                <!-- CRMSS-971 01/12/2020 Start-->
+                <aura:if isTrue="{!(v.hotelierRole)}">
+                    <div style="font-size: large;color: #10a590;font-weight:Bold">
+                        Nombre de Voucher(s) OC restant(s) : {!v.nbVouchOCAvailable}
+                    </div>
+                    <br/>
+                </aura:if>    
+                <!-- CRMSS-971 01/12/2020 End-->
+                
                 <lightning:recordEditForm  aura:id = "editForm" objectApiName="Master_Voucher__c" density="comfy" onsubmit="{!c.handleSubmit}" onsuccess="{!c.handleSuccess}">
                     <lightning:messages />
                     <div class="demo-only" style="padding:0.5rem;background:#10a590">

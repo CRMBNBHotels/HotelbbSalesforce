@@ -45,7 +45,13 @@ public without sharing class LCC01_DashboardOCQuotas {
             if(role != null && role != '' && role == 'IR-OC'){
                 
                 ret.nbAvailableVouch = remainingHotelVouchOC;
-                ret.remainingVouchOC = remainingHotelVouchOC - nbCopies;
+                ret.hotelierEmitter = true;
+                
+                if(nbCopies != null){
+                    
+                    ret.remainingVouchOC = remainingHotelVouchOC - nbCopies;
+                }
+                
                 system.debug('### cg apx ret.remainingVouchOC'+ret.remainingVouchOC);
             }
             else if(role == null || role == '' || role != 'IR-OC'){
@@ -66,6 +72,7 @@ public without sharing class LCC01_DashboardOCQuotas {
         
         @AuraEnabled public double remainingVouchOC;
         @AuraEnabled public double nbAvailableVouch;
+        @AuraEnabled public boolean hotelierEmitter;
     }
     
     @AuraEnabled
