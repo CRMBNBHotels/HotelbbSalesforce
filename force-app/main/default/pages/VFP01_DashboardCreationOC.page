@@ -8,7 +8,7 @@
         //CRMSS-868 05/11/2020 
         var emitEmail = "{!$CurrentPage.parameters.user_email}";
         var clientId = "{!$CurrentPage.parameters.client_id}";
-        var hotelEmitId = "{!$CurrentPage.parameters.hotel_emitter_pms_id}";
+        var hotelEmitId = "{!$CurrentPage.parameters.hotel_emitter_vb_id}";
         var serviceEmit = "{!$CurrentPage.parameters.services_emitter}";
         $Lightning.use("c:LA01_MasterVoucher", function() {
             $Lightning.createComponent(
