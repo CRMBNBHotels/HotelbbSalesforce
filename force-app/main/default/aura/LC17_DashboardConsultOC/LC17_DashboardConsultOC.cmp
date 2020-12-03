@@ -45,7 +45,7 @@
                             <lightning:outputField fieldName="Valorisation__c" />
                         </div>
                         <div class="slds-col slds-size_1-of-2">
-                            <lightning:outputField fieldName="Hotel_emetteur__c" />
+                            <lightning:outputField fieldName="Hotel_emetteur_CommercialName__c" />
                             <lightning:outputField fieldName="Service_emetteur__c" />
                             <lightning:outputField fieldName="Pr_nom_Nom_de_l_m_tteur__c" />
                         </div>
@@ -138,7 +138,7 @@
             </div>
             
             <aura:set attribute="else">
-                <c:LC18_DashboardConsultVoucherOC recordId = "{!v.vouchrecordId}" mvrecordId="{!v.mvrecordId}"/>
+                <c:LC18_DashboardConsultVoucherOC recordId = "{!v.vouchrecordId}" mvrecordId="{!v.mvrecordId}" parentMVCall="True"/>
             </aura:set>
             
         </aura:if>

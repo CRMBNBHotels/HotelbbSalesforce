@@ -1,0 +1,23 @@
+<!-- TMA-EIT CG *01/12/2020* CRMSS-972 VFP04_DashboardConsultVoucherOC -->
+<apex:page standardController="Voucher__c" standardStylesheets="false" tabStyle="Voucher__c" showHeader="false" docType="html-5.0"  title="Voucher OC">
+
+    <div>
+        
+        <apex:includeLightning />
+        <div id="Con" />
+        <script> 
+        var codeVouchOC = "{!$CurrentPage.parameters.voucher_code}";
+        $Lightning.use("c:LA04_Voucher", function() {
+            $Lightning.createComponent(
+                "c:LC18_DashboardConsultVoucherOC",
+                {"codeVouchOC" : codeVouchOC},
+                "Con",
+                function(cmp) {
+                    console.log("Component is created!");
+                    console.log(cmp);
+                });
+        });        
+        </script>
+    
+    </div>
+</apex:page>

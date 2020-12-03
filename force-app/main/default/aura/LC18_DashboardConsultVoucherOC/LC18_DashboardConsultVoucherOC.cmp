@@ -1,12 +1,21 @@
 <!-- TMA-EIT CG *22/10/2020* LC18_DashboardConsultVoucherOC -->
-<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,lightning:isUrlAddressable" access="global" >
-    
-    <aura:attribute name="recordId" type="String" />
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,lightning:isUrlAddressable,force:hasRecordId" access="global" controller="LCC18_DashboardConsultVoucherOC">
+
+    <aura:attribute name="recordId" type="Id" access="public" />
     <aura:attribute name="consultVouch" type="boolean" default="true"/>
     <aura:attribute name="mvrecordId" type="String" />
+   
+    <!-- CRMSS-960 26/11/2020 Start-->
+    <aura:attribute name="codeVouchOC" type="String" />
+    <aura:attribute name="parentMVCall" type="boolean" default="false"/>
+    <!-- CRMSS-960 26/11/2020 End-->
     
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
     <aura:if isTrue="{!(v.consultVouch)}">
         
+        <aura:if isTrue="{! not( empty( v.recordId ) ) }">
+            
         <div style = "background-color:white;padding:2%;border-radius:5px;width:100%">
             
             <lightning:button class="slds-button slds-button_success Dashboard" label="Master Voucher" onclick="{!c.goBack}"/>
@@ -30,7 +39,7 @@
                         <lightning:outputField fieldName="Valorisation__c" />
                     </div>
                     <div class="slds-col slds-size_1-of-2">
-                        <lightning:outputField fieldName="Hotel_transmitter__c" />
+                        <lightning:outputField fieldName="Hotel_emetteur_CommercialName__c" />
                         <lightning:outputField fieldName="Service_emetteur__c" />
                         <lightning:outputField fieldName="Nom_de_l_m_tteur__c" />
                     </div>
@@ -95,6 +104,8 @@
             </lightning:recordViewForm>
             
         </div>
+            
+        </aura:if>
         
         <aura:set attribute="else">
             <c:LC17_DashboardConsultOC  mvrecordId="{!v.mvrecordId}"/>

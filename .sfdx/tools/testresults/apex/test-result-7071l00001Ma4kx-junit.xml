@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+    <testsuite name="force.apex" timestamp="2020-12-03T10:57:52+02:00" hostname="https://hotelbb--neodev1.my.salesforce.com" tests="1" failures="0"  errors="0"  time="5.54">
+        <properties>
+            <property name="outcome" value="Passed"/>
+            <property name="testsRan" value="1"/>
+            <property name="passing" value="1"/>
+            <property name="failing" value="0"/>
+            <property name="skipped" value="0"/>
+            <property name="passRate" value="100%"/>
+            <property name="failRate" value="0%"/>
+            <property name="testStartTime" value="Dec 3, 2020 10:57 AM"/>
+            <property name="testExecutionTime" value="5.54 s"/>
+            <property name="testTotalTime" value="5.54 s"/>
+            <property name="commandTime" value="11.35 s"/>
+            <property name="hostname" value="https://hotelbb--neodev1.my.salesforce.com"/>
+            <property name="orgId" value="00D1l0000008iPoEAI"/>
+            <property name="username" value="cynthia.geagea@eit-mena.com.neodev1"/>
+            <property name="testRunId" value="7071l00001Ma4kx"/>
+            <property name="userId" value="0051l000003qJtvAAE"/>
+        </properties>
+        <testcase name="GetBookingInfoTest" classname="LCC13_BookingHeader_Test" time="5.54">
+        </testcase>
+    </testsuite>
+</testsuites>

@@ -1,0 +1,46 @@
+{
+    "summary": {
+        "outcome": "Passed",
+        "testsRan": 1,
+        "passing": 1,
+        "failing": 0,
+        "skipped": 0,
+        "passRate": "100%",
+        "failRate": "0%",
+        "testStartTime": "Dec 3, 2020 10:57 AM",
+        "testExecutionTime": "5538 ms",
+        "testTotalTime": "5538 ms",
+        "commandTime": "11354 ms",
+        "hostname": "https://hotelbb--neodev1.my.salesforce.com",
+        "orgId": "00D1l0000008iPoEAI",
+        "username": "cynthia.geagea@eit-mena.com.neodev1",
+        "testRunId": "7071l00001Ma4kx",
+        "userId": "0051l000003qJtvAAE"
+    },
+    "tests": [
+        {
+            "attributes": {
+                "type": "ApexTestResult",
+                "url": "/services/data/v50.0/tooling/sobjects/ApexTestResult/07M1l00000803xSEAQ"
+            },
+            "Id": "07M1l00000803xSEAQ",
+            "QueueItemId": "7091l00000153ISAAY",
+            "StackTrace": null,
+            "Message": null,
+            "AsyncApexJobId": "7071l00001Ma4kxAAB",
+            "MethodName": "GetBookingInfoTest",
+            "Outcome": "Pass",
+            "ApexClass": {
+                "attributes": {
+                    "type": "ApexClass",
+                    "url": "/services/data/v50.0/tooling/sobjects/ApexClass/01p1v00000Pn0OxAAJ"
+                },
+                "Id": "01p1v00000Pn0OxAAJ",
+                "Name": "LCC13_BookingHeader_Test",
+                "NamespacePrefix": null
+            },
+            "RunTime": 5538,
+            "FullName": "LCC13_BookingHeader_Test.GetBookingInfoTest"
+        }
+    ]
+}

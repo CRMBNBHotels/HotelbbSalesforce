@@ -1,0 +1,33 @@
+=== Test Reports
+FORMAT  FILE
+──────  ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+txt     c:\Users\cynthia.geagea.EITECH\Documents\TMA B&B\BB_Git\.sfdx\tools\testresults\apex\test-result.txt
+txt     c:\Users\cynthia.geagea.EITECH\Documents\TMA B&B\BB_Git\.sfdx\tools\testresults\apex\test-run-id.txt
+junit   c:\Users\cynthia.geagea.EITECH\Documents\TMA B&B\BB_Git\.sfdx\tools\testresults\apex\test-result-7071l00001Ma4kx-junit.xml
+json    c:\Users\cynthia.geagea.EITECH\Documents\TMA B&B\BB_Git\.sfdx\tools\testresults\apex\test-result-7071l00001Ma4kx.json
+
+=== Test Results
+TEST NAME                                    OUTCOME  MESSAGE  RUNTIME (MS)
+───────────────────────────────────────────  ───────  ───────  ────────────
+LCC13_BookingHeader_Test.GetBookingInfoTest  Pass              5538
+
+=== Test Summary
+NAME                 VALUE
+───────────────────  ───────────────────────────────────────────
+Outcome              Passed
+Tests Ran            1
+Passing              1
+Failing              0
+Skipped              0
+Pass Rate            100%
+Fail Rate            0%
+Test Start Time      Dec 3, 2020 10:57 AM
+Test Execution Time  5538 ms
+Test Total Time      5538 ms
+Command Time         11354 ms
+Hostname             https://hotelbb--neodev1.my.salesforce.com
+Org Id               00D1l0000008iPoEAI
+Username             cynthia.geagea@eit-mena.com.neodev1
+Test Run Id          7071l00001Ma4kx
+User Id              0051l000003qJtvAAE
+
