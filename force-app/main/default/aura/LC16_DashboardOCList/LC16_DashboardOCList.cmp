@@ -19,12 +19,13 @@
                     <br/>
                     <table>
                         <tr style="width:100%;">
-                            <th style="width:17%;color:#10a590;"> Master Voucher OC</th>
-                            <th style="width:17%;color:#10a590;"> Nature de la demande </th>
-                            <th style="width:30%;color:#10a590;"> Préstation offerte </th>
-                            <th style="width:15%;color:#10a590;"> Durée de validité </th>
-                            <th style="width:15%;color:#10a590;"> Nombre de copies </th>
-                            <th style="width:20%;color:#10a590;"> Date de céation </th>
+                            <th style="width:11%;color:#10a590;"> Master Voucher OC</th>
+                            <th style="width:13%;color:#10a590;"> Prénom / Nom client </th>
+                            <th style="width:17%;color:#10a590;"> Prénom / Nom de l'émetteur </th>
+                            <th style="width:27%;color:#10a590;"> Préstation offerte </th>
+                            <th style="width:11%;color:#10a590;"> Durée de validité </th>
+                            <th style="width:12%;color:#10a590;"> Nombre de copies </th>
+                            <th style="width:30%;color:#10a590;"> Date de céation </th>
                         </tr>
                         <br/>
                         <aura:iteration items="{!v.MasterVoucherList}" var="record">
@@ -36,7 +37,12 @@
                                 </td>    
                                 <td class="slds-truncate">
                                     <div class="slds-truncate slds-cell-wrap" >
-                                        {!record.Nature_de_la_demande__c}
+                                        {!record.Nom_Pr_nom_client__c}
+                                    </div>                         
+                                </td>
+                                <td class="slds-truncate">
+                                    <div class="slds-truncate slds-cell-wrap" >
+                                        {!record.Pr_nom_Nom_de_l_m_tteur__r.Name}
                                     </div>                         
                                 </td>
                                 <td class="slds-truncate">
