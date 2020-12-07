@@ -1,0 +1,128 @@
+<apex:page id="theIncludedPage" standardController="Master_Voucher__c" extensions="VFC01_GetRelatedVouchers"   renderAs="PDF" showHeader="false" sidebar="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false">    
+    <!--renderAs="PDF"-->
+    <html>
+        <head> 
+            <apex:stylesheet value="{!URLFOR($Resource.PDFOC, 'styles.css')}"/>
+            <style>
+                @page {
+                size: left;
+                margin: 2mm;
+                }
+                .page-break {
+                page-break-after: always;
+                }
+                #container1 { 
+                position: relative; 
+                width: 700px;
+                height: 1040px; 
+                overflow: hidden;
+                }
+                
+            </style>
+        </head>    
+        <apex:repeat value="{!RelatedVouchers}" var="cli" >
+            <body class="background" >
+                <div id="container1" >
+                    <div id="Background"><img src="{!URLFOR($Resource.PDFOC, 'images/Background.png')}" height="1050" width="2050"/></div>
+                    <div id="BonsjourchezBBHtels"><span class="dinpro-bold" style="font-size:27px;color:#5b2c15;">Bon séjour chez B&amp;B Hôtels !</span></div>
+                    <div id="CustomerName_1"><span class="dinpro-medium" style="font-size:20px;color:#364429;">
+                        <apex:outputPanel rendered="{!IF(NOT(ISBLANK(cli.Nom_Prenom_du_client__c)) && ISBLANK(cli.Offert_occasion_de__c),true,false)}">
+                            {!cli.Nom_Prenom_du_client__c}
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!IF(NOT(ISBLANK(cli.Offert_occasion_de__c)),true,false)}">
+                            {!cli.Offert_occasion_de__c}
+                        </apex:outputPanel></span></div>
+                    <div id="VoucherCode_1"><span class="dinpro-medium" style="font-size:16px;color:#484646;letter-spacing: 3.9px;text-align:center;">{!cli.Code_OC__c}</span></div>
+                    <div id="RoomPictures"><img src="{!URLFOR($Resource.PDFOC, 'images/RoomPictures.png')}"/></div>
+                    <div id="AndSign"><img src="{!URLFOR($Resource.PDFOC, 'images/AndSign.png')}"/></div>
+                    <div id="BnbLogo_1"><img src="{!URLFOR($Resource.PDFOC, 'images/BnbLogo1.png')}"/></div>
+                    <div id="BnbLogo_2"><img src="{!URLFOR($Resource.PDFOC, 'images/BnbLogo.png')}"/></div>
+                    <div id="NumCRS"><img src="{!URLFOR($Resource.PDFOC, 'images/NumCRS.png')}"/></div>
+                    <div id="Underline_1"><img src="{!URLFOR($Resource.PDFOC, 'images/Underline.png')}"/></div>
+                    <div id="Underline_2"><img src="{!URLFOR($Resource.PDFOC, 'images/Underline.png')}"/></div>
+                    <div id="INVITATION_1"><span class="dinpro-medium" style="font-size:50px;color:#5b2c15;letter-spacing: 8.5px;">INVITATION</span></div>
+                    <div id="INVITATION_2"><span class="dinpro-medium" style="font-size:50px;color:#5b2c15;letter-spacing: 8.5px;">INVITATION</span></div>
+                    <div id="VoucherCode_2"><span class="dinpro-medium" style="font-size:16px;color:#484646;letter-spacing: 3.9px;text-align:center;">{!cli.Code_OC__c}</span></div>
+                    <div id="Offerte_1" style = "display: block;width: max-content;"><span class="dinpro-medium" style="font-size:29px;color:#5b2c15;text-align:center;display: block;width: max-content;white-space: nowrap;">
+                        <apex:outputPanel rendered="{!IF(NOT(ISBLANK(cli.Nom_Prenom_du_client__c)) && ISBLANK(cli.Offert_occasion_de__c),true,false)}">
+                            Offerte à
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!IF(NOT(ISBLANK(cli.Offert_occasion_de__c)),true,false)}">
+                            Offert à l’occasion de:
+                        </apex:outputPanel></span></div>
+                    <div id="Pourvousremercierden">
+                        <span class="dinpro-medium" style="font-size:18px;color:#694225;letter-spacing: 0.2px;line-height: 22px;">
+                            <strong>C’est avec plaisir que nous vous offrons cette invitation.</strong> 
+                        </span>
+                    </div>
+                    <div id="Pourlutiliserremette">
+                        <span class="dinpro-medium" style="font-size:18px;color:#694225;letter-spacing: 0.2px;line-height: 22px;">
+                            Pour l’utiliser, renseignez le numéro de votre invitation en ligne lors de votre réservation que vous pouvez effectuer:
+                        </span>
+                    </div>
+                    
+                    <div id="ourremetterla">
+                        <span class="dinpro-medium" style="font-size:18px;color:#694225;letter-spacing: 0.2px;line-height: 22px;">
+                            Ou remettez-la tout simplement à nos hôteliers lors de votre arrivée à l’hôtel.
+                        </span>
+                    </div>
+                    
+                    <div id="Nousvousconseillonsd">
+                        <span class="dinpro-medium" style="font-size:18px;color:#694225;letter-spacing: 0.2px;line-height: 22px;">
+                            Nous vous conseillons alors de vérifier les horaires d’ouverture de la réception lors de 
+                            votre réservation que vous pouvez faire  aussi:
+                        </span>
+                    </div>
+                    <div id="OffrirCetteInvitation">
+                        <div class="dinpro-medium" style="font-size:18px;color:#694225;letter-spacing: 0.2px;line-height: 22px;">
+                            <p>
+                                ............................................................................................
+                                <strong>Vous souhaitez offrir cette invitation ?</strong> 
+                                <br/>
+                                Il vous suffit de la transmettre à la personne de votre choix. 
+                                ............................................................................................
+                            </p>
+                        </div>
+                    </div>
+                    <div id="parinternetsurhotelb"><span class="dinpro-medium" style="font-size:18px;color:#694225;letter-spacing: 0.2px;line-height: 22px;">• par internet sur hotelbb.com</span></div>
+                    <div id="auprsdenotreCentrale"><span class="dinpro-medium" style="font-size:18px;color:#694225;letter-spacing: 0.2px;line-height: 22px;">• auprès de notre Centrale de Réservations au</span></div>
+                    <div id="oudirectementenappel"><span class="dinpro-medium" style="font-size:18px;color:#694225;letter-spacing: 0.2px;line-height: 22px;">• ou directement en appelant l’hôtel.</span></div>
+                    <div id="OnlyforeveryoneRserv"><img src="{!URLFOR($Resource.PDFOC, 'images/OnlyforeveryoneRserv.png')}"/></div>
+                    <div id="Valablejusquau"><span class="dinpro-regular" style="font-size:12px;color:#5b2c15;">Valable jusqu’au</span></div>
+                    <div id="ValidityDate"><span class="dinpro-regular" style="font-size:12px;color:#464545;">
+                        <apex:outputText value="{0, date, dd/MM/yyyy}">
+                            <apex:param value="{!cli.expireDate__c}" /> 
+                        </apex:outputText>
+                        </span></div>
+                    <div id="UsabilityDays"><span class="dinpro-regular" style="font-size:12px;color:#464545;display: block;width: max-content;white-space: nowrap;">{!cli.Validite__c}</span></div>
+                    <div id="Utilisable"><span class="dinpro-regular" style="font-size:12px;color:#5b2c15;">Utilisable</span></div>
+                    <div id="Offerte_2"><span class="dinpro-medium" style="font-size:16px;color:#5b2c15;text-align:center;white-space: nowrap;display: block;width: max-content;left:0px;position:absolute;">
+                        <apex:outputPanel rendered="{!IF(NOT(ISBLANK(cli.Nom_Prenom_du_client__c)),true,false)}">
+                            Offerte à
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!IF(ISBLANK(cli.Nom_Prenom_du_client__c) && NOT(ISBLANK(cli.Offert_occasion_de__c)),true,false)}">
+                            Offert à l’occasion de:
+                        </apex:outputPanel></span></div>
+                    <div id="Pour"><span class="dinpro-medium" style="font-size:16px;color:#5b2c15;">Pour</span></div>
+                    <div id="Dans">
+                        <span class="dinpro-medium" style="font-size:16px;color:#5b2c15;position:absolute;white-space: nowrap;top:15px;">
+                            {!IF(cli.Zone_de_validite_OC__c != 'France','Dans le B&B HÔTEL de '+cli.Hotel_Validite_France__r.Commercial_Hotel_Name__c,'Dans le B&B HÔTEL de votre choix en France')}
+                        </span>
+                    </div>
+                    <div id="CustomerName_2"><span class="dinpro-medium" style="font-size:16px;color:#464545;">
+                        <apex:outputPanel rendered="{!IF(NOT(ISBLANK(cli.Nom_Prenom_du_client__c)),true,false)}">
+                            {!cli.Nom_Prenom_du_client__c}
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!IF(ISBLANK(cli.Nom_Prenom_du_client__c) && NOT(ISBLANK(cli.Offert_occasion_de__c)),true,false)}">
+                            <div class="dinpro-medium" style="position:absolute;left:100px;font-size:16px;color:#464545;">
+                                {!cli.Offert_occasion_de__c}
+                            </div>
+                        </apex:outputPanel></span></div>
+                  
+                    
+                    <div id="Where" ><span class="dinpro-medium" style="font-size:16px;color:#464545;">{!cli.Prestation_offerte__c}</span></div>
+                </div>
+            </body>
+        </apex:repeat>
+    </html>
+</apex:page>

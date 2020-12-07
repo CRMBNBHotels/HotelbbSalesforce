@@ -1,0 +1,372 @@
+@font-face {
+  font-family: "DINPro-Medium";
+  src: url("DINPro-Medium/DINPro-Medium.eot?orgId=00D250000008bKq");
+  src: url("DINPro-Medium/DINPro-Medium.woff2?orgId=00D250000008bKq") format("woff2"), url("DINPro-Medium/DINPro-Medium.woff?orgId=00D250000008bKq") format("woff"), url("DINPro-Medium/DINPro-Medium.ttf?orgId=00D250000008bKq") format("truetype"), url("DINPro-Medium/DINPro-Medium.svg?orgId=00D250000008bKq#DINPro-Medium") format("svg");
+}
+
+@font-face {
+  font-family: "DINPro-Bold";
+  src: url("DINPro-Bold/DINPro-Bold.eot?orgId=00D250000008bKq");
+  src: url("DINPro-Bold/DINPro-Bold.woff2?orgId=00D250000008bKq") format("woff2"), url("DINPro-Bold/DINPro-Bold.woff?orgId=00D250000008bKq") format("woff"), url("DINPro-Bold/DINPro-Bold.ttf?orgId=00D250000008bKq") format("truetype"), url("DINPro-Bold/DINPro-Bold.svg?orgId=00D250000008bKq#DINPro-Bold") format("svg");
+}
+
+@font-face {
+  font-family: "DINPro-Regular";
+  src: url("DINPro-Regular/DINPro-Regular.eot?orgId=00D250000008bKq");
+  src: url("DINPro-Regular/DINPro-Regular.woff2?orgId=00D250000008bKq") format("woff2"), url("DINPro-Regular/DINPro-Regular.woff?orgId=00D250000008bKq") format("woff"), url("DINPro-Regular/DINPro-Regular.ttf?orgId=00D250000008bKq") format("truetype"), url("DINPro-Regular/DINPro-Regular.svg?orgId=00D250000008bKq#DINPro-Regular") format("svg");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+span.dinpro-regular {
+  font-family: 'DINPro-Regular', sans-serif;
+}
+
+span.dinpro-medium {
+  font-family: 'DINPro-Medium', sans-serif;
+}
+
+span.dinpro-bold {
+  font-family: 'DINPro-Bold', sans-serif;
+}
+
+#container {
+  left: 0px;
+  top: 0px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+  height: 1000px;
+  overflow: hidden;
+  z-index: 0;
+}
+
+#Background {
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  z-index: 2;
+}
+
+#BonsjourchezBBHtels {
+  left: 300px;
+  top: 653px;
+  position: absolute;
+  width: 360px;
+  height: 26px;
+  z-index: 3;
+}
+
+#CustomerName_1 {
+  left: 0px;
+  top: 210px;
+  position: absolute;
+  width: 420px;
+  height: 15px;
+  text-align: center;
+  z-index: 4;
+}
+
+#VoucherCode_1 {
+  left: 126px;
+  top: 777px;
+  position: absolute;
+  width: 160px;
+  height: 12px;
+  z-index: 5;
+}
+
+#RoomPictures {
+  left: 460px;
+  top: 721px;
+  position: absolute;
+  width: 261px;
+  height: 129px;
+  z-index: 6;
+}
+
+#AndSign {
+  left: -1px;
+  top: 400px;
+  position: absolute;
+  width: 238px;
+  height: 302px;
+  z-index: 7;
+}
+
+#BnbLogo_1 {
+  left: 500px;
+  top: 29px;
+  position: absolute;
+  width: 125px;
+  height: 112px;
+  z-index: 8;
+}
+
+#BnbLogo_2 {
+  left: 537px;
+  top: 887px;
+  position: absolute;
+  width: 50px;
+  height: 48px;
+  z-index: 9;
+}
+
+#GarantieIR_1 {
+  left: 149px;
+  top: 108px;
+  position: absolute;
+  width: 118px;
+  height: 119px;
+  z-index: 10;
+}
+
+#NumCRS {
+  left: 490px;
+  top: 473px;
+  position: absolute;
+  width: 189px;
+  height: 25px;
+  z-index: 11;
+}
+
+#Underline_1 {
+  left: 64px;
+  top: 80px;
+  position: absolute;
+  width: 281px;
+  height: 2px;
+  z-index: 12;
+}
+
+#GarantieIR_2 {
+  left: 360px;
+  top: 726px;
+  position: absolute;
+  width: 109px;
+  height: 110px;
+  z-index: 13;
+}
+
+#Underline_2 {
+  left: 64px;
+  top: 772px;
+  position: absolute;
+  width: 281px;
+  height: 2px;
+  z-index: 14;
+}
+
+#INVITATION_1 {
+  left: 64px;
+  top: 36px;
+  position: absolute;
+  width: 280px;
+  height: 29px;
+  z-index: 15;
+}
+
+#INVITATION_2 {
+  left: 64px;
+  top: 722px;
+  position: absolute;
+  width: 280px;
+  height: 29px;
+  z-index: 16;
+}
+
+#VoucherCode_2 {
+  left: 126px;
+  top: 87px;
+  position: absolute;
+  width: 160px;
+  height: 12px;
+  z-index: 17;
+  text-align: center;
+}
+
+#Offerte_1 {
+  left: 150px;
+  top: 165px;
+  position: absolute;
+  width: 115px;
+  height: 22px;
+  z-index: 18;
+}
+
+#Pourvousremercierden {
+  left: 60px;
+  top: 280px;
+  position: absolute;
+  width: 630px;
+  height: 38px;
+  z-index: 19;
+}
+
+#Pourlutiliserremette {
+  left: 60px;
+  top: 305px;
+  position: absolute;
+  width: 630px;
+  height: 34px;
+  z-index: 20;
+}
+
+#ourremetterla{
+  left: 60px;
+  top: 390px;
+  position: absolute;
+  width: 630px;
+  height: 34px;
+  z-index: 20;
+}
+
+#Nousvousconseillonsd {
+  left: 60px;
+  top: 420px;
+  position: absolute;
+  width: 630px;
+  height: 38px;
+  z-index: 21;
+}
+
+#parinternetsurhotelb {
+  left: 100px;
+  top: 363px;
+  position: absolute;
+  width: 265px;
+  height: 16px;
+  z-index: 22;
+}
+
+#auprsdenotreCentrale {
+  left: 100px;
+  top: 473px;
+  position: absolute;
+  width: 390px;
+  height: 17px;
+  z-index: 23;
+}
+
+#oudirectementenappel {
+  left: 100px;
+  top: 505px;
+  position: absolute;
+  width: 310px;
+  height: 17px;
+  z-index: 24;
+}
+
+#OnlyforeveryoneRserv {
+  left: 756px;
+  top: 737px;
+  position: absolute;
+  width: 8px;
+  height: 130px;
+  z-index: 25;
+}
+
+#Valablejusquau {
+  left: 64px;
+  top: 821px;
+  position: absolute;
+  width: 150px;
+  height: 14px;
+  z-index: 26;
+}
+
+#ValidityDate {
+  left: 155px;
+  top: 821px;
+  position: absolute;
+  width: 100px;
+  height: 13px;
+  z-index: 27;
+}
+
+#UsabilityDays {
+  left: 120px;
+  top: 843px;
+  position: absolute;
+  width: 205px;
+  height: 11px;
+  z-index: 28;
+}
+
+#Utilisable {
+  left: 64px;
+  top: 840px;
+  position: absolute;
+  width: 59px;
+  height: 11px;
+  z-index: 29;
+}
+
+#Offerte_2 {
+  left: 62px;
+  top: 867px;
+  position: absolute;
+  width: 110px;
+  height: 21px;
+  z-index: 30;
+}
+
+#Pour {
+  left: 61px;
+  top: 900px;
+  position: absolute;
+  width: 47px;
+  height: 16px;
+  z-index: 31;
+}
+
+#Dans {
+  left: 61px;
+  top: 930px;
+  position: absolute;
+  width: 49px;
+  height: 17px;
+  z-index: 32;
+}
+
+#CustomerName_2 {
+  left: 130px;
+  top: 867px;
+  position: absolute;
+  width: 350px;
+  height: 15px;
+  z-index: 33;
+}
+
+#Prestation {
+  left: 117px;
+  top: 930px;
+  position: absolute;
+  width: 450px;
+  height: 22px;
+  z-index: 34;
+}
+
+#Where {
+  left: 102px;
+  top: 900px;
+  position: absolute;
+  width: 450px;
+  height: 22px;
+  z-index: 35;
+}
+
+#OffrirCetteInvitation {
+  left: 240px;
+  top: 530px;
+  position: absolute;
+  width: 450px;
+  height: 22px;
+  z-index: 36;
+}
