@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingGuestRules>
+        <fullName>SR01_MasterVoucherOC_Dashboard</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Grand tread access of MV OC created in SF to dashboard users</description>
+        <label>SR01_MasterVoucherOC_Dashboard</label>
+        <sharedTo>
+            <guestUser>homepage</guestUser>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Master Voucher OC</value>
+        </criteriaItems>
+    </sharingGuestRules>
+</SharingRules>
