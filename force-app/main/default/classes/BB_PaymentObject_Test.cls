@@ -179,6 +179,16 @@ public class BB_PaymentObject_Test {
         profileInfoObj.Profile.UserID = new List<BB_PaymentObject.UserID>();
         BB_PaymentObject.UserID userIdObj = new BB_PaymentObject.UserID();
         userIdObj.ID = 'ID';
+        
+        BB_PaymentObject.ResGlobalInfoResponse resp = New BB_PaymentObject.ResGlobalInfoResponse();
+        resp.GuestCounts = New BB_PaymentObject.GuestCounts();
+        resp.TimeSpan  = New BB_PaymentObject.TimeSpan();
+        resp.Comments  = New BB_PaymentObject.Comments();
+        resp.DepositPayments  = New BB_PaymentObject.DepositPayments();
+        resp.Total  = New BB_PaymentObject.Total();
+        resp.HotelReservationIDs  = New BB_PaymentObject.HotelReservationIDs();
+        resp.Profiles = New BB_PaymentObject.Profiles();
+        resp.BookingRules  = New BB_PaymentObject.BookingRules();
     }
     
     static String fillResponse(string resBody) {

@@ -1,3 +1,10 @@
+/*******************************************************************************************************************************************************************
+* -- Date         Name              Version  Remarks
+* -- -----------  ----------        -------  ---------------------------------------
+* -- 03-MAY-2019  Consultant TMA    1.0     
+* -- 08-MAR-2021  Shiksha           2.0     CRMSS-1087 : Change the description according to the mapping under based on the status ,If the value sent by BBUS is not in this list don’t display anything
+* @TestClass : BB_PaymentObject_Test
+*********************************************************************************************************************************************************************/
 public without sharing class BB_PaymentObject extends BB_Object implements BB_Object_Interface {
     
     public String initializeRequestEndpointUpdate() {
@@ -12,18 +19,41 @@ public without sharing class BB_PaymentObject extends BB_Object implements BB_Ob
         
     }
     
-   public static String initializeRequestBody(boolean includePaging, String pageKey, Id sfdcId,set<String> setfieldtoInclude,String PageDateKey){
-         Opportunity oppObj = [Select Id, Externalid__c, RecordType.Name
-                              FROM Opportunity
-                              WHERE Id =:sfdcId];
+    public static String initializeRequestBody(boolean includePaging, String pageKey, Id sfdcId,set<String> setfieldtoInclude,String PageDateKey){
+        
+        //Added by TMA-EIL CG CRMSS-630 17/08/2020 Start
         string typeOpp = '';
-        if(oppObj.RecordType.Name == 'Booking'){
+        string resValue = '';
+        
+        string stringSFDCID = string.valueOf(sfdcId);
+        string beginSFDCID = stringSFDCID.substring(0, 3);
+        
+        if(beginSFDCID == label.BookingIdSubString){
+            
+            Booking__c bookObj = [Select Id, EXTERNALID__c 
+                                  FROM Booking__c
+                                  WHERE Id =:sfdcId];
+            
             typeOpp = '14';
+            resValue = bookObj.EXTERNALID__c;
         }
-        else if(oppObj.RecordType.Name == 'Master Booking'){
-            typeOpp = '34';
+        
+        else if(beginSFDCID == '006'){
+        //Added by TMA-EIL CG CRMSS-630 17/08/2020 End
+           
+            Opportunity oppObj = [Select Id, Externalid__c, RecordType.Name
+                                  FROM Opportunity
+                                  WHERE Id =:sfdcId];
+            
+            if(oppObj.RecordType.Name == 'Booking'){
+                typeOpp = '14';
+            }
+            else if(oppObj.RecordType.Name == 'Master Booking'){
+                typeOpp = '34';
+            }
+            resValue = oppObj.Externalid__c;
         }
-        string resValue = oppObj.Externalid__c;
+        
         
         BBVoucherRequestWrapper bookingWrapper = new BBVoucherRequestWrapper();
         bookingWrapper.headers = new Headers();
@@ -51,10 +81,19 @@ public without sharing class BB_PaymentObject extends BB_Object implements BB_Ob
         strBody = strBody.replace('ResID_Value', '@ResID_Value');
         strBody = strBody.replace('Version', '@Version');
         return strBody;
-    //return null;
+        //return null;
     }
     
     public DataTableWrapper createTableFromResponse(String strResponse) {
+        Map<String, String> mapCodeToChannel = new Map<String, String>();
+        Map<String,String> statusTodescriptionMap = New Map<String, String>(); // CRMSS-1087
+        for(Channel_Code__mdt oneCHCode : [SELECT Label, Channel_Name__c FROM Channel_Code__mdt]){
+            mapCodeToChannel.put(oneCHCode.Label, oneCHCode.Channel_Name__c);
+        }
+
+        for (BookingPaymentMapping__mdt statusToDesc : [SELECT Code__c,originalBBUSlabel__c,TranslatedLabel__c FROM BookingPaymentMapping__mdt]){
+            statusTodescriptionMap.put(statusToDesc.originalBBUSlabel__c, statusToDesc.TranslatedLabel__c);
+        }
         system.debug('strResponse ' + strResponse);
         DataTableWrapper tableWrapper = new DataTableWrapper();
         strResponse = cleanResponse(strResponse);
@@ -79,7 +118,7 @@ public without sharing class BB_PaymentObject extends BB_Object implements BB_Ob
                     
                     //Added by TMA-EIL CG MS-871 20/01/2020 Start
                     if(guaranteePaymentObj != null && guaranteePaymentObj.AcceptedPayments != null && guaranteePaymentObj.AcceptedPayments.AcceptedPayment != null){
-                    //Added by TMA-EIL CG MS-871 20/01/2020 End
+                        //Added by TMA-EIL CG MS-871 20/01/2020 End
                         
                         for(AcceptedPayment acceptedPaymentObj : guaranteePaymentObj.AcceptedPayments.AcceptedPayment) {
                             
@@ -94,11 +133,13 @@ public without sharing class BB_PaymentObject extends BB_Object implements BB_Ob
                                         strEffectiveDate = effectiveDate.format();
                                     }
                                 }
+                                String vendorCode = mapCodeToChannel.containsKey(custLoyaltyObj.VendorCode) ? mapCodeToChannel.get(custLoyaltyObj.VendorCode) : custLoyaltyObj.VendorCode;
+                                String description = statusTodescriptionMap.containsKey(custLoyaltyObj.LoyalLevelCode) ? statusTodescriptionMap.get(custLoyaltyObj.LoyalLevelCode) : '';
                                 listFields.add(new DataTableWrapper.TableField(strEffectiveDate, null, null));
-                                listFields.add(new DataTableWrapper.TableField(custLoyaltyObj.VendorCode, null, null));
+                                listFields.add(new DataTableWrapper.TableField(vendorCode, null, null));
                                 listFields.add(new DataTableWrapper.TableField(custLoyaltyObj.CustomerValue, null, null));
                                 listFields.add(new DataTableWrapper.TableField(custLoyaltyObj.LoyalLevelCode, null, null));
-                                listFields.add(new DataTableWrapper.TableField(custLoyaltyObj.LoyalLevel, null, null));
+                                listFields.add(new DataTableWrapper.TableField(description, null, null));
                                 record.listFields = listFields;
                                 tableWrapper.listRecords.add(record);
                             }
@@ -147,7 +188,7 @@ public without sharing class BB_PaymentObject extends BB_Object implements BB_Ob
                 
                 //Added by TMA-EIL CG MS-871 20/01/2020 Start
                 if(guaranteePaymentObj != null && guaranteePaymentObj.AcceptedPayments != null && guaranteePaymentObj.AcceptedPayments.AcceptedPayment != null){
-                //Added by TMA-EIL CG MS-871 20/01/2020 End
+                    //Added by TMA-EIL CG MS-871 20/01/2020 End
                     
                     for(AcceptedPayment acceptedPaymentObj : guaranteePaymentObj.AcceptedPayments.AcceptedPayment) {
                         
