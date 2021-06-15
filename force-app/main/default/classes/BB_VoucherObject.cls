@@ -1,3 +1,13 @@
+/*******************************************************************************************************************************************************************
+*
+* -- Date         Name              Version  Remarks
+* -- -----------  ----------        -------  ---------------------------------------
+* -- 29-May-2019  Consultant TMA    1.0     
+* -- 19-MAR-2021  Amira             2.0     CRMSS-1106: Vouchers RI/CL/OC : possibilité de mettre à jour le champs montant de consommation
+* -- 01-Apr-2021  Amira             3.0     CRMSS-1124: Vouchers statut 7001 transmis au lieu de "used"
+* -- 21-may-2021  Amira             4.0     CRMSS-1155: As a CR user, I want to be able to modify the field "responsability" of a voucher RI
+*********************************************************************************************************************************************************************/
+
 public without sharing class BB_VoucherObject extends BB_Object implements BB_Object_Interface,BB_Object_Sync_Interface{
     
     //Added by TMA-EIL CG - CRMSS 423 - 09/01/2020 - Start
@@ -5,6 +15,7 @@ public without sharing class BB_VoucherObject extends BB_Object implements BB_Ob
     public static string RTID;
     public static string IRRecordTypeID = Schema.SObjectType.Voucher__c.getRecordTypeInfosByDeveloperName().get('IR').getRecordTypeId();
     public static string EClubRecordTypeID = Schema.SObjectType.Voucher__c.getRecordTypeInfosByDeveloperName().get('Eclub').getRecordTypeId();
+        
     //Added by TMA-EIL CG - CRMSS 423 - 09/01/2020 - End
     
     
@@ -17,6 +28,7 @@ public without sharing class BB_VoucherObject extends BB_Object implements BB_Ob
     public String initializeRequestEndpointUpdate() {
         system.debug('@@@ RTID'+RTID);
         //String endPoint = Label.BBUS_WebservicesLink + Label.BBUS_VoucherEndpointUpdate;
+        
         
         //Added by TMA-EIL CG - CRMSS 423 - 09/01/2020 - Start
         string endpoint;
@@ -73,13 +85,32 @@ public without sharing class BB_VoucherObject extends BB_Object implements BB_Ob
         
         else{
             
-            Voucher__c vouchObj = [Select Id, Code__c, Statut__c, Externalid__c, RecordtypeId
+            Voucher__c vouchObj = [Select Id, Code__c, Statut__c, Externalid__c, RecordtypeId,expireDate__c,Montant_de_Consommation__c,Responsabilite__c
                                    From Voucher__c
                                    Where Externalid__c =: sfdcId];
             
             string GeneratedCode = vouchObj.Code__c;
             string Status = vouchObj.Statut__c;
-            
+            if (vouchObj.Statut__c=='7003'){
+
+                status='Cancelled';
+            }
+            else if (vouchObj.Statut__c==label.Statut7000){
+
+                status=label.Generated;
+            }
+            else if (vouchObj.Statut__c=='7001'){
+
+                status=label.Used;
+            }
+            else {
+
+                status=vouchObj.Statut__c;
+            }
+            String expireDate = String.valueof(vouchObj.expireDate__c);
+            String Montant = String.valueof(vouchObj.Montant_de_Consommation__c);
+            String Responsibility= String.valueof(vouchObj.Responsabilite__c);
+
             String strBody;
             
             if(vouchObj.RecordTypeId == EClubRecordTypeID){
@@ -89,6 +120,9 @@ public without sharing class BB_VoucherObject extends BB_Object implements BB_Ob
                 voucherWrapper.UpdateVoucherRQ.voucherRQS = new VoucherRQS();
                 voucherWrapper.UpdateVoucherRQ.voucherRQS.GeneratedCode = GeneratedCode;
                 voucherWrapper.UpdateVoucherRQ.voucherRQS.Status = Status;
+                voucherWrapper.UpdateVoucherRQ.voucherRQS.ExpireDate = expireDate;
+                voucherWrapper.UpdateVoucherRQ.voucherRQS.Amount = Montant;
+                voucherWrapper.UpdateVoucherRQ.voucherRQS.Responsability = Responsibility;
                 
                 
                 strBody = JSON.serialize(voucherWrapper);
@@ -96,6 +130,9 @@ public without sharing class BB_VoucherObject extends BB_Object implements BB_Ob
                 strBody = strBody.replace('"VoucherRQS":', '"bb:Voucher":');
                 strBody = strBody.replace('"GeneratedCode":', '"@GeneratedCode":');
                 strBody = strBody.replace('"Status":', '"@Status":');
+                strBody = strBody.replace('"ExpireDate":', '"@ExpireDate":');
+                strBody = strBody.replace('"Amount":', '"@Amount":');
+                strBody = strBody.replace('"Responsability":', '"@Responsability":');
             }
             else if(vouchObj.RecordTypeId == IRRecordTypeID){
                 
@@ -104,6 +141,9 @@ public without sharing class BB_VoucherObject extends BB_Object implements BB_Ob
                 refundVoucherWrapper.UpdateRefundVoucherRQ.RefundVoucherRQS = new RefundVoucherRQS();
                 refundVoucherWrapper.UpdateRefundVoucherRQ.RefundVoucherRQS.GeneratedCode = GeneratedCode;
                 refundVoucherWrapper.UpdateRefundVoucherRQ.RefundVoucherRQS.Status = Status;
+                refundVoucherWrapper.UpdateRefundVoucherRQ.RefundVoucherRQS.ExpireDate = expireDate;
+                refundVoucherWrapper.UpdateRefundVoucherRQ.RefundVoucherRQS.Amount = Montant;
+                refundVoucherWrapper.UpdateRefundVoucherRQ.RefundVoucherRQS.Responsability = Responsibility;
                 
                 
                 strBody = JSON.serialize(refundVoucherWrapper);
@@ -111,6 +151,10 @@ public without sharing class BB_VoucherObject extends BB_Object implements BB_Ob
                 strBody = strBody.replace('"RefundVoucherRQS":', '"bb:Voucher":');
                 strBody = strBody.replace('"GeneratedCode":', '"@GeneratedCode":');
                 strBody = strBody.replace('"Status":', '"@Status":');
+                strBody = strBody.replace('"ExpireDate":', '"@ExpireDate":');
+                strBody = strBody.replace('"Amount":', '"@Amount":');
+                strBody = strBody.replace('"Responsability":', '"@Responsability":');
+                
             }
             system.debug('strBody2' + strBody);
             return strBody;
@@ -245,6 +289,7 @@ public without sharing class BB_VoucherObject extends BB_Object implements BB_Ob
                 
                 vouch.Statut__c = (String)OldDataWrapper.sobj.get('Statut__c');
             }
+            
         }
         
         //Added by TMA-CG CRMSS-203 20/06/2019 start
@@ -330,6 +375,10 @@ public without sharing class BB_VoucherObject extends BB_Object implements BB_Ob
     public class VoucherRQS {
         public String GeneratedCode {get;set;}
         public String Status {get;set;}
+        public String ExpireDate {get;set;}
+        public String Amount {get;set;}
+        public String Responsability {get;set;}
+        
     }
     // end of request wrappers - ticket CRMSS-129
     
@@ -345,6 +394,9 @@ public without sharing class BB_VoucherObject extends BB_Object implements BB_Ob
     public class RefundVoucherRQS {
         public String GeneratedCode {get;set;}
         public String Status {get;set;}
+        public String ExpireDate {get;set;}
+        public String Amount {get;set;}
+        public String Responsability {get;set;}
     }
     // end of request wrappers - ticket CRMSS-423
     //Added by TMA-EIL CG - CRMSS 423 - 09/01/2020 - End
@@ -377,6 +429,7 @@ public without sharing class BB_VoucherObject extends BB_Object implements BB_Ob
         public String Responsability {get;set;}
         public String Status {get;set;}
         public String ExpireDate {get;set;}
+        public String Amount {get;set;}
         public Reason Reason {get;set;} 
         public List<RefundVoucherDetail> RefundVoucherDetail {get;set;} 
     }
@@ -428,6 +481,8 @@ public without sharing class BB_VoucherObject extends BB_Object implements BB_Ob
         public String GeneratedDate {get;set;}
         public String Status {get;set;}
         public String ExpireDate {get;set;}
+        public String Amount {get;set;}
+        public String Responsability {get;set;}
         public List<VoucherDetail> VoucherDetail {get;set;} 
     }
     
