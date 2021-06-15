@@ -1,0 +1,10 @@
+<!--
+@author: Kanel Services  - Amira 
+@date: 08/06/2021
+@details : 
+Date         Name        Version  Remarks
+08-FEB-2021  Amira      1.0     MS-7561: Je ne peux plus supprimer les DA de mon équipe dans SF-->
+
+<aura:component implements="force:lightningQuickAction,lightning:availableForFlowActions">
+   <aura:attribute name="redirectURL" type="String" />
+</aura:component>
