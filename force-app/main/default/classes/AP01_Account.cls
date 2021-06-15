@@ -6,7 +6,7 @@
 */
 public without sharing class AP01_Account 
 {
-    public static void UpdateStatus(List<Account> triggerNew,Map<Id,Account> oldMap) //
+    public static void UpdateStatus(List<Account> triggerNew,Map<Id,Account> oldMap)
     {
         system.debug('@@@ UpdateStatus');
         list<Account> listAccount = new list<Account>();
