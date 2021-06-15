@@ -1,10 +1,12 @@
-/**
-* @author TMA-EI Julien
-* @date 15/04/2019
-* @description update fields on voucher object + WS. aCRMSS-133
-* @test class : AP03_voucher_test
-* @coverage: 78 %
-*/
+/*******************************************************************************************************************************************************************
+*
+* -- Date         Name              Version  Remarks
+* -- -----------  ----------        -------  ---------------------------------------
+* -- 15-Apr-2019  Consultant TMA    1.0     update fields on voucher object + WS. aCRMSS-133
+* -- 19-MAR-2021  Amira             2.0     CRMSS-1106: Vouchers RI/CL/OC : possibilité de mettre à jour le champs montant de consommation
+* -- 21-MAY-2021  Amira             3.0     CRMSS-1155: As a CR user, I want to be able to modify the field "responsability" of a voucher RI 
+*@test class : AP03_voucher_test
+*********************************************************************************************************************************************************************/
 public without sharing class AP03_voucher {
     //Method to check if  1-Statut__c on object voucher is modified 
     //                   2- Status_change_request__c isn't modified 
@@ -21,9 +23,12 @@ public without sharing class AP03_voucher {
         
         for(Id VoucherId : MapOldVouchers.Keyset()){
             
-            if(MapVouchers.get(VoucherId).Statut__c != MapOldVouchers.get(VoucherId).Statut__c){
+            if(MapVouchers.get(VoucherId).Statut__c != MapOldVouchers.get(VoucherId).Statut__c || MapVouchers.get(VoucherId).expireDate__c != MapOldVouchers.get(VoucherId).expireDate__c || MapVouchers.get(VoucherId).Montant_de_Consommation__c != MapOldVouchers.get(VoucherId).Montant_de_Consommation__c || MapVouchers.get(VoucherId).Responsabilite__c != MapOldVouchers.get(VoucherId).Responsabilite__c){
                 
                 SetOfFields.add('Statut__c');
+                SetOfFields.add('expireDate__c');
+                SetOfFields.add('Montant_de_Consommation__c');
+				SetOfFields.add('Responsabilite__c');
                 
                 if(SetOfFields != null && SetOfFields.size()>0){
                     
@@ -37,7 +42,7 @@ public without sharing class AP03_voucher {
         for (id Idcurr : MapVouchers.keySet())
         {
             String ConnectedUserId = userinfo.getUserId();
-            if(MapVouchers.get(Idcurr).Statut__c != MapOldVouchers.get(Idcurr).Statut__c 
+            if((MapVouchers.get(Idcurr).Statut__c != MapOldVouchers.get(Idcurr).Statut__c || MapVouchers.get(Idcurr).expireDate__c != MapOldVouchers.get(Idcurr).expireDate__c || MapVouchers.get(Idcurr).Montant_de_Consommation__c != MapOldVouchers.get(Idcurr).Montant_de_Consommation__c || MapVouchers.get(Idcurr).Responsabilite__c != MapOldVouchers.get(Idcurr).Responsabilite__c)
                && MapVouchers.get(Idcurr).Status_change_request__c ==  MapOldVouchers.get(Idcurr).Status_change_request__c
                && ConnectedUserId.substring(0,15) != label.technical_user_2_id )
             { 
@@ -65,10 +70,12 @@ public without sharing class AP03_voucher {
                 //If the info modified is related to personal info, set a list of fields modified and call a future method to perform the callout for BBUS
                 if((newMap.get(Idcurr).Status_change_request__c =='Processing' || 
                     newMap.get(Idcurr).Status_change_request__c == oldMap.get(Idcurr).Status_change_request__c ) && 
-                    newMap.get(Idcurr).Statut__c != oldMap.get(Idcurr).Statut__c){
+                   (newMap.get(Idcurr).Statut__c != oldMap.get(Idcurr).Statut__c || newMap.get(Idcurr).expireDate__c != oldMap.get(Idcurr).expireDate__c || newMap.get(Idcurr).Montant_de_Consommation__c != oldMap.get(Idcurr).Montant_de_Consommation__c || newMap.get(Idcurr).Responsabilite__c != oldMap.get(Idcurr).Responsabilite__c)){
                        
                        mapfieldModified.put('Statut__c',newMap.get(Idcurr).Statut__c);
-                       
+                       mapfieldModified.put('expireDate__c',string.valueof(newMap.get(Idcurr).expireDate__c));
+                       mapfieldModified.put('Montant_de_Consommation__c',string.valueof(newMap.get(Idcurr).Montant_de_Consommation__c));
+					   mapfieldModified.put('Responsabilite__c',string.valueof(newMap.get(Idcurr).Responsabilite__c));
                        //Call the future method
                        
                        system.debug('###cyn CallWSUpdateVoucherInfo newMap.get(Idcurr).externalID__c'+newMap.get(Idcurr).externalID__c);
@@ -158,7 +165,7 @@ public without sharing class AP03_voucher {
                  vouch.id = Idcurr;
                  vouch =  voucherObject.actionBadResponse(null, Idcurr,setfieldModif);
                  vouch.Status_change_request__c = 'Error null External Id ' + String.valueOf(DateTime.now().format());
-           		 update vouch;
+                 update vouch;
             }
         }catch(Exception e) {
             system.debug('### cyn catch exception');
