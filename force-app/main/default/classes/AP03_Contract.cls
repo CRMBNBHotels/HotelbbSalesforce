@@ -11,6 +11,8 @@
 * -- 25-FEB-2021  Amira        2.0     CRMSS-1039: Notification au travel manager lorsque une facture est rattaché à un contrat carte logée
 * -- 22-FEB-2021  Shiksha      3.0     CRMSS-1042/1064: carte logée Génération du relevé de facture Batch, récupération des données et calculs
 * -- 08-MAR-2021  Shiksha      4.0     CRMSS-1085 : En fonction du code prestation reçu afficher les libellés de prestations selon le mapping
+* -- 22-APR-2021  Shiksha      5.0     CRMSS-1134 :Carte logée : liste des personnes autorisées = 1 contrat actif par personne
+* -- 07-Jul-2021  Amira        6.0     CRMSS-1228 : Message opportunité Groupe - Remplacer emetteur du batch : Shiksha à Nadia 
 * @TestClass : AP03_Contract_Test
 *********************************************************************************************************************************************************************/
 
@@ -18,13 +20,20 @@ public class AP03_Contract {
     /*
     * @Details: CRMSS-1051: carte logée credit card expire avant la fin du contrat : Statut du contrat devient “Expiré” + Notification Owner 
     *           CRMSS-359 : Carte logée credit card expire dans 1 mois - notification owner un mois avant la date d’expiration de la carte bancaire
+
+    *           CRMSS-975 : Une carte logée (Si au statut Actif uniquement) est renouvelée tacitement UN JOUR AVANT LA DATE DE FIN DE CONTRAT
+    * 			CRMSS-1228: Message opportunité Groupe - Remplacer emetteur du batch : Shiksha à Nadia        
+
     *           CRMSS-975 : Une carte logée (Si au statut Actif uniquement) est renouvelée tacitement UN JOUR AVANT LA DATE DE FIN DE CONTRAT           
+
     */
     public static void carteLogeeNotifActions(List<Contract> aContractList, String aAction){
         List<EmailMessageWrapper> msgWrapperList = New List<EmailMessageWrapper>();
         
         For(Contract cont : aContractList){ 
-            EmailMessageWrapper msg = New EmailMessageWrapper(null, null, New List<String> {cont.Owner.email}, null, null,null, null, null, true , cont.Id );
+
+            EmailMessageWrapper msg = New EmailMessageWrapper(cont.Owner.email, cont.Owner.Name, New List<String> {cont.Owner.email}, null, null,null, null, null, true , cont.Id );
+
             msgWrapperList.add(msg);
 
             if (aAction.EqualsIgnoreCase('reconduction')){
@@ -79,7 +88,9 @@ public class AP03_Contract {
             efa.setBody(cont.ContentDocument.LatestPublishedVersion.VersionData);
             attachmentList.add(efa);  
 
-            EmailMessageWrapper msg = New EmailMessageWrapper(null, null, New List<String> {ctr.ContactComptabilite__r.email}, ctr.ContactComptabilite__c, null,null, null, null, true , ctr.Id,attachmentList);
+
+            EmailMessageWrapper msg = New EmailMessageWrapper(ctr.Owner.email, ctr.Owner.Name, New List<String> {ctr.ContactComptabilite__r.email}, ctr.ContactComptabilite__c, null,null, null, null, true , ctr.Id,attachmentList);
+
             contractMsgMap.put(ctr.id,msg);
 
             PrevLinekdEntityId = cont.LinkedEntityId;
@@ -187,7 +198,8 @@ public class AP03_Contract {
             pdfA.setBody(pdfBlob);
 
 
-            EmailMessageWrapper msg = New EmailMessageWrapper(null, null, New List<String> {cont.ContactComptabilite__r.email}, cont.ContactComptabilite__c, null,null, ParameterSubjectMap, ParameterBodyMap, true , cont.Id , New List<Messaging.EmailFileAttachment>{csvA, pdfA } );
+           EmailMessageWrapper msg = New EmailMessageWrapper(cont.Owner.email, cont.Owner.Name, New List<String> {cont.ContactComptabilite__r.email}, cont.ContactComptabilite__c, null,null, ParameterSubjectMap, ParameterBodyMap, true , cont.Id , New List<Messaging.EmailFileAttachment>{csvA, pdfA } );
+
             msgWrapperList.add(msg);
 
             //Create Attachments
@@ -208,6 +220,75 @@ public class AP03_Contract {
 
         Database.Insert (attachList);
         Utils_Email.sendEmail(msgWrapperList, 'Carte_Log_e_Envoi_du_relev_des_factures_1614070497692');
+    }
+
+
+   /*
+    * @Details: CRMSS-1134 :Carte logée : liste des personnes autorisées = 1 contrat actif par personne
+    *           
+    */
+    public static void validate1ActivecUser(List<CarteLogeeUser__c> cUserList, Set<Id> aAccUserSet){
+        //get count Account for each CarteLogee User
+        Map<Id,Account> notUniqueAccMap = getAuthorizedCarteLogeeUser(aAccUserSet);
+        
+        for (CarteLogeeUser__c cUser: cUserList ){
+        
+            if (notUniqueAccMap.KeySet().Contains(cUser.Account__c)){
+                cUser.AddError (Label.Validate1ActiveUser.Replace('<UserName>',notUniqueAccMap.get(cUser.Account__c).Name ));
+            }
+        }
+    }
+
+    public static Map<Id,Account> getAuthorizedCarteLogeeUser(Set<Id> aAccUserSet){
+        Map<Id,Account> notUniqueAccMap = New  Map<Id,Account>();
+        Integer 	 countAcc 		 = 0;
+        Id 			 previousAcc;
+        for (CarteLogeeUser__c cUser:[SELECT Id ,Contract__c, Account__c, Account__r.Name
+                                        FROM CarteLogeeUser__c
+                                        WHERE Active__c = TRUE AND Contract__r.Status ='Activated'  AND Account__c IN :aAccUserSet
+                                        ORDER BY Account__c] ) {									
+            if (cUser.Account__c != previousAcc){
+                countAcc = 0;
+            }
+            countAcc++;
+            if (countAcc > 1){
+                notUniqueAccMap.put(cUser.Account__c,New Account (Id = cUser.Account__c , Name = cUser.Account__r.Name));
+            }
+            previousAcc = cUser.Account__c;	
+        }
+        return notUniqueAccMap;
+    }
+
+    public static void validate1ActivecUser(Map<Id,Contract> aCarteLogeeMap ){
+	
+        Set<Id> 		 allAccUserSet			= New Set<Id>();
+        Set<Id> 		 accUserSet				= New Set<Id>();
+        Map<Id,Set<Id>>  contractCarteUserMap	= New Map<Id,Set<Id>>();
+        Id               previousContract;
+        
+        for (CarteLogeeUser__c cUser:[SELECT Id ,Contract__c, Account__c, Account__r.Name, Active__c
+                                        FROM CarteLogeeUser__c
+                                        WHERE Contract__c IN :aCarteLogeeMap.KeySet() AND Contract__r.Status = 'Activated'
+                                        ORDER BY Contract__c]){
+            
+            if (cUser.Contract__c != previousContract){
+                accUserSet = New Set<Id>();			
+            }
+            allAccUserSet.add(cUser.Account__c);
+            accUserSet.add(cUser.Account__c);
+            contractCarteUserMap.put(cUser.Contract__c,accUserSet);
+            previousContract = cUser.Contract__c;
+        }
+        
+        Map<Id,Account> notUniqueAccMap = getAuthorizedCarteLogeeUser(allAccUserSet);
+        
+        for (Account acc: notUniqueAccMap.Values() ){		
+            for (Contract ctr: aCarteLogeeMap.Values()){
+                if (contractCarteUserMap.get(ctr.Id).Contains(acc.Id)){				
+                    ctr.AddError (Label.Validate1ActiveUser.Replace('<UserName>',acc.Name ));
+                }
+            }	
+        }
     }
 
 }
