@@ -1,0 +1,106 @@
+<!-- CRMSS - 624 TMA-EI CG *18/06/2020*  Start LC13_BookingHeader -->
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,force:hasSObjectName,flexipage:availableForAllPageTypes" access="global" controller="LCC13_BookingHeader">
+	
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="Stage" type="String" />
+    <aura:attribute name="ArrivalDate" type="Date" />
+    <aura:attribute name="DepartureDate" type="Date" />
+    <aura:attribute name="Hotel" type="String" />
+    <aura:attribute name="HotelName" type="String" />
+    <aura:attribute name="InvoicedAmnt" type="double" />
+    <aura:attribute name="OCStatus" type="String" />
+    <aura:attribute name="PMSBookId" type="String" />
+    <aura:attribute name="IdCrsVb" type="String" />
+    <aura:attribute name="Updatable" type="Boolean" />
+    <aura:attribute name="Cancellable" type="Boolean" />
+    
+    <!-- initialize values -->
+    <aura:handler name="init" value="{!this}" action="{!c.loadData}" />
+    <!-- / initialize values -->
+    <div style = "background-color:white;padding:0.1%;border-radius:5px;width:100%">
+        
+        <!-- Body -->
+        <div class="c-container">
+            <br/>
+            <lightning:layout >
+                <div style="width:20%">
+                    <lightning:layoutItem padding="around-small">
+                        <ui:outputText value="{!$Label.c.LCC13_BookingStage}"/>
+                        <br/>
+                        <ui:outputText value="{!v.Stage}"/>
+                    </lightning:layoutItem>
+                </div>
+                <div style="width:20%">
+                    <lightning:layoutItem padding="around-small">
+                        <ui:outputText value="{!$Label.c.LCC13_BookingArrivalDate}"/>
+                        <br/>
+                        <ui:outputText  value="{!v.ArrivalDate}" /> 
+                    </lightning:layoutItem>
+                </div>
+                <div style="width:20%">
+                    <lightning:layoutItem padding="around-small">
+                        <ui:outputText value="{!$Label.c.LCC13_BookingDepDate}"/>
+                        <br/>
+                        <ui:outputText value="{!v.DepartureDate}"/>
+                    </lightning:layoutItem>
+                </div>
+                <div style="width:20%">
+                    <lightning:layoutItem padding="around-small">
+                        <ui:outputText value="{!$Label.c.LCC13_BookingHotelName}"/>
+                        <br/>
+                        <ui:outputText value="{!v.HotelName}"/>
+                    </lightning:layoutItem>
+                </div>
+                <div style="width:20%">
+                    <lightning:layoutItem padding="around-small">
+                        <ui:outputText value="{!$Label.c.LCC13_BookingInvAmnt}"/>
+                        <br/>
+                        <ui:outputText value="{!v.InvoicedAmnt}"/>
+                    </lightning:layoutItem>
+                </div>
+            </lightning:layout>
+            
+            <div class="c-container">
+                <br/>
+                <lightning:layout >
+                    <div style="width:20%">
+                        <lightning:layoutItem padding="around-small">
+                            <ui:outputText value="{!$Label.c.LCC13_BookingOCStatus}"/>
+                            <br/>
+                            <ui:outputText value="{!v.OCStatus}"/>
+                        </lightning:layoutItem>
+                    </div>
+                    <div style="width:20%">
+                        <lightning:layoutItem padding="around-small">
+                            <ui:outputText value="{!$Label.c.LCC13_BookingPMSId}"/>
+                            <br/>
+                            <ui:outputText value="{!v.PMSBookId}"/>
+                        </lightning:layoutItem>
+                    </div>
+                    <div style="width:20%">
+                        <lightning:layoutItem padding="around-small">
+                            <ui:outputText value="{!$Label.c.LCC13_BookingID_CRS_VB}"/>
+                            <br/>
+                            <ui:outputText value="{!v.IdCrsVb}"/>
+                        </lightning:layoutItem>
+                    </div>
+                    <div style="width:20%">
+                        <lightning:layoutItem padding="around-small">
+                            <ui:outputText value="{!$Label.c.LCC13_BookingUpdatable}"/>
+                            <br/>
+                            <ui:outputCheckbox value="{!v.Updatable}"/>
+                        </lightning:layoutItem>
+                    </div>
+                    <div style="width:20%">
+                        <lightning:layoutItem padding="around-small">
+                            <ui:outputText value="{!$Label.c.LCC13_BookingCancellable}"/>
+                            <br/>
+                            <ui:outputCheckbox  value="{!v.Cancellable}"/>
+                        </lightning:layoutItem>
+                    </div>
+                </lightning:layout>
+            </div>
+        </div>
+    </div>
+
+</aura:component>

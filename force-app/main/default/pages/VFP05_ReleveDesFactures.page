@@ -1,0 +1,255 @@
+<apex:page standardController="Contract" extensions="VFC05_ReleveDesFactures"  renderAs="pdf" showHeader="false"  sidebar="false"  standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false">
+<html>
+<head>
+<style type="text/css">
+    @page {              
+        size: Landscape;
+        margin-top: 20px;
+        margin-bottom:30px;
+        text-align: justify;
+        
+        @top-center {
+            content: element(header);
+        }
+        
+        @bottom-left{
+            content: element(footer);
+        }
+        @bottom-right {
+            content: counter(page) "/" counter(pages);
+        }
+    }
+    
+    body {
+        font-family: Arial;
+        font-size: 10pt;
+        line-height: 100%;
+    }
+            
+    .col1 {width:80%; text-align:left;}
+    .col2 {width:20%; text-align:left;} 
+
+    .header{
+        line-height: 40%;
+    }
+    
+
+    table.table1 {               
+        border: solid 1px;
+        text-align: left;
+        border-collapse: collapse;
+        table-layout: auto;
+        width: 100%;
+        -fs-table-paginate: paginate;   
+        border-spacing: 0;        
+    }
+
+    .table1-th{
+        border: 1px solid black;
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+
+    .table1-td{
+        border: 1px solid black;
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+
+    .table1-tf{
+        border: 1px solid black;
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+
+    tr{
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+
+    table.table2 {               
+        border: solid 1px;
+        text-align: left;
+        border-collapse: collapse;
+        table-layout: auto;
+        width: 60%; /* whichever width you want */
+        margin-left: 40%; /* minus the amount to make it 100% */
+        page-break-inside: avoid;
+    }
+
+    .table2-th{
+        border: 1px solid black;
+         text-align: center;
+    }
+
+    .table2-td{
+        border: 1px solid black;
+    }
+
+    .table2-tf{
+        border: 1px solid black;
+        text-align: right;
+    }
+    
+    .table2-tf-h{
+        border: 1px solid black;
+        text-align: left;
+    }
+
+    .table2-title{
+        border: none;
+    }
+
+    .table1-td-montant{
+        border: 1px solid black;
+        text-align: right;
+    }
+    
+ 
+</style>
+<div class="header">
+    <apex:panelGrid columns="2"  columnClasses="col1, col2" width="100%"  border="0">
+        <apex:image url="{!$Resource.logo}" width="20%"/>
+        <apex:panelGroup id="theGroup">            
+            <p><span>SAS FINANCIERE BBHOTELS</span></p>
+            <p><span>271 RUE GENERAL PAULET</span></p>
+            <p><span>CS 91975 </span></p>
+            <p><span>BREST 29219</span></p>
+            <p><span>&nbsp;</span></p>
+            <p><span>&nbsp;</span></p>
+            <p><span>Brest, le <apex:outputText value="{0,date,' 'dd' 'MM ' 'yyyy}"><apex:param value="{!NOW()}" /> </apex:outputText></span></p>
+            <p><span>&nbsp;</span></p>
+        </apex:panelGroup>
+    </apex:panelGrid> 
+    <p><span>REF : <apex:outputText value=" {!corporateCode}{0,date,yyyyMM}"> <apex:param value="{!NOW()}"/></apex:outputText></span></p>
+
+<p style='text-align:center'><b><span>Relevé de consommations  <apex:outputText value=" {!corporateCode}"/></span></b></p>
+<p style='text-align:center'><b><span>Période: <apex:outputText value=" {!CASE(MONTH(premiereConso),
+                                1, 'Janvier',
+                                2, 'Février',
+                                3, 'Mars', 
+                                4, 'Avril', 
+                                5, 'Mai', 
+                                6, 'Juin',
+                                7, 'Juillet',
+                                8, 'Août',
+                                9, 'Septembre',
+                                10, 'Octobre',
+                                11, 'Novembre',
+                                12, 'Décembre',
+                                '-')} {!YEAR(DATEVALUE(NOW()))}"/></span></b></p>
+</div>
+</head>
+
+<body>
+    <apex:form >
+        <br/>
+        <div id="table1">
+            <table class="table1">
+                <thead>
+                    <tr>
+                        <th class="table1-th"> Hotel </th>
+                        <th class="table1-th"> Réservé par </th>
+                        <th class="table1-th"> Nom de l'occupant </th>
+                        <th class="table1-th"> Date de séjour </th>
+                        <th class="table1-th"> Prestation </th>
+                        <th class="table1-th"> Qté </th>                         
+                        <th class="table1-th"> Montant HT </th>
+                        <th class="table1-th"> Taux TVA </th>
+                        <th class="table1-th"> Montant TVA </th>
+                        <th class="table1-th"> Montant TTC </th>
+                        <th class="table1-th"> N° Facture </th>
+                        <th class="table1-th"> ID Client </th>
+                        <th class="table1-th"> N° Résa </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <apex:repeat value="{!venteList}" var="v" >
+                    <tr>
+                        <td class="table1-td">{!v.Nomhotel__c}</td>
+                        <td class="table1-td">{!v.PrenomBooker__c} {!v.NomBooker__c}</td>
+                        <td class="table1-td">{!v.Nom_du_stayer__c}</td>
+                        <td class="table1-td">
+                            <apex:outputText value="{0, date,' 'dd'-'MM'-'yyyy}"><apex:param value="{!v.DateSejour__c}" /></apex:outputText>
+                        </td>
+                        <td class="table1-td">{!v.LibellePrestation__c}</td>
+                        <td class="table1-td-montant"><apex:outputText value="{0, number, 0}"><apex:param value="{!v.Quantite__c}" /></apex:outputText></td>                        
+                        <td class="table1-td-montant"><apex:outputText value="{0, number, 0.00}"><apex:param value="{!v.Montant_HT__c}" /></apex:outputText></td>
+                        <td class="table1-td-montant"><apex:outputText value="{0, number, 0}"><apex:param value="{!v.Taux_TVA__c}" /></apex:outputText>%</td>
+                        <td class="table1-td-montant"><apex:outputText value="{0, number, 0.00}"><apex:param value="{!v.Montant_TVA__c}" /></apex:outputText></td>
+                        <td class="table1-td-montant"><apex:outputText value="{0, number, 0.00}"><apex:param value="{!v.Montant_TTC__c}" /></apex:outputText></td>
+                        <td class="table1-td"  style="text-align:right">{!v.NumFactureAvoir__c}</td>
+                        <td class="table1-td">{!v.IDCRSClient__c}</td>
+                        <td class="table1-td">{!v.NumReservation__c}</td>
+                    </tr>
+                    </apex:repeat>
+                    <tr>
+                        <td class="table1-tf" colspan="6" style="text-align:right"><b>Somme</b></td>                        
+                        <td class="table1-tf" style="text-align:right"><apex:outputText value="{0, number, 0.00}"><apex:param value="{!totalHT}" /></apex:outputText></td>
+                        <td class="table1-tf"></td>
+                        <td class="table1-tf" style="text-align:right"><apex:outputText value="{0, number, 0.00}"><apex:param value="{!totaltva}" /></apex:outputText></td>
+                        <td class="table1-tf" style="text-align:right"><apex:outputText value="{0, number, 0.00}"><apex:param value="{!totalTTC}" /></apex:outputText></td>
+                        <td class="table1-tf"></td>
+                        <td class="table1-tf"></td>
+                        <td class="table1-tf"></td>
+                    </tr>
+                </tbody>
+                <!--tfoot>
+
+                </tfoot-->
+            </table>
+        </div>
+
+        <br/>
+        <p></p>
+       <!-- <p style='margin-left: 40%; text-align:center'> <b>Total des consommations du  <apex:outputText value="{0, date,' 'dd'-'MM'-'yyyy}"><apex:param value="{!premiereConso}" /></apex:outputText> au <apex:outputText value="{0, date,' 'dd'-'MM'-'yyyy}"><apex:param value="{!derniereConso}" /></apex:outputText></b></p>
+       -->
+        <div id="table2">
+            <table class="table2">
+                <thead>
+                    <tr class="table2-title">
+                        <td class="table2-title" colspan="4" style="text-align:left">
+                            <p><b>Total des consommations du  <apex:outputText value="{0, date,' 'dd'-'MM'-'yyyy}">
+                                <apex:param value="{!premiereConso}" />
+                            </apex:outputText> au <apex:outputText value="{0, date,' 'dd'-'MM'-'yyyy}">
+                                <apex:param value="{!derniereConso}" /></apex:outputText></b></p></td>   
+                    </tr>
+                    <tr>
+                        <th class="table2-th">  </th>                    
+                        <th class="table2-th"> Montant HT </th>
+                        <th class="table2-th"> Montant TVA </th>
+                        <th class="table2-th"> Montant TTC </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="table2-tf-h"><b>TVA 10%</b></td>                    
+                        <td class="table2-tf"><apex:outputText value="{0, number, 0.00}"><apex:param value="{!tva10TotalHT}" /></apex:outputText></td>
+                        <td class="table2-tf"><apex:outputText value="{0, number, 0.00}"><apex:param value="{!tva10Totaltva}" /></apex:outputText></td>
+                        <td class="table2-tf"><apex:outputText value="{0, number, 0.00}"><apex:param value="{!tva10TotalTTC}" /></apex:outputText></td>
+                    </tr>
+                    <tr>
+                        <td class="table2-tf-h"><b>TVA 20%</b></td>                     
+                        <td class="table2-tf"><apex:outputText value="{0, number, 0.00}"><apex:param value="{!tva20TotalHT}" /></apex:outputText></td>
+                        <td class="table2-tf"><apex:outputText value="{0, number, 0.00}"><apex:param value="{!tva20Totaltva}" /></apex:outputText></td>
+                        <td class="table2-tf"><apex:outputText value="{0, number, 0.00}"><apex:param value="{!tva20TotalTTC}" /></apex:outputText></td>
+                    </tr>
+                    <tr>                     
+                        <td class="table2-tf-h"><b>TVA Exonérée</b></td>
+                        <td class="table2-tf"><apex:outputText value="{0, number, 0.00}"><apex:param value="{!ExclTotalHT}" /></apex:outputText></td>
+                        <td class="table2-tf"><apex:outputText value="{0, number, 0.00}"><apex:param value="{!ExclTotaltva}" /></apex:outputText></td>
+                        <td class="table2-tf"><apex:outputText value="{0, number, 0.00}"><apex:param value="{!ExclTotalTTC}" /></apex:outputText></td>
+                    </tr>
+                    <tr>                     
+                        <td class="table2-tf-h"><b>Total</b></td>
+                        <td class="table2-tf"><apex:outputText value="{0, number, 0.00}"><apex:param value="{!totalHT}" /></apex:outputText></td>
+                        <td class="table2-tf"><apex:outputText value="{0, number, 0.00}"><apex:param value="{!totaltva}" /></apex:outputText></td>                        
+                        <td class="table2-tf"><apex:outputText value="{0, number, 0.00}"><apex:param value="{!totalTTC}" /></apex:outputText></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </apex:form>
+</body>
+</html>
+</apex:page>

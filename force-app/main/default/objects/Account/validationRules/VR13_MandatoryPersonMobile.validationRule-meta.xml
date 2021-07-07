@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+        <fullName>VR13_MandatoryPersonMobile</fullName>
+        <active>true</active>
+        <description>CRMSS-1061,CRMSS-1081</description>
+        <errorConditionFormula>!$User.BypassValidationRule__c &amp;&amp;
+!ISBLANK(PersonMobilePhone)&amp;&amp;
+NOT(REGEX( PersonMobilePhone , &quot;[+][0-9]{1,3}[&apos; &apos;][0-9]*?&quot;))&amp;&amp;
+!(
+CONTAINS($User.Alias , &apos;obens&apos;)||
+CONTAINS($User.FirstName , &apos;Usertech&apos;)||
+CONTAINS($Profile.Name, &apos;Technical&apos;)
+)</errorConditionFormula>
+        <errorDisplayField>PersonMobilePhone</errorDisplayField>
+        <errorMessage>Number must be in the format : +{country code} {phone number}
+Example:+33 632344589</errorMessage>
+</ValidationRule>
