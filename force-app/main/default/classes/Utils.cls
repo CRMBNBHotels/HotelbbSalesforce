@@ -71,4 +71,27 @@ public class Utils {
         singleEmailMessage.setSenderDisplayName(ReplyEmail);
         return singleEmailMessage;
     }
+    public static Integer getBatchSize(string aClassName){
+        Integer batchSize = 200;
+        List<CMT003_BatchSize__mdt> batchsizeList = [SELECT Id, BatchSize__c, ApexClass__c
+                                                        FROM CMT003_BatchSize__mdt
+                                                        WHERE ApexClass__c =:aClassName];   
+        if (batchsizeList != null && batchsizeList.Size() > 0){
+            batchSize = batchsizeList[0].BatchSize__c != null ? Integer.ValueOf(batchsizeList[0].BatchSize__c) : 200;
+        }
+        return batchSize;
+    }
+    
+    public static Task CreateTask(string tskStatus, string tskWhoId, string tskWhatId,date tskWDueDate, string tskPriority, string tskSubject, string tskDescription){
+        Task tsk = new Task();
+        tsk.Status=tskStatus;
+        tsk.WhoId=tskWhoId;
+        tsk.WhatId=tskWhatId;
+        tsk.ActivityDate=tskWDueDate;
+        tsk.Priority=tskPriority;
+        tsk.Subject=tskSubject;
+        tsk.description=tskDescription;
+        return tsk;
+    }
+
 }
