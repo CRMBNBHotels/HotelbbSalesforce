@@ -1,172 +1,308 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
-        <processMetadataValues>
-            <name>flowSelection</name>
-            <value>
-                <stringValue>JBSystemFlow_Opportunity</stringValue>
-            </value>
-        </processMetadataValues>
-        <name>myRule_1_A1</name>
-        <label>JBSystemFlow_Opportunity_Action</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <actionName>JBSystemFlow_Opportunity</actionName>
-        <actionType>flow</actionType>
+        <name>OpplanguageEnglish</name>
+        <label>OpplanguageEnglish</label>
+        <locationX>612</locationX>
+        <locationY>463</locationY>
+        <actionName>Opportunity.OppAccuseRecepENF</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Create_Task_Eng</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>SObject</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>new_object</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>maxOccurs</name>
-                <value>
-                    <numberValue>1.0</numberValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>objectType</name>
-                <value>
-                    <stringValue>Opportunity</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>SObject</stringValue>
-                </value>
-            </processMetadataValues>
-            <name>new_object</name>
+            <name>SObjectRowId</name>
             <value>
-                <elementReference>myVariable_current</elementReference>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <processMetadataValues>
-                <name>dataType</name>
-                <value>
-                    <stringValue>SObject</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>isRequired</name>
-                <value>
-                    <booleanValue>false</booleanValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>leftHandSideLabel</name>
-                <value>
-                    <stringValue>old_object</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>maxOccurs</name>
-                <value>
-                    <numberValue>1.0</numberValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>objectType</name>
-                <value>
-                    <stringValue>Opportunity</stringValue>
-                </value>
-            </processMetadataValues>
-            <processMetadataValues>
-                <name>rightHandSideType</name>
-                <value>
-                    <stringValue>SObject</stringValue>
-                </value>
-            </processMetadataValues>
-            <name>old_object</name>
-            <value>
-                <elementReference>myVariable_old</elementReference>
+                <elementReference>recordId</elementReference>
             </value>
         </inputParameters>
     </actionCalls>
+    <actionCalls>
+        <name>SendEmailFR</name>
+        <label>SendEmailFR</label>
+        <locationX>669</locationX>
+        <locationY>210</locationY>
+        <actionName>Opportunity.OppAccuseRecepFR</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>CreateTask</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>52.0</apiVersion>
     <decisions>
-        <name>myDecision</name>
-        <label>Primary Decision</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <name>Check_Language</name>
+        <label>Check Language</label>
+        <locationX>462</locationX>
+        <locationY>221</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>myRule_1</name>
+            <name>French</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>formula_myRule_1</leftValueReference>
+                <leftValueReference>GetOpp.LanguageCom__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <booleanValue>true</booleanValue>
+                    <stringValue>French</stringValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>myRule_1_A1</targetReference>
+                <targetReference>SendEmailFR</targetReference>
             </connector>
-            <label>No_criteria</label>
+            <label>French</label>
+        </rules>
+        <rules>
+            <name>English</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GetOpp.LanguageCom__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>English</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>OpplanguageEnglish</targetReference>
+            </connector>
+            <label>English</label>
         </rules>
     </decisions>
     <formulas>
-        <name>formula_myRule_1</name>
-        <dataType>Boolean</dataType>
-        <expression>true</expression>
+        <name>TaskDescriptionEn</name>
+        <dataType>String</dataType>
+        <expression>&quot;Send on &quot; &amp; TEXT({!$Flow.CurrentDate})&amp;  &quot; to &quot; &amp; {!GetOpp.Contact__r.Email}&amp;&quot; &quot; &amp; BR() &amp;
+{!DescriptionContentEn}</expression>
     </formulas>
-    <label>JBSystem_Opportunity_Process</label>
+    <formulas>
+        <name>TaskDescriptionFR</name>
+        <dataType>String</dataType>
+        <expression>&quot;Envoyée le &quot;&amp; TEXT({!$Flow.CurrentDate}) &amp;  &quot; à &quot; &amp; {!GetOpp.Contact__r.Email} &amp;&quot; &quot; &amp; BR() &amp;
+{!DescriptionContentFr}</expression>
+    </formulas>
+    <formulas>
+        <name>TaskSubjectEN</name>
+        <dataType>String</dataType>
+        <expression>&quot;Accommodation Request &quot; &amp; {!GetOpp.Name}</expression>
+    </formulas>
+    <formulas>
+        <name>TaskSubjectFR</name>
+        <dataType>String</dataType>
+        <expression>&quot;Accusé de réception B&amp;B Hôtels : votre demande a été transmise - &quot; &amp; {!GetOpp.Name}</expression>
+    </formulas>
+    <interviewLabel>Opportunity_SendEmailUponCreation {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity_SendEmailUponCreation</label>
     <processMetadataValues>
-        <name>ObjectType</name>
+        <name>BuilderType</name>
         <value>
-            <stringValue>Opportunity</stringValue>
+            <stringValue>LightningFlowBuilder</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
-        <name>ObjectVariable</name>
+        <name>CanvasMode</name>
         <value>
-            <elementReference>myVariable_current</elementReference>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
-        <name>OldObjectVariable</name>
+        <name>OriginBuilderType</name>
         <value>
-            <elementReference>myVariable_old</elementReference>
+            <stringValue>LightningFlowBuilder</stringValue>
         </value>
     </processMetadataValues>
-    <processMetadataValues>
-        <name>TriggerType</name>
-        <value>
-            <stringValue>onAllChanges</stringValue>
-        </value>
-    </processMetadataValues>
-    <processType>Workflow</processType>
-    <startElementReference>myDecision</startElementReference>
-    <status>Obsolete</status>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>Create_Task_Eng</name>
+        <label>Create Task Eng</label>
+        <locationX>753</locationX>
+        <locationY>440</locationY>
+        <inputAssignments>
+            <field>ActivityDate</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <elementReference>TaskDescriptionEn</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Terminé</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <elementReference>TaskSubjectEN</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhatId</field>
+            <value>
+                <elementReference>GetOpp.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhoId</field>
+            <value>
+                <elementReference>GetOpp.Contact__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>CreateTask</name>
+        <label>CreateTask</label>
+        <locationX>851</locationX>
+        <locationY>203</locationY>
+        <inputAssignments>
+            <field>ActivityDate</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <elementReference>TaskDescriptionFR</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Terminé</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <elementReference>TaskSubjectFR</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhatId</field>
+            <value>
+                <elementReference>GetOpp.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhoId</field>
+            <value>
+                <elementReference>GetOpp.Contact__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>GetOpp</name>
+        <label>GetOpp</label>
+        <locationX>175</locationX>
+        <locationY>222</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>SendEmail</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>LanguageCom__c</queriedFields>
+        <queriedFields>Contact__c</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <screens>
+        <name>SendEmail</name>
+        <label>SendEmail</label>
+        <locationX>168</locationX>
+        <locationY>464</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Check_Language</targetReference>
+        </connector>
+        <fields>
+            <name>SendEmailConfirmation</name>
+            <fieldText>&lt;p&gt;Do you want to send email?&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>GetOpp</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
     <variables>
-        <name>myVariable_current</name>
-        <dataType>SObject</dataType>
+        <name>CurrentDateTime</name>
+        <dataType>DateTime</dataType>
         <isCollection>false</isCollection>
-        <isInput>true</isInput>
-        <isOutput>true</isOutput>
-        <objectType>Opportunity</objectType>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$Flow.CurrentDateTime</elementReference>
+        </value>
     </variables>
     <variables>
-        <name>myVariable_old</name>
-        <dataType>SObject</dataType>
+        <name>DescriptionContentEn</name>
+        <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
-        <objectType>Opportunity</objectType>
+        <value>
+            <stringValue>Dear customer, We thank you for your interest in B&amp;B hotels. We acknowledge receipt of your accommodation request, and will get back to you as soon as possible. Regards B&amp;B Hotels</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>DescriptionContentFr</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <stringValue>Bonjour, J&apos;ai bien pris connaissance de votre demande d&apos;hébergement. Je reviendrai vers vous dans les meilleurs délais pour vous apporter une réponse. Je reste à votre disposition pour tous renseignements. Cordialement, B&amp;B Hotels</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>EmailAccuseReception</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Email Accusé Reception</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
     </variables>
 </Flow>
