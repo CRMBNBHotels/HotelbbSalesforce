@@ -12,6 +12,7 @@ public class Utils_Test {
       Contact con = Utils.CreateContact('Contact', Partner.Id, label.EN);
       insert con;
       Account Person = Utils.CreatePersonAccount('Person1',Partner.Id);
+      Person.firstname='fname';
       insert Person;
       Opportunity MasterBooking = Utils.CreateMasterBookingOpportunity('MasterBooking1', Person.Id);
       MasterBooking.StageName = label.ClosedWonStage;
@@ -31,6 +32,8 @@ public class Utils_Test {
       insert contract;
       Hotel__c hotel = Utils.CreateHotel('123');
       insert hotel;
+      Task task =Utils.CreateTask('Terminé',null,null,system.today(),'Low','Subject','Description');
+      insert task;
       Case cas = Utils.CreateCase();
       insert cas;
       Hotel_Room_Option__c hotelRoomOptionAndCode = Utils.CreateHotelRoomOptionAndCode();
@@ -39,6 +42,9 @@ public class Utils_Test {
       prod.Name = 'prod1';
       insert prod;
       Messaging.SingleEmailMessage SEM = Utils.CreateSingleEmailMessage(null,null,null,null,label.WebCaseEnglishEmailTemplateId,'jennyjawhar@hotmail.com');
+      String className= 'AP03_contract';
+      Integer batchSize = 200;
+      Utils.getBatchSize(className);
       
     }
 }
