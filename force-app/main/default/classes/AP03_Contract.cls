@@ -13,6 +13,7 @@
 * -- 08-MAR-2021  Shiksha      4.0     CRMSS-1085 : En fonction du code prestation reçu afficher les libellés de prestations selon le mapping
 * -- 22-APR-2021  Shiksha      5.0     CRMSS-1134 :Carte logée : liste des personnes autorisées = 1 contrat actif par personne
 * -- 07-Jul-2021  Amira        6.0     CRMSS-1228 : Message opportunité Groupe - Remplacer emetteur du batch : Shiksha à Nadia 
+* -- 09-Jul-2021  Amira        7.0     CRMSS-1238 : Carte logée - Relevé de factures et factures unitaires : afficher code carte logée au lieu numéro de contrat
 * @TestClass : AP03_Contract_Test
 *********************************************************************************************************************************************************************/
 
@@ -20,20 +21,14 @@ public class AP03_Contract {
     /*
     * @Details: CRMSS-1051: carte logée credit card expire avant la fin du contrat : Statut du contrat devient “Expiré” + Notification Owner 
     *           CRMSS-359 : Carte logée credit card expire dans 1 mois - notification owner un mois avant la date d’expiration de la carte bancaire
-
     *           CRMSS-975 : Une carte logée (Si au statut Actif uniquement) est renouvelée tacitement UN JOUR AVANT LA DATE DE FIN DE CONTRAT
     * 			CRMSS-1228: Message opportunité Groupe - Remplacer emetteur du batch : Shiksha à Nadia        
-
-    *           CRMSS-975 : Une carte logée (Si au statut Actif uniquement) est renouvelée tacitement UN JOUR AVANT LA DATE DE FIN DE CONTRAT           
-
     */
     public static void carteLogeeNotifActions(List<Contract> aContractList, String aAction){
         List<EmailMessageWrapper> msgWrapperList = New List<EmailMessageWrapper>();
         
         For(Contract cont : aContractList){ 
-
             EmailMessageWrapper msg = New EmailMessageWrapper(cont.Owner.email, cont.Owner.Name, New List<String> {cont.Owner.email}, null, null,null, null, null, true , cont.Id );
-
             msgWrapperList.add(msg);
 
             if (aAction.EqualsIgnoreCase('reconduction')){
@@ -88,9 +83,7 @@ public class AP03_Contract {
             efa.setBody(cont.ContentDocument.LatestPublishedVersion.VersionData);
             attachmentList.add(efa);  
 
-
             EmailMessageWrapper msg = New EmailMessageWrapper(ctr.Owner.email, ctr.Owner.Name, New List<String> {ctr.ContactComptabilite__r.email}, ctr.ContactComptabilite__c, null,null, null, null, true , ctr.Id,attachmentList);
-
             contractMsgMap.put(ctr.id,msg);
 
             PrevLinekdEntityId = cont.LinkedEntityId;
@@ -102,6 +95,7 @@ public class AP03_Contract {
     /*
     * @Details: CRMSS-1042/1064: carte logée Génération du relevé de facture Batch, récupération des données et calculs
     *           CRMSS-1085     : En fonction du code prestation reçu afficher les libellés de prestations selon le mapping
+    *           CRMSS-1238 : Carte logée - Relevé de factures et factures unitaires : afficher code carte logée au lieu numéro de contrat
     *
     */
 
@@ -172,8 +166,8 @@ public class AP03_Contract {
         for (Contract cont: contractAttachMap.KeySet() ){
                         
             String             factureMois          = (DateTime.now().addMonths(-1)).format('MMM YYYY');
-            String             fileName             = 'Relevé de factures_'+ cont.ContractNumber + '_' + factureMois;
-            Map<String,String> ParameterSubjectMap  = New Map<String,String>{'#ContractDetails' => cont.ContractNumber + ' ' + factureMois};
+            String             fileName             = 'Relevé de factures_'+ cont.CorporateCode__r.name + '_' + factureMois;
+            Map<String,String> ParameterSubjectMap  = New Map<String,String>{'#ContractDetails' => cont.CorporateCode__r.name + ' ' + factureMois};
             Map<String,String> ParameterBodyMap     = New Map<String,String>{'#RelevantDate' => factureMois};
             
             //csv blob
@@ -198,8 +192,7 @@ public class AP03_Contract {
             pdfA.setBody(pdfBlob);
 
 
-           EmailMessageWrapper msg = New EmailMessageWrapper(cont.Owner.email, cont.Owner.Name, New List<String> {cont.ContactComptabilite__r.email}, cont.ContactComptabilite__c, null,null, ParameterSubjectMap, ParameterBodyMap, true , cont.Id , New List<Messaging.EmailFileAttachment>{csvA, pdfA } );
-
+            EmailMessageWrapper msg = New EmailMessageWrapper(cont.Owner.email, cont.Owner.Name, New List<String> {cont.ContactComptabilite__r.email}, cont.ContactComptabilite__c, null,null, ParameterSubjectMap, ParameterBodyMap, true , cont.Id , New List<Messaging.EmailFileAttachment>{csvA, pdfA } );
             msgWrapperList.add(msg);
 
             //Create Attachments
@@ -221,7 +214,6 @@ public class AP03_Contract {
         Database.Insert (attachList);
         Utils_Email.sendEmail(msgWrapperList, 'Carte_Log_e_Envoi_du_relev_des_factures_1614070497692');
     }
-
 
    /*
     * @Details: CRMSS-1134 :Carte logée : liste des personnes autorisées = 1 contrat actif par personne
